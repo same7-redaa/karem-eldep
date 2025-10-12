@@ -6,6 +6,7 @@ import About from './components/About';
 import PracticeAreas from './components/PracticeAreas';
 import WhyChooseUs from './components/WhyChooseUs';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 
 // FIX: Changed return type to React.ReactElement to resolve "Cannot find namespace 'JSX'" error.
@@ -21,6 +22,7 @@ export default function App(): React.ReactElement {
           <WhyChooseUs />
           <Contact />
         </main>
+        <Footer />
         <WhatsAppButton />
       </div>
     </LanguageProvider>
