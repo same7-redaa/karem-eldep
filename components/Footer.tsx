@@ -106,6 +106,29 @@ const Footer: React.FC = () => {
             </SocialIcon>
           </div>
         </div>
+
+        {/* تذييل المطور */}
+        <div className="border-t border-gray-800/50 mt-8 pt-6">
+          <div className="text-center space-y-3">
+            <p className="text-sm font-sans text-gray-500">
+              تم التصميم والتطوير ب��اسطة: <span className="text-[#d4a15c] font-semibold">سامح رضا</span>
+            </p>
+            <p className="text-sm font-sans text-gray-500">
+              اطلب موقعك الآن
+            </p>
+            <div className="flex justify-center gap-4 mt-3">
+              <a href="https://wa.me/201023160657" target="_blank" rel="noopener noreferrer" className="text-[#25D366] hover:text-[#128C7E] transition-colors duration-300">
+                <i className="fa-brands fa-whatsapp text-2xl"></i>
+              </a>
+              <a href="https://www.facebook.com/SAME7.REDAA" target="_blank" rel="noopener noreferrer" className="text-[#1877F2] hover:text-[#145dbf] transition-colors duration-300">
+                <i className="fa-brands fa-facebook-f text-2xl"></i>
+              </a>
+              <a href="https://www.doc-digital.online/" target="_blank" rel="noopener noreferrer" className="text-[#d4a15c] hover:text-[#b8894a] transition-colors duration-300">
+                <i className="fa-solid fa-globe text-2xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );
