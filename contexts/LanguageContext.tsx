@@ -70,6 +70,12 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.sharm.address': 'الهضبة، شرم الشيخ',
     'contact.methods': 'طرق التواصل',
     'contact.whatsapp': 'واتساب',
+    
+    // Footer
+    'footer.rights': 'مؤسسة كريم الديب للمحاماة. جميع الحقوق محفوظة.',
+    'footer.designed': 'تم التصميم والتطوير بواسطة:',
+    'footer.developer': 'سامح رضا',
+    'footer.order': 'اطلب موقعك الآن',
   },
   en: {
     // Header
@@ -132,6 +138,12 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.sharm.address': 'Al Hadaba, Sharm El Sheikh',
     'contact.methods': 'Contact Methods',
     'contact.whatsapp': 'WhatsApp',
+    
+    // Footer
+    'footer.rights': 'Karim Eldib Law Firm. All rights reserved.',
+    'footer.designed': 'Designed and Developed by:',
+    'footer.developer': 'Sameh Reda',
+    'footer.order': 'Order Your Website Now',
   }
 };
 
