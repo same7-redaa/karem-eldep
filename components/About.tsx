@@ -4,12 +4,12 @@ import type { Stat } from '../types';
 
 const StatCard: React.FC<{ stat: Stat; index: number }> = ({ stat, index }) => (
     <div 
-        className="relative bg-white/5 backdrop-blur-sm border border-[#d4a15c]/30 rounded-lg p-4 md:p-6 text-center animate-fade-in-up opacity-0 hover:bg-white/10 hover:border-[#d4a15c]/60 transition-all duration-300 hover:scale-105 min-w-[110px] md:min-w-[140px]"
+        className="relative bg-white/5 backdrop-blur-sm border border-[#d4a15c]/30 rounded-lg p-3 md:p-4 text-center animate-fade-in-up opacity-0 hover:bg-white/10 hover:border-[#d4a15c]/60 transition-all duration-300 hover:scale-105 min-w-[90px] md:min-w-[110px]"
         style={{ animationDelay: `${0.6 + index * 0.2}s`, animationFillMode: 'forwards' }}
     >
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#d4a15c]/10 to-transparent rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-        <p className="text-3xl md:text-5xl font-bold font-sans text-[#d4a15c] mb-1 md:mb-2 relative z-10">{stat.value}</p>
-        <p className="text-gray-300 text-sm md:text-base font-medium relative z-10">{stat.label}</p>
+        <p className="text-2xl md:text-3xl font-bold font-sans text-[#d4a15c] mb-1 relative z-10">{stat.value}</p>
+        <p className="text-gray-300 text-xs md:text-sm font-medium relative z-10">{stat.label}</p>
     </div>
 );
 
@@ -46,39 +46,39 @@ const About: React.FC = () => {
     }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="py-12 md:py-20 bg-[#0e1f3b] overflow-hidden">
+    <section id="about" ref={sectionRef} className="py-8 md:py-12 bg-[#0e1f3b] overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className={`order-2 lg:order-1 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            <h2 className="text-2xl md:text-4xl font-bold font-sans mb-6 md:mb-8 animate-fade-in-up">
-              <i className="fas fa-user-tie text-[#d4a15c] ml-2 md:ml-3"></i>
+            <h2 className="text-xl md:text-2xl font-bold font-sans mb-4 md:mb-6 animate-fade-in-up">
+              <i className="fas fa-user-tie text-[#d4a15c] ml-2"></i>
               {t('about.title')}
             </h2>
             
-            <div className="space-y-4 md:space-y-6 mb-6 md:mb-8">
-              <div className="flex items-start gap-3 md:gap-4 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards', opacity: 0 }}>
-                <i className="fas fa-shield-alt text-[#d4a15c] text-xl md:text-2xl mt-1 flex-shrink-0"></i>
-                <p className="text-gray-300 leading-relaxed font-sans text-base md:text-lg">
+            <div className="space-y-3 md:space-y-4 mb-4 md:mb-6">
+              <div className="flex items-start gap-2 md:gap-3 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards', opacity: 0 }}>
+                <i className="fas fa-shield-alt text-[#d4a15c] text-lg md:text-xl mt-1 flex-shrink-0"></i>
+                <p className="text-gray-300 leading-relaxed font-sans text-sm md:text-base">
                   {t('about.p1')}
                 </p>
               </div>
               
-              <div className="flex items-start gap-3 md:gap-4 animate-fade-in-up" style={{ animationDelay: '0.3s', animationFillMode: 'forwards', opacity: 0 }}>
-                <i className="fas fa-landmark text-[#d4a15c] text-xl md:text-2xl mt-1 flex-shrink-0"></i>
-                <p className="text-gray-300 leading-relaxed font-sans text-base md:text-lg">
+              <div className="flex items-start gap-2 md:gap-3 animate-fade-in-up" style={{ animationDelay: '0.3s', animationFillMode: 'forwards', opacity: 0 }}>
+                <i className="fas fa-landmark text-[#d4a15c] text-lg md:text-xl mt-1 flex-shrink-0"></i>
+                <p className="text-gray-300 leading-relaxed font-sans text-sm md:text-base">
                   {t('about.p2')}
                 </p>
               </div>
               
-              <div className="flex items-start gap-3 md:gap-4 animate-fade-in-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards', opacity: 0 }}>
-                <i className="fas fa-language text-[#d4a15c] text-xl md:text-2xl mt-1 flex-shrink-0"></i>
-                <p className="text-gray-300 leading-relaxed font-sans text-base md:text-lg">
+              <div className="flex items-start gap-2 md:gap-3 animate-fade-in-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards', opacity: 0 }}>
+                <i className="fas fa-language text-[#d4a15c] text-lg md:text-xl mt-1 flex-shrink-0"></i>
+                <p className="text-gray-300 leading-relaxed font-sans text-sm md:text-base">
                   {t('about.p3')}
                 </p>
               </div>
             </div>
             
-            <div className="flex justify-center lg:justify-start gap-8 flex-wrap">
+            <div className="flex justify-center lg:justify-start gap-4 md:gap-6 flex-wrap">
                 {stats.map((stat, index) => <StatCard key={index} stat={stat} index={index} />)}
             </div>
           </div>

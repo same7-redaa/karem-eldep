@@ -34,14 +34,19 @@ const Header: React.FC = () => {
         {/* Lighting Effect */}
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent pointer-events-none"></div>
         
-        <div className="container mx-auto px-4 md:px-6 flex justify-between items-center h-16 md:h-20">
+        <div className="container mx-auto px-4 md:px-6 flex justify-between items-center h-14 md:h-16">
           <button onClick={() => scrollToSection('home')} className="flex items-center cursor-pointer hover:opacity-80 transition-opacity">
             <img 
               src="https://i.postimg.cc/G3FMRMY4/3.png" 
               alt="Karim Eldib Law Firm Logo" 
-              className="h-12 md:h-16 w-auto"
+              className="h-10 md:h-12 w-auto"
               style={{ mixBlendMode: 'screen' }}
             />
+            <div className="mr-2 md:mr-3 text-right">
+              <div className="text-[#d4a15c] text-xs md:text-sm font-bold whitespace-nowrap">
+                Unlimited lawyers & foreign services
+              </div>
+            </div>
           </button>
 
           <nav className="hidden md:flex items-center gap-6 lg:gap-10">
@@ -49,7 +54,7 @@ const Header: React.FC = () => {
               <button 
                 key={link.id} 
                 onClick={() => scrollToSection(link.id)}
-                className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-base lg:text-lg whitespace-nowrap"
+                className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap"
               >
                 {link.name}
               </button>
@@ -59,7 +64,7 @@ const Header: React.FC = () => {
           <div className="hidden md:flex items-center gap-4">
             <button 
               onClick={() => scrollToSection('contact')}
-              className="bg-[#d4a15c] text-[#0b1a33] font-bold py-2.5 px-6 rounded-md hover:bg-opacity-90 transition-all duration-300 text-base lg:text-lg whitespace-nowrap"
+              className="bg-[#d4a15c] text-[#0b1a33] font-bold py-2 px-4 rounded-md hover:bg-opacity-90 transition-all duration-300 text-sm lg:text-base whitespace-nowrap"
             >
               {t('nav.book')}
             </button>
