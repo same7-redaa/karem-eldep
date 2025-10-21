@@ -17,7 +17,7 @@ const PracticeAreas: React.FC = () => {
   const { t } = useLanguage();
   
   const practiceAreas: PracticeArea[] = [
-    { icon: 'fa-solid fa-scales', title: t('services.civil'), description: t('services.civil.desc') },
+    { icon: 'fa-solid fa-balance-scale', title: t('services.civil'), description: t('services.civil.desc') },
     { icon: 'fa-solid fa-gavel', title: t('services.criminal'), description: t('services.criminal.desc') },
     { icon: 'fa-solid fa-handshake', title: t('services.commercial'), description: t('services.commercial.desc') },
     { icon: 'fa-solid fa-heart', title: t('services.family'), description: t('services.family.desc') },
