@@ -85,63 +85,73 @@ const Blog: React.FC = () => {
         {/* المقالات */}
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
           {articles.map((article) => (
-            <article key={article.id} className="bg-[#1a2d4d] rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+            <article 
+              key={article.id} 
+              className="group bg-[#1a2d4d] rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-[#c8a876]/20"
+            >
               
               {/* صورة المقال */}
-              <div className="h-48 overflow-hidden">
+              <div className="h-56 overflow-hidden relative">
                 <img 
                   src={article.image} 
                   alt={article.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = 'https://i.postimg.cc/G3FMRMY4/3.png';
                   }}
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0b1a33]/80 to-transparent"></div>
               </div>
 
               {/* محتوى المقال */}
               <div className="p-6">
                 
                 {/* التاريخ ووقت القراءة */}
-                <div className="flex items-center gap-4 text-sm text-gray-400 mb-3">
-                  <span className="flex items-center gap-1">
-                    <i className="fas fa-calendar-alt"></i>
+                <div className="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                  <span className="flex items-center gap-2 bg-[#c8a876]/10 px-3 py-1 rounded-full">
+                    <i className="fas fa-calendar-alt text-[#c8a876]"></i>
                     {article.date}
                   </span>
-                  <span className="flex items-center gap-1">
-                    <i className="fas fa-clock"></i>
+                  <span className="flex items-center gap-2 bg-[#c8a876]/10 px-3 py-1 rounded-full">
+                    <i className="fas fa-clock text-[#c8a876]"></i>
                     {article.readTime}
                   </span>
                 </div>
 
                 {/* عنوان المقال */}
-                <h2 className="text-2xl font-bold text-white mb-3 line-clamp-2">
+                <h2 className="text-2xl font-bold text-white mb-4 line-clamp-2 group-hover:text-[#c8a876] transition-colors duration-300">
                   {article.title}
                 </h2>
 
                 {/* مقتطف من المقال */}
-                <p className="text-gray-300 mb-4 line-clamp-3">
+                <p className="text-gray-300 mb-5 line-clamp-3 leading-relaxed">
                   {article.excerpt}
                 </p>
 
                 {/* التاجز */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {article.tags.map((tag, index) => (
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {article.tags.slice(0, 2).map((tag, index) => (
                     <span 
                       key={index}
-                      className="bg-[#c8a876] text-[#0b1a33] px-3 py-1 rounded-full text-xs font-semibold"
+                      className="bg-[#c8a876]/10 border border-[#c8a876]/30 text-[#c8a876] px-3 py-1 rounded-lg text-xs font-semibold hover:bg-[#c8a876]/20 transition-colors duration-300"
                     >
+                      <i className="fas fa-tag text-xs mr-1"></i>
                       {tag}
                     </span>
                   ))}
+                  {article.tags.length > 2 && (
+                    <span className="bg-[#c8a876]/10 text-[#c8a876] px-3 py-1 rounded-lg text-xs font-semibold">
+                      +{article.tags.length - 2}
+                    </span>
+                  )}
                 </div>
 
                 {/* رابط القراءة */}
                 <Link 
                   to={`/blog/${article.slug}`}
-                  className="inline-flex items-center gap-2 text-[#c8a876] hover:text-white transition-colors duration-300 font-semibold"
+                  className="inline-flex items-center gap-2 bg-[#c8a876] text-[#0b1a33] px-6 py-3 rounded-lg font-semibold hover:bg-white transition-all duration-300 hover:gap-3"
                 >
-                  {isRTL ? 'اقرأ المقال كاملاً' : 'Read Full Article'}
+                  {isRTL ? 'اقرأ المزيد' : 'Read More'}
                   <i className={`fas fa-arrow-${isRTL ? 'left' : 'right'}`}></i>
                 </Link>
               </div>
@@ -149,26 +159,39 @@ const Blog: React.FC = () => {
           ))}
         </div>
 
-        {/* CTA للاشتراك */}
-        <div className="bg-[#1a2d4d] rounded-lg p-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#c8a876] mb-6">
-            {isRTL ? 'ابق على اطلاع بأحدث المقالات القانونية' : 'Stay Updated with Latest Legal Articles'}
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            {isRTL 
-              ? 'اشترك لتحصل على أحدث المقالات والنصائح القانونية من المحامي كريم الديب مباشرة في بريدك الإلكتروني.'
-              : 'Subscribe to get the latest articles and legal advice from Lawyer Karim El-Dib directly in your email.'
-            }
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder={isRTL ? 'البريد الإلكتروني' : 'Email Address'}
-              className="flex-1 px-6 py-3 rounded-full bg-[#0b1a33] text-white border border-[#c8a876] focus:outline-none focus:ring-2 focus:ring-[#c8a876]"
-            />
-            <button className="bg-[#c8a876] text-[#0b1a33] px-8 py-3 rounded-full font-semibold hover:bg-white transition-colors duration-300">
-              {isRTL ? 'اشترك' : 'Subscribe'}
-            </button>
+        {/* CTA للاشتراك والتواصل */}
+        <div className="bg-gradient-to-br from-[#1a2d4d] to-[#0b1a33] border border-[#c8a876]/20 rounded-2xl p-12 text-center">
+          <div className="max-w-4xl mx-auto">
+            <div className="w-20 h-20 bg-[#c8a876]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i className="fas fa-newspaper text-4xl text-[#c8a876]"></i>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#c8a876] mb-4">
+              {isRTL ? 'هل لديك استفسار قانوني؟' : 'Have a Legal Question?'}
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              {isRTL 
+                ? 'تواصل معنا الآن للحصول على استشارة قانونية متخصصة من المحامي كريم الديب'
+                : 'Contact us now for specialized legal consultation from Lawyer Karim El-Dib'
+              }
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <a
+                href="https://wa.me/201009955509"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[#c8a876] text-[#0b1a33] px-8 py-4 rounded-xl font-bold hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-[#c8a876]/50"
+              >
+                <i className="fab fa-whatsapp text-2xl"></i>
+                {isRTL ? 'تواصل عبر واتساب' : 'Contact via WhatsApp'}
+              </a>
+              <a
+                href="tel:+201009955509"
+                className="inline-flex items-center gap-3 bg-white text-[#0b1a33] px-8 py-4 rounded-xl font-bold hover:bg-[#c8a876] hover:scale-105 transition-all duration-300 shadow-lg"
+              >
+                <i className="fas fa-phone text-xl"></i>
+                {isRTL ? 'اتصل الآن' : 'Call Now'}
+              </a>
+            </div>
           </div>
         </div>
 

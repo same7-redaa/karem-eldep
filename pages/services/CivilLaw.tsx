@@ -66,7 +66,7 @@ const CivilLaw: React.FC = () => {
       ogUrl.setAttribute('property', 'og:url');
       document.head.appendChild(ogUrl);
     }
-    ogUrl.setAttribute('content', 'https://eldib-co.com/services/civil-law');
+    ogUrl.setAttribute('content', 'https://ke-lawyer.com/services/civil-law');
 
     let ogImage = document.querySelector('meta[property="og:image"]');
     if (!ogImage) {
@@ -122,7 +122,7 @@ const CivilLaw: React.FC = () => {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', 'https://eldib-co.com/services/civil-law');
+    canonical.setAttribute('href', 'https://ke-lawyer.com/services/civil-law');
 
     // Alternate Language Tags
     let alternateLangAr = document.querySelector('link[rel="alternate"][hreflang="ar"]');
@@ -132,7 +132,7 @@ const CivilLaw: React.FC = () => {
       alternateLangAr.setAttribute('hreflang', 'ar');
       document.head.appendChild(alternateLangAr);
     }
-    alternateLangAr.setAttribute('href', 'https://eldib-co.com/ar/services/civil-law');
+    alternateLangAr.setAttribute('href', 'https://ke-lawyer.com/ar/services/civil-law');
 
     let alternateLangEn = document.querySelector('link[rel="alternate"][hreflang="en"]');
     if (!alternateLangEn) {
@@ -141,7 +141,7 @@ const CivilLaw: React.FC = () => {
       alternateLangEn.setAttribute('hreflang', 'en');
       document.head.appendChild(alternateLangEn);
     }
-    alternateLangEn.setAttribute('href', 'https://eldib-co.com/en/services/civil-law');
+    alternateLangEn.setAttribute('href', 'https://ke-lawyer.com/en/services/civil-law');
 
     // Robots Meta
     let robots = document.querySelector('meta[name="robots"]');
@@ -172,10 +172,10 @@ const CivilLaw: React.FC = () => {
       "@graph": [
         {
           "@type": "LegalService",
-          "@id": "https://eldib-co.com/services/civil-law#legalservice",
+          "@id": "https://ke-lawyer.com/services/civil-law#legalservice",
           "name": isRTL ? "مكتب كريم الديب للمحاماة - القانون المدني" : "Karim El-Dib Law Firm - Civil Law",
           "image": "https://i.postimg.cc/G3FMRMY4/3.png",
-          "url": "https://eldib-co.com/services/civil-law",
+          "url": "https://ke-lawyer.com/services/civil-law",
           "telephone": "+201009955509",
           "priceRange": "$$",
           "address": [
@@ -290,7 +290,7 @@ const CivilLaw: React.FC = () => {
         },
         {
           "@type": "Attorney",
-          "@id": "https://eldib-co.com/services/civil-law#attorney",
+          "@id": "https://ke-lawyer.com/services/civil-law#attorney",
           "name": "Karim El-Dib",
           "jobTitle": isRTL ? "محامي ومستشار قانوني" : "Lawyer and Legal Consultant",
           "worksFor": {
@@ -314,13 +314,13 @@ const CivilLaw: React.FC = () => {
         },
         {
           "@type": "WebPage",
-          "@id": "https://eldib-co.com/services/civil-law#webpage",
-          "url": "https://eldib-co.com/services/civil-law",
+          "@id": "https://ke-lawyer.com/services/civil-law#webpage",
+          "url": "https://ke-lawyer.com/services/civil-law",
           "name": isRTL ? "محامي قانون مدني في مصر | المحامي كريم الديب" : "Civil Law Lawyer in Egypt | Lawyer Karim El-Dib",
           "isPartOf": {
             "@type": "WebSite",
-            "@id": "https://eldib-co.com/#website",
-            "url": "https://eldib-co.com",
+            "@id": "https://ke-lawyer.com/#website",
+            "url": "https://ke-lawyer.com",
             "name": isRTL ? "مكتب كريم الديب للمحاماة" : "Karim El-Dib Law Firm",
             "publisher": {
               "@type": "Organization",
@@ -340,19 +340,19 @@ const CivilLaw: React.FC = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": isRTL ? "الرئيسية" : "Home",
-                "item": "https://eldib-co.com"
+                "item": "https://ke-lawyer.com"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": isRTL ? "الخدمات" : "Services",
-                "item": "https://eldib-co.com/services"
+                "item": "https://ke-lawyer.com/services"
               },
               {
                 "@type": "ListItem",
                 "position": 3,
                 "name": isRTL ? "القانون المدني" : "Civil Law",
-                "item": "https://eldib-co.com/services/civil-law"
+                "item": "https://ke-lawyer.com/services/civil-law"
               }
             ]
           }

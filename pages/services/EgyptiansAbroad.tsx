@@ -67,33 +67,57 @@ const EgyptiansAbroad: React.FC = () => {
   const countries = [
     {
       name: isRTL ? 'الولايات المتحدة الأمريكية' : 'United States',
-      flag: '🇺🇸',
-      cities: isRTL ? ['نيويورك', 'لوس أنجلوس', 'شيكاغو'] : ['New York', 'Los Angeles', 'Chicago']
+      icon: 'fas fa-flag-usa',
+      color: '#c8a876',
+      cities: isRTL ? ['نيويورك', 'لوس أنجلوس', 'شيكاغو', 'واشنطن'] : ['New York', 'Los Angeles', 'Chicago', 'Washington']
     },
     {
       name: isRTL ? 'ألمانيا' : 'Germany',
-      flag: '🇩🇪',
-      cities: isRTL ? ['برلين', 'ميونيخ', 'فرانكفورت'] : ['Berlin', 'Munich', 'Frankfurt']
+      icon: 'fas fa-landmark',
+      color: '#c8a876',
+      cities: isRTL ? ['برلين', 'ميونيخ', 'فرانكفورت', 'هامبورغ'] : ['Berlin', 'Munich', 'Frankfurt', 'Hamburg']
     },
     {
       name: isRTL ? 'المملكة العربية السعودية' : 'Saudi Arabia',
-      flag: '🇸🇦',
-      cities: isRTL ? ['الرياض', 'جدة', 'الدمام'] : ['Riyadh', 'Jeddah', 'Dammam']
+      icon: 'fas fa-mosque',
+      color: '#c8a876',
+      cities: isRTL ? ['الرياض', 'جدة', 'الدمام', 'مكة المكرمة'] : ['Riyadh', 'Jeddah', 'Dammam', 'Makkah']
     },
     {
       name: isRTL ? 'الإمارات العربية المتحدة' : 'UAE',
-      flag: '🇦🇪',
-      cities: isRTL ? ['دبي', 'أبوظبي', 'الشارقة'] : ['Dubai', 'Abu Dhabi', 'Sharjah']
+      icon: 'fas fa-city',
+      color: '#c8a876',
+      cities: isRTL ? ['دبي', 'أبوظبي', 'الشارقة', 'عجمان'] : ['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman']
     },
     {
       name: isRTL ? 'كندا' : 'Canada',
-      flag: '🇨🇦',
-      cities: isRTL ? ['تورنتو', 'فانكوفر', 'مونتريال'] : ['Toronto', 'Vancouver', 'Montreal']
+      icon: 'fas fa-map-marker-alt',
+      color: '#c8a876',
+      cities: isRTL ? ['تورنتو', 'فانكوفر', 'مونتريال', 'أوتاوا'] : ['Toronto', 'Vancouver', 'Montreal', 'Ottawa']
     },
     {
       name: isRTL ? 'المملكة المتحدة' : 'United Kingdom',
-      flag: '🇬🇧',
-      cities: isRTL ? ['لندن', 'مانشستر', 'برمنغهام'] : ['London', 'Manchester', 'Birmingham']
+      icon: 'fas fa-university',
+      color: '#c8a876',
+      cities: isRTL ? ['لندن', 'مانشستر', 'برمنغهام', 'ليفربول'] : ['London', 'Manchester', 'Birmingham', 'Liverpool']
+    },
+    {
+      name: isRTL ? 'الكويت' : 'Kuwait',
+      icon: 'fas fa-building',
+      color: '#c8a876',
+      cities: isRTL ? ['الكويت', 'حولي', 'السالمية', 'الفروانية'] : ['Kuwait City', 'Hawalli', 'Salmiya', 'Farwaniya']
+    },
+    {
+      name: isRTL ? 'قطر' : 'Qatar',
+      icon: 'fas fa-city',
+      color: '#c8a876',
+      cities: isRTL ? ['الدوحة', 'الوكرة', 'الخور', 'الريان'] : ['Doha', 'Al Wakrah', 'Al Khor', 'Al Rayyan']
+    },
+    {
+      name: isRTL ? 'أستراليا' : 'Australia',
+      icon: 'fas fa-globe-asia',
+      color: '#c8a876',
+      cities: isRTL ? ['سيدني', 'ملبورن', 'بريسبان', 'بيرث'] : ['Sydney', 'Melbourne', 'Brisbane', 'Perth']
     }
   ];
 
@@ -167,28 +191,53 @@ const EgyptiansAbroad: React.FC = () => {
         </div>
 
         {/* الدول التي نخدمها */}
-        <div className="bg-[#1a2d4d] rounded-lg p-12 mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#c8a876] mb-12">
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#c8a876] mb-4">
             {isRTL ? 'نخدم المصريين في جميع أنحاء العالم' : 'We Serve Egyptians Worldwide'}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <p className="text-center text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
+            {isRTL 
+              ? 'خدماتنا القانونية متاحة للمصريين المقيمين في جميع دول العالم'
+              : 'Our legal services are available to Egyptians residing in all countries worldwide'
+            }
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {countries.map((country, index) => (
-              <div key={index} className="bg-[#0b1a33] p-6 rounded-lg text-center">
-                <div className="text-6xl mb-4">{country.flag}</div>
-                <h3 className="text-xl font-bold text-white mb-3">{country.name}</h3>
-                <div className="space-y-1">
+              <div 
+                key={index} 
+                className="bg-[#1a2d4d] p-6 rounded-lg hover:transform hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-[#c8a876]/20"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-14 h-14 bg-[#c8a876]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <i className={`${country.icon} text-2xl text-[#c8a876]`}></i>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-white mb-2">{country.name}</h3>
+                  </div>
+                </div>
+                <div className="space-y-2">
                   {country.cities.map((city, cityIndex) => (
-                    <span key={cityIndex} className="text-gray-300 text-sm block">{city}</span>
+                    <div key={cityIndex} className="flex items-center gap-2 text-gray-300">
+                      <i className="fas fa-check-circle text-[#c8a876] text-sm"></i>
+                      <span className="text-sm">{city}</span>
+                    </div>
                   ))}
                 </div>
               </div>
             ))}
           </div>
-          <div className="text-center mt-8">
-            <p className="text-gray-300 text-lg">
+          <div className="text-center mt-10 bg-[#1a2d4d] p-8 rounded-lg">
+            <i className="fas fa-globe text-5xl text-[#c8a876] mb-4"></i>
+            <p className="text-gray-300 text-xl font-semibold">
               {isRTL 
-                ? 'وجميع البلدان الأخرى حول العالم' 
-                : 'And all other countries around the world'
+                ? '+ جميع البلدان الأخرى حول العالم' 
+                : '+ All Other Countries Worldwide'
+              }
+            </p>
+            <p className="text-gray-400 mt-2">
+              {isRTL 
+                ? 'نقدم خدماتنا للمصريين في كل مكان'
+                : 'We serve Egyptians everywhere'
               }
             </p>
           </div>

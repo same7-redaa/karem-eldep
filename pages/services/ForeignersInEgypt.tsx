@@ -191,26 +191,91 @@ const ForeignersInEgypt: React.FC = () => {
         </div>
 
         {/* المناطق التي نخدمها */}
-        <div className="bg-[#1a2d4d] rounded-lg p-12 mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#c8a876] mb-8">
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-[#c8a876] mb-4">
             {isRTL ? 'نخدم الأجانب في جميع أنحاء مصر' : 'We Serve Foreigners Throughout Egypt'}
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <p className="text-center text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
+            {isRTL 
+              ? 'مكاتبنا وخدماتنا القانونية متاحة في جميع المحافظات والمدن المصرية'
+              : 'Our offices and legal services are available in all Egyptian governorates and cities'
+            }
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { name: isRTL ? 'القاهرة' : 'Cairo', icon: 'fas fa-city' },
-              { name: isRTL ? 'الإسكندرية' : 'Alexandria', icon: 'fas fa-water' },
-              { name: isRTL ? 'شرم الشيخ' : 'Sharm El Sheikh', icon: 'fas fa-umbrella-beach' },
-              { name: isRTL ? 'الغردقة' : 'Hurghada', icon: 'fas fa-fish' },
-              { name: isRTL ? 'الساحل الشمالي' : 'North Coast', icon: 'fas fa-waves' },
-              { name: isRTL ? 'العين السخنة' : 'Ain Sokhna', icon: 'fas fa-mountain' },
-              { name: isRTL ? 'العاصمة الإدارية' : 'New Capital', icon: 'fas fa-building' },
-              { name: isRTL ? 'جميع المحافظات' : 'All Governorates', icon: 'fas fa-map-marked-alt' }
-            ].map((location, index) => (
-              <div key={index} className="text-center">
-                <i className={`${location.icon} text-3xl text-[#c8a876] mb-3`}></i>
-                <h3 className="text-white font-semibold">{location.name}</h3>
+              { 
+                name: isRTL ? 'القاهرة الكبرى' : 'Greater Cairo', 
+                icon: 'fas fa-city',
+                cities: isRTL ? ['القاهرة', 'الجيزة', 'العاصمة الإدارية', 'القاهرة الجديدة'] : ['Cairo', 'Giza', 'New Capital', 'New Cairo']
+              },
+              { 
+                name: isRTL ? 'الإسكندرية' : 'Alexandria', 
+                icon: 'fas fa-anchor',
+                cities: isRTL ? ['الإسكندرية', 'برج العرب', 'العجمي', 'أبو قير'] : ['Alexandria', 'Borg El Arab', 'Agami', 'Abu Qir']
+              },
+              { 
+                name: isRTL ? 'البحر الأحمر' : 'Red Sea', 
+                icon: 'fas fa-umbrella-beach',
+                cities: isRTL ? ['شرم الشيخ', 'الغردقة', 'دهب', 'مرسى علم'] : ['Sharm El Sheikh', 'Hurghada', 'Dahab', 'Marsa Alam']
+              },
+              { 
+                name: isRTL ? 'الساحل الشمالي' : 'North Coast', 
+                icon: 'fas fa-water',
+                cities: isRTL ? ['مطروح', 'العلمين', 'الساحل الشمالي', 'رأس الحكمة'] : ['Matrouh', 'Alamein', 'North Coast', 'Ras El Hekma']
+              },
+              { 
+                name: isRTL ? 'الأقصر وأسوان' : 'Luxor & Aswan', 
+                icon: 'fas fa-monument',
+                cities: isRTL ? ['الأقصر', 'أسوان', 'الكرنك', 'إدفو'] : ['Luxor', 'Aswan', 'Karnak', 'Edfu']
+              },
+              { 
+                name: isRTL ? 'الدلتا' : 'Delta Region', 
+                icon: 'fas fa-map-marked-alt',
+                cities: isRTL ? ['طنطا', 'المنصورة', 'دمياط', 'كفر الشيخ'] : ['Tanta', 'Mansoura', 'Damietta', 'Kafr El Sheikh']
+              },
+              { 
+                name: isRTL ? 'قناة السويس' : 'Suez Canal', 
+                icon: 'fas fa-ship',
+                cities: isRTL ? ['بورسعيد', 'السويس', 'الإسماعيلية', 'العين السخنة'] : ['Port Said', 'Suez', 'Ismailia', 'Ain Sokhna']
+              },
+              { 
+                name: isRTL ? 'صعيد مصر' : 'Upper Egypt', 
+                icon: 'fas fa-mountain',
+                cities: isRTL ? ['أسيوط', 'المنيا', 'سوهاج', 'قنا'] : ['Assiut', 'Minya', 'Sohag', 'Qena']
+              }
+            ].map((region, index) => (
+              <div 
+                key={index} 
+                className="bg-[#1a2d4d] p-6 rounded-xl hover:transform hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-[#c8a876]/20"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-[#c8a876]/10 rounded-full flex items-center justify-center flex-shrink-0">
+                    <i className={`${region.icon} text-xl text-[#c8a876]`}></i>
+                  </div>
+                  <h3 className="text-lg font-bold text-white">{region.name}</h3>
+                </div>
+                <div className="space-y-1.5">
+                  {region.cities.map((city, cityIndex) => (
+                    <div key={cityIndex} className="flex items-center gap-2 text-gray-300 text-sm">
+                      <i className="fas fa-map-pin text-[#c8a876] text-xs"></i>
+                      <span>{city}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-10 bg-[#1a2d4d] p-8 rounded-xl border-2 border-[#c8a876]/30">
+            <i className="fas fa-globe-africa text-5xl text-[#c8a876] mb-4"></i>
+            <h3 className="text-2xl font-bold text-white mb-2">
+              {isRTL ? 'تغطية شاملة لجميع المحافظات' : 'Comprehensive Coverage of All Governorates'}
+            </h3>
+            <p className="text-gray-300 text-lg">
+              {isRTL 
+                ? 'خدماتنا القانونية متاحة في جميع أنحاء جمهورية مصر العربية'
+                : 'Our legal services are available throughout the Arab Republic of Egypt'
+              }
+            </p>
           </div>
         </div>
 

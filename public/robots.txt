@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://eldib-co-law-firm.vercel.app/sitemap.xml
+Sitemap: https://ke-lawyer.com/sitemap.xml
 
 # Allow search engines to crawl all pages
 Allow: /lawyer-profile
