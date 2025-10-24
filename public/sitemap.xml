@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://eldib-co-law-firm.vercel.app/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2024-12-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://eldib-co-law-firm.vercel.app/?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eldib-co-law-firm.vercel.app/?lang=en" />
+  </url>
+
+  <!-- Lawyer Profile -->
+  <url>
+    <loc>https://eldib-co-law-firm.vercel.app/lawyer-profile</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2024-12-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://eldib-co-law-firm.vercel.app/lawyer-profile?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eldib-co-law-firm.vercel.app/lawyer-profile?lang=en" />
+  </url>
+
+  <!-- Service Pages -->
+  <url>
+    <loc>https://eldib-co-law-firm.vercel.app/foreigners-in-egypt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://eldib-co-law-firm.vercel.app/foreigners-in-egypt?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eldib-co-law-firm.vercel.app/foreigners-in-egypt?lang=en" />
+  </url>
+
+  <url>
+    <loc>https://eldib-co-law-firm.vercel.app/egyptians-abroad</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-12-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://eldib-co-law-firm.vercel.app/egyptians-abroad?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eldib-co-law-firm.vercel.app/egyptians-abroad?lang=en" />
+  </url>
+
+  <url>
+    <loc>https://eldib-co-law-firm.vercel.app/commercial-law</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://eldib-co-law-firm.vercel.app/commercial-law?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eldib-co-law-firm.vercel.app/commercial-law?lang=en" />
+  </url>
+
+  <url>
+    <loc>https://eldib-co-law-firm.vercel.app/family-law</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://eldib-co-law-firm.vercel.app/family-law?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eldib-co-law-firm.vercel.app/family-law?lang=en" />
+  </url>
+
+  <url>
+    <loc>https://eldib-co-law-firm.vercel.app/civil-law</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://eldib-co-law-firm.vercel.app/civil-law?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eldib-co-law-firm.vercel.app/civil-law?lang=en" />
+  </url>
+
+  <url>
+    <loc>https://eldib-co-law-firm.vercel.app/criminal-law</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://eldib-co-law-firm.vercel.app/criminal-law?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eldib-co-law-firm.vercel.app/criminal-law?lang=en" />
+  </url>
+
+  <url>
+    <loc>https://eldib-co-law-firm.vercel.app/company-law</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://eldib-co-law-firm.vercel.app/company-law?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eldib-co-law-firm.vercel.app/company-law?lang=en" />
+  </url>
+
+  <url>
+    <loc>https://eldib-co-law-firm.vercel.app/arbitration-mediation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2024-12-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://eldib-co-law-firm.vercel.app/arbitration-mediation?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eldib-co-law-firm.vercel.app/arbitration-mediation?lang=en" />
+  </url>
+
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://eldib-co-law-firm.vercel.app/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://eldib-co-law-firm.vercel.app/blog?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eldib-co-law-firm.vercel.app/blog?lang=en" />
+  </url>
+
+  <url>
+    <loc>https://eldib-co-law-firm.vercel.app/blog/foreigners-rights-egypt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://eldib-co-law-firm.vercel.app/blog/foreigners-rights-egypt?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eldib-co-law-firm.vercel.app/blog/foreigners-rights-egypt?lang=en" />
+  </url>
+
+  <url>
+    <loc>https://eldib-co-law-firm.vercel.app/blog/egyptian-investment-law</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://eldib-co-law-firm.vercel.app/blog/egyptian-investment-law?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eldib-co-law-firm.vercel.app/blog/egyptian-investment-law?lang=en" />
+  </url>
+
+  <url>
+    <loc>https://eldib-co-law-firm.vercel.app/blog/legal-procedures-egyptians-abroad</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2024-12-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://eldib-co-law-firm.vercel.app/blog/legal-procedures-egyptians-abroad?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://eldib-co-law-firm.vercel.app/blog/legal-procedures-egyptians-abroad?lang=en" />
+  </url>
+
+</urlset>

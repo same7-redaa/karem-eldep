@@ -1,15 +1,30 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isRTL = language === 'ar';
   
   const navLinks = [
-    { name: t('nav.home'), id: "home" },
+    { name: t('nav.home'), id: "hero" },
     { name: t('nav.about'), id: "about" },
-    { name: t('nav.services'), id: "services" },
     { name: t('nav.contact'), id: "contact" }
+  ];
+  
+  const services = [
+    { name: isRTL ? 'الأجانب في مصر' : 'Foreigners in Egypt', path: '/foreigners-in-egypt' },
+    { name: isRTL ? 'المصريين بالخارج' : 'Egyptians Abroad', path: '/egyptians-abroad' },
+    { name: isRTL ? 'القانون التجاري' : 'Commercial Law', path: '/commercial-law' },
+    { name: isRTL ? 'قانون الأسرة' : 'Family Law', path: '/family-law' },
+    { name: isRTL ? 'القانون المدني' : 'Civil Law', path: '/civil-law' },
+    { name: isRTL ? 'القانون الجنائي' : 'Criminal Law', path: '/criminal-law' },
+    { name: isRTL ? 'قانون الشركات' : 'Company Law', path: '/company-law' },
+    { name: isRTL ? 'التحكيم والوساطة' : 'Arbitration & Mediation', path: '/arbitration-mediation' }
   ];
 
   // Lock body scroll when menu is open
@@ -21,6 +36,13 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      // الانتقال للصفحة الرئيسية بدون hash
+      navigate('/');
+      return;
+    }
+    
+    // إذا كنا في الصفحة الرئيسية، قم بالتمرير مباشرة
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -35,10 +57,10 @@ const Header: React.FC = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent pointer-events-none"></div>
         
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center h-14 md:h-16">
-          <button onClick={() => scrollToSection('home')} className="flex items-center cursor-pointer hover:opacity-80 transition-opacity">
+          <button onClick={() => scrollToSection('hero')} className="flex items-center cursor-pointer hover:opacity-80 transition-opacity">
             <img 
               src="https://i.postimg.cc/G3FMRMY4/3.png" 
-              alt="Karim Eldib Law Firm Logo" 
+              alt={isRTL ? "شعار مكتب كريم الديب للمحاماة - مكتب محاماة دولي متخصص" : "Karim Eldib Law Firm Logo - International specialized law office"}
               className="h-10 md:h-12 w-auto"
               style={{ mixBlendMode: 'screen' }}
             />
@@ -50,15 +72,57 @@ const Header: React.FC = () => {
           </button>
 
           <nav className="hidden md:flex items-center gap-6 lg:gap-10">
-            {navLinks.map((link) => (
-              <button 
-                key={link.id} 
-                onClick={() => scrollToSection(link.id)}
-                className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap"
-              >
-                {link.name}
+            <button 
+              onClick={() => scrollToSection('hero')}
+              className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap"
+            >
+              {isRTL ? 'الرئيسية' : 'Home'}
+            </button>
+            
+            <button 
+              onClick={() => scrollToSection('about')}
+              className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap"
+            >
+              {t('nav.about')}
+            </button>
+
+            {/* قائمة الخدمات المنسدلة */}
+            <div className="relative group">
+              <button className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap flex items-center gap-1">
+                {isRTL ? 'الخدمات' : 'Services'}
+                <i className="fas fa-chevron-down text-xs"></i>
               </button>
-            ))}
+              
+              {/* القائمة المنسدلة */}
+              <div className="absolute top-full left-0 mt-2 w-64 bg-[#1a2d4d] rounded-lg shadow-xl border border-[#c8a876]/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div className="p-2">
+                  {services.map((service, index) => (
+                    <Link
+                      key={index}
+                      to={service.path}
+                      className="block px-4 py-3 text-gray-300 hover:text-[#c8a876] hover:bg-[#c8a876]/10 rounded-md transition-colors duration-200 text-sm"
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <Link to="/lawyer-profile" className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap">
+              {isRTL ? 'المحامي' : 'Lawyer'}
+            </Link>
+
+            <Link to="/blog" className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap">
+              {isRTL ? 'المقالات' : 'Blog'}
+            </Link>
+            
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap"
+            >
+              {t('nav.contact')}
+            </button>
           </nav>
           
           <div className="hidden md:flex items-center gap-4">

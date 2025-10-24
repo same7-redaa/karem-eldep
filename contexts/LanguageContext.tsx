@@ -24,6 +24,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // About
     'about.title': 'نبذة عن المكتب',
+    'about.intro': 'نبذة عن مكتب كريم الديب للمحاماة',
     'about.p1': 'مكتب كريم الديب للمحاماة والاستشارات القانونية هو مكتب قانوني معتمد تأسس عام 2006 ويضم فريق متخصص من المحامين ذوي الخبرة في مختلف فروع القانون.',
     'about.p2': 'يقدم المكتب خدماته في مجالات القضايا الجنائية والمدنية وقضايا الأجانب والاقامات والعقود الدولية والتحكيم قانون الشركات قانون الأسرة قانون تجاري.',
     'about.p3': 'يتميز المكتب بخبرة تتجاوز 18 عام في تقديم الدعم القانوني للأفراد والشركات محليا ودوليا خاصة بالتعاون مع السفارات الأجنبية في مصر. نلتزم بالدقة والسرية والاحترافية في تمثيل عملائنا داخل وخارج مصر. هدفنا هو تحقيق العدالة وحماية حقوق عملائنا بكل شفافية والتزام.',
@@ -31,9 +32,12 @@ const translations: Record<Language, Record<string, string>> = {
     'about.stat2': 'موكل',
     'about.stat3.value': 'عالمية',
     'about.stat3.label': 'خدمات',
+    'about.lawyerProfile': 'التعريف بالمحامي كريم الديب',
     
     // Services
-    'services.title': 'خدمات قانونية بلا حدود',
+        // Services
+    'services.title': 'خدماتنا',
+    'services.heading': 'خدماتنا القانونية بلا حدود',
     'services.subtitle': 'خدمات قانونية شاملة ومتخصصة للأفراد والشركات محليا ودوليا',
     'services.civil': 'القانون المدني',
     'services.civil.desc': 'تقديم الإستشارات القانونية وصياغة العقود ومباشرة القضايا المتعلقة بالحقوق المدنية والنزاعات والتعويضات',
@@ -49,7 +53,9 @@ const translations: Record<Language, Record<string, string>> = {
     'services.foreigners.desc': 'تأسيس الشركات داخل مصر واستخراج تصاريح الإقامة والعمل والتمثيل القانوني في النزاعات المدنية والجنائية وتنظيم عقود الزواج والطلاق بما يتوافق مع القوانين المصرية والدولية',
     'services.egyptians': 'المصريين بالخارج',
     'services.egyptians.desc': 'متابعة القضايا داخل مصر نيابة عنهم وإدارة شؤونهم العقارية والقانونية وتنفيذ الوكالات الشرعية والعامة وتقديم استشارات قانونية بلغات متعددة',
-    
+    'services.arbitration': 'التحكيم والوساطة',
+    'services.arbitration.desc': 'تقديم خدمات التحكيم والوساطة لتسوية النزاعات التجارية والمدنية بطرق سلمية وفعالة',
+    'services.learnMore': 'اعرف المزيد',
     // Why Choose Us
     'why.title': 'لماذا تختار مكتب كريم الديب؟',
     'why.subtitle': 'مكتب كريم الديب للمحاماة يهدف إلى تقديم خدمات قانونية دولية بمستوى عالمي، مع الحفاظ على السرية التامة والالتزام بأخلاقيات المهنة.',
@@ -61,9 +67,14 @@ const translations: Record<Language, Record<string, string>> = {
     'why.languages.desc': 'تقديم استشارات قانونية بلغات متعددة لخدمة العملاء الدوليين',
     'why.confidential': 'السرية والاحترافية',
     'why.confidential.desc': 'نوفر خدماتنا القانونية بدرجة عالية من السرية والاحترافية',
+    'why.differ': 'لماذا نختلف',
+    'why.ready': 'هل أنت مستعد للبدء؟',
+    'why.ready.desc': 'تواصل معنا اليوم واحصل على استشارة قانونية متخصصة من فريقنا المحترف',
+    'why.book': 'احجز استشارة قانونية',
     
     // Contact
     'contact.title': 'تواصل معنا',
+    'contact.heading': 'تواصل معنا الآن',
     'contact.subtitle': 'نحن هنا لمساعدتك - تواصل معنا الآن',
     'contact.info': 'معلومات التواصل والعناوين',
     'contact.alex': 'مكتب الإسكندرية',
@@ -91,6 +102,7 @@ const translations: Record<Language, Record<string, string>> = {
     
     // About
     'about.title': 'About the Firm',
+    'about.intro': 'About Karim Eldib Law Firm',
     'about.p1': 'Karim Eldib Law Firm & Legal Consultations is an accredited legal office established in 2006, comprising a specialized team of experienced lawyers in various branches of law.',
     'about.p2': 'The firm provides its services in the fields of criminal and civil cases, foreigners and residence cases, international contracts, arbitration, corporate law, family law, and commercial law.',
     'about.p3': 'The firm is distinguished by experience spanning over 18 years in providing legal support to individuals and companies locally and internationally, especially in cooperation with foreign embassies in Egypt. We are committed to accuracy, confidentiality, and professionalism in representing our clients inside and outside Egypt. Our goal is to achieve justice and protect the rights of our clients with complete transparency and commitment.',
@@ -98,9 +110,11 @@ const translations: Record<Language, Record<string, string>> = {
     'about.stat2': 'Clients',
     'about.stat3.value': 'Global',
     'about.stat3.label': 'Services',
+    'about.lawyerProfile': 'Meet Lawyer Karim Eldib',
     
     // Services
     'services.title': 'Unlimited Legal Services',
+    'services.heading': 'Unlimited Legal Services',
     'services.subtitle': 'Comprehensive and specialized legal services for individuals and companies locally and internationally',
     'services.civil': 'Civil Law',
     'services.civil.desc': 'Providing legal consultations, drafting contracts, and pursuing cases related to civil rights, disputes, and compensation',
@@ -116,7 +130,9 @@ const translations: Record<Language, Record<string, string>> = {
     'services.foreigners.desc': 'Establishing companies within Egypt, obtaining residence and work permits, legal representation in civil and criminal disputes, and organizing marriage and divorce contracts in compliance with Egyptian and international laws',
     'services.egyptians': 'Egyptians Abroad',
     'services.egyptians.desc': 'Following up cases within Egypt on their behalf, managing their real estate and legal affairs, implementing religious and general powers of attorney, and providing legal consultations in multiple languages',
-    
+    'services.arbitration': 'Arbitration & Mediation',
+    'services.arbitration.desc': 'Providing arbitration and mediation services to resolve commercial and civil disputes through peaceful and effective methods',
+    'services.learnMore': 'Learn More',
     // Why Choose Us
     'why.title': 'Why Choose Karim Eldib Law Firm?',
     'why.subtitle': 'Karim Eldib Law Firm aims to provide international legal services at a world-class level, while maintaining complete confidentiality and commitment to professional ethics.',
@@ -128,9 +144,14 @@ const translations: Record<Language, Record<string, string>> = {
     'why.languages.desc': 'Providing legal consultations in multiple languages to serve international clients',
     'why.confidential': 'Confidentiality & Professionalism',
     'why.confidential.desc': 'We provide our legal services with a high degree of confidentiality and professionalism',
+    'why.differ': 'Why We Differ',
+    'why.ready': 'Are You Ready to Get Started?',
+    'why.ready.desc': 'Contact us today and get specialized legal consultation from our professional team',
+    'why.book': 'Book Legal Consultation',
     
     // Contact
     'contact.title': 'Contact Us',
+    'contact.heading': 'Contact Us Now',
     'contact.subtitle': 'We are here to help you - Contact us now',
     'contact.info': 'Contact Information and Addresses',
     'contact.alex': 'Alexandria Office',

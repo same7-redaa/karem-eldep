@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://eldib-co-law-firm.vercel.app/sitemap.xml
+
+# Allow search engines to crawl all pages
+Allow: /lawyer-profile
+Allow: /foreigners-in-egypt
+Allow: /egyptians-abroad
+Allow: /commercial-law
+Allow: /family-law
+Allow: /civil-law
+Allow: /criminal-law
+Allow: /company-law
+Allow: /arbitration-mediation
+Allow: /blog
+
+# Block unnecessary crawling
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1

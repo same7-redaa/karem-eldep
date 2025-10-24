@@ -13,9 +13,11 @@ const Hero: React.FC = () => {
 
   return (
     <section 
-      id="home"
+      id="hero"
       className="relative h-[70vh] min-h-[450px] flex items-center justify-center text-center text-white bg-cover bg-center" 
       style={{ backgroundImage: "url('https://i.pinimg.com/1200x/fb/4e/36/fb4e36b171a92fb4d391f3bc6a90e8a5.jpg')" }}
+      role="banner"
+      aria-label={t('hero.title')}
     >
       <div className="absolute inset-0 bg-[#0b1a33] bg-opacity-70"></div>
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0e1f3b] to-transparent"></div>

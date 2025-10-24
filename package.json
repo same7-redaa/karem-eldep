@@ -12,8 +12,10 @@
     "deploy": "node node_modules/gh-pages/bin/gh-pages.js -d dist"
   },
   "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.4"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
