@@ -16,7 +16,7 @@ const BlogSection: React.FC = () => {
         : 'A comprehensive guide for foreigners wishing to invest or live in Egypt, including everything you need to know about legal services.',
       date: isRTL ? '15 أكتوبر 2025' : 'October 15, 2025',
       readTime: isRTL ? '10 دقائق قراءة' : '10 min read',
-      image: 'https://i.postimg.cc/x1MfZcP8/legal-blog1.jpg',
+      image: '/images/lawyer-1.jpg',
       tags: isRTL 
         ? ['محامي أجانب في مصر', 'استثمار أجنبي']
         : ['Lawyer for foreigners Egypt', 'Foreign investment']
@@ -30,7 +30,7 @@ const BlogSection: React.FC = () => {
         : 'How Egyptians abroad can protect their legal rights in Egypt and obtain required legal services remotely.',
       date: isRTL ? '10 أكتوبر 2025' : 'October 10, 2025',
       readTime: isRTL ? '8 دقائق قراءة' : '8 min read',
-      image: 'https://i.postimg.cc/N0h9Lx6K/legal-blog2.jpg',
+      image: '/images/lawyer-2.jpg',
       tags: isRTL 
         ? ['محامي المصريين بالخارج', 'حقوق قانونية']
         : ['Lawyer for Egyptians abroad', 'Legal rights']
@@ -44,7 +44,7 @@ const BlogSection: React.FC = () => {
         : 'A comprehensive guide to foreign investment in Egypt, including new laws and available facilities.',
       date: isRTL ? '5 أكتوبر 2025' : 'October 5, 2025',
       readTime: isRTL ? '12 دقيقة قراءة' : '12 min read',
-      image: 'https://i.postimg.cc/j5DcF8xK/legal-blog3.jpg',
+      image: '/images/lawyer-3.jpg',
       tags: isRTL 
         ? ['الاستثمار في مصر', 'قانون الاستثمار']
         : ['Investment in Egypt', 'Investment law']
@@ -78,9 +78,9 @@ const BlogSection: React.FC = () => {
                 <img 
                   src={article.image} 
                   alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-300"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'https://i.postimg.cc/G3FMRMY4/3.png';
+                    (e.target as HTMLImageElement).src = '/images/lawyer-7.jpg';
                   }}
                 />
               </div>

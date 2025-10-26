@@ -5,6 +5,7 @@ import PracticeAreas from '../components/PracticeAreas';
 import WhyChooseUs from '../components/WhyChooseUs';
 import TeamSection from '../components/TeamSection';
 import BlogSection from '../components/BlogSection';
+import News from '../components/News';
 import Contact from '../components/Contact';
 import SchemaMarkup from '../components/SchemaMarkup';
 
@@ -35,6 +36,7 @@ const Home: React.FC = () => {
       <WhyChooseUs />
       <TeamSection />
       <BlogSection />
+      <News />
       <Contact />
     </>
   );

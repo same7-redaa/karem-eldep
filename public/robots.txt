@@ -15,6 +15,14 @@ Allow: /criminal-law
 Allow: /company-law
 Allow: /arbitration-mediation
 Allow: /blog
+Allow: /blog/*
+
+# Allow images
+Allow: /images/
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.webp
 
 # Block unnecessary crawling
 Disallow: /api/
@@ -22,4 +30,13 @@ Disallow: /_next/
 Disallow: /static/
 
 # Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1
+
+# Specific crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
 Crawl-delay: 1

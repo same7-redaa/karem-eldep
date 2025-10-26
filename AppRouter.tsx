@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { RouterProvider, createBrowserRouter, Outlet, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
+import SocialButtons from './components/SocialButtons';
 
 // Pages
 import Home from './pages/Home';
@@ -40,7 +40,7 @@ const Layout: React.FC = () => {
         <Outlet />
       </main>
       <Footer />
-      <WhatsAppButton />
+      <SocialButtons />
     </div>
   );
 };

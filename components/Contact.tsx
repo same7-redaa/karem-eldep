@@ -87,18 +87,54 @@ const Contact: React.FC = () => {
             </h3>
             
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 flex-wrap justify-center">
-              <a href="tel:01223767592" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#d4a15c]/10 hover:bg-[#d4a15c]/20 border border-[#d4a15c]/30 hover:border-[#d4a15c]/50 rounded-lg text-gray-300 hover:text-[#d4a15c] transition-all duration-300 font-sans text-sm md:text-base">
+              <a href="tel:+201223767592" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#d4a15c]/10 hover:bg-[#d4a15c]/20 border border-[#d4a15c]/30 hover:border-[#d4a15c]/50 rounded-lg text-gray-300 hover:text-[#d4a15c] transition-all duration-300 font-sans text-sm md:text-base">
                 <i className="fas fa-phone text-[#d4a15c]"></i>
-                <span>01223767592</span>
+                <span>+20 122 376 7592</span>
               </a>
-              <a href="https://wa.me/201223767592" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#d4a15c]/10 hover:bg-[#d4a15c]/20 border border-[#d4a15c]/30 hover:border-[#d4a15c]/50 rounded-lg text-gray-300 hover:text-[#d4a15c] transition-all duration-300 font-sans text-sm md:text-base">
-                <i className="fab fa-whatsapp text-[#d4a15c]"></i>
+              <a href="https://wa.me/201223767592" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/30 hover:border-[#25D366]/50 rounded-lg text-gray-300 hover:text-[#25D366] transition-all duration-300 font-sans text-sm md:text-base">
+                <i className="fab fa-whatsapp text-[#25D366]"></i>
                 <span>{t('contact.whatsapp')}</span>
               </a>
-              <a href="mailto:kingarim2411@gmail.com" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#d4a15c]/10 hover:bg-[#d4a15c]/20 border border-[#d4a15c]/30 hover:border-[#d4a15c]/50 rounded-lg text-gray-300 hover:text-[#d4a15c] transition-all duration-300 font-sans text-sm md:text-base">
-                <i className="fas fa-envelope text-[#d4a15c]"></i>
-                <span>kingarim2411@gmail.com</span>
+              <a href="mailto:info@ke-lawyer.com" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#EA4335]/10 hover:bg-[#EA4335]/20 border border-[#EA4335]/30 hover:border-[#EA4335]/50 rounded-lg text-gray-300 hover:text-[#EA4335] transition-all duration-300 font-sans text-sm md:text-base">
+                <i className="fas fa-envelope text-[#EA4335]"></i>
+                <span>info@ke-lawyer.com</span>
               </a>
+            </div>
+            
+            {/* Social Media Links */}
+            <div className="mt-6 pt-6 border-t border-[#d4a15c]/20">
+              <h4 className="text-base md:text-lg font-semibold text-white mb-4 text-center">
+                {t('contact.social') || 'تابعنا على'}
+              </h4>
+              <div className="flex gap-4 justify-center flex-wrap">
+                <a 
+                  href="https://facebook.com/karim.eldib.lawyer" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center w-12 h-12 rounded-full bg-[#1877F2]/10 hover:bg-[#1877F2]/20 border border-[#1877F2]/30 hover:border-[#1877F2]/50 transition-all duration-300"
+                  title="Facebook"
+                >
+                  <i className="fab fa-facebook-f text-[#1877F2] text-lg group-hover:scale-110 transition-transform"></i>
+                </a>
+                <a 
+                  href="https://instagram.com/karim.eldib.lawyer" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center w-12 h-12 rounded-full bg-[#E4405F]/10 hover:bg-[#E4405F]/20 border border-[#E4405F]/30 hover:border-[#E4405F]/50 transition-all duration-300"
+                  title="Instagram"
+                >
+                  <i className="fab fa-instagram text-[#E4405F] text-lg group-hover:scale-110 transition-transform"></i>
+                </a>
+                <a 
+                  href="https://tiktok.com/@karim.eldib.lawyer" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/30 hover:border-white/50 transition-all duration-300"
+                  title="TikTok"
+                >
+                  <i className="fab fa-tiktok text-white text-lg group-hover:scale-110 transition-transform"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>

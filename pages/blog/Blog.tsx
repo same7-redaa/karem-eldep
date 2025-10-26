@@ -24,44 +24,44 @@ const Blog: React.FC = () => {
     {
       id: 1,
       slug: 'guide-foreigners-legal-services-egypt-2025',
-      title: isRTL ? 'دليل شامل للأجانب: الخدمات القانونية في مصر 2025' : 'Complete Guide for Foreigners: Legal Services in Egypt 2025',
+      title: isRTL ? 'دليل شامل للأجانب: الخدمات القانونية في مصر 2025 | المحامي كريم الديب' : 'Complete Guide for Foreigners: Legal Services in Egypt 2025 | Lawyer Karim El-Dib',
       excerpt: isRTL 
-        ? 'دليل شامل للأجانب الراغبين في الاستثمار أو العيش في مصر، يشمل كل ما تحتاج معرفته عن الخدمات القانونية والإجراءات المطلوبة.'
-        : 'A comprehensive guide for foreigners wishing to invest or live in Egypt, including everything you need to know about legal services and required procedures.',
+        ? 'دليل شامل للأجانب الراغبين في الاستثمار أو العيش في مصر مع المحامي كريم الديب. تأسيس الشركات، تصاريح الإقامة، الاستثمار العقاري، وجميع الخدمات القانونية المتخصصة للأجانب.'
+        : 'A comprehensive guide for foreigners wishing to invest or live in Egypt with Lawyer Karim El-Dib. Company formation, residence permits, real estate investment, and all specialized legal services for foreigners.',
       date: isRTL ? '15 أكتوبر 2025' : 'October 15, 2025',
-      readTime: isRTL ? '10 دقائق قراءة' : '10 min read',
-      image: 'https://i.postimg.cc/x1MfZcP8/legal-blog1.jpg',
+      readTime: isRTL ? '12 دقيقة قراءة' : '12 min read',
+      image: '/images/lawyer-1.jpg',
       tags: isRTL 
-        ? ['محامي أجانب في مصر', 'استثمار أجنبي', 'تأسيس شركات']
-        : ['Lawyer for foreigners Egypt', 'Foreign investment', 'Company formation']
+        ? ['محامي أجانب في مصر', 'كريم الديب محامي', 'استثمار أجنبي مصر', 'تأسيس شركات للأجانب', 'تصاريح إقامة مصر']
+        : ['Lawyer for foreigners Egypt', 'Karim El-Dib lawyer', 'Foreign investment Egypt', 'Company formation foreigners', 'Egypt residence permits']
     },
     {
       id: 2,
       slug: 'egyptians-abroad-legal-rights-protection',
-      title: isRTL ? 'محامي المصريين بالخارج: حماية حقوقك القانونية' : 'Lawyer for Egyptians Abroad: Protecting Your Legal Rights',
+      title: isRTL ? 'محامي المصريين بالخارج: حماية حقوقك القانونية | كريم الديب' : 'Lawyer for Egyptians Abroad: Protecting Your Legal Rights | Karim El-Dib',
       excerpt: isRTL 
-        ? 'كيف يمكن للمصريين في الخارج حماية حقوقهم القانونية في مصر والحصول على الخدمات القانونية المطلوبة عن بُعد.'
-        : 'How Egyptians abroad can protect their legal rights in Egypt and obtain required legal services remotely.',
+        ? 'خدمات قانونية متخصصة للمصريين المقيمين بالخارج مع المحامي كريم الديب. إدارة الممتلكات، قضايا الميراث، الوكالات القانونية، وحماية الحقوق عن بُعد.'
+        : 'Specialized legal services for Egyptians residing abroad with Lawyer Karim El-Dib. Property management, inheritance cases, legal powers of attorney, and remote rights protection.',
       date: isRTL ? '10 أكتوبر 2025' : 'October 10, 2025',
-      readTime: isRTL ? '8 دقائق قراءة' : '8 min read',
-      image: 'https://i.postimg.cc/N0h9Lx6K/legal-blog2.jpg',
+      readTime: isRTL ? '10 دقائق قراءة' : '10 min read',
+      image: '/images/lawyer-2.jpg',
       tags: isRTL 
-        ? ['محامي المصريين بالخارج', 'حقوق قانونية', 'خدمات عن بعد']
-        : ['Lawyer for Egyptians abroad', 'Legal rights', 'Remote services']
+        ? ['محامي المصريين بالخارج', 'كريم الديب', 'حقوق قانونية مصر', 'خدمات قانونية عن بعد', 'إدارة الممتلكات مصر']
+        : ['Lawyer for Egyptians abroad', 'Karim El-Dib', 'Egypt legal rights', 'Remote legal services', 'Egypt property management']
     },
     {
       id: 3,
       slug: 'foreign-investment-egypt-complete-guide',
-      title: isRTL ? 'الاستثمار في مصر: دليل المستثمر الأجنبي الكامل' : 'Investment in Egypt: Complete Foreign Investor Guide',
+      title: isRTL ? 'الاستثمار في مصر: دليل المستثمر الأجنبي الكامل 2025 | كريم الديب' : 'Investment in Egypt: Complete Foreign Investor Guide 2025 | Karim El-Dib',
       excerpt: isRTL 
-        ? 'دليل شامل للاستثمار الأجنبي في مصر، يتضمن القوانين الجديدة، التسهيلات المتاحة، وأفضل الفرص الاستثمارية.'
-        : 'A comprehensive guide to foreign investment in Egypt, including new laws, available facilities, and best investment opportunities.',
+        ? 'دليل شامل للاستثمار الأجنبي في مصر 2025 مع المحامي كريم الديب. القوانين الجديدة، التسهيلات الحكومية، الفرص الاستثمارية الذهبية، والإجراءات القانونية المطلوبة.'
+        : 'A comprehensive guide to foreign investment in Egypt 2025 with Lawyer Karim El-Dib. New laws, government facilities, golden investment opportunities, and required legal procedures.',
       date: isRTL ? '5 أكتوبر 2025' : 'October 5, 2025',
-      readTime: isRTL ? '12 دقيقة قراءة' : '12 min read',
-      image: 'https://i.postimg.cc/j5DcF8xK/legal-blog3.jpg',
+      readTime: isRTL ? '15 دقيقة قراءة' : '15 min read',
+      image: '/images/lawyer-3.jpg',
       tags: isRTL 
-        ? ['الاستثمار في مصر', 'قانون الاستثمار', 'فرص استثمارية']
-        : ['Investment in Egypt', 'Investment law', 'Investment opportunities']
+        ? ['الاستثمار في مصر 2025', 'قانون الاستثمار المصري', 'فرص استثمارية مصر', 'كريم الديب محامي استثمار', 'تسهيلات الاستثمار مصر']
+        : ['Investment in Egypt 2025', 'Egyptian investment law', 'Egypt investment opportunities', 'Karim El-Dib investment lawyer', 'Egypt investment facilities']
     }
   ];
 
