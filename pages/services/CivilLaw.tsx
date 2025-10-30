@@ -2,14 +2,19 @@ import React, { useEffect } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const CivilLaw: React.FC = () => {
-  const { language } = useLanguage();
+  const { language, getTextByLanguage } = useLanguage();
   const isRTL = language === 'ar';
 
   useEffect(() => {
-    // تحسين عنوان الصفحة بشكل احترافي
-    document.title = isRTL 
+    const title = language === 'ar'
       ? "محامي قانون مدني في مصر | قضايا التعويضات والعقود المدنية | المحامي كريم الديب - خبرة +15 عام"
+      : language === 'fr'
+      ? "Avocat Droit Civil en Égypte | Affaires d'Indemnisation et Contrats | Karim El-Dib"
+      : language === 'it'
+      ? "Avvocato Diritto Civile in Egitto | Cause Risarcimenti e Contratti | Karim El-Dib"
       : "Civil Law Lawyer in Egypt | Compensation & Civil Contracts Cases | Lawyer Karim El-Dib - +15 Years Experience";
+    
+    document.title = title;
     
     // Meta Description محسّن
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -405,68 +410,156 @@ const CivilLaw: React.FC = () => {
   const services = [
     {
       icon: 'fas fa-balance-scale',
-      title: isRTL ? 'قضايا التعويضات' : 'Compensation Cases',
-      description: isRTL 
-        ? 'نمثل العملاء في قضايا المطالبة بالتعويضات عن الأضرار المادية والمعنوية، مع ضمان الحصول على التعويض العادل والمناسب.'
-        : 'We represent clients in claims for material and moral damages, ensuring fair and appropriate compensation.'
+      title: getTextByLanguage({
+        ar: 'قضايا التعويضات',
+        en: 'Compensation Cases',
+        fr: 'Affaires d\'Indemnisation',
+        it: 'Cause di Risarcimento'
+      }),
+      description: getTextByLanguage({
+        ar: 'نمثل العملاء في قضايا المطالبة بالتعويضات عن الأضرار المادية والمعنوية، مع ضمان الحصول على التعويض العادل والمناسب.',
+        en: 'We represent clients in claims for material and moral damages, ensuring fair and appropriate compensation.',
+        fr: 'Nous représentons les clients dans les réclamations pour dommages matériels et moraux, garantissant une compensation juste et appropriée.',
+        it: 'Rappresentiamo i clienti nelle richieste di danni materiali e morali, garantendo un risarcimento equo e appropriato.'
+      })
     },
     {
       icon: 'fas fa-file-contract',
-      title: isRTL ? 'العقود المدنية' : 'Civil Contracts',
-      description: isRTL 
-        ? 'صياغة ومراجعة جميع أنواع العقود المدنية، وتقديم الاستشارات القانونية المتخصصة حول الالتزامات التعاقدية.'
-        : 'Drafting and reviewing all types of civil contracts, providing specialized legal consultations on contractual obligations.'
+      title: getTextByLanguage({
+        ar: 'العقود المدنية',
+        en: 'Civil Contracts',
+        fr: 'Contrats Civils',
+        it: 'Contratti Civili'
+      }),
+      description: getTextByLanguage({
+        ar: 'صياغة ومراجعة جميع أنواع العقود المدنية، وتقديم الاستشارات القانونية المتخصصة حول الالتزامات التعاقدية.',
+        en: 'Drafting and reviewing all types of civil contracts, providing specialized legal consultations on contractual obligations.',
+        fr: 'Rédaction et révision de tous types de contrats civils, fourniture de consultations juridiques spécialisées sur les obligations contractuelles.',
+        it: 'Redazione e revisione di tutti i tipi di contratti civili, fornitura di consulenze legali specializzate sugli obblighi contrattuali.'
+      })
     },
     {
       icon: 'fas fa-building',
-      title: isRTL ? 'المنازعات العقارية' : 'Real Estate Disputes',
-      description: isRTL 
-        ? 'حل النزاعات المتعلقة بالملكية والإيجار والبيع والشراء، مع خبرة واسعة في القوانين العقارية المصرية.'
-        : 'Resolving disputes related to ownership, rent, sale and purchase, with extensive experience in Egyptian real estate laws.'
+      title: getTextByLanguage({
+        ar: 'المنازعات العقارية',
+        en: 'Real Estate Disputes',
+        fr: 'Litiges Immobiliers',
+        it: 'Controversie Immobiliari'
+      }),
+      description: getTextByLanguage({
+        ar: 'حل النزاعات المتعلقة بالملكية والإيجار والبيع والشراء، مع خبرة واسعة في القوانين العقارية المصرية.',
+        en: 'Resolving disputes related to ownership, rent, sale and purchase, with extensive experience in Egyptian real estate laws.',
+        fr: 'Résolution des litiges liés à la propriété, la location, la vente et l\'achat, avec une vaste expérience des lois immobilières égyptiennes.',
+        it: 'Risoluzione delle controversie relative a proprietà, affitto, vendita e acquisto, con vasta esperienza nelle leggi immobiliari egiziane.'
+      })
     },
     {
       icon: 'fas fa-users',
-      title: isRTL ? 'قضايا الإرث والميراث' : 'Inheritance Cases',
-      description: isRTL 
-        ? 'تقسيم التركات وحل المنازعات الأسرية المتعلقة بالميراث وفقاً للقانون المصري والشريعة الإسلامية.'
-        : 'Estate division and resolving family disputes related to inheritance according to Egyptian law and Islamic Sharia.'
+      title: getTextByLanguage({
+        ar: 'قضايا الإرث والميراث',
+        en: 'Inheritance Cases',
+        fr: 'Affaires de Succession',
+        it: 'Cause di Eredità'
+      }),
+      description: getTextByLanguage({
+        ar: 'تقسيم التركات وحل المنازعات الأسرية المتعلقة بالميراث وفقاً للقانون المصري والشريعة الإسلامية.',
+        en: 'Estate division and resolving family disputes related to inheritance according to Egyptian law and Islamic Sharia.',
+        fr: 'Partage successoral et résolution des litiges familiaux liés à l\'héritage selon la loi égyptienne et la charia islamique.',
+        it: 'Divisione patrimoniale e risoluzione delle controversie familiari relative all\'eredità secondo la legge egiziana e la Sharia islamica.'
+      })
     },
     {
       icon: 'fas fa-gavel',
-      title: isRTL ? 'المسؤولية التقصيرية' : 'Tort Liability',
-      description: isRTL 
-        ? 'قضايا المسؤولية عن الفعل الضار والإهمال والأخطاء الطبية وحوادث السيارات.'
-        : 'Cases of tort liability, negligence, medical errors, and car accidents.'
+      title: getTextByLanguage({
+        ar: 'المسؤولية التقصيرية',
+        en: 'Tort Liability',
+        fr: 'Responsabilité Délictuelle',
+        it: 'Responsabilità Extracontrattuale'
+      }),
+      description: getTextByLanguage({
+        ar: 'قضايا المسؤولية عن الفعل الضار والإهمال والأخطاء الطبية وحوادث السيارات.',
+        en: 'Cases of tort liability, negligence, medical errors, and car accidents.',
+        fr: 'Cas de responsabilité délictuelle, négligence, erreurs médicales et accidents de voiture.',
+        it: 'Casi di responsabilità extracontrattuale, negligenza, errori medici e incidenti stradali.'
+      })
     },
     {
       icon: 'fas fa-landmark',
-      title: isRTL ? 'القضايا المدنية المعقدة' : 'Complex Civil Cases',
-      description: isRTL 
-        ? 'التعامل مع القضايا المدنية المعقدة والمنازعات طويلة الأمد بخبرة وكفاءة عالية.'
-        : 'Handling complex civil cases and long-term disputes with high expertise and efficiency.'
+      title: getTextByLanguage({
+        ar: 'القضايا المدنية المعقدة',
+        en: 'Complex Civil Cases',
+        fr: 'Affaires Civiles Complexes',
+        it: 'Cause Civili Complesse'
+      }),
+      description: getTextByLanguage({
+        ar: 'التعامل مع القضايا المدنية المعقدة والمنازعات طويلة الأمد بخبرة وكفاءة عالية.',
+        en: 'Handling complex civil cases and long-term disputes with high expertise and efficiency.',
+        fr: 'Traiter des affaires civiles complexes et des litiges à long terme avec une grande expertise et efficacité.',
+        it: 'Gestione di cause civili complesse e controversie a lungo termine con alta competenza ed efficienza.'
+      })
     }
   ];
 
   const advantages = [
     {
       icon: 'fas fa-certificate',
-      title: isRTL ? '+15 عاماً خبرة' : '+15 Years Experience',
-      description: isRTL ? 'خبرة واسعة في القانون المدني' : 'Extensive experience in civil law'
+      title: getTextByLanguage({
+        ar: '+15 عاماً خبرة',
+        en: '+15 Years Experience',
+        fr: '+15 Ans d\'Expérience',
+        it: '+15 Anni di Esperienza'
+      }),
+      description: getTextByLanguage({
+        ar: 'خبرة واسعة في القانون المدني',
+        en: 'Extensive experience in civil law',
+        fr: 'Vaste expérience en droit civil',
+        it: 'Vasta esperienza in diritto civile'
+      })
     },
     {
       icon: 'fas fa-trophy',
-      title: isRTL ? 'نسبة نجاح عالية' : 'High Success Rate',
-      description: isRTL ? 'سجل حافل في كسب القضايا' : 'Proven track record in winning cases'
+      title: getTextByLanguage({
+        ar: 'نسبة نجاح عالية',
+        en: 'High Success Rate',
+        fr: 'Taux de Réussite Élevé',
+        it: 'Alto Tasso di Successo'
+      }),
+      description: getTextByLanguage({
+        ar: 'سجل حافل في كسب القضايا',
+        en: 'Proven track record in winning cases',
+        fr: 'Bilan éprouvé dans la victoire de cas',
+        it: 'Comprovata esperienza nella vincita di cause'
+      })
     },
     {
       icon: 'fas fa-user-tie',
-      title: isRTL ? 'فريق متخصص' : 'Specialized Team',
-      description: isRTL ? 'محامون خبراء في القانون المدني' : 'Expert lawyers in civil law'
+      title: getTextByLanguage({
+        ar: 'فريق متخصص',
+        en: 'Specialized Team',
+        fr: 'Équipe Spécialisée',
+        it: 'Team Specializzato'
+      }),
+      description: getTextByLanguage({
+        ar: 'محامون خبراء في القانون المدني',
+        en: 'Expert lawyers in civil law',
+        fr: 'Avocats experts en droit civil',
+        it: 'Avvocati esperti in diritto civile'
+      })
     },
     {
       icon: 'fas fa-handshake',
-      title: isRTL ? 'خدمة شخصية' : 'Personal Service',
-      description: isRTL ? 'متابعة دقيقة لكل قضية' : 'Precise follow-up for each case'
+      title: getTextByLanguage({
+        ar: 'خدمة شخصية',
+        en: 'Personal Service',
+        fr: 'Service Personnel',
+        it: 'Servizio Personale'
+      }),
+      description: getTextByLanguage({
+        ar: 'متابعة دقيقة لكل قضية',
+        en: 'Precise follow-up for each case',
+        fr: 'Suivi précis pour chaque cas',
+        it: 'Follow-up preciso per ogni causa'
+      })
     }
   ];
 
@@ -477,20 +570,37 @@ const CivilLaw: React.FC = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[#c8a876]">
-            {isRTL ? 'محامي قانون مدني متخصص' : 'Specialized Civil Law Lawyer'}
+            {getTextByLanguage({
+              ar: 'محامي قانون مدني متخصص',
+              en: 'Specialized Civil Law Lawyer',
+              fr: 'Avocat Spécialisé en Droit Civil',
+              it: 'Avvocato Specializzato in Diritto Civile'
+            })}
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            {isRTL 
-              ? 'المحامي كريم الديب - خبير في القانون المدني المصري. نقدم خدمات قانونية متكاملة في قضايا التعويضات، العقود، النزاعات العقارية، والإرث.'
-              : 'Lawyer Karim El-Dib - Expert in Egyptian civil law. We provide comprehensive legal services in compensation cases, contracts, real estate disputes, and inheritance.'
-            }
+            {getTextByLanguage({
+              ar: 'المحامي كريم الديب - خبير في القانون المدني المصري. نقدم خدمات قانونية متكاملة في قضايا التعويضات، العقود، النزاعات العقارية، والإرث.',
+              en: 'Lawyer Karim El-Dib - Expert in Egyptian civil law. We provide comprehensive legal services in compensation cases, contracts, real estate disputes, and inheritance.',
+              fr: 'Avocat Karim El-Dib - Expert en droit civil égyptien. Nous fournissons des services juridiques complets dans les affaires d\'indemnisation, contrats, litiges immobiliers et succession.',
+              it: 'Avvocato Karim El-Dib - Esperto in diritto civile egiziano. Forniamo servizi legali completi in cause di risarcimento, contratti, controversie immobiliari ed eredità.'
+            })}
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-lg">
             <span className="bg-[#c8a876] text-[#0b1a33] px-6 py-3 rounded-full font-semibold">
-              {isRTL ? 'خبير القانون المدني' : 'Civil Law Expert'}
+              {getTextByLanguage({
+                ar: 'خبير القانون المدني',
+                en: 'Civil Law Expert',
+                fr: 'Expert en Droit Civil',
+                it: 'Esperto di Diritto Civile'
+              })}
             </span>
             <span className="bg-white text-[#0b1a33] px-6 py-3 rounded-full font-semibold">
-              {isRTL ? '+15 عاماً خبرة' : '+15 Years Experience'}
+              {getTextByLanguage({
+                ar: '+15 عاماً خبرة',
+                en: '+15 Years Experience',
+                fr: '+15 Ans d\'Expérience',
+                it: '+15 Anni di Esperienza'
+              })}
             </span>
           </div>
         </div>
@@ -498,7 +608,12 @@ const CivilLaw: React.FC = () => {
         {/* الخدمات */}
         <div className="mb-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-[#c8a876] mb-12">
-            {isRTL ? 'خدمات القانون المدني' : 'Civil Law Services'}
+            {getTextByLanguage({
+              ar: 'خدمات القانون المدني',
+              en: 'Civil Law Services',
+              fr: 'Services de Droit Civil',
+              it: 'Servizi di Diritto Civile'
+            })}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -514,7 +629,12 @@ const CivilLaw: React.FC = () => {
         {/* المميزات */}
         <div className="bg-[#1a2d4d] rounded-lg p-12 mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-[#c8a876] mb-12">
-            {isRTL ? 'لماذا تختار مكتبنا؟' : 'Why Choose Our Firm?'}
+            {getTextByLanguage({
+              ar: 'لماذا تختار مكتبنا؟',
+              en: 'Why Choose Our Firm?',
+              fr: 'Pourquoi Choisir Notre Cabinet?',
+              it: 'Perché Scegliere il Nostro Studio?'
+            })}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {advantages.map((advantage, index) => (
@@ -530,54 +650,109 @@ const CivilLaw: React.FC = () => {
         {/* معلومات مهمة */}
         <div className="bg-[#1a2d4d] rounded-lg p-12 mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-[#c8a876] mb-8">
-            {isRTL ? 'معلومات مهمة عن القانون المدني' : 'Important Information About Civil Law'}
+            {getTextByLanguage({
+              ar: 'معلومات مهمة عن القانون المدني',
+              en: 'Important Information About Civil Law',
+              fr: 'Informations Importantes sur le Droit Civil',
+              it: 'Informazioni Importanti sul Diritto Civile'
+            })}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-300">
             <div>
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <i className="fas fa-info-circle text-[#c8a876]"></i>
-                {isRTL ? 'نطاق القانون المدني' : 'Scope of Civil Law'}
+                {getTextByLanguage({
+                  ar: 'نطاق القانون المدني',
+                  en: 'Scope of Civil Law',
+                  fr: 'Portée du Droit Civil',
+                  it: 'Ambito del Diritto Civile'
+                })}
               </h3>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <i className="fas fa-check text-[#c8a876] mt-1"></i>
-                  <span>{isRTL ? 'العقود والالتزامات' : 'Contracts and Obligations'}</span>
+                  <span>{getTextByLanguage({
+                    ar: 'العقود والالتزامات',
+                    en: 'Contracts and Obligations',
+                    fr: 'Contrats et Obligations',
+                    it: 'Contratti e Obbligazioni'
+                  })}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <i className="fas fa-check text-[#c8a876] mt-1"></i>
-                  <span>{isRTL ? 'الحقوق العينية والملكية' : 'Property Rights and Ownership'}</span>
+                  <span>{getTextByLanguage({
+                    ar: 'الحقوق العينية والملكية',
+                    en: 'Property Rights and Ownership',
+                    fr: 'Droits Réels et Propriété',
+                    it: 'Diritti Reali e Proprietà'
+                  })}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <i className="fas fa-check text-[#c8a876] mt-1"></i>
-                  <span>{isRTL ? 'المسؤولية التقصيرية' : 'Tort Liability'}</span>
+                  <span>{getTextByLanguage({
+                    ar: 'المسؤولية التقصيرية',
+                    en: 'Tort Liability',
+                    fr: 'Responsabilité Délictuelle',
+                    it: 'Responsabilità Extracontrattuale'
+                  })}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <i className="fas fa-check text-[#c8a876] mt-1"></i>
-                  <span>{isRTL ? 'أحكام الأسرة والميراث' : 'Family and Inheritance Provisions'}</span>
+                  <span>{getTextByLanguage({
+                    ar: 'أحكام الأسرة والميراث',
+                    en: 'Family and Inheritance Provisions',
+                    fr: 'Dispositions Familiales et Successorales',
+                    it: 'Disposizioni Familiari ed Ereditarie'
+                  })}</span>
                 </li>
               </ul>
             </div>
             <div>
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <i className="fas fa-clipboard-list text-[#c8a876]"></i>
-                {isRTL ? 'خدماتنا الإضافية' : 'Our Additional Services'}
+                {getTextByLanguage({
+                  ar: 'خدماتنا الإضافية',
+                  en: 'Our Additional Services',
+                  fr: 'Nos Services Supplémentaires',
+                  it: 'I Nostri Servizi Aggiuntivi'
+                })}
               </h3>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
                   <i className="fas fa-check text-[#c8a876] mt-1"></i>
-                  <span>{isRTL ? 'الاستشارات القانونية المتخصصة' : 'Specialized Legal Consultations'}</span>
+                  <span>{getTextByLanguage({
+                    ar: 'الاستشارات القانونية المتخصصة',
+                    en: 'Specialized Legal Consultations',
+                    fr: 'Consultations Juridiques Spécialisées',
+                    it: 'Consulenze Legali Specializzate'
+                  })}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <i className="fas fa-check text-[#c8a876] mt-1"></i>
-                  <span>{isRTL ? 'صياغة ومراجعة العقود' : 'Contract Drafting and Review'}</span>
+                  <span>{getTextByLanguage({
+                    ar: 'صياغة ومراجعة العقود',
+                    en: 'Contract Drafting and Review',
+                    fr: 'Rédaction et Révision de Contrats',
+                    it: 'Redazione e Revisione Contratti'
+                  })}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <i className="fas fa-check text-[#c8a876] mt-1"></i>
-                  <span>{isRTL ? 'التمثيل القانوني أمام المحاكم' : 'Legal Representation in Courts'}</span>
+                  <span>{getTextByLanguage({
+                    ar: 'التمثيل القانوني أمام المحاكم',
+                    en: 'Legal Representation in Courts',
+                    fr: 'Représentation Juridique devant les Tribunaux',
+                    it: 'Rappresentanza Legale nei Tribunali'
+                  })}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <i className="fas fa-check text-[#c8a876] mt-1"></i>
-                  <span>{isRTL ? 'التحكيم والوساطة' : 'Arbitration and Mediation'}</span>
+                  <span>{getTextByLanguage({
+                    ar: 'التحكيم والوساطة',
+                    en: 'Arbitration and Mediation',
+                    fr: 'Arbitrage et Médiation',
+                    it: 'Arbitrato e Mediazione'
+                  })}</span>
                 </li>
               </ul>
             </div>
@@ -587,13 +762,20 @@ const CivilLaw: React.FC = () => {
         {/* Call to Action */}
         <div className="text-center bg-gradient-to-r from-[#c8a876] to-[#b89b68] rounded-lg p-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0b1a33] mb-4">
-            {isRTL ? 'احجز استشارتك القانونية الآن' : 'Book Your Legal Consultation Now'}
+            {getTextByLanguage({
+              ar: 'احجز استشارتك القانونية الآن',
+              en: 'Book Your Legal Consultation Now',
+              fr: 'Réservez Votre Consultation Juridique Maintenant',
+              it: 'Prenota la Tua Consulenza Legale Ora'
+            })}
           </h2>
           <p className="text-xl text-[#0b1a33] mb-8">
-            {isRTL 
-              ? 'تواصل معنا للحصول على استشارة قانونية متخصصة في القانون المدني'
-              : 'Contact us for specialized legal consultation in civil law'
-            }
+            {getTextByLanguage({
+              ar: 'تواصل معنا للحصول على استشارة قانونية متخصصة في القانون المدني',
+              en: 'Contact us for specialized legal consultation in civil law',
+              fr: 'Contactez-nous pour une consultation juridique spécialisée en droit civil',
+              it: 'Contattaci per una consulenza legale specializzata in diritto civile'
+            })}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
@@ -603,14 +785,24 @@ const CivilLaw: React.FC = () => {
               className="inline-flex items-center gap-2 bg-[#0b1a33] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#1a2d4d] transition-colors duration-300"
             >
               <i className="fab fa-whatsapp text-2xl"></i>
-              {isRTL ? 'واتساب' : 'WhatsApp'}
+              {getTextByLanguage({
+                ar: 'واتساب',
+                en: 'WhatsApp',
+                fr: 'WhatsApp',
+                it: 'WhatsApp'
+              })}
             </a>
             <a
               href="tel:+201009955509"
               className="inline-flex items-center gap-2 bg-white text-[#0b1a33] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
             >
               <i className="fas fa-phone text-xl"></i>
-              {isRTL ? 'اتصل الآن' : 'Call Now'}
+              {getTextByLanguage({
+                ar: 'اتصل الآن',
+                en: 'Call Now',
+                fr: 'Appelez Maintenant',
+                it: 'Chiama Ora'
+              })}
             </a>
           </div>
         </div>

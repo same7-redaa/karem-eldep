@@ -8,6 +8,11 @@ Sitemap: https://ke-lawyer.com/sitemap.xml
 Allow: /lawyer-profile
 Allow: /foreigners-in-egypt
 Allow: /egyptians-abroad
+
+# City Pages - High Priority for Local SEO
+Allow: /sharm-el-sheikh
+Allow: /cairo
+Allow: /alexandria
 Allow: /commercial-law
 Allow: /family-law
 Allow: /civil-law

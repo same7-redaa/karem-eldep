@@ -5,7 +5,8 @@ import { useLanguage } from '../contexts/LanguageContext';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const { language, toggleLanguage, t } = useLanguage();
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
   const isRTL = language === 'ar';
@@ -16,15 +17,19 @@ const Header: React.FC = () => {
     { name: t('nav.contact'), id: "contact" }
   ];
   
+  const getTextByLanguage = (texts: { ar: string; en: string; fr: string; it: string }) => {
+    return texts[language as keyof typeof texts] || texts.en;
+  };
+
   const services = [
-    { name: isRTL ? 'الأجانب في مصر' : 'Foreigners in Egypt', path: '/foreigners-in-egypt' },
-    { name: isRTL ? 'المصريين بالخارج' : 'Egyptians Abroad', path: '/egyptians-abroad' },
-    { name: isRTL ? 'القانون التجاري' : 'Commercial Law', path: '/commercial-law' },
-    { name: isRTL ? 'قانون الأسرة' : 'Family Law', path: '/family-law' },
-    { name: isRTL ? 'القانون المدني' : 'Civil Law', path: '/civil-law' },
-    { name: isRTL ? 'القانون الجنائي' : 'Criminal Law', path: '/criminal-law' },
-    { name: isRTL ? 'قانون الشركات' : 'Company Law', path: '/company-law' },
-    { name: isRTL ? 'التحكيم والوساطة' : 'Arbitration & Mediation', path: '/arbitration-mediation' }
+    { name: getTextByLanguage({ar: 'الأجانب في مصر', en: 'Foreigners in Egypt', fr: 'Étrangers en Égypte', it: 'Stranieri in Egitto'}), path: '/foreigners-in-egypt' },
+    { name: getTextByLanguage({ar: 'المصريين بالخارج', en: 'Egyptians Abroad', fr: 'Égyptiens à l\'Étranger', it: 'Egiziani all\'Estero'}), path: '/egyptians-abroad' },
+    { name: getTextByLanguage({ar: 'القانون التجاري', en: 'Commercial Law', fr: 'Droit Commercial', it: 'Diritto Commerciale'}), path: '/commercial-law' },
+    { name: getTextByLanguage({ar: 'قانون الأسرة', en: 'Family Law', fr: 'Droit de la Famille', it: 'Diritto di Famiglia'}), path: '/family-law' },
+    { name: getTextByLanguage({ar: 'القانون المدني', en: 'Civil Law', fr: 'Droit Civil', it: 'Diritto Civile'}), path: '/civil-law' },
+    { name: getTextByLanguage({ar: 'القانون الجنائي', en: 'Criminal Law', fr: 'Droit Pénal', it: 'Diritto Penale'}), path: '/criminal-law' },
+    { name: getTextByLanguage({ar: 'قانون الشركات', en: 'Company Law', fr: 'Droit des Sociétés', it: 'Diritto Societario'}), path: '/company-law' },
+    { name: getTextByLanguage({ar: 'التحكيم والوساطة', en: 'Arbitration & Mediation', fr: 'Arbitrage et Médiation', it: 'Arbitrato e Mediazione'}), path: '/arbitration-mediation' }
   ];
 
   // Lock body scroll when menu is open
@@ -34,6 +39,24 @@ const Header: React.FC = () => {
       document.body.style.overflow = 'unset';
     };
   }, [isMenuOpen]);
+
+  // Close language menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (isLangMenuOpen && !target.closest('.language-dropdown')) {
+        setIsLangMenuOpen(false);
+      }
+    };
+
+    if (isLangMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isLangMenuOpen]);
 
   const scrollToSection = (sectionId: string) => {
     if (location.pathname !== '/') {
@@ -76,7 +99,7 @@ const Header: React.FC = () => {
               onClick={() => scrollToSection('hero')}
               className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap"
             >
-              {isRTL ? 'الرئيسية' : 'Home'}
+              {getTextByLanguage({ar: 'الرئيسية', en: 'Home', fr: 'Accueil', it: 'Home'})}
             </button>
             
             <button 
@@ -89,7 +112,7 @@ const Header: React.FC = () => {
             {/* قائمة الخدمات المنسدلة */}
             <div className="relative group">
               <button className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap flex items-center gap-1">
-                {isRTL ? 'الخدمات' : 'Services'}
+                {getTextByLanguage({ar: 'الخدمات', en: 'Services', fr: 'Services', it: 'Servizi'})}
                 <i className="fas fa-chevron-down text-xs"></i>
               </button>
               
@@ -110,11 +133,11 @@ const Header: React.FC = () => {
             </div>
 
             <Link to="/lawyer-profile" className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap">
-              {isRTL ? 'المحامي' : 'Lawyer'}
+              {getTextByLanguage({ar: 'المحامي', en: 'Lawyer', fr: 'Avocat', it: 'Avvocato'})}
             </Link>
 
             <Link to="/blog" className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap">
-              {isRTL ? 'المقالات' : 'Blog'}
+              {getTextByLanguage({ar: 'المقالات', en: 'Blog', fr: 'Blog', it: 'Blog'})}
             </Link>
             
             <button 
@@ -133,25 +156,92 @@ const Header: React.FC = () => {
               {t('nav.book')}
             </button>
             
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-md transition-all duration-300 border border-white/20"
-              aria-label="Toggle Language"
-            >
-              <i className="fas fa-language text-[#d4a15c]"></i>
-              <span className="text-white font-medium">{language === 'ar' ? 'EN' : 'AR'}</span>
-            </button>
+            <div className="relative language-dropdown">
+              <button
+                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-md transition-all duration-300 border border-white/20"
+                aria-label="Select Language"
+              >
+                <i className="fas fa-language text-[#d4a15c]"></i>
+                <span className="text-white font-medium">
+                  {language === 'ar' ? '🇪🇬 AR' : language === 'en' ? '🇬🇧 EN' : language === 'fr' ? '🇫🇷 FR' : '🇮🇹 IT'}
+                </span>
+                <i className={`fas fa-chevron-down text-white text-xs transition-transform ${isLangMenuOpen ? 'rotate-180' : ''}`}></i>
+              </button>
+              
+              {isLangMenuOpen && (
+                <div className="absolute top-full mt-2 right-0 bg-[#0b1a33] border border-white/20 rounded-md shadow-lg overflow-hidden z-50 min-w-[120px]">
+                  <button
+                    onClick={() => { setLanguage('ar'); setIsLangMenuOpen(false); }}
+                    className={`w-full px-4 py-2 text-right hover:bg-white/10 transition-colors ${language === 'ar' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
+                  >
+                    🇪🇬 العربية
+                  </button>
+                  <button
+                    onClick={() => { setLanguage('en'); setIsLangMenuOpen(false); }}
+                    className={`w-full px-4 py-2 text-left hover:bg-white/10 transition-colors ${language === 'en' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
+                  >
+                    🇬🇧 English
+                  </button>
+                  <button
+                    onClick={() => { setLanguage('fr'); setIsLangMenuOpen(false); }}
+                    className={`w-full px-4 py-2 text-left hover:bg-white/10 transition-colors ${language === 'fr' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
+                  >
+                    🇫🇷 Français
+                  </button>
+                  <button
+                    onClick={() => { setLanguage('it'); setIsLangMenuOpen(false); }}
+                    className={`w-full px-4 py-2 text-left hover:bg-white/10 transition-colors ${language === 'it' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
+                  >
+                    🇮🇹 Italiano
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="md:hidden flex items-center gap-3">
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded-md transition-all duration-300"
-              aria-label="Toggle Language"
-            >
-              <i className="fas fa-language text-[#d4a15c] text-sm"></i>
-              <span className="text-white text-sm font-medium">{language === 'ar' ? 'EN' : 'AR'}</span>
-            </button>
+            <div className="relative language-dropdown">
+              <button
+                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+                className="flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded-md transition-all duration-300"
+                aria-label="Select Language"
+              >
+                <span className="text-white text-sm font-medium">
+                  {language === 'ar' ? '🇪🇬' : language === 'en' ? '🇬🇧' : language === 'fr' ? '🇫🇷' : '🇮🇹'}
+                </span>
+                <i className={`fas fa-chevron-down text-white text-xs transition-transform ${isLangMenuOpen ? 'rotate-180' : ''}`}></i>
+              </button>
+              
+              {isLangMenuOpen && (
+                <div className="absolute top-full mt-2 right-0 bg-[#0b1a33] border border-white/20 rounded-md shadow-lg overflow-hidden z-50 min-w-[100px]">
+                  <button
+                    onClick={() => { setLanguage('ar'); setIsLangMenuOpen(false); }}
+                    className={`w-full px-3 py-2 text-sm text-right hover:bg-white/10 transition-colors ${language === 'ar' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
+                  >
+                    🇪🇬 AR
+                  </button>
+                  <button
+                    onClick={() => { setLanguage('en'); setIsLangMenuOpen(false); }}
+                    className={`w-full px-3 py-2 text-sm text-left hover:bg-white/10 transition-colors ${language === 'en' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
+                  >
+                    🇬🇧 EN
+                  </button>
+                  <button
+                    onClick={() => { setLanguage('fr'); setIsLangMenuOpen(false); }}
+                    className={`w-full px-3 py-2 text-sm text-left hover:bg-white/10 transition-colors ${language === 'fr' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
+                  >
+                    🇫🇷 FR
+                  </button>
+                  <button
+                    onClick={() => { setLanguage('it'); setIsLangMenuOpen(false); }}
+                    className={`w-full px-3 py-2 text-sm text-left hover:bg-white/10 transition-colors ${language === 'it' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
+                  >
+                    🇮🇹 IT
+                  </button>
+                </div>
+              )}
+            </div>
             
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white focus:outline-none z-50">
               <svg className="w-7 h-7 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ transform: isMenuOpen ? 'rotate(90deg)' : 'none' }}>

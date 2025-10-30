@@ -7,48 +7,52 @@ const SocialButtons: React.FC = () => {
   const { language } = useLanguage();
   const isRTL = language === 'ar';
 
+  const getTextByLanguage = (texts: { ar: string; en: string; fr: string; it: string }) => {
+    return texts[language as keyof typeof texts] || texts.en;
+  };
+
   const socialLinks = [
     {
       name: 'WhatsApp',
       icon: 'fab fa-whatsapp',
-      url: 'https://wa.me/201223767592',
+      url: 'https://wa.me/2001223767592',
       color: '#25D366',
-      label: isRTL ? 'واتساب' : 'WhatsApp'
+      label: getTextByLanguage({ar: 'واتساب', en: 'WhatsApp', fr: 'WhatsApp', it: 'WhatsApp'})
     },
     {
       name: 'Phone',
       icon: 'fas fa-phone',
-      url: 'tel:+201223767592',
+      url: 'tel:+2001223767592',
       color: '#34B7F1',
-      label: isRTL ? 'اتصال' : 'Call'
+      label: getTextByLanguage({ar: 'اتصال', en: 'Call', fr: 'Appeler', it: 'Chiama'})
     },
     {
       name: 'Facebook',
       icon: 'fab fa-facebook-f',
       url: 'https://facebook.com/karim.eldib.lawyer',
       color: '#1877F2',
-      label: isRTL ? 'فيسبوك' : 'Facebook'
+      label: getTextByLanguage({ar: 'فيسبوك', en: 'Facebook', fr: 'Facebook', it: 'Facebook'})
     },
     {
       name: 'Instagram',
       icon: 'fab fa-instagram',
       url: 'https://instagram.com/karim.eldib.lawyer',
       color: '#E4405F',
-      label: isRTL ? 'انستجرام' : 'Instagram'
+      label: getTextByLanguage({ar: 'انستجرام', en: 'Instagram', fr: 'Instagram', it: 'Instagram'})
     },
     {
       name: 'TikTok',
       icon: 'fab fa-tiktok',
       url: 'https://tiktok.com/@karim.eldib.lawyer',
       color: '#000000',
-      label: isRTL ? 'تيك توك' : 'TikTok'
+      label: getTextByLanguage({ar: 'تيك توك', en: 'TikTok', fr: 'TikTok', it: 'TikTok'})
     },
     {
       name: 'Email',
       icon: 'fas fa-envelope',
       url: 'mailto:info@ke-lawyer.com',
       color: '#EA4335',
-      label: isRTL ? 'بريد إلكتروني' : 'Email'
+      label: getTextByLanguage({ar: 'بريد إلكتروني', en: 'Email', fr: 'E-mail', it: 'Email'})
     }
   ];
 
@@ -72,6 +76,21 @@ const SocialButtons: React.FC = () => {
       {/* الأزرار الإضافية */}
       {isExpanded && (
         <div className="flex flex-col items-center space-y-3 mb-4">
+          {/* زر واتساب إضافي */}
+          <button
+            onClick={() => handleSocialClick('https://wa.me/2001223767592')}
+            className="flex items-center justify-center text-white rounded-full w-12 h-12 shadow-lg transition-all duration-300 transform hover:scale-110"
+            style={{
+              backgroundColor: '#25D366',
+              opacity: isExpanded ? 1 : 0,
+              transform: isExpanded ? 'translateY(0)' : 'translateY(20px)',
+              transitionDelay: '0ms'
+            }}
+            title={getTextByLanguage({ar: 'واتساب', en: 'WhatsApp', fr: 'WhatsApp', it: 'WhatsApp'})}
+          >
+            <i className="fab fa-whatsapp text-lg"></i>
+          </button>
+          
           {socialLinks.slice(1).reverse().map((social, index) => (
             <button
               key={social.name}
@@ -81,7 +100,7 @@ const SocialButtons: React.FC = () => {
                 backgroundColor: social.color,
                 opacity: isExpanded ? 1 : 0,
                 transform: isExpanded ? 'translateY(0)' : 'translateY(20px)',
-                transitionDelay: `${index * 100}ms`
+                transitionDelay: `${(index + 1) * 100}ms`
               }}
               title={social.label}
             >
@@ -100,7 +119,7 @@ const SocialButtons: React.FC = () => {
         style={{
           transform: `${isVisible ? 'translateY(0)' : 'translateY(40px)'} ${isExpanded ? 'rotate(45deg)' : 'rotate(0deg)'}`
         }}
-        title={isRTL ? (isExpanded ? 'إغلاق' : 'فتح قائمة التواصل') : (isExpanded ? 'Close' : 'Open social menu')}
+        title={isExpanded ? getTextByLanguage({ar: 'إغلاق', en: 'Close', fr: 'Fermer', it: 'Chiudi'}) : getTextByLanguage({ar: 'فتح قائمة التواصل', en: 'Open social menu', fr: 'Ouvrir le menu social', it: 'Apri menu social'})}
       >
         {!isExpanded ? (
           <i className="fab fa-whatsapp text-4xl"></i>
@@ -119,12 +138,12 @@ const SocialButtons: React.FC = () => {
           }}
         >
           <h3 className="font-bold text-[#0b1a33] mb-2 text-center">
-            {isRTL ? 'تواصل معنا' : 'Contact Us'}
+            {getTextByLanguage({ar: 'تواصل معنا', en: 'Contact Us', fr: 'Contactez-nous', it: 'Contattaci'})}
           </h3>
           <div className="space-y-2 text-sm text-gray-600">
             <div className="flex items-center gap-2">
               <i className="fas fa-phone text-[#c8a876]"></i>
-              <span>+20 122 376 7592</span>
+              <span dir="ltr">+20 122 376 7592</span>
             </div>
             <div className="flex items-center gap-2">
               <i className="fas fa-envelope text-[#c8a876]"></i>
@@ -132,7 +151,7 @@ const SocialButtons: React.FC = () => {
             </div>
             <div className="flex items-center gap-2">
               <i className="fas fa-clock text-[#c8a876]"></i>
-              <span>{isRTL ? '24/7 متاح' : '24/7 Available'}</span>
+              <span>{getTextByLanguage({ar: '24/7 متاح', en: '24/7 Available', fr: '24/7 Disponible', it: '24/7 Disponibile'})}</span>
             </div>
           </div>
         </div>

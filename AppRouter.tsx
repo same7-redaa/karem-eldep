@@ -17,6 +17,9 @@ import EgyptiansAbroad from './pages/services/EgyptiansAbroad';
 import ArbitrationMediation from './pages/services/ArbitrationMediation';
 import Blog from './pages/blog/Blog';
 import BlogPost from './pages/blog/BlogPost';
+import SharmElSheikh from './pages/cities/SharmElSheikh';
+import Cairo from './pages/cities/Cairo';
+import Alexandria from './pages/cities/Alexandria';
 
 // ScrollToTop component
 const ScrollToTop: React.FC = () => {
@@ -62,6 +65,9 @@ const router = createBrowserRouter([
       { path: '/arbitration-mediation', element: <ArbitrationMediation /> },
       { path: '/blog', element: <Blog /> },
       { path: '/blog/:slug', element: <BlogPost /> },
+      { path: '/sharm-el-sheikh', element: <SharmElSheikh /> },
+      { path: '/cairo', element: <Cairo /> },
+      { path: '/alexandria', element: <Alexandria /> },
     ],
   },
 ]);

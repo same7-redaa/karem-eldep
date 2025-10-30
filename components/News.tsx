@@ -5,54 +5,112 @@ const News: React.FC = () => {
   const { language } = useLanguage();
   const isRTL = language === 'ar';
 
+  const getTextByLanguage = (texts: { ar: string; en: string; fr: string; it: string }) => {
+    return texts[language as keyof typeof texts] || texts.en;
+  };
+
   const newsArticles = [
     {
       id: 1,
-      title: isRTL 
-        ? 'نصير من لا نصير له: المحامي كريم الديب صاحب القضايا المستحيلة'
-        : 'Supporter of the Unsupported: Lawyer Karim El-Dib, Master of Impossible Cases',
-      newspaper: isRTL ? 'أخبار الجمهورية' : 'Akhbar El Gomhuria',
-      date: isRTL ? '15 مايو 2025' : 'May 15, 2025',
-      excerpt: isRTL 
-        ? 'تقرير شامل عن إنجازات المحامي كريم الديب في الدفاع عن القضايا الصعبة والمعقدة التي لا يجرؤ محامون آخرون على التعامل معها.'
-        : 'Comprehensive report on Lawyer Karim El-Dib\'s achievements in defending difficult and complex cases that other lawyers dare not handle.',
+      title: getTextByLanguage({
+        ar: 'نصير من لا نصير له: المحامي كريم الديب صاحب القضايا المستحيلة',
+        en: 'Supporter of the Unsupported: Lawyer Karim El-Dib, Master of Impossible Cases',
+        fr: 'Soutien des Sans Soutien: L\'Avocat Karim El-Dib, Maître des Cas Impossibles',
+        it: 'Sostenitore dei Senza Sostegno: L\'Avvocato Karim El-Dib, Maestro dei Casi Impossibili'
+      }),
+      newspaper: getTextByLanguage({
+        ar: 'أخبار الجمهورية',
+        en: 'Akhbar El Gomhuria',
+        fr: 'Akhbar El Gomhuria',
+        it: 'Akhbar El Gomhuria'
+      }),
+      date: getTextByLanguage({
+        ar: '15 مايو 2025',
+        en: 'May 15, 2025',
+        fr: '15 mai 2025',
+        it: '15 maggio 2025'
+      }),
+      excerpt: getTextByLanguage({
+        ar: 'تقرير شامل عن إنجازات المحامي كريم الديب في الدفاع عن القضايا الصعبة والمعقدة التي لا يجرؤ محامون آخرون على التعامل معها.',
+        en: 'Comprehensive report on Lawyer Karim El-Dib\'s achievements in defending difficult and complex cases that other lawyers dare not handle.',
+        fr: 'Rapport complet sur les réalisations de l\'avocat Karim El-Dib dans la défense de cas difficiles et complexes que d\'autres avocats n\'osent pas gérer.',
+        it: 'Rapporto completo sui successi dell\'avvocato Karim El-Dib nella difesa di casi difficili e complessi che altri avvocati non osano gestire.'
+      }),
       link: 'https://akhbaralgomhuria.com/%d9%86%d8%b5%d9%8a%d8%b1-%d9%85%d9%86-%d9%84%d8%a7-%d9%86%d8%b5%d9%8a%d8%b1-%d9%84%d8%a9-%d8%a7%d9%84%d9%85%d8%ad%d8%a7%d9%85%d9%8a-%d9%83%d8%b1%d9%8a%d9%85-%d8%a7%d9%84%d8%af%d9%8a%d8%a8-%d8%b5/',
       image: '/images/lawyer-4.jpg',
-      tags: isRTL 
-        ? ['أخبار المحامين', 'قضايا صعبة', 'كريم الديب']
-        : ['Lawyers News', 'Difficult Cases', 'Karim El-Dib']
+      tags: [
+        getTextByLanguage({ ar: 'أخبار المحامين', en: 'Lawyers News', fr: 'Actualités Juridiques', it: 'Notizie Legali' }),
+        getTextByLanguage({ ar: 'قضايا صعبة', en: 'Difficult Cases', fr: 'Cas Difficiles', it: 'Casi Difficili' }),
+        getTextByLanguage({ ar: 'كريم الديب', en: 'Karim El-Dib', fr: 'Karim El-Dib', it: 'Karim El-Dib' })
+      ]
     },
     {
       id: 2,
-      title: isRTL 
-        ? 'المحامي كريم الديب يحقق نصراً قانونياً مدوياً في قضية استثمارية معقدة'
-        : 'Lawyer Karim El-Dib Achieves Resounding Legal Victory in Complex Investment Case',
-      newspaper: isRTL ? 'اليوم السابع' : 'Youm7',
-      date: isRTL ? '10 مايو 2025' : 'May 10, 2025',
-      excerpt: isRTL 
-        ? 'تغطية حصرية لانتصار المحامي كريم الديب في قضية استثمارية دولية معقدة تتعلق بحقوق المستثمرين الأجانب في مصر.'
-        : 'Exclusive coverage of Lawyer Karim El-Dib\'s victory in a complex international investment case related to foreign investors\' rights in Egypt.',
+      title: getTextByLanguage({
+        ar: 'المحامي كريم الديب يحقق نصراً قانونياً مدوياً في قضية استثمارية معقدة',
+        en: 'Lawyer Karim El-Dib Achieves Resounding Legal Victory in Complex Investment Case',
+        fr: 'L\'Avocat Karim El-Dib Remporte une Victoire Juridique Retentissante dans un Cas d\'Investissement Complexe',
+        it: 'L\'Avvocato Karim El-Dib Ottiene una Vittoria Legale Clamorosa in un Caso di Investimento Complesso'
+      }),
+      newspaper: getTextByLanguage({
+        ar: 'اليوم السابع',
+        en: 'Youm7',
+        fr: 'Youm7',
+        it: 'Youm7'
+      }),
+      date: getTextByLanguage({
+        ar: '10 مايو 2025',
+        en: 'May 10, 2025',
+        fr: '10 mai 2025',
+        it: '10 maggio 2025'
+      }),
+      excerpt: getTextByLanguage({
+        ar: 'تغطية حصرية لانتصار المحامي كريم الديب في قضية استثمارية دولية معقدة تتعلق بحقوق المستثمرين الأجانب في مصر.',
+        en: 'Exclusive coverage of Lawyer Karim El-Dib\'s victory in a complex international investment case related to foreign investors\' rights in Egypt.',
+        fr: 'Couverture exclusive de la victoire de l\'avocat Karim El-Dib dans une affaire d\'investissement international complexe liée aux droits des investisseurs étrangers en Égypte.',
+        it: 'Copertura esclusiva della vittoria dell\'avvocato Karim El-Dib in un caso di investimento internazionale complesso relativo ai diritti degli investitori stranieri in Egitto.'
+      }),
       link: 'https://www.youm7.com/2025/05/blog-post_565.html',
       image: '/images/lawyer-5.jpg',
-      tags: isRTL 
-        ? ['انتصارات قانونية', 'استثمار دولي', 'أخبار قانونية']
-        : ['Legal Victories', 'International Investment', 'Legal News']
+      tags: [
+        getTextByLanguage({ ar: 'انتصارات قانونية', en: 'Legal Victories', fr: 'Victoires Juridiques', it: 'Vittorie Legali' }),
+        getTextByLanguage({ ar: 'استثمار دولي', en: 'International Investment', fr: 'Investissement International', it: 'Investimento Internazionale' }),
+        getTextByLanguage({ ar: 'أخبار قانونية', en: 'Legal News', fr: 'Actualités Juridiques', it: 'Notizie Legali' })
+      ]
     },
     {
       id: 3,
-      title: isRTL 
-        ? 'كريم الديب: رائد الخدمات القانونية للمصريين بالخارج والمستثمرين الأجانب'
-        : 'Karim El-Dib: Pioneer in Legal Services for Egyptians Abroad and Foreign Investors',
-      newspaper: isRTL ? 'الوطن نيوز' : 'El Watan News',
-      date: isRTL ? '5 مايو 2025' : 'May 5, 2025',
-      excerpt: isRTL 
-        ? 'حوار شامل مع المحامي كريم الديب حول تطوير الخدمات القانونية المتخصصة للمصريين في الخارج والمستثمرين الأجانب في مصر.'
-        : 'Comprehensive interview with Lawyer Karim El-Dib about developing specialized legal services for Egyptians abroad and foreign investors in Egypt.',
+      title: getTextByLanguage({
+        ar: 'كريم الديب: رائد الخدمات القانونية للمصريين بالخارج والمستثمرين الأجانب',
+        en: 'Karim El-Dib: Pioneer in Legal Services for Egyptians Abroad and Foreign Investors',
+        fr: 'Karim El-Dib: Pionnier des Services Juridiques pour les Égyptiens à l\'Étranger et les Investisseurs Étrangers',
+        it: 'Karim El-Dib: Pioniere dei Servizi Legali per gli Egiziani all\'Estero e gli Investitori Stranieri'
+      }),
+      newspaper: getTextByLanguage({
+        ar: 'الوطن نيوز',
+        en: 'El Watan News',
+        fr: 'El Watan News',
+        it: 'El Watan News'
+      }),
+      date: getTextByLanguage({
+        ar: '5 مايو 2025',
+        en: 'May 5, 2025',
+        fr: '5 mai 2025',
+        it: '5 maggio 2025'
+      }),
+      excerpt: getTextByLanguage({
+        ar: 'حوار شامل مع المحامي كريم الديب حول تطوير الخدمات القانونية المتخصصة للمصريين في الخارج والمستثمرين الأجانب في مصر.',
+        en: 'Comprehensive interview with Lawyer Karim El-Dib about developing specialized legal services for Egyptians abroad and foreign investors in Egypt.',
+        fr: 'Entretien complet avec l\'avocat Karim El-Dib sur le développement de services juridiques spécialisés pour les Égyptiens à l\'étranger et les investisseurs étrangers en Égypte.',
+        it: 'Intervista completa con l\'avvocato Karim El-Dib sullo sviluppo di servizi legali specializzati per gli egiziani all\'estero e gli investitori stranieri in Egitto.'
+      }),
       link: 'https://www.elwaatannews.com/2025/05/blog-post_55.html',
       image: '/images/lawyer-6.jpg',
-      tags: isRTL 
-        ? ['خدمات قانونية', 'مصريون بالخارج', 'استثمار أجنبي']
-        : ['Legal Services', 'Egyptians Abroad', 'Foreign Investment']
+      tags: [
+        getTextByLanguage({ ar: 'خدمات قانونية', en: 'Legal Services', fr: 'Services Juridiques', it: 'Servizi Legali' }),
+        getTextByLanguage({ ar: 'مصريون بالخارج', en: 'Egyptians Abroad', fr: 'Égyptiens à l\'Étranger', it: 'Egiziani all\'Estero' }),
+        getTextByLanguage({ ar: 'استثمار أجنبي', en: 'Foreign Investment', fr: 'Investissement Étranger', it: 'Investimento Straniero' })
+      ]
     }
   ];
 
@@ -64,13 +122,20 @@ const News: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#c8a876] mb-6">
             <i className="fas fa-newspaper text-[#c8a876] ml-3"></i>
-            {isRTL ? 'كريم الديب في الأخبار' : 'Karim El-Dib in the News'}
+            {getTextByLanguage({
+              ar: 'كريم الديب في الأخبار',
+              en: 'Karim El-Dib in the News',
+              fr: 'Karim El-Dib dans les Nouvelles',
+              it: 'Karim El-Dib nelle Notizie'
+            })}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            {isRTL 
-              ? 'تغطية إعلامية شاملة لإنجازات وانتصارات المحامي كريم الديب في أهم الصحف والمواقع الإخبارية المصرية'
-              : 'Comprehensive media coverage of Lawyer Karim El-Dib\'s achievements and victories in major Egyptian newspapers and news websites'
-            }
+            {getTextByLanguage({
+              ar: 'تغطية إعلامية شاملة لإنجازات وانتصارات المحامي كريم الديب في أهم الصحف والمواقع الإخبارية المصرية',
+              en: 'Comprehensive media coverage of Lawyer Karim El-Dib\'s achievements and victories in major Egyptian newspapers and news websites',
+              fr: 'Couverture médiatique complète des réalisations et victoires de l\'avocat Karim El-Dib dans les principaux journaux et sites d\'actualités égyptiens',
+              it: 'Copertura mediatica completa dei successi e delle vittorie dell\'avvocato Karim El-Dib nei principali giornali e siti di notizie egiziani'
+            })}
           </p>
         </div>
 
@@ -136,7 +201,12 @@ const News: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[#c8a876] hover:text-white transition-colors duration-300 font-semibold text-sm"
                 >
-                  {isRTL ? 'قراءة الخبر كاملاً' : 'Read Full News'}
+                  {getTextByLanguage({
+                    ar: 'قراءة الخبر كاملاً',
+                    en: 'Read Full News',
+                    fr: 'Lire l\'Article Complet',
+                    it: 'Leggi l\'Articolo Completo'
+                  })}
                   <i className="fas fa-external-link-alt"></i>
                 </a>
               </div>
@@ -147,33 +217,55 @@ const News: React.FC = () => {
         {/* إحصائيات الإعلام */}
         <div className="bg-[#c8a876]/10 border border-[#c8a876]/30 rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-bold text-[#c8a876] mb-4">
-            {isRTL ? 'تغطية إعلامية واسعة' : 'Extensive Media Coverage'}
+            {getTextByLanguage({
+              ar: 'تغطية إعلامية واسعة',
+              en: 'Extensive Media Coverage',
+              fr: 'Couverture Médiatique Étendue',
+              it: 'Copertura Mediatica Estesa'
+            })}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center">
               <div className="text-3xl font-bold text-white mb-2">50+</div>
               <div className="text-gray-300 text-sm">
-                {isRTL ? 'تقرير إعلامي' : 'Media Reports'}
+                {getTextByLanguage({
+                  ar: 'تقرير إعلامي',
+                  en: 'Media Reports',
+                  fr: 'Rapports Médiatiques',
+                  it: 'Rapporti Mediatici'
+                })}
               </div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-white mb-2">15+</div>
               <div className="text-gray-300 text-sm">
-                {isRTL ? 'صحيفة ومجلة' : 'Newspapers & Magazines'}
+                {getTextByLanguage({
+                  ar: 'صحيفة ومجلة',
+                  en: 'Newspapers & Magazines',
+                  fr: 'Journaux et Magazines',
+                  it: 'Giornali e Riviste'
+                })}
               </div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-white mb-2">100+</div>
               <div className="text-gray-300 text-sm">
-                {isRTL ? 'قضية منشورة' : 'Published Cases'}
+                {getTextByLanguage({
+                  ar: 'قضية منشورة',
+                  en: 'Published Cases',
+                  fr: 'Cas Publiés',
+                  it: 'Casi Pubblicati'
+                })}
               </div>
             </div>
           </div>
           <p className="text-gray-300 mt-4 text-sm">
-            {isRTL 
-              ? 'يحظى المحامي كريم الديب بتغطية إعلامية واسعة لإنجازاته القانونية المتميزة'
-              : 'Lawyer Karim El-Dib receives extensive media coverage for his outstanding legal achievements'
-            }
+            {getTextByLanguage({
+              ar: 'يحظى المحامي كريم الديب بتغطية إعلامية واسعة لإنجازاته القانونية المتميزة',
+              en: 'Lawyer Karim El-Dib receives extensive media coverage for his outstanding legal achievements',
+              fr: 'L\'avocat Karim El-Dib bénéficie d\'une large couverture médiatique pour ses remarquables réalisations juridiques',
+              it: 'L\'avvocato Karim El-Dib riceve un\'ampia copertura mediatica per i suoi eccezionali risultati legali'
+            })}
           </p>
         </div>
 

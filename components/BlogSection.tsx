@@ -6,48 +6,85 @@ const BlogSection: React.FC = () => {
   const { language } = useLanguage();
   const isRTL = language === 'ar';
 
+  const getTextByLanguage = (texts: { ar: string; en: string; fr: string; it: string }) => {
+    return texts[language as keyof typeof texts] || texts.en;
+  };
+
   const featuredArticles = [
     {
       id: 1,
       slug: 'guide-foreigners-legal-services-egypt-2025',
-      title: isRTL ? 'دليل شامل للأجانب: الخدمات القانونية في مصر 2025' : 'Complete Guide for Foreigners: Legal Services in Egypt 2025',
-      excerpt: isRTL 
-        ? 'دليل شامل للأجانب الراغبين في الاستثمار أو العيش في مصر، يشمل كل ما تحتاج معرفته عن الخدمات القانونية.'
-        : 'A comprehensive guide for foreigners wishing to invest or live in Egypt, including everything you need to know about legal services.',
-      date: isRTL ? '15 أكتوبر 2025' : 'October 15, 2025',
-      readTime: isRTL ? '10 دقائق قراءة' : '10 min read',
+      title: getTextByLanguage({
+        ar: 'دليل شامل للأجانب: الخدمات القانونية في مصر 2025',
+        en: 'Complete Guide for Foreigners: Legal Services in Egypt 2025',
+        fr: 'Guide Complet pour les Étrangers: Services Juridiques en Égypte 2025',
+        it: 'Guida Completa per Stranieri: Servizi Legali in Egitto 2025'
+      }),
+      excerpt: getTextByLanguage({
+        ar: 'دليل شامل للأجانب الراغبين في الاستثمار أو العيش في مصر، يشمل كل ما تحتاج معرفته عن الخدمات القانونية.',
+        en: 'A comprehensive guide for foreigners wishing to invest or live in Egypt, including everything you need to know about legal services.',
+        fr: 'Un guide complet pour les étrangers souhaitant investir ou vivre en Égypte, incluant tout ce que vous devez savoir sur les services juridiques.',
+        it: 'Una guida completa per stranieri che desiderano investire o vivere in Egitto, includendo tutto ciò che devi sapere sui servizi legali.'
+      }),
+      date: getTextByLanguage({ar: '15 أكتوبر 2025', en: 'October 15, 2025', fr: '15 octobre 2025', it: '15 ottobre 2025'}),
+      readTime: getTextByLanguage({ar: '10 دقائق قراءة', en: '10 min read', fr: '10 min de lecture', it: '10 min di lettura'}),
       image: '/images/lawyer-1.jpg',
-      tags: isRTL 
-        ? ['محامي أجانب في مصر', 'استثمار أجنبي']
-        : ['Lawyer for foreigners Egypt', 'Foreign investment']
+      tags: getTextByLanguage({
+        ar: 'محامي أجانب في مصر, استثمار أجنبي',
+        en: 'Lawyer for foreigners Egypt, Foreign investment',
+        fr: 'Avocat pour étrangers Égypte, Investissement étranger',
+        it: 'Avvocato per stranieri Egitto, Investimento estero'
+      }).split(', ')
     },
     {
       id: 2,
       slug: 'egyptians-abroad-legal-rights-protection',
-      title: isRTL ? 'محامي المصريين بالخارج: حماية حقوقك القانونية' : 'Lawyer for Egyptians Abroad: Protecting Your Legal Rights',
-      excerpt: isRTL 
-        ? 'كيف يمكن للمصريين في الخارج حماية حقوقهم القانونية في مصر والحصول على الخدمات القانونية المطلوبة.'
-        : 'How Egyptians abroad can protect their legal rights in Egypt and obtain required legal services remotely.',
-      date: isRTL ? '10 أكتوبر 2025' : 'October 10, 2025',
-      readTime: isRTL ? '8 دقائق قراءة' : '8 min read',
+      title: getTextByLanguage({
+        ar: 'محامي المصريين بالخارج: حماية حقوقك القانونية',
+        en: 'Lawyer for Egyptians Abroad: Protecting Your Legal Rights',
+        fr: 'Avocat pour Égyptiens à l\'Étranger: Protection de vos Droits Juridiques',
+        it: 'Avvocato per Egiziani all\'Estero: Protezione dei Tuoi Diritti Legali'
+      }),
+      excerpt: getTextByLanguage({
+        ar: 'كيف يمكن للمصريين في الخارج حماية حقوقهم القانونية في مصر والحصول على الخدمات القانونية المطلوبة.',
+        en: 'How Egyptians abroad can protect their legal rights in Egypt and obtain required legal services remotely.',
+        fr: 'Comment les Égyptiens à l\'étranger peuvent protéger leurs droits juridiques en Égypte et obtenir les services juridiques requis.',
+        it: 'Come gli egiziani all\'estero possono proteggere i loro diritti legali in Egitto e ottenere i servizi legali richiesti.'
+      }),
+      date: getTextByLanguage({ar: '10 أكتوبر 2025', en: 'October 10, 2025', fr: '10 octobre 2025', it: '10 ottobre 2025'}),
+      readTime: getTextByLanguage({ar: '8 دقائق قراءة', en: '8 min read', fr: '8 min de lecture', it: '8 min di lettura'}),
       image: '/images/lawyer-2.jpg',
-      tags: isRTL 
-        ? ['محامي المصريين بالخارج', 'حقوق قانونية']
-        : ['Lawyer for Egyptians abroad', 'Legal rights']
+      tags: getTextByLanguage({
+        ar: 'محامي المصريين بالخارج, حقوق قانونية',
+        en: 'Lawyer for Egyptians abroad, Legal rights',
+        fr: 'Avocat pour Égyptiens à l\'étranger, Droits juridiques',
+        it: 'Avvocato per egiziani all\'estero, Diritti legali'
+      }).split(', ')
     },
     {
       id: 3,
       slug: 'foreign-investment-egypt-complete-guide',
-      title: isRTL ? 'الاستثمار في مصر: دليل المستثمر الأجنبي الكامل' : 'Investment in Egypt: Complete Foreign Investor Guide',
-      excerpt: isRTL 
-        ? 'دليل شامل للاستثمار الأجنبي في مصر، يتضمن القوانين الجديدة والتسهيلات المتاحة.'
-        : 'A comprehensive guide to foreign investment in Egypt, including new laws and available facilities.',
-      date: isRTL ? '5 أكتوبر 2025' : 'October 5, 2025',
-      readTime: isRTL ? '12 دقيقة قراءة' : '12 min read',
+      title: getTextByLanguage({
+        ar: 'الاستثمار في مصر: دليل المستثمر الأجنبي الكامل',
+        en: 'Investment in Egypt: Complete Foreign Investor Guide',
+        fr: 'Investissement en Égypte: Guide Complet pour Investisseurs Étrangers',
+        it: 'Investimento in Egitto: Guida Completa per Investitori Esteri'
+      }),
+      excerpt: getTextByLanguage({
+        ar: 'دليل شامل للاستثمار الأجنبي في مصر، يتضمن القوانين الجديدة والتسهيلات المتاحة.',
+        en: 'A comprehensive guide to foreign investment in Egypt, including new laws and available facilities.',
+        fr: 'Un guide complet sur l\'investissement étranger en Égypte, incluant les nouvelles lois et les facilités disponibles.',
+        it: 'Una guida completa all\'investimento estero in Egitto, includendo nuove leggi e strutture disponibili.'
+      }),
+      date: getTextByLanguage({ar: '5 أكتوبر 2025', en: 'October 5, 2025', fr: '5 octobre 2025', it: '5 ottobre 2025'}),
+      readTime: getTextByLanguage({ar: '12 دقيقة قراءة', en: '12 min read', fr: '12 min de lecture', it: '12 min di lettura'}),
       image: '/images/lawyer-3.jpg',
-      tags: isRTL 
-        ? ['الاستثمار في مصر', 'قانون الاستثمار']
-        : ['Investment in Egypt', 'Investment law']
+      tags: getTextByLanguage({
+        ar: 'الاستثمار في مصر, قانون الاستثمار',
+        en: 'Investment in Egypt, Investment law',
+        fr: 'Investissement en Égypte, Droit de l\'investissement',
+        it: 'Investimento in Egitto, Legge sugli investimenti'
+      }).split(', ')
     }
   ];
 
@@ -58,13 +95,15 @@ const BlogSection: React.FC = () => {
         {/* العنوان الرئيسي */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#c8a876] mb-6">
-            {isRTL ? 'أحدث المقالات القانونية' : 'Latest Legal Articles'}
+            {getTextByLanguage({ar: 'أحدث المقالات القانونية', en: 'Latest Legal Articles', fr: 'Derniers Articles Juridiques', it: 'Ultimi Articoli Legali'})}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            {isRTL 
-              ? 'مقالات قانونية متخصصة من المحامي كريم الديب لمساعدتك في فهم القوانين والحصول على نصائح قانونية قيمة'
-              : 'Specialized legal articles by Lawyer Karim El-Dib to help you understand laws and get valuable legal advice'
-            }
+            {getTextByLanguage({
+              ar: 'مقالات قانونية متخصصة من المحامي كريم الديب لمساعدتك في فهم القوانين والحصول على نصائح قانونية قيمة',
+              en: 'Specialized legal articles by Lawyer Karim El-Dib to help you understand laws and get valuable legal advice',
+              fr: 'Articles juridiques spécialisés de l\'avocat Karim El-Dib pour vous aider à comprendre les lois et obtenir des conseils juridiques précieux',
+              it: 'Articoli legali specializzati dell\'avvocato Karim El-Dib per aiutarti a comprendere le leggi e ottenere preziosi consigli legali'
+            })}
           </p>
         </div>
 
@@ -127,7 +166,7 @@ const BlogSection: React.FC = () => {
                   to={`/blog/${article.slug}`}
                   className="inline-flex items-center gap-2 text-[#c8a876] hover:text-white transition-colors duration-300 font-semibold text-sm"
                 >
-                  {isRTL ? 'اقرأ المقال كاملاً' : 'Read Full Article'}
+                  {getTextByLanguage({ar: 'اقرأ المقال كاملاً', en: 'Read Full Article', fr: 'Lire l\'Article Complet', it: 'Leggi l\'Articolo Completo'})}
                   <i className={`fas fa-arrow-${isRTL ? 'left' : 'right'}`}></i>
                 </Link>
               </div>
@@ -142,7 +181,7 @@ const BlogSection: React.FC = () => {
             className="inline-flex items-center gap-3 bg-[#c8a876] text-[#0b1a33] px-8 py-4 rounded-full font-semibold text-lg hover:bg-white transition-colors duration-300"
           >
             <i className="fas fa-newspaper"></i>
-            {isRTL ? 'عرض جميع المقالات' : 'View All Articles'}
+            {getTextByLanguage({ar: 'عرض جميع المقالات', en: 'View All Articles', fr: 'Voir Tous les Articles', it: 'Visualizza Tutti gli Articoli'})}
           </Link>
         </div>
 

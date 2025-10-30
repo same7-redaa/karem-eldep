@@ -1,11 +1,13 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-type Language = 'ar' | 'en';
+type Language = 'ar' | 'en' | 'fr' | 'it';
 
 interface LanguageContextType {
   language: Language;
+  setLanguage: (lang: Language) => void;
   toggleLanguage: () => void;
   t: (key: string) => string;
+  getTextByLanguage: (texts: { ar: string; en: string; fr: string; it: string }) => string;
 }
 
 const translations: Record<Language, Record<string, string>> = {
@@ -18,8 +20,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.book': 'احجز استشارة',
     
     // Hero
-    'hero.title': 'مكتب كريم الديب للمحاماة والاستشارات القانونية',
+    'hero.title': 'مؤسسة كريم الديب للمحاماة الدولية وخدمات الأجانب',
     'hero.subtitle': 'Unlimited lawyers & foreign services',
+    'hero.consulate': 'محامي معتمد لدى القنصلية الفرنسية',
     'hero.cta': 'احجز استشارة قانونية',
     
     // About
@@ -83,6 +86,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.sharm.address': '123 ش البحر الهضبة شرم الشيخ',
     'contact.methods': 'طرق التواصل',
     'contact.whatsapp': 'واتساب',
+    'contact.social': 'تابعنا على وسائل التواصل الاجتماعي',
     
     // Footer
     'footer.rights': 'مكتب كريم الديب للمحاماة. جميع الحقوق محفوظة.',
@@ -96,8 +100,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.book': 'Book Consultation',
     
     // Hero
-    'hero.title': 'Karim Eldib Law Firm & Legal Consultations',
+    'hero.title': 'Karim Eldib International Law Firm & Foreign Services',
     'hero.subtitle': 'Unlimited lawyers & foreign services',
+    'hero.consulate': 'Certified Lawyer at the French Consulate',
     'hero.cta': 'Book Legal Consultation',
     
     // About
@@ -160,33 +165,214 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.sharm.address': '123 Al-Bahr Street, Al-Hadaba, Sharm El Sheikh',
     'contact.methods': 'Contact Methods',
     'contact.whatsapp': 'WhatsApp',
+    'contact.social': 'Follow Us on Social Media',
     
     // Footer
     'footer.rights': 'Karim Eldib Law Firm. All rights reserved.',
+  },
+  
+  // French translations
+  fr: {
+    // Header
+    'nav.home': 'Accueil',
+    'nav.about': 'À propos',
+    'nav.services': 'Services Juridiques',
+    'nav.contact': 'Contact',
+    'nav.book': 'Réserver une consultation',
+    
+    // Hero
+    'hero.title': 'Cabinet Karim Eldib - Avocat International et Services pour Étrangers',
+    'hero.subtitle': 'Services juridiques illimités pour étrangers',
+    'hero.consulate': 'Avocat agréé au Consulat de France',
+    'hero.cta': 'Réserver une consultation juridique',
+    
+    // About
+    'about.title': 'À propos du cabinet',
+    'about.intro': 'À propos du Cabinet Karim Eldib',
+    'about.p1': 'Le Cabinet Karim Eldib est un cabinet juridique agréé fondé en 2006, composé d\'une équipe spécialisée d\'avocats expérimentés dans diverses branches du droit.',
+    'about.p2': 'Le cabinet offre ses services dans les domaines du droit pénal et civil, affaires d\'étrangers, permis de résidence, contrats internationaux, arbitrage, droit des sociétés, droit de la famille et droit commercial.',
+    'about.p3': 'Le cabinet se distingue par une expérience de plus de 18 ans dans la fourniture de soutien juridique aux particuliers et aux entreprises localement et internationalement, en particulier en coopération avec les ambassades étrangères en Égypte.',
+    'about.stat1': 'Années d\'expérience',
+    'about.stat2': 'Clients',
+    'about.stat3.value': 'Mondiaux',
+    'about.stat3.label': 'Services',
+    'about.lawyerProfile': 'Profil de l\'Avocat Karim Eldib',
+    
+    // Services
+    'services.title': 'Nos Services',
+    'services.heading': 'Services Juridiques Illimités',
+    'services.subtitle': 'Services juridiques complets et spécialisés pour particuliers et entreprises',
+    'services.civil': 'Droit Civil',
+    'services.civil.desc': 'Consultations juridiques, rédaction de contrats et gestion des affaires de droits civils',
+    'services.criminal': 'Droit Pénal',
+    'services.criminal.desc': 'Plaidoiries dans les affaires pénales et représentation devant les tribunaux',
+    'services.commercial': 'Droit Commercial',
+    'services.commercial.desc': 'Services de création d\'entreprise et gestion des contrats commerciaux',
+    'services.family': 'Droit de la Famille',
+    'services.family.desc': 'Gestion professionnelle des affaires de divorce, garde et pension alimentaire',
+    'services.companies': 'Droit des Sociétés',
+    'services.companies.desc': 'Création de sociétés et soutien juridique et administratif complet',
+    'services.foreigners': 'Étrangers en Égypte',
+    'services.foreigners.desc': 'Création d\'entreprises, permis de résidence, représentation juridique pour étrangers',
+    'services.egyptians': 'Égyptiens à l\'étranger',
+    'services.egyptians.desc': 'Suivi des affaires en Égypte et consultations juridiques multilingues',
+    'services.arbitration': 'Arbitrage et Médiation',
+    'services.arbitration.desc': 'Services d\'arbitrage pour résoudre les litiges commerciaux et civils',
+    'services.learnMore': 'En savoir plus',
+    
+    // Why Choose Us
+    'why.title': 'Pourquoi choisir le Cabinet Karim Eldib?',
+    'why.subtitle': 'Services juridiques internationaux de classe mondiale avec confidentialité totale',
+    'why.experience': '18 ans d\'expérience',
+    'why.experience.desc': 'Longue expérience dans le soutien juridique local et international',
+    'why.diplomatic': 'Coopération Internationale',
+    'why.diplomatic.desc': 'Coopération avec les ambassades étrangères et cabinets juridiques internationaux',
+    'why.languages': 'Multilingue',
+    'why.languages.desc': 'Consultations juridiques en plusieurs langues pour clients internationaux',
+    'why.confidential': 'Confidentialité et Professionnalisme',
+    'why.confidential.desc': 'Services juridiques avec haut niveau de confidentialité',
+    'why.differ': 'Pourquoi nous sommes différents',
+    'why.ready': 'Prêt à commencer?',
+    'why.ready.desc': 'Contactez-nous aujourd\'hui pour une consultation juridique spécialisée',
+    'why.book': 'Réserver une consultation',
+    
+    // Contact
+    'contact.title': 'Contactez-nous',
+    'contact.heading': 'Contactez-nous maintenant',
+    'contact.subtitle': 'Nous sommes là pour vous aider',
+    'contact.info': 'Informations de contact et adresses',
+    'contact.alex': 'Bureau d\'Alexandrie',
+    'contact.alex.address': 'Station Raml, 14 rue Al-Shohada, Chambre de Commerce',
+    'contact.sharm': 'Bureau de Sharm El Sheikh',
+    'contact.sharm.address': '123 rue Al-Bahr, Al-Hadaba, Sharm El Sheikh',
+    'contact.methods': 'Méthodes de contact',
+    'contact.whatsapp': 'WhatsApp',
+    'contact.social': 'Suivez-nous sur les réseaux sociaux',
+    
+    // Footer
+    'footer.rights': 'Cabinet Karim Eldib. Tous droits réservés.',
+  },
+  
+  // Italian translations
+  it: {
+    // Header
+    'nav.home': 'Home',
+    'nav.about': 'Chi Siamo',
+    'nav.services': 'Servizi Legali',
+    'nav.contact': 'Contatti',
+    'nav.book': 'Prenota consulenza',
+    
+    // Hero
+    'hero.title': 'Studio Legale Karim Eldib - Avvocato Internazionale e Servizi per Stranieri',
+    'hero.subtitle': 'Servizi legali illimitati per stranieri',
+    'hero.consulate': 'Avvocato certificato presso il Consolato Francese',
+    'hero.cta': 'Prenota consulenza legale',
+    
+    // About
+    'about.title': 'Chi Siamo',
+    'about.intro': 'Informazioni sullo Studio Legale Karim Eldib',
+    'about.p1': 'Lo Studio Legale Karim Eldib è uno studio legale accreditato fondato nel 2006, composto da un team specializzato di avvocati esperti in vari rami del diritto.',
+    'about.p2': 'Lo studio offre i suoi servizi nei settori del diritto penale e civile, affari degli stranieri, permessi di soggiorno, contratti internazionali, arbitrato, diritto societario, diritto di famiglia e diritto commerciale.',
+    'about.p3': 'Lo studio si distingue per un\'esperienza di oltre 18 anni nel fornire supporto legale a privati e aziende localmente e internazionalmente, in particolare in collaborazione con ambasciate straniere in Egitto.',
+    'about.stat1': 'Anni di esperienza',
+    'about.stat2': 'Clienti',
+    'about.stat3.value': 'Globali',
+    'about.stat3.label': 'Servizi',
+    'about.lawyerProfile': 'Profilo dell\'Avvocato Karim Eldib',
+    
+    // Services
+    'services.title': 'I Nostri Servizi',
+    'services.heading': 'Servizi Legali Illimitati',
+    'services.subtitle': 'Servizi legali completi e specializzati per privati e aziende',
+    'services.civil': 'Diritto Civile',
+    'services.civil.desc': 'Consulenze legali, redazione contratti e gestione cause civili',
+    'services.criminal': 'Diritto Penale',
+    'services.criminal.desc': 'Difesa in cause penali e rappresentanza nei tribunali',
+    'services.commercial': 'Diritto Commerciale',
+    'services.commercial.desc': 'Servizi di costituzione società e gestione contratti commerciali',
+    'services.family': 'Diritto di Famiglia',
+    'services.family.desc': 'Gestione professionale di divorzi, custodia e alimenti',
+    'services.companies': 'Diritto Societario',
+    'services.companies.desc': 'Costituzione società e supporto legale e amministrativo completo',
+    'services.foreigners': 'Stranieri in Egitto',
+    'services.foreigners.desc': 'Costituzione società, permessi di soggiorno, rappresentanza legale per stranieri',
+    'services.egyptians': 'Egiziani all\'estero',
+    'services.egyptians.desc': 'Gestione affari in Egitto e consulenze legali multilingue',
+    'services.arbitration': 'Arbitrato e Mediazione',
+    'services.arbitration.desc': 'Servizi di arbitrato per risolvere controversie commerciali e civili',
+    'services.learnMore': 'Scopri di più',
+    
+    // Why Choose Us
+    'why.title': 'Perché scegliere lo Studio Legale Karim Eldib?',
+    'why.subtitle': 'Servizi legali internazionali di livello mondiale con totale riservatezza',
+    'why.experience': '18 anni di esperienza',
+    'why.experience.desc': 'Lunga esperienza nel supporto legale locale e internazionale',
+    'why.diplomatic': 'Cooperazione Internazionale',
+    'why.diplomatic.desc': 'Cooperazione con ambasciate straniere e studi legali internazionali',
+    'why.languages': 'Multilingue',
+    'why.languages.desc': 'Consulenze legali in più lingue per clienti internazionali',
+    'why.confidential': 'Riservatezza e Professionalità',
+    'why.confidential.desc': 'Servizi legali con alto livello di riservatezza',
+    'why.differ': 'Perché siamo diversi',
+    'why.ready': 'Pronto per iniziare?',
+    'why.ready.desc': 'Contattaci oggi per una consulenza legale specializzata',
+    'why.book': 'Prenota consulenza',
+    
+    // Contact
+    'contact.title': 'Contattaci',
+    'contact.heading': 'Contattaci ora',
+    'contact.subtitle': 'Siamo qui per aiutarti',
+    'contact.info': 'Informazioni di contatto e indirizzi',
+    'contact.alex': 'Ufficio di Alessandria',
+    'contact.alex.address': 'Stazione Raml, 14 via Al-Shohada, Camera di Commercio',
+    'contact.sharm': 'Ufficio di Sharm El Sheikh',
+    'contact.sharm.address': '123 via Al-Bahr, Al-Hadaba, Sharm El Sheikh',
+    'contact.methods': 'Metodi di contatto',
+    'contact.whatsapp': 'WhatsApp',
+    'contact.social': 'Seguici sui social media',
+    
+    // Footer
+    'footer.rights': 'Studio Legale Karim Eldib. Tutti i diritti riservati.',
   }
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  // Load language from localStorage or default to 'en'
+  const [language, setLanguage] = useState<Language>(() => {
+    const savedLanguage = localStorage.getItem('preferredLanguage');
+    return (savedLanguage as Language) || 'en';
+  });
 
   useEffect(() => {
     // Set document direction based on language
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = language;
+    
+    // Save language preference to localStorage
+    localStorage.setItem('preferredLanguage', language);
   }, [language]);
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'ar' ? 'en' : 'ar');
+    setLanguage(prev => {
+      if (prev === 'ar') return 'en';
+      if (prev === 'en') return 'fr';
+      if (prev === 'fr') return 'it';
+      return 'ar';
+    });
   };
 
   const t = (key: string): string => {
     return translations[language][key] || key;
   };
 
+  const getTextByLanguage = (texts: { ar: string; en: string; fr: string; it: string }): string => {
+    return texts[language];
+  };
+
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t, getTextByLanguage }}>
       {children}
     </LanguageContext.Provider>
   );

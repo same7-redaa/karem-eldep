@@ -87,11 +87,11 @@ const Contact: React.FC = () => {
             </h3>
             
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 flex-wrap justify-center">
-              <a href="tel:+201223767592" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#d4a15c]/10 hover:bg-[#d4a15c]/20 border border-[#d4a15c]/30 hover:border-[#d4a15c]/50 rounded-lg text-gray-300 hover:text-[#d4a15c] transition-all duration-300 font-sans text-sm md:text-base">
+              <a href="tel:+2001223767592" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#d4a15c]/10 hover:bg-[#d4a15c]/20 border border-[#d4a15c]/30 hover:border-[#d4a15c]/50 rounded-lg text-gray-300 hover:text-[#d4a15c] transition-all duration-300 font-sans text-sm md:text-base">
                 <i className="fas fa-phone text-[#d4a15c]"></i>
-                <span>+20 122 376 7592</span>
+                <span dir="ltr">+20 122 376 7592</span>
               </a>
-              <a href="https://wa.me/201223767592" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/30 hover:border-[#25D366]/50 rounded-lg text-gray-300 hover:text-[#25D366] transition-all duration-300 font-sans text-sm md:text-base">
+              <a href="https://wa.me/2001223767592" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/30 hover:border-[#25D366]/50 rounded-lg text-gray-300 hover:text-[#25D366] transition-all duration-300 font-sans text-sm md:text-base">
                 <i className="fab fa-whatsapp text-[#25D366]"></i>
                 <span>{t('contact.whatsapp')}</span>
               </a>

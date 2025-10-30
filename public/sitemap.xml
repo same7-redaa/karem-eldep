@@ -134,4 +134,32 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/arbitration-mediation?lang=en" />
   </url>
 
+  <!-- City Pages - SEO Optimized -->
+  <url>
+    <loc>https://ke-lawyer.com/sharm-el-sheikh</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/sharm-el-sheikh?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/sharm-el-sheikh?lang=en" />
+  </url>
+
+  <url>
+    <loc>https://ke-lawyer.com/cairo</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/cairo?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/cairo?lang=en" />
+  </url>
+
+  <url>
+    <loc>https://ke-lawyer.com/alexandria</loc>
+    <lastmod>2025-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/alexandria?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/alexandria?lang=en" />
+  </url>
+
 </urlset>

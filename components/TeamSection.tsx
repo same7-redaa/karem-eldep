@@ -5,58 +5,22 @@ const TeamSection: React.FC = () => {
   const { language, t } = useLanguage();
   const isRTL = language === 'ar';
 
+  const getTextByLanguage = (texts: { ar: string; en: string; fr: string; it: string }) => {
+    return texts[language as keyof typeof texts] || texts.en;
+  };
+
   const teamMembers = [
     {
       id: 1,
-      name: isRTL ? 'المحامي كريم الديب' : 'Lawyer Karim El-Dib',
-      title: isRTL ? 'المؤسس والشريك الأول' : 'Founder & Senior Partner',
-      image: 'https://i.postimg.cc/G3FMRMY4/3.png',
-      specialties: isRTL 
-        ? ['القانون الدولي', 'محامي أجانب في مصر', 'محامي المصريين بالخارج'] 
-        : ['International Law', 'Lawyer for Foreigners in Egypt', 'Lawyer for Egyptians Abroad'],
-      experience: isRTL ? '+15 سنة خبرة' : '+15 Years Experience',
-      description: isRTL 
-        ? 'محامي مصري بالخارج متخصص في تقديم الخدمات القانونية للمصريين بالخارج والأجانب في مصر'
-        : 'Egyptian lawyer abroad specialized in providing legal services for Egyptians abroad and foreigners in Egypt'
+      name: getTextByLanguage({ar: 'أ/ منة مرسي', en: 'Menna Morsi', fr: 'Menna Morsi', it: 'Menna Morsi'}),
     },
     {
       id: 2,
-      name: isRTL ? 'المحامي أحمد السيد' : 'Lawyer Ahmed El-Sayed',
-      title: isRTL ? 'شريك - القانون التجاري' : 'Partner - Commercial Law',
-      image: 'https://i.postimg.cc/x1MfZcP8/lawyer2.jpg',
-      specialties: isRTL 
-        ? ['القانون التجاري', 'تأسيس الشركات', 'الاستثمار الأجنبي'] 
-        : ['Commercial Law', 'Company Formation', 'Foreign Investment'],
-      experience: isRTL ? '+12 سنة خبرة' : '+12 Years Experience',
-      description: isRTL 
-        ? 'خبير في القانون التجاري وتأسيس الشركات للأجانب والمصريين'
-        : 'Expert in commercial law and company formation for foreigners and Egyptians'
+      name: getTextByLanguage({ar: 'أ/ الحسين النبوي', en: 'Al-Hussein Al-Nabawy', fr: 'Al-Hussein Al-Nabawy', it: 'Al-Hussein Al-Nabawy'}),
     },
     {
       id: 3,
-      name: isRTL ? 'المحامية فاطمة محمد' : 'Lawyer Fatma Mohamed',
-      title: isRTL ? 'محامية أول - قانون الأسرة' : 'Senior Lawyer - Family Law',
-      image: 'https://i.postimg.cc/N0h9Lx6K/lawyer3.jpg',
-      specialties: isRTL 
-        ? ['قانون الأسرة', 'الأحوال الشخصية', 'قضايا النساء'] 
-        : ['Family Law', 'Personal Status', 'Women\'s Rights'],
-      experience: isRTL ? '+10 سنوات خبرة' : '+10 Years Experience',
-      description: isRTL 
-        ? 'متخصصة في قانون الأسرة والأحوال الشخصية للمصريين والأجانب'
-        : 'Specialized in family law and personal status for Egyptians and foreigners'
-    },
-    {
-      id: 4,
-      name: isRTL ? 'المحامي محمد علي' : 'Lawyer Mohamed Ali',
-      title: isRTL ? 'محامي - القانون العقاري' : 'Lawyer - Real Estate Law',
-      image: 'https://i.postimg.cc/j5DcF8xK/lawyer4.jpg',
-      specialties: isRTL 
-        ? ['القانون العقاري', 'التطوير العقاري', 'عقارات الأجانب'] 
-        : ['Real Estate Law', 'Property Development', 'Foreign Property'],
-      experience: isRTL ? '+8 سنوات خبرة' : '+8 Years Experience',
-      description: isRTL 
-        ? 'خبير في القانون العقاري وتملك الأجانب للعقارات في مصر'
-        : 'Expert in real estate law and foreign property ownership in Egypt'
+      name: getTextByLanguage({ar: 'أ/ محمد ابراهيم', en: 'Mohamed Ibrahim', fr: 'Mohamed Ibrahim', it: 'Mohamed Ibrahim'}),
     }
   ];
 
@@ -67,58 +31,47 @@ const TeamSection: React.FC = () => {
         {/* العنوان الرئيسي */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#c8a876] mb-6">
-            {isRTL ? 'فريق العمل المتميز' : 'Our Distinguished Team'}
+            {getTextByLanguage({ar: 'فريق العمل', en: 'Our Team', fr: 'Notre Équipe', it: 'Il Nostro Team'})}
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            {isRTL 
-              ? 'فريق من المحامين المتخصصين والخبراء في مختلف فروع القانون، بقيادة المحامي كريم الديب، محامي مصري بالخارج متخصص في خدمة محامي أجانب في مصر ومحامي المصريين بالخارج'
-              : 'A team of specialized lawyers and experts in various branches of law, led by Lawyer Karim El-Dib, an Egyptian lawyer abroad specialized in serving foreigners in Egypt and Egyptians abroad'
-            }
-          </p>
         </div>
 
         {/* أعضاء الفريق */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {teamMembers.map((member) => (
-            <div key={member.id} className="bg-[#0b1a33] rounded-lg p-6 text-center group hover:transform hover:scale-105 transition-all duration-300">
+            <div 
+              key={member.id} 
+              className="relative group"
+            >
+              {/* الخلفية المتحركة */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#c8a876] via-[#d4a15c] to-[#b8956a] rounded-2xl transform group-hover:scale-105 transition-all duration-500 opacity-0 group-hover:opacity-100 blur-xl"></div>
               
-              {/* صورة العضو */}
-              <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-[#c8a876] group-hover:border-white transition-colors duration-300">
-                <img 
-                  src={member.image} 
-                  alt={`${member.name} - ${member.title}`}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    // صورة افتراضية في حالة عدم تحميل الصورة
-                    (e.target as HTMLImageElement).src = 'https://i.postimg.cc/G3FMRMY4/3.png';
-                  }}
-                />
-              </div>
-
-              {/* معلومات العضو */}
-              <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-              <p className="text-[#c8a876] font-semibold mb-3">{member.title}</p>
-              <p className="text-gray-400 text-sm mb-4">{member.experience}</p>
-              
-              {/* الوصف */}
-              <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                {member.description}
-              </p>
-
-              {/* التخصصات */}
-              <div className="space-y-2">
-                <h4 className="text-white font-semibold text-sm">
-                  {isRTL ? 'التخصصات:' : 'Specialties:'}
-                </h4>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {member.specialties.map((specialty, index) => (
-                    <span 
-                      key={index}
-                      className="bg-[#c8a876] text-[#0b1a33] px-2 py-1 rounded-full text-xs font-semibold"
-                    >
-                      {specialty}
-                    </span>
-                  ))}
+              {/* البطاقة الرئيسية */}
+              <div className="relative bg-gradient-to-br from-[#0b1a33] via-[#0e1f3b] to-[#1a2d4d] rounded-2xl p-8 text-center transform group-hover:scale-105 transition-all duration-500 border-2 border-[#c8a876]/30 group-hover:border-[#c8a876] shadow-2xl overflow-hidden">
+                
+                {/* شكل زخرفي في الخلفية */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#c8a876]/10 rounded-full blur-3xl transform translate-x-16 -translate-y-16 group-hover:bg-[#c8a876]/20 transition-all duration-500"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#d4a15c]/10 rounded-full blur-3xl transform -translate-x-16 translate-y-16 group-hover:bg-[#d4a15c]/20 transition-all duration-500"></div>
+                
+                {/* أيقونة محامي مميزة */}
+                <div className="relative mb-6">
+                  <div className="w-24 h-24 mx-auto bg-gradient-to-br from-[#c8a876] to-[#b8956a] rounded-2xl flex items-center justify-center transform group-hover:rotate-6 transition-all duration-500 shadow-xl">
+                    <i className="fas fa-balance-scale text-4xl text-[#0b1a33] group-hover:scale-110 transition-transform duration-500"></i>
+                  </div>
+                  {/* حلقة ديكور */}
+                  <div className="absolute inset-0 w-24 h-24 mx-auto border-2 border-[#c8a876] rounded-2xl transform rotate-6 group-hover:rotate-12 transition-all duration-500 opacity-50"></div>
+                </div>
+                
+                {/* الاسم */}
+                <h3 className="relative text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#c8a876] via-[#d4a15c] to-[#c8a876] bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-500">
+                  {member.name}
+                </h3>
+                
+                {/* خط فاصل متحرك */}
+                <div className="relative mt-4 h-1 bg-gradient-to-r from-transparent via-[#c8a876] to-transparent w-0 group-hover:w-full mx-auto transition-all duration-700"></div>
+                
+                {/* زخرفة إضافية */}
+                <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-30 transition-opacity duration-500">
+                  <i className="fas fa-gavel text-6xl text-[#c8a876]"></i>
                 </div>
               </div>
             </div>
@@ -128,19 +81,21 @@ const TeamSection: React.FC = () => {
         {/* CTA للتواصل */}
         <div className="text-center mt-16">
           <h3 className="text-2xl font-bold text-white mb-4">
-            {isRTL ? 'هل تحتاج استشارة قانونية متخصصة؟' : 'Need Specialized Legal Consultation?'}
+            {getTextByLanguage({ar: 'هل تحتاج استشارة قانونية متخصصة؟', en: 'Need Specialized Legal Consultation?', fr: 'Besoin d\'une Consultation Juridique Spécialisée?', it: 'Hai bisogno di Consultazione Legale Specializzata?'})}
           </h3>
           <p className="text-gray-300 mb-6">
-            {isRTL 
-              ? 'تواصل مع فريقنا المتخصص من المحامين لحل جميع قضاياك القانونية'
-              : 'Contact our specialized team of lawyers to solve all your legal issues'
-            }
+            {getTextByLanguage({
+              ar: 'تواصل مع فريقنا المتخصص من المحامين لحل جميع قضاياك القانونية',
+              en: 'Contact our specialized team of lawyers to solve all your legal issues',
+              fr: 'Contactez notre équipe spécialisée d\'avocats pour résoudre tous vos problèmes juridiques',
+              it: 'Contatta il nostro team specializzato di avvocati per risolvere tutte le tue questioni legali'
+            })}
           </p>
           <a 
             href="#contact" 
             className="bg-[#c8a876] text-[#0b1a33] px-8 py-3 rounded-full font-semibold hover:bg-white transition-colors duration-300 inline-block"
           >
-            {isRTL ? 'احجز استشارة الآن' : 'Book Consultation Now'}
+            {getTextByLanguage({ar: 'احجز استشارة الآن', en: 'Book Consultation Now', fr: 'Réservez une Consultation Maintenant', it: 'Prenota Consultazione Ora'})}
           </a>
         </div>
 

@@ -8,27 +8,29 @@ import BlogSection from '../components/BlogSection';
 import News from '../components/News';
 import Contact from '../components/Contact';
 import SchemaMarkup from '../components/SchemaMarkup';
+import AdvancedSEO from '../components/AdvancedSEO';
 
 const Home: React.FC = () => {
   useEffect(() => {
     // تحديث عنوان الصفحة والـ Meta Tags للصفحة الرئيسية
-    document.title = "المحامي كريم الديب | مكتب محاماة دولي | محامي مصري بالخارج | Egyptian Lawyer Abroad";
+    document.title = "المحامي كريم الديب | محامي أجانب في مصر | محامي دولي | International Lawyer Egypt";
     
     // Update meta description
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute('content', 'المحامي كريم الديب - محامي مصري بالخارج وخبير قانوني دولي. مكتب محاماة متخصص في خدمات محامي أجانب في مصر، محامي المصريين بالخارج، استشارات قانونية في مصر. Egyptian lawyer abroad providing legal services.');
+      metaDesc.setAttribute('content', 'المحامي كريم الديب - محامي دولي في مصر وخبير قانوني. مكتب محاماة متخصص في خدمات الأجانب في مصر، المصريين المغتربين، استشارات قانونية دولية. International lawyer in Egypt providing legal services for foreigners.');
     }
     
     // Update meta keywords
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'كريم الديب محامي, المحامي كريم الديب, محامي مصري بالخارج, محامي المصريين بالخارج, محامي أجانب في مصر, مكتب محاماة في مصر, مكتب محاماة دولي, استشارات قانونية في مصر, Egyptian lawyer abroad, Egyptian legal consultant, Egyptian lawyer for foreigners, Legal services in Egypt, Lawyer in Sharm El Sheikh, lawyer in alexandria');
+      metaKeywords.setAttribute('content', 'كريم الديب محامي, المحامي كريم الديب, محامي دولي في مصر, محامي للمصريين المغتربين, محامي أجانب في مصر, مكتب محاماة في مصر, مكتب محاماة دولي, استشارات قانونية في مصر, International lawyer Egypt, Egyptian legal consultant, Lawyer for foreigners in Egypt, Legal services in Egypt, Lawyer in Sharm El Sheikh, lawyer in alexandria');
     }
   }, []);
 
   return (
     <>
+      <AdvancedSEO />
       <SchemaMarkup type="organization" />
       <Hero />
       <About />

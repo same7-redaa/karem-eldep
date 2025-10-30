@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { useParams, Link } from 'react-router-dom';
 
+// Import translated article content for FR and IT
+import guideForeignersTranslations from '../../data/articles/guide-foreigners.json';
+import egyptiansAbroadTranslations from '../../data/articles/egyptians-abroad.json';
+import foreignInvestmentTranslations from '../../data/articles/foreign-investment.json';
+
 const BlogPost: React.FC = () => {
   const { language } = useLanguage();
   const isRTL = language === 'ar';
@@ -543,8 +548,27 @@ const BlogPost: React.FC = () => {
 
     const currentArticle = articles[slug as keyof typeof articles];
     if (currentArticle) {
-      setArticle(currentArticle);
-      document.title = `${currentArticle.title} | المحامي كريم الديب`;
+      // Apply French/Italian translations if available
+      let finalArticle = { ...currentArticle };
+      
+      if (language === 'fr' || language === 'it') {
+        const translations: any = {
+          'guide-foreigners-legal-services-egypt-2025': guideForeignersTranslations,
+          'egyptians-abroad-legal-rights-protection': egyptiansAbroadTranslations,
+          'foreign-investment-egypt-complete-guide': foreignInvestmentTranslations
+        };
+        
+        const translation = translations[slug]?.[language];
+        if (translation) {
+          finalArticle = {
+            ...finalArticle,
+            content: translation
+          };
+        }
+      }
+      
+      setArticle(finalArticle);
+      document.title = `${finalArticle.title} | المحامي كريم الديب`;
       
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {

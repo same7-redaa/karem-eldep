@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
     <section 
       id="hero"
       className="relative h-[70vh] min-h-[450px] flex items-center justify-center text-center text-white bg-cover bg-center" 
-      style={{ backgroundImage: "url('https://i.pinimg.com/1200x/fb/4e/36/fb4e36b171a92fb4d391f3bc6a90e8a5.jpg')" }}
+      style={{ backgroundImage: "url('/france.png')" }}
       role="banner"
       aria-label={t('hero.title')}
     >
@@ -25,8 +25,11 @@ const Hero: React.FC = () => {
         <h1 className="text-2xl md:text-3xl lg:text-5xl font-extrabold font-sans mb-2 md:mb-3 leading-tight">
           {t('hero.title')}
         </h1>
-        <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-4 md:mb-6 font-medium text-[#d4a15c] font-sans">
+        <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-3 md:mb-4 font-medium text-[#d4a15c] font-sans">
           {t('hero.subtitle')}
+        </p>
+        <p className="text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-4 md:mb-6 font-medium text-white/90 font-sans">
+          {t('hero.consulate')}
         </p>
         <button 
           onClick={scrollToContact}
