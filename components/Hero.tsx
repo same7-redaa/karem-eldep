@@ -14,13 +14,34 @@ const Hero: React.FC = () => {
   return (
     <section 
       id="hero"
-      className="relative h-[70vh] min-h-[450px] flex items-center justify-center text-center text-white bg-cover bg-center" 
-      style={{ backgroundImage: "url('/france.png')" }}
+      className="relative h-[70vh] min-h-[450px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]" 
       role="banner"
       aria-label={t('hero.title')}
     >
-      <div className="absolute inset-0 bg-[#0b1a33] bg-opacity-70"></div>
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0e1f3b] to-transparent"></div>
+      {/* Background Image with optimization and blur placeholder */}
+      <img 
+        src="/france.png" 
+        alt="Karim El-Dib Law Firm Background"
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+        style={{ 
+          filter: 'blur(0px)',
+          opacity: 1
+        }}
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
+        onLoad={(e) => {
+          (e.target as HTMLImageElement).style.filter = 'blur(0px)';
+        }}
+      />
+      
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-[#0b1a33] bg-opacity-70 z-[1]"></div>
+      
+      {/* Gradient bottom */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0e1f3b] to-transparent z-[2]"></div>
+      
+      {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <h1 className="text-2xl md:text-3xl lg:text-5xl font-extrabold font-sans mb-2 md:mb-3 leading-tight">
           {t('hero.title')}
