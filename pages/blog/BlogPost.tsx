@@ -6,6 +6,8 @@ import { useParams, Link } from 'react-router-dom';
 import guideForeignersTranslations from '../../data/articles/guide-foreigners.json';
 import egyptiansAbroadTranslations from '../../data/articles/egyptians-abroad.json';
 import foreignInvestmentTranslations from '../../data/articles/foreign-investment.json';
+import rentControlDecisionTranslations from '../../data/articles/rent-control-decision-2025.json';
+import christianDivorceCaseTranslations from '../../data/articles/christian-divorce-case-2025.json';
 
 const BlogPost: React.FC = () => {
   const { language } = useLanguage();
@@ -16,6 +18,34 @@ const BlogPost: React.FC = () => {
   useEffect(() => {
     // بيانات المقالات (في التطبيق الحقيقي ستأتي من API)
     const articles = {
+      'christian-divorce-case-2025': {
+        title: isRTL ? 'سابقة قانونية تاريخية: حكم خُلع لمواطنة مسيحية في مصر | المحامي كريم الديب' : 'Historic Legal Precedent: Khul\' Ruling for Christian Woman in Egypt | Lawyer Karim El-Dib',
+        content: (language === 'fr' || language === 'it') 
+          ? christianDivorceCaseTranslations[language]
+          : isRTL 
+            ? christianDivorceCaseTranslations.ar
+            : christianDivorceCaseTranslations.en,
+        date: isRTL ? '12 نوفمبر 2025' : 'November 12, 2025',
+        readTime: isRTL ? '10 دقائق قراءة' : '10 min read',
+        image: '/images/christian-divorce-case.jpg',
+        tags: isRTL 
+          ? ['قانون الأحوال الشخصية', 'خُلع للمسيحيين', 'سابقة قانونية', 'حقوق المرأة']
+          : ['Personal Status Law', 'Christian Khul\'', 'Legal Precedent', 'Women\'s Rights']
+      },
+      'rent-control-decision-2025': {
+        title: isRTL ? 'قرار جديد بمد عمل لجان حصر الإيجارات القديمة - القرار 2497 لسنة 2025 | المحامي كريم الديب' : 'New Decision Extending Rent Control Survey Committees - Decision 2497 of 2025 | Lawyer Karim El-Dib',
+        content: (language === 'fr' || language === 'it') 
+          ? rentControlDecisionTranslations[language]
+          : isRTL 
+            ? rentControlDecisionTranslations.ar
+            : rentControlDecisionTranslations.en,
+        date: isRTL ? '12 نوفمبر 2025' : 'November 12, 2025',
+        readTime: isRTL ? '8 دقائق قراءة' : '8 min read',
+        image: '/images/rent-decision-1.jpg',
+        tags: isRTL 
+          ? ['قانون الإيجار القديم', 'لجان الحصر', 'قرار مجلس الوزراء', 'حقوق الملاك والمستأجرين']
+          : ['Old Rent Law', 'Survey Committees', 'Cabinet Decision', 'Landlord-Tenant Rights']
+      },
       'guide-foreigners-legal-services-egypt-2025': {
         title: isRTL ? 'دليل شامل للأجانب: الخدمات القانونية في مصر 2025 | المحامي كريم الديب' : 'Complete Guide for Foreigners: Legal Services in Egypt 2025 | Lawyer Karim El-Dib',
         content: isRTL 

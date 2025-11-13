@@ -27,6 +27,78 @@ const Blog: React.FC = () => {
   const articles = [
     {
       id: 1,
+      slug: 'christian-divorce-case-2025',
+      title: getTextByLanguage({
+        ar: 'سابقة قانونية تاريخية: حكم خُلع لمواطنة مسيحية في مصر',
+        en: 'Historic Legal Precedent: Khul\' Ruling for Christian Woman in Egypt',
+        fr: 'Précédent Juridique Historique: Décision de Khul\' pour une Femme Chrétienne',
+        it: 'Precedente Giuridico Storico: Sentenza di Khul\' per Donna Cristiana'
+      }),
+      excerpt: getTextByLanguage({
+        ar: 'في خطوة تُعد الأولى من نوعها، حصلت إحدى موكلات مؤسسة كريم الديب على حكم خُلع لمواطنة مسيحية. سابقة قانونية تاريخية تُجسّد تطور مفهوم العدالة في قضايا الأحوال الشخصية مع احترام كامل للشريعة المسيحية.',
+        en: 'In a first-of-its-kind move, a client of Karim El-Dib Law Firm obtained a khul\' ruling for a Christian woman. A historic legal precedent embodying the evolution of justice in personal status cases with full respect for Christian law.',
+        fr: 'Dans une première du genre, une cliente du Cabinet Karim El-Dib a obtenu une décision de khul\' pour une femme chrétienne. Un précédent juridique historique incarnant l\'évolution de la justice dans les affaires de statut personnel.',
+        it: 'In una prima assoluta, una cliente dello Studio Karim El-Dib ha ottenuto una sentenza di khul\' per una donna cristiana. Un precedente giuridico storico che incarna l\'evoluzione della giustizia nei casi di stato personale.'
+      }),
+      date: getTextByLanguage({
+        ar: '12 نوفمبر 2025',
+        en: 'November 12, 2025',
+        fr: '12 novembre 2025',
+        it: '12 novembre 2025'
+      }),
+      readTime: getTextByLanguage({
+        ar: '10 دقائق قراءة',
+        en: '10 min read',
+        fr: '10 min de lecture',
+        it: '10 min di lettura'
+      }),
+      image: '/images/christian-divorce-case.jpg',
+      tags: isRTL 
+        ? ['قانون الأحوال الشخصية', 'خُلع للمسيحيين', 'سابقة قانونية', 'حقوق المرأة']
+        : language === 'fr'
+        ? ['Statut Personnel', 'Khul\' Chrétien', 'Précédent Juridique', 'Droits des Femmes']
+        : language === 'it'
+        ? ['Stato Personale', 'Khul\' Cristiano', 'Precedente Giuridico', 'Diritti delle Donne']
+        : ['Personal Status Law', 'Christian Khul\'', 'Legal Precedent', 'Women\'s Rights']
+    },
+    {
+      id: 2,
+      slug: 'rent-control-decision-2025',
+      title: getTextByLanguage({
+        ar: 'قرار جديد بمد عمل لجان حصر الإيجارات القديمة - القرار 2497 لسنة 2025',
+        en: 'New Decision Extending Rent Control Survey Committees - Decision 2497 of 2025',
+        fr: 'Nouvelle Décision Prolongeant les Comités de Recensement des Loyers - Décision 2497 de 2025',
+        it: 'Nuova Decisione che Prolunga i Comitati di Censimento degli Affitti - Decisione 2497 del 2025'
+      }),
+      excerpt: getTextByLanguage({
+        ar: 'قرار رئيس مجلس الوزراء رقم 2497 لسنة 2025 بمد عمل لجان حصر المناطق المؤجرة لمدة 3 أشهر إضافية. كل ما تحتاج معرفته عن القرار وتأثيره على الملاك والمستأجرين.',
+        en: 'Prime Minister\'s Decision No. 2497 of 2025 extending the work of committees surveying rented areas for an additional 3 months. Everything you need to know about the decision and its impact on landlords and tenants.',
+        fr: 'Décision du Premier Ministre n° 2497 de 2025 prolongeant le travail des comités de recensement des zones louées pour 3 mois supplémentaires. Tout ce que vous devez savoir sur la décision et son impact sur les propriétaires et locataires.',
+        it: 'Decisione del Primo Ministro n. 2497 del 2025 che prolunga il lavoro dei comitati di censimento delle aree affittate per 3 mesi aggiuntivi. Tutto ciò che devi sapere sulla decisione e il suo impatto su proprietari e inquilini.'
+      }),
+      date: getTextByLanguage({
+        ar: '12 نوفمبر 2025',
+        en: 'November 12, 2025',
+        fr: '12 novembre 2025',
+        it: '12 novembre 2025'
+      }),
+      readTime: getTextByLanguage({
+        ar: '8 دقائق قراءة',
+        en: '8 min read',
+        fr: '8 min de lecture',
+        it: '8 min di lettura'
+      }),
+      image: '/images/rent-decision-1.jpg',
+      tags: isRTL 
+        ? ['قانون الإيجار القديم', 'لجان الحصر', 'قرار مجلس الوزراء', 'حقوق الملاك والمستأجرين']
+        : language === 'fr'
+        ? ['Ancienne Loi sur les Loyers', 'Comités de Recensement', 'Décision du Cabinet', 'Droits Propriétaire-Locataire']
+        : language === 'it'
+        ? ['Vecchia Legge Affitti', 'Comitati di Censimento', 'Decisione del Gabinetto', 'Diritti Proprietario-Inquilino']
+        : ['Old Rent Law', 'Survey Committees', 'Cabinet Decision', 'Landlord-Tenant Rights']
+    },
+    {
+      id: 3,
       slug: 'guide-foreigners-legal-services-egypt-2025',
       title: getTextByLanguage({
         ar: 'دليل شامل للأجانب: الخدمات القانونية في مصر 2025 | المحامي كريم الديب',
@@ -60,7 +132,7 @@ const Blog: React.FC = () => {
       ]
     },
     {
-      id: 2,
+      id: 4,
       slug: 'egyptians-abroad-legal-rights-protection',
       title: getTextByLanguage({
         ar: 'محامي المصريين بالخارج: حماية حقوقك القانونية | كريم الديب',
@@ -94,7 +166,7 @@ const Blog: React.FC = () => {
       ]
     },
     {
-      id: 3,
+      id: 5,
       slug: 'foreign-investment-egypt-complete-guide',
       title: getTextByLanguage({
         ar: 'الاستثمار في مصر: دليل المستثمر الأجنبي الكامل 2025 | كريم الديب',
