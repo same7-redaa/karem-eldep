@@ -157,7 +157,7 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
         "description": pageDescription,
         "url": canonicalUrl,
         "telephone": "+2001223767592",
-        "email": "info@ke-lawyer.com",
+        "email": "kingarim2411@gmail.com",
         "priceRange": "$$",
         "knowsLanguage": ["Arabic", "English", "French", "Italian"],
         "areaServed": [

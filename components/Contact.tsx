@@ -95,9 +95,9 @@ const Contact: React.FC = () => {
                 <i className="fab fa-whatsapp text-[#25D366]"></i>
                 <span>{t('contact.whatsapp')}</span>
               </a>
-              <a href="mailto:info@ke-lawyer.com" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#EA4335]/10 hover:bg-[#EA4335]/20 border border-[#EA4335]/30 hover:border-[#EA4335]/50 rounded-lg text-gray-300 hover:text-[#EA4335] transition-all duration-300 font-sans text-sm md:text-base">
+              <a href="mailto:kingarim2411@gmail.com" className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#EA4335]/10 hover:bg-[#EA4335]/20 border border-[#EA4335]/30 hover:border-[#EA4335]/50 rounded-lg text-gray-300 hover:text-[#EA4335] transition-all duration-300 font-sans text-sm md:text-base">
                 <i className="fas fa-envelope text-[#EA4335]"></i>
-                <span>info@ke-lawyer.com</span>
+                <span>kingarim2411@gmail.com</span>
               </a>
             </div>
             
@@ -108,7 +108,7 @@ const Contact: React.FC = () => {
               </h4>
               <div className="flex gap-4 justify-center flex-wrap">
                 <a 
-                  href="https://facebook.com/karim.eldib.lawyer" 
+                  href="https://www.facebook.com/Unlimitedsharm" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="group flex items-center justify-center w-12 h-12 rounded-full bg-[#1877F2]/10 hover:bg-[#1877F2]/20 border border-[#1877F2]/30 hover:border-[#1877F2]/50 transition-all duration-300"
@@ -117,7 +117,7 @@ const Contact: React.FC = () => {
                   <i className="fab fa-facebook-f text-[#1877F2] text-lg group-hover:scale-110 transition-transform"></i>
                 </a>
                 <a 
-                  href="https://instagram.com/karim.eldib.lawyer" 
+                  href="https://www.instagram.com/karimeldeeb_lawyer/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="group flex items-center justify-center w-12 h-12 rounded-full bg-[#E4405F]/10 hover:bg-[#E4405F]/20 border border-[#E4405F]/30 hover:border-[#E4405F]/50 transition-all duration-300"
@@ -126,7 +126,7 @@ const Contact: React.FC = () => {
                   <i className="fab fa-instagram text-[#E4405F] text-lg group-hover:scale-110 transition-transform"></i>
                 </a>
                 <a 
-                  href="https://tiktok.com/@karim.eldib.lawyer" 
+                  href="https://www.tiktok.com/@lawyer.karim.eldee" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="group flex items-center justify-center w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/30 hover:border-white/50 transition-all duration-300"

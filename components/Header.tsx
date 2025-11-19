@@ -159,11 +159,11 @@ const Header: React.FC = () => {
             <div className="relative language-dropdown">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-md transition-all duration-300 border border-white/20"
+                className="flex items-center gap-1.5 px-2.5 py-1.5 bg-white/10 hover:bg-white/20 rounded-md transition-all duration-300 border border-white/20 text-xs md:text-sm"
                 aria-label="Select Language"
               >
-                <i className="fas fa-language text-[#d4a15c]"></i>
-                <span className="text-white font-medium">
+                <i className="fas fa-language text-[#d4a15c] text-xs"></i>
+                <span className="text-white font-medium text-xs md:text-sm">
                   {language === 'ar' ? '🇪🇬 AR' : language === 'en' ? '🇬🇧 EN' : language === 'fr' ? '🇫🇷 FR' : '🇮🇹 IT'}
                 </span>
                 <i className={`fas fa-chevron-down text-white text-xs transition-transform ${isLangMenuOpen ? 'rotate-180' : ''}`}></i>

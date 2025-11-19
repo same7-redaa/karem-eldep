@@ -176,7 +176,7 @@ const Alexandria: React.FC = () => {
                 it: 'Stazione Raml, 14 via Al-Shohada, via Camera di Commercio'
               })}</p>
               <p className="mb-4" dir="ltr">📞 +20 122 376 7592</p>
-              <p className="mb-2">✉️ info@ke-lawyer.com</p>
+              <p className="mb-2">✉️ kingarim2411@gmail.com</p>
               <p className="text-sm opacity-90">
                 {getTextByLanguage({
                   ar: 'نرحب بزيارتكم من السبت إلى الخميس، 9 صباحاً - 7 مساءً',

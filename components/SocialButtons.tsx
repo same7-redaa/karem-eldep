@@ -29,28 +29,28 @@ const SocialButtons: React.FC = () => {
     {
       name: 'Facebook',
       icon: 'fab fa-facebook-f',
-      url: 'https://facebook.com/karim.eldib.lawyer',
+      url: 'https://www.facebook.com/Unlimitedsharm',
       color: '#1877F2',
       label: getTextByLanguage({ar: 'فيسبوك', en: 'Facebook', fr: 'Facebook', it: 'Facebook'})
     },
     {
       name: 'Instagram',
       icon: 'fab fa-instagram',
-      url: 'https://instagram.com/karim.eldib.lawyer',
+      url: 'https://www.instagram.com/karimeldeeb_lawyer/',
       color: '#E4405F',
       label: getTextByLanguage({ar: 'انستجرام', en: 'Instagram', fr: 'Instagram', it: 'Instagram'})
     },
     {
       name: 'TikTok',
       icon: 'fab fa-tiktok',
-      url: 'https://tiktok.com/@karim.eldib.lawyer',
+      url: 'https://www.tiktok.com/@lawyer.karim.eldee',
       color: '#000000',
       label: getTextByLanguage({ar: 'تيك توك', en: 'TikTok', fr: 'TikTok', it: 'TikTok'})
     },
     {
       name: 'Email',
       icon: 'fas fa-envelope',
-      url: 'mailto:info@ke-lawyer.com',
+      url: 'mailto:kingarim2411@gmail.com',
       color: '#EA4335',
       label: getTextByLanguage({ar: 'بريد إلكتروني', en: 'Email', fr: 'E-mail', it: 'Email'})
     }
@@ -147,7 +147,7 @@ const SocialButtons: React.FC = () => {
             </div>
             <div className="flex items-center gap-2">
               <i className="fas fa-envelope text-[#c8a876]"></i>
-              <span>info@ke-lawyer.com</span>
+              <span>kingarim2411@gmail.com</span>
             </div>
             <div className="flex items-center gap-2">
               <i className="fas fa-clock text-[#c8a876]"></i>
