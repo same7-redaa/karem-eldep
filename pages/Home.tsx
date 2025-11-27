@@ -13,7 +13,7 @@ import AdvancedSEO from '../components/AdvancedSEO';
 const Home: React.FC = () => {
   useEffect(() => {
     // تحديث عنوان الصفحة والـ Meta Tags للصفحة الرئيسية
-    document.title = "المحامي كريم الديب | محامي أجانب في مصر | محامي دولي | International Lawyer Egypt";
+    document.title = "المحامي كريم الديب _ صاحب مؤسسة كريم الديب للمحاماة | محامي أجانب في مصر | محامي دولي | International Lawyer Egypt";
     
     // Update meta description
     const metaDesc = document.querySelector('meta[name="description"]');

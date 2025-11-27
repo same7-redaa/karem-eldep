@@ -1,4 +1,16 @@
 {
+  "foreign-lawyer-alexandria": {
+    "ar": "محامي أجانب بالإسكندرية",
+    "en": "Lawyer for Foreigners in Alexandria",
+    "fr": "Avocat pour Étrangers à Alexandrie",
+    "it": "Avvocato per Stranieri ad Alessandria"
+  },
+  "foreign-lawyer-sharm-el-sheikh": {
+    "ar": "محامي الأجانب في شرم الشيخ",
+    "en": "Foreign Lawyer in Sharm El Sheikh",
+    "fr": "Avocat pour Étrangers à Charm el-Cheikh",
+    "it": "Avvocato per Stranieri a Sharm El Sheikh"
+  },
   "christian-divorce-case-2025": {
     "ar": "سيتم إضافة المحتوى العربي الكامل هنا",
     "en": "Full English content will be added here",

@@ -27,6 +27,78 @@ const Blog: React.FC = () => {
   const articles = [
     {
       id: 1,
+      slug: 'foreign-lawyer-alexandria',
+      title: getTextByLanguage({
+        ar: 'محامي أجانب بالإسكندرية – خدمات قانونية متخصصة',
+        en: 'Lawyer for Foreigners in Alexandria – Specialized Legal Services',
+        fr: 'Avocat pour Étrangers à Alexandrie – Services Juridiques Spécialisés',
+        it: 'Avvocato per Stranieri ad Alessandria – Servizi Legali Specializzati'
+      }),
+      excerpt: getTextByLanguage({
+        ar: 'دليلك الشامل للخدمات القانونية المتخصصة للأجانب في الإسكندرية - إقامة، عقارات، شركات، زواج وطلاق. المحامي كريم الديب خبير في شؤون الأجانب.',
+        en: 'Your comprehensive guide to specialized legal services for foreigners in Alexandria - residency, property, companies, marriage and divorce. Lawyer Karim El-Dib, expert in foreign affairs.',
+        fr: 'Votre guide complet des services juridiques spécialisés pour étrangers à Alexandrie - résidence, propriété, sociétés, mariage et divorce. Maître Karim El-Dib, expert en affaires étrangères.',
+        it: 'La tua guida completa ai servizi legali specializzati per stranieri ad Alessandria - residenza, proprietà, società, matrimonio e divorzio. Avvocato Karim El-Dib, esperto in affari esteri.'
+      }),
+      date: getTextByLanguage({
+        ar: '27 نوفمبر 2025',
+        en: 'November 27, 2025',
+        fr: '27 novembre 2025',
+        it: '27 novembre 2025'
+      }),
+      readTime: getTextByLanguage({
+        ar: '11 دقيقة قراءة',
+        en: '11 min read',
+        fr: '11 min de lecture',
+        it: '11 min di lettura'
+      }),
+      image: '/images/alexandria-lawyer.jpg',
+      tags: isRTL 
+        ? ['محامي أجانب الإسكندرية', 'Foreign Lawyer Alexandria', 'إقامة الأجانب', 'عقارات للأجانب']
+        : language === 'fr'
+        ? ['Avocat Étrangers Alexandrie', 'Résidence Étrangers', 'Propriété Étrangers', 'Services Juridiques']
+        : language === 'it'
+        ? ['Avvocato Stranieri Alessandria', 'Residenza Stranieri', 'Proprietà Stranieri', 'Servizi Legali']
+        : ['Foreign Lawyer Alexandria', 'Foreigners Residency', 'Property for Foreigners', 'Legal Services']
+    },
+    {
+      id: 2,
+      slug: 'foreign-lawyer-sharm-el-sheikh',
+      title: getTextByLanguage({
+        ar: 'محامي الأجانب في شرم الشيخ – خدمات قانونية متخصصة',
+        en: 'Foreign Lawyer in Sharm El Sheikh – Specialized Legal Services',
+        fr: 'Avocat pour Étrangers à Charm el-Cheikh – Services Juridiques Spécialisés',
+        it: 'Avvocato per Stranieri a Sharm El Sheikh – Servizi Legali Specializzati'
+      }),
+      excerpt: getTextByLanguage({
+        ar: 'دليلك الكامل للحصول على خدمات قانونية متخصصة للأجانب في شرم الشيخ - إقامة، عقارات، شركات، زواج وطلاق. المحامي كريم الديب خبير في شؤون الأجانب.',
+        en: 'Your complete guide to specialized legal services for foreigners in Sharm El Sheikh - residency, property, companies, marriage and divorce. Lawyer Karim El-Dib, expert in foreign affairs.',
+        fr: 'Votre guide complet des services juridiques spécialisés pour étrangers à Charm el-Cheikh - résidence, propriété, sociétés, mariage et divorce. Maître Karim El-Dib, expert en affaires étrangères.',
+        it: 'La tua guida completa ai servizi legali specializzati per stranieri a Sharm El Sheikh - residenza, proprietà, società, matrimonio e divorzio. Avvocato Karim El-Dib, esperto in affari esteri.'
+      }),
+      date: getTextByLanguage({
+        ar: '27 نوفمبر 2025',
+        en: 'November 27, 2025',
+        fr: '27 novembre 2025',
+        it: '27 novembre 2025'
+      }),
+      readTime: getTextByLanguage({
+        ar: '12 دقيقة قراءة',
+        en: '12 min read',
+        fr: '12 min de lecture',
+        it: '12 min di lettura'
+      }),
+      image: '/images/sharm-el-sheikh-lawyer.jpg',
+      tags: isRTL 
+        ? ['محامي أجانب شرم الشيخ', 'Foreign Lawyer Sharm', 'إقامة الأجانب', 'عقارات للأجانب']
+        : language === 'fr'
+        ? ['Avocat Étrangers Charm', 'Résidence Étrangers', 'Propriété Étrangers', 'Services Juridiques']
+        : language === 'it'
+        ? ['Avvocato Stranieri Sharm', 'Residenza Stranieri', 'Proprietà Stranieri', 'Servizi Legali']
+        : ['Foreign Lawyer Sharm', 'Foreigners Residency', 'Property for Foreigners', 'Legal Services']
+    },
+    {
+      id: 2,
       slug: 'christian-divorce-case-2025',
       title: getTextByLanguage({
         ar: 'سابقة قانونية تاريخية: حكم خُلع لمواطنة مسيحية في مصر',
@@ -62,7 +134,7 @@ const Blog: React.FC = () => {
         : ['Personal Status Law', 'Christian Khul\'', 'Legal Precedent', 'Women\'s Rights']
     },
     {
-      id: 2,
+      id: 3,
       slug: 'rent-control-decision-2025',
       title: getTextByLanguage({
         ar: 'قرار جديد بمد عمل لجان حصر الإيجارات القديمة - القرار 2497 لسنة 2025',

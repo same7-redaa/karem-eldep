@@ -49,6 +49,12 @@ const Hero: React.FC = () => {
         <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-3 md:mb-4 font-medium text-[#d4a15c] font-sans">
           {t('hero.subtitle')}
         </p>
+        
+        {/* محامي أجانب في شرم الشيخ والإسكندرية */}
+        <p className="text-base md:text-lg lg:text-xl font-semibold text-[#c8a876] mb-4 md:mb-5">
+          {t('hero.cities')}
+        </p>
+        
         <p className="text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-4 md:mb-6 font-medium text-white/90 font-sans">
           {t('hero.consulate')}
         </p>

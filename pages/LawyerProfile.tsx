@@ -100,6 +100,249 @@ const LawyerProfile: React.FC = () => {
           </div>
         </div>
 
+        {/* النبذة التعريفية المطولة */}
+        <div className="mb-16">
+          <div className="bg-gradient-to-br from-[#1a2d4d] to-[#0f1f38] rounded-2xl p-8 md:p-12 shadow-2xl border border-[#c8a876]/20">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#c8a876] mb-8 text-center">
+                {getTextByLanguage({
+                  ar: 'من هو المحامي كريم الديب؟ - محامي الأجانب في شرم الشيخ والإسكندرية',
+                  en: 'Who is Lawyer Karim El-Dib? - Lawyer for Foreigners in Sharm El Sheikh and Alexandria',
+                  fr: 'Qui est l\'avocat Karim El-Dib? - Avocat pour étrangers à Charm el-Cheikh et Alexandrie',
+                  it: 'Chi è l\'avvocato Karim El-Dib? - Avvocato per stranieri a Sharm El Sheikh e Alessandria'
+                })}
+              </h2>
+
+              {/* صورة المحامي كريم الديب - محامي معتمد من القنصلية الفرنسية */}
+              <div className="flex justify-center mb-10">
+                <div className="relative">
+                  <div className="w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden border-4 border-[#c8a876] shadow-2xl">
+                    <img 
+                      src="/images/karim-eldib-lawyer.jpg" 
+                      alt={getTextByLanguage({
+                        ar: "المحامي كريم الديب - محامي معتمد من القنصلية الفرنسية",
+                        en: "Lawyer Karim El-Dib - Certified by the French Consulate",
+                        fr: "Avocat Karim El-Dib - Agréé par le Consulat de France",
+                        it: "Avvocato Karim El-Dib - Certificato dal Consolato Francese"
+                      })}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="mt-4 text-center">
+                    <p className="text-[#c8a876] font-bold text-lg md:text-xl">
+                      {getTextByLanguage({
+                        ar: '🏛️ محامي معتمد من القنصلية الفرنسية',
+                        en: '🏛️ Certified by the French Consulate',
+                        fr: '🏛️ Agréé par le Consulat de France',
+                        it: '🏛️ Certificato dal Consolato Francese'
+                      })}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* المقدمة */}
+              <div className="mb-10">
+                <p className="text-lg md:text-xl leading-relaxed text-gray-200 mb-6">
+                  {getTextByLanguage({
+                    ar: 'يُعتبر المحامي كريم الديب واحدًا من أبرز المتخصصين في قضايا وإجراءات الأجانب في شرم الشيخ وقضايا الأجانب في الإسكندرية، حيث يتمتع بخبرة طويلة في تقديم الخدمات القانونية للمقيمين والزوار في المدينتين. لقد بنى كريم الديب سمعته المتميزة بفضل قدرته الفائقة على تبسيط الإجراءات الحكومية المعقّدة، وإنهاء كافة المعاملات الخاصة بالأجانب بسرعة ودقة ومهنية عالية، مما جعل اسمه بارزًا بين محامي الأجانب في مصر.',
+                    en: 'Lawyer Karim El-Dib is considered one of the leading specialists in foreigner cases and procedures in Sharm El Sheikh and Alexandria. He has extensive experience in providing legal services to residents and visitors in both cities. Karim El-Dib has built his distinguished reputation thanks to his exceptional ability to simplify complex government procedures and complete all foreigner-related transactions quickly, accurately, and with high professionalism, making his name prominent among lawyers for foreigners in Egypt.',
+                    fr: 'L\'avocat Karim El-Dib est considéré comme l\'un des principaux spécialistes des affaires et procédures concernant les étrangers à Charm el-Cheikh et Alexandrie. Il possède une vaste expérience dans la prestation de services juridiques aux résidents et visiteurs des deux villes. Karim El-Dib a construit sa réputation distinguée grâce à sa capacité exceptionnelle à simplifier les procédures gouvernementales complexes et à compléter toutes les transactions liées aux étrangers rapidement, avec précision et professionnalisme élevé.',
+                    it: 'L\'avvocato Karim El-Dib è considerato uno dei principali specialisti in casi e procedure per stranieri a Sharm El Sheikh e Alessandria. Ha una vasta esperienza nella fornitura di servizi legali a residenti e visitatori in entrambe le città. Karim El-Dib ha costruito la sua reputazione distinta grazie alla sua capacità eccezionale di semplificare procedure governative complesse e completare tutte le transazioni relative agli stranieri rapidamente, con precisione e alto professionalismo.'
+                  })}
+                </p>
+              </div>
+
+              {/* خبرة قانونية متخصصة */}
+              <div className="mb-10">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#c8a876] mb-6 flex items-center gap-3">
+                  <i className="fas fa-balance-scale"></i>
+                  {getTextByLanguage({
+                    ar: 'خبرته القانونية المتخصصة في شؤون الأجانب',
+                    en: 'His Specialized Legal Expertise in Foreign Affairs',
+                    fr: 'Son expertise juridique spécialisée en affaires étrangères',
+                    it: 'La sua competenza legale specializzata in affari esteri'
+                  })}
+                </h3>
+                <p className="text-lg leading-relaxed text-gray-200 mb-6">
+                  {getTextByLanguage({
+                    ar: 'بصفته محامي أجانب متميز في شرم الشيخ والإسكندرية، يُقدم المحامي كريم الديب مجموعة واسعة من الخدمات القانونية التي يحتاجها الأجانب في مصر، وتشمل:',
+                    en: 'As a distinguished lawyer for foreigners in Sharm El Sheikh and Alexandria, Lawyer Karim El-Dib provides a wide range of legal services needed by foreigners in Egypt, including:',
+                    fr: 'En tant qu\'avocat distingué pour étrangers à Charm el-Cheikh et Alexandrie, Maître Karim El-Dib fournit une large gamme de services juridiques nécessaires aux étrangers en Égypte, notamment:',
+                    it: 'Come avvocato distinto per stranieri a Sharm El Sheikh e Alessandria, l\'Avvocato Karim El-Dib fornisce un\'ampia gamma di servizi legali necessari agli stranieri in Egitto, tra cui:'
+                  })}
+                </p>
+                <ul className="grid md:grid-cols-2 gap-4 text-gray-200">
+                  <li className="flex items-start gap-3 bg-[#0b1a33]/50 p-4 rounded-lg border border-[#c8a876]/10 hover:border-[#c8a876]/30 transition-all">
+                    <i className="fas fa-check-circle text-[#c8a876] text-xl mt-1 flex-shrink-0"></i>
+                    <span className="text-lg">{getTextByLanguage({ar: 'إجراءات الإقامة والتجديد', en: 'Residence procedures and renewal', fr: 'Procédures de résidence et renouvellement', it: 'Procedure di residenza e rinnovo'})}</span>
+                  </li>
+                  <li className="flex items-start gap-3 bg-[#0b1a33]/50 p-4 rounded-lg border border-[#c8a876]/10 hover:border-[#c8a876]/30 transition-all">
+                    <i className="fas fa-check-circle text-[#c8a876] text-xl mt-1 flex-shrink-0"></i>
+                    <span className="text-lg">{getTextByLanguage({ar: 'تأسيس الشركات للأجانب', en: 'Company formation for foreigners', fr: 'Formation de sociétés pour étrangers', it: 'Costituzione società per stranieri'})}</span>
+                  </li>
+                  <li className="flex items-start gap-3 bg-[#0b1a33]/50 p-4 rounded-lg border border-[#c8a876]/10 hover:border-[#c8a876]/30 transition-all">
+                    <i className="fas fa-check-circle text-[#c8a876] text-xl mt-1 flex-shrink-0"></i>
+                    <span className="text-lg">{getTextByLanguage({ar: 'عقود شراء وبيع العقارات', en: 'Real estate purchase and sale contracts', fr: 'Contrats d\'achat et vente immobilière', it: 'Contratti di compravendita immobiliare'})}</span>
+                  </li>
+                  <li className="flex items-start gap-3 bg-[#0b1a33]/50 p-4 rounded-lg border border-[#c8a876]/10 hover:border-[#c8a876]/30 transition-all">
+                    <i className="fas fa-check-circle text-[#c8a876] text-xl mt-1 flex-shrink-0"></i>
+                    <span className="text-lg">{getTextByLanguage({ar: 'تسجيل الزواج المختلط والطلاق للأجانب', en: 'Mixed marriage registration and divorce for foreigners', fr: 'Enregistrement de mariage mixte et divorce pour étrangers', it: 'Registrazione matrimonio misto e divorzio per stranieri'})}</span>
+                  </li>
+                  <li className="flex items-start gap-3 bg-[#0b1a33]/50 p-4 rounded-lg border border-[#c8a876]/10 hover:border-[#c8a876]/30 transition-all md:col-span-2">
+                    <i className="fas fa-check-circle text-[#c8a876] text-xl mt-1 flex-shrink-0"></i>
+                    <span className="text-lg">{getTextByLanguage({ar: 'الاستشارات القانونية المتعلقة بالاستثمار والعمل', en: 'Legal consultations related to investment and work', fr: 'Consultations juridiques liées à l\'investissement et au travail', it: 'Consulenze legali relative a investimenti e lavoro'})}</span>
+                  </li>
+                </ul>
+                <p className="text-lg leading-relaxed text-gray-200 mt-6 bg-[#c8a876]/10 p-4 rounded-lg border-r-4 border-[#c8a876]">
+                  {getTextByLanguage({
+                    ar: 'ويجعل تخصصه الدقيق في Foreigners\' Legal Affairs خيارًا قويًا لكل من يبحث عن: Foreign Lawyer in Sharm El Sheikh، أو Lawyer for Foreigners in Alexandria.',
+                    en: 'His precise specialization in Foreigners\' Legal Affairs makes him a strong choice for anyone looking for: Foreign Lawyer in Sharm El Sheikh, or Lawyer for Foreigners in Alexandria.',
+                    fr: 'Sa spécialisation précise dans les affaires juridiques des étrangers en fait un choix solide pour tous ceux qui recherchent: Avocat étranger à Charm el-Cheikh, ou Avocat pour étrangers à Alexandrie.',
+                    it: 'La sua precisa specializzazione negli affari legali degli stranieri lo rende una scelta forte per chiunque cerchi: Avvocato straniero a Sharm El Sheikh, o Avvocato per stranieri ad Alessandria.'
+                  })}
+                </p>
+              </div>
+
+              {/* خدمات قانونية عملية */}
+              <div className="mb-10">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#c8a876] mb-6 flex items-center gap-3">
+                  <i className="fas fa-rocket"></i>
+                  {getTextByLanguage({
+                    ar: 'خدماته القانونية العملية والسريعة',
+                    en: 'His Practical and Fast Legal Services',
+                    fr: 'Ses services juridiques pratiques et rapides',
+                    it: 'I suoi servizi legali pratici e veloci'
+                  })}
+                </h3>
+                <p className="text-lg leading-relaxed text-gray-200 mb-6">
+                  {getTextByLanguage({
+                    ar: 'يتميز المحامي كريم الديب بفهمه الدقيق للقوانين المنظمة لوضع الأجانب داخل مصر، وقدرته الفائقة على إنهاء الإجراءات الحكومية بكفاءة عالية داخل الجهات التالية:',
+                    en: 'Lawyer Karim El-Dib is distinguished by his precise understanding of the laws regulating the status of foreigners in Egypt, and his exceptional ability to complete government procedures with high efficiency within the following entities:',
+                    fr: 'Maître Karim El-Dib se distingue par sa compréhension précise des lois régissant le statut des étrangers en Égypte, et sa capacité exceptionnelle à accomplir les procédures gouvernementales avec une grande efficacité auprès des entités suivantes:',
+                    it: 'L\'Avvocato Karim El-Dib si distingue per la sua precisa comprensione delle leggi che regolano lo status degli stranieri in Egitto, e la sua capacità eccezionale di completare le procedure governative con alta efficienza presso le seguenti entità:'
+                  })}
+                </p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-[#0b1a33]/50 p-5 rounded-lg border border-[#c8a876]/20 hover:border-[#c8a876]/40 transition-all hover:shadow-lg hover:shadow-[#c8a876]/10">
+                    <i className="fas fa-passport text-[#c8a876] text-2xl mb-3"></i>
+                    <h4 className="text-xl font-semibold text-white mb-2">{getTextByLanguage({ar: 'مصلحة الجوازات والهجرة', en: 'Passport and Immigration Authority', fr: 'Autorité des passeports et de l\'immigration', it: 'Autorità passaporti e immigrazione'})}</h4>
+                  </div>
+                  <div className="bg-[#0b1a33]/50 p-5 rounded-lg border border-[#c8a876]/20 hover:border-[#c8a876]/40 transition-all hover:shadow-lg hover:shadow-[#c8a876]/10">
+                    <i className="fas fa-building text-[#c8a876] text-2xl mb-3"></i>
+                    <h4 className="text-xl font-semibold text-white mb-2">{getTextByLanguage({ar: 'الشهر العقاري', en: 'Real Estate Registry', fr: 'Registre immobilier', it: 'Registro immobiliare'})}</h4>
+                  </div>
+                  <div className="bg-[#0b1a33]/50 p-5 rounded-lg border border-[#c8a876]/20 hover:border-[#c8a876]/40 transition-all hover:shadow-lg hover:shadow-[#c8a876]/10">
+                    <i className="fas fa-chart-line text-[#c8a876] text-2xl mb-3"></i>
+                    <h4 className="text-xl font-semibold text-white mb-2">{getTextByLanguage({ar: 'هيئة الاستثمار', en: 'Investment Authority', fr: 'Autorité d\'investissement', it: 'Autorità per gli investimenti'})}</h4>
+                  </div>
+                  <div className="bg-[#0b1a33]/50 p-5 rounded-lg border border-[#c8a876]/20 hover:border-[#c8a876]/40 transition-all hover:shadow-lg hover:shadow-[#c8a876]/10">
+                    <i className="fas fa-gavel text-[#c8a876] text-2xl mb-3"></i>
+                    <h4 className="text-xl font-semibold text-white mb-2">{getTextByLanguage({ar: 'الجهات القضائية والمحاكم', en: 'Judicial Bodies and Courts', fr: 'Organes judiciaires et tribunaux', it: 'Organi giudiziari e tribunali'})}</h4>
+                  </div>
+                </div>
+                <p className="text-lg leading-relaxed text-gray-200 mt-6 text-center font-semibold">
+                  {getTextByLanguage({
+                    ar: 'ويحرص دائمًا على تقديم خدمات تعتمد على السرعة، والدقة، والاحترافية، مما يجعله من الأسماء الرائدة في مجال محامي الأجانب في شرم الشيخ ومحامي الأجانب في الإسكندرية.',
+                    en: 'He always strives to provide services based on speed, accuracy, and professionalism, making him one of the leading names in the field of lawyers for foreigners in Sharm El Sheikh and lawyers for foreigners in Alexandria.',
+                    fr: 'Il s\'efforce toujours de fournir des services basés sur la rapidité, la précision et le professionnalisme, ce qui fait de lui l\'un des noms de premier plan dans le domaine des avocats pour étrangers à Charm el-Cheikh et des avocats pour étrangers à Alexandrie.',
+                    it: 'Si impegna sempre a fornire servizi basati su velocità, precisione e professionalità, rendendolo uno dei nomi leader nel campo degli avvocati per stranieri a Sharm El Sheikh e degli avvocati per stranieri ad Alessandria.'
+                  })}
+                </p>
+              </div>
+
+              {/* استشارات بخمس لغات */}
+              <div className="mb-10">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#c8a876] mb-6 flex items-center gap-3">
+                  <i className="fas fa-language"></i>
+                  {getTextByLanguage({
+                    ar: 'استشاراته القانونية بخمس لغات',
+                    en: 'His Legal Consultations in Five Languages',
+                    fr: 'Ses consultations juridiques en cinq langues',
+                    it: 'Le sue consulenze legali in cinque lingue'
+                  })}
+                </h3>
+                <p className="text-lg leading-relaxed text-gray-200 mb-6">
+                  {getTextByLanguage({
+                    ar: 'لتسهيل التواصل مع أكبر عدد من الجاليات الأجنبية، يُقدم المحامي كريم الديب خدماته القانونية واستشاراته بخمس لغات، وهي:',
+                    en: 'To facilitate communication with the largest number of foreign communities, Lawyer Karim El-Dib provides his legal services and consultations in five languages:',
+                    fr: 'Pour faciliter la communication avec le plus grand nombre de communautés étrangères, Maître Karim El-Dib fournit ses services juridiques et ses consultations en cinq langues:',
+                    it: 'Per facilitare la comunicazione con il maggior numero di comunità straniere, l\'Avvocato Karim El-Dib fornisce i suoi servizi legali e consulenze in cinque lingue:'
+                  })}
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 mb-6">
+                  <div className="bg-gradient-to-br from-[#c8a876] to-[#d4a15c] text-[#0b1a33] px-6 py-3 rounded-full font-bold text-lg shadow-lg flex items-center gap-2">
+                    <span>🇪🇬</span> {getTextByLanguage({ar: 'العربية', en: 'Arabic', fr: 'Arabe', it: 'Arabo'})}
+                  </div>
+                  <div className="bg-gradient-to-br from-[#c8a876] to-[#d4a15c] text-[#0b1a33] px-6 py-3 rounded-full font-bold text-lg shadow-lg flex items-center gap-2">
+                    <span>🇬🇧</span> {getTextByLanguage({ar: 'الإنجليزية', en: 'English', fr: 'Anglais', it: 'Inglese'})}
+                  </div>
+                  <div className="bg-gradient-to-br from-[#c8a876] to-[#d4a15c] text-[#0b1a33] px-6 py-3 rounded-full font-bold text-lg shadow-lg flex items-center gap-2">
+                    <span>🇫🇷</span> {getTextByLanguage({ar: 'الفرنسية', en: 'French', fr: 'Français', it: 'Francese'})}
+                  </div>
+                  <div className="bg-gradient-to-br from-[#c8a876] to-[#d4a15c] text-[#0b1a33] px-6 py-3 rounded-full font-bold text-lg shadow-lg flex items-center gap-2">
+                    <span>🇩🇪</span> {getTextByLanguage({ar: 'الألمانية', en: 'German', fr: 'Allemand', it: 'Tedesco'})}
+                  </div>
+                  <div className="bg-gradient-to-br from-[#c8a876] to-[#d4a15c] text-[#0b1a33] px-6 py-3 rounded-full font-bold text-lg shadow-lg flex items-center gap-2">
+                    <span>🇮🇹</span> {getTextByLanguage({ar: 'الإيطالية', en: 'Italian', fr: 'Italien', it: 'Italiano'})}
+                  </div>
+                </div>
+                <p className="text-lg leading-relaxed text-gray-200 bg-[#c8a876]/10 p-4 rounded-lg border-l-4 border-[#c8a876]">
+                  {getTextByLanguage({
+                    ar: 'هذا التنوع اللغوي يمنحه قدرة قوية على التواصل مع عملاء من مختلف الدول، ويجعله اختيارًا مثاليًا لكل من يبحث عن Multilingual Foreign Lawyer in Egypt أو Foreign Legal Consultant in Sharm El Sheikh & Alexandria.',
+                    en: 'This linguistic diversity gives him a strong ability to communicate with clients from different countries, making him an ideal choice for anyone looking for a Multilingual Foreign Lawyer in Egypt or Foreign Legal Consultant in Sharm El Sheikh & Alexandria.',
+                    fr: 'Cette diversité linguistique lui donne une forte capacité à communiquer avec des clients de différents pays, ce qui en fait un choix idéal pour tous ceux qui recherchent un avocat étranger multilingue en Égypte ou un consultant juridique étranger à Charm el-Cheikh et Alexandrie.',
+                    it: 'Questa diversità linguistica gli conferisce una forte capacità di comunicare con clienti di diversi paesi, rendendolo una scelta ideale per chiunque cerchi un avvocato straniero multilingue in Egitto o un consulente legale straniero a Sharm El Sheikh e Alessandria.'
+                  })}
+                </p>
+              </div>
+
+              {/* لماذا يختار العملاء */}
+              <div className="bg-gradient-to-br from-[#c8a876]/20 to-[#d4a15c]/10 rounded-xl p-8 border-2 border-[#c8a876]/30">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#c8a876] mb-6 text-center flex items-center justify-center gap-3">
+                  <i className="fas fa-star"></i>
+                  {getTextByLanguage({
+                    ar: 'لماذا يختار العملاء المحامي كريم الديب؟',
+                    en: 'Why Do Clients Choose Lawyer Karim El-Dib?',
+                    fr: 'Pourquoi les clients choisissent-ils l\'avocat Karim El-Dib?',
+                    it: 'Perché i clienti scelgono l\'avvocato Karim El-Dib?'
+                  })}
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="flex items-start gap-3">
+                    <i className="fas fa-check-double text-[#c8a876] text-xl mt-1 flex-shrink-0"></i>
+                    <span className="text-lg text-gray-200">{getTextByLanguage({ar: 'خبرة متخصصة في شؤون الأجانب', en: 'Specialized expertise in foreign affairs', fr: 'Expertise spécialisée en affaires étrangères', it: 'Competenza specializzata in affari esteri'})}</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <i className="fas fa-check-double text-[#c8a876] text-xl mt-1 flex-shrink-0"></i>
+                    <span className="text-lg text-gray-200">{getTextByLanguage({ar: 'إنهاء الإجراءات الحكومية دون تعقيد', en: 'Completing government procedures without complications', fr: 'Accomplissement des procédures gouvernementales sans complications', it: 'Completamento procedure governative senza complicazioni'})}</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <i className="fas fa-check-double text-[#c8a876] text-xl mt-1 flex-shrink-0"></i>
+                    <span className="text-lg text-gray-200">{getTextByLanguage({ar: 'إدارة كاملة لملفات الإقامة والشركات والعقارات', en: 'Complete management of residence, company and property files', fr: 'Gestion complète des dossiers de résidence, sociétés et propriétés', it: 'Gestione completa di residenza, società e proprietà'})}</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <i className="fas fa-check-double text-[#c8a876] text-xl mt-1 flex-shrink-0"></i>
+                    <span className="text-lg text-gray-200">{getTextByLanguage({ar: 'متابعة دقيقة لكل خطوة قانونية', en: 'Precise follow-up of every legal step', fr: 'Suivi précis de chaque étape juridique', it: 'Monitoraggio preciso di ogni fase legale'})}</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <i className="fas fa-check-double text-[#c8a876] text-xl mt-1 flex-shrink-0"></i>
+                    <span className="text-lg text-gray-200">{getTextByLanguage({ar: 'احترافية عالية في التواصل وتوضيح التفاصيل للعميل', en: 'High professionalism in communication and clarifying details to clients', fr: 'Haut professionnalisme en communication et clarification des détails aux clients', it: 'Alto professionalismo nella comunicazione e chiarimento dettagli ai clienti'})}</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <i className="fas fa-check-double text-[#c8a876] text-xl mt-1 flex-shrink-0"></i>
+                    <span className="text-lg text-gray-200">{getTextByLanguage({ar: 'تغطية جغرافية تشمل شرم الشيخ + الإسكندرية', en: 'Geographic coverage including Sharm El Sheikh + Alexandria', fr: 'Couverture géographique incluant Charm el-Cheikh + Alexandrie', it: 'Copertura geografica che include Sharm El Sheikh + Alessandria'})}</span>
+                  </div>
+                  <div className="flex items-start gap-3 md:col-span-2">
+                    <i className="fas fa-check-double text-[#c8a876] text-xl mt-1 flex-shrink-0"></i>
+                    <span className="text-lg text-gray-200">{getTextByLanguage({ar: 'دعم لغوي قوي بخمس لغات يخدم مختلف الجاليات الأجنبية', en: 'Strong linguistic support in five languages serving various foreign communities', fr: 'Support linguistique solide en cinq langues au service de diverses communautés étrangères', it: 'Forte supporto linguistico in cinque lingue al servizio di varie comunità straniere'})}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* المؤهلات والخبرات */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           

@@ -8,6 +8,8 @@ import egyptiansAbroadTranslations from '../../data/articles/egyptians-abroad.js
 import foreignInvestmentTranslations from '../../data/articles/foreign-investment.json';
 import rentControlDecisionTranslations from '../../data/articles/rent-control-decision-2025.json';
 import christianDivorceCaseTranslations from '../../data/articles/christian-divorce-case-2025.json';
+import foreignLawyerSharmTranslations from '../../data/articles/foreign-lawyer-sharm-el-sheikh.json';
+import foreignLawyerAlexandriaTranslations from '../../data/articles/foreign-lawyer-alexandria.json';
 
 const BlogPost: React.FC = () => {
   const { language } = useLanguage();
@@ -15,16 +17,90 @@ const BlogPost: React.FC = () => {
   const { slug } = useParams();
   const [article, setArticle] = useState<any>(null);
 
+  // دالة لتحويل البيانات المنظمة إلى HTML
+  const renderStructuredContent = (contentData: any): string => {
+    if (typeof contentData === 'string') {
+      return contentData;
+    }
+
+    if (!contentData || !contentData.content) {
+      return '';
+    }
+
+    let html = '';
+    
+    contentData.content.forEach((section: any) => {
+      switch (section.type) {
+        case 'heading':
+          html += `<h2 class="text-2xl md:text-3xl font-bold text-[#c8a876] mb-6 mt-8">${section.text}</h2>`;
+          break;
+        case 'subheading':
+          html += `<h3 class="text-xl md:text-2xl font-semibold text-[#c8a876] mb-4 mt-6">${section.text}</h3>`;
+          break;
+        case 'paragraph':
+          html += `<p class="text-gray-300 leading-relaxed mb-4">${section.text}</p>`;
+          break;
+        case 'list':
+          html += '<ul class="list-disc list-inside mb-6 space-y-2 text-gray-300">';
+          section.items.forEach((item: string) => {
+            html += `<li class="leading-relaxed">${item}</li>`;
+          });
+          html += '</ul>';
+          break;
+        default:
+          break;
+      }
+    });
+
+    return html;
+  };
+
   useEffect(() => {
     // بيانات المقالات (في التطبيق الحقيقي ستأتي من API)
     const articles = {
+      'foreign-lawyer-alexandria': {
+        title: isRTL ? 'محامي أجانب بالإسكندرية – خدمات قانونية متخصصة | المحامي كريم الديب' : 'Lawyer for Foreigners in Alexandria – Specialized Legal Services | Lawyer Karim El-Dib',
+        content: renderStructuredContent(
+          (language === 'fr' || language === 'it') 
+            ? foreignLawyerAlexandriaTranslations[language]
+            : isRTL 
+              ? foreignLawyerAlexandriaTranslations.ar
+              : foreignLawyerAlexandriaTranslations.en
+        ),
+        date: isRTL ? '27 نوفمبر 2025' : 'November 27, 2025',
+        readTime: isRTL ? '11 دقيقة قراءة' : '11 min read',
+        image: '/images/alexandria-lawyer.jpg',
+        tags: isRTL ? ['محامي أجانب الإسكندرية', 'Foreign Lawyer Alexandria', 'إقامة الأجانب', 'عقارات للأجانب'] : ['Foreign Lawyer Alexandria', 'Foreigners Residency', 'Property for Foreigners', 'Legal Services'],
+        description: isRTL 
+          ? 'دليلك الشامل للخدمات القانونية المتخصصة للأجانب في الإسكندرية - إقامة، عقارات، شركات، زواج وطلاق من المحامي كريم الديب'
+          : 'Your comprehensive guide to specialized legal services for foreigners in Alexandria - residency, property, companies, marriage and divorce from Lawyer Karim El-Dib'
+      },
+      'foreign-lawyer-sharm-el-sheikh': {
+        title: isRTL ? 'محامي الأجانب في شرم الشيخ – خدمات قانونية متخصصة | المحامي كريم الديب' : 'Foreign Lawyer in Sharm El Sheikh – Specialized Legal Services | Lawyer Karim El-Dib',
+        content: renderStructuredContent(
+          (language === 'fr' || language === 'it') 
+            ? foreignLawyerSharmTranslations[language]
+            : isRTL 
+              ? foreignLawyerSharmTranslations.ar
+              : foreignLawyerSharmTranslations.en
+        ),
+        date: isRTL ? '27 نوفمبر 2025' : 'November 27, 2025',
+        readTime: isRTL ? '12 دقيقة قراءة' : '12 min read',
+        image: '/images/sharm-el-sheikh-lawyer.jpg',
+        tags: isRTL ? ['محامي أجانب شرم الشيخ', 'Foreign Lawyer Sharm', 'إقامة الأجانب', 'عقارات للأجانب'] : ['Foreign Lawyer Sharm', 'Foreigners Residency', 'Property for Foreigners', 'Legal Services'],
+        description: isRTL 
+          ? 'دليلك الكامل للحصول على خدمات قانونية متخصصة للأجانب في شرم الشيخ - إقامة، عقارات، شركات، زواج وطلاق من المحامي كريم الديب'
+          : 'Your complete guide to specialized legal services for foreigners in Sharm El Sheikh - residency, property, companies, marriage and divorce from Lawyer Karim El-Dib'
+      },
       'christian-divorce-case-2025': {
         title: isRTL ? 'سابقة قانونية تاريخية: حكم خُلع لمواطنة مسيحية في مصر | المحامي كريم الديب' : 'Historic Legal Precedent: Khul\' Ruling for Christian Woman in Egypt | Lawyer Karim El-Dib',
-        content: (language === 'fr' || language === 'it') 
-          ? christianDivorceCaseTranslations[language]
-          : isRTL 
-            ? christianDivorceCaseTranslations.ar
-            : christianDivorceCaseTranslations.en,
+        content: renderStructuredContent(
+          (language === 'fr' || language === 'it') 
+            ? christianDivorceCaseTranslations[language]
+            : isRTL 
+              ? christianDivorceCaseTranslations.ar
+              : christianDivorceCaseTranslations.en
+        ),
         date: isRTL ? '12 نوفمبر 2025' : 'November 12, 2025',
         readTime: isRTL ? '10 دقائق قراءة' : '10 min read',
         image: '/images/christian-divorce-case.jpg',
@@ -34,11 +110,13 @@ const BlogPost: React.FC = () => {
       },
       'rent-control-decision-2025': {
         title: isRTL ? 'قرار جديد بمد عمل لجان حصر الإيجارات القديمة - القرار 2497 لسنة 2025 | المحامي كريم الديب' : 'New Decision Extending Rent Control Survey Committees - Decision 2497 of 2025 | Lawyer Karim El-Dib',
-        content: (language === 'fr' || language === 'it') 
-          ? rentControlDecisionTranslations[language]
-          : isRTL 
-            ? rentControlDecisionTranslations.ar
-            : rentControlDecisionTranslations.en,
+        content: renderStructuredContent(
+          (language === 'fr' || language === 'it') 
+            ? rentControlDecisionTranslations[language]
+            : isRTL 
+              ? rentControlDecisionTranslations.ar
+              : rentControlDecisionTranslations.en
+        ),
         date: isRTL ? '12 نوفمبر 2025' : 'November 12, 2025',
         readTime: isRTL ? '8 دقائق قراءة' : '8 min read',
         image: '/images/rent-decision-1.jpg',

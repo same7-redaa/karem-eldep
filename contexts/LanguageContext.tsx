@@ -22,6 +22,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.title': 'مؤسسة كريم الديب للمحاماة الدولية وخدمات الأجانب',
     'hero.subtitle': 'Unlimited lawyers & foreign services',
+    'hero.cities': 'محامي أجانب في شرم الشيخ | محامي أجانب في الإسكندرية',
     'hero.consulate': 'محامي معتمد لدى القنصلية الفرنسية',
     'hero.cta': 'احجز استشارة قانونية',
     
@@ -102,6 +103,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.title': 'Karim Eldib International Law Firm & Foreign Services',
     'hero.subtitle': 'Unlimited lawyers & foreign services',
+    'hero.cities': 'Foreign Lawyer in Sharm El Sheikh | Lawyer for Foreigners in Alexandria',
     'hero.consulate': 'Certified Lawyer at the French Consulate',
     'hero.cta': 'Book Legal Consultation',
     
@@ -183,6 +185,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.title': 'Cabinet Karim Eldib - Avocat International et Services pour Étrangers',
     'hero.subtitle': 'Services juridiques illimités pour étrangers',
+    'hero.cities': 'Avocat pour Étrangers à Charm El-Cheikh | Avocat pour Étrangers à Alexandrie',
     'hero.consulate': 'Avocat agréé au Consulat de France',
     'hero.cta': 'Réserver une consultation juridique',
     
@@ -265,6 +268,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Hero
     'hero.title': 'Studio Legale Karim Eldib - Avvocato Internazionale e Servizi per Stranieri',
     'hero.subtitle': 'Servizi legali illimitati per stranieri',
+    'hero.cities': 'Avvocato per Stranieri a Sharm El Sheikh | Avvocato per Stranieri ad Alessandria',
     'hero.consulate': 'Avvocato certificato presso il Consolato Francese',
     'hero.cta': 'Prenota consulenza legale',
     
