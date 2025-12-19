@@ -15,14 +15,14 @@ const SocialButtons: React.FC = () => {
     {
       name: 'WhatsApp',
       icon: 'fab fa-whatsapp',
-      url: 'https://wa.me/2001223767592',
+      url: 'https://wa.me/201223767592',
       color: '#25D366',
       label: getTextByLanguage({ar: 'واتساب', en: 'WhatsApp', fr: 'WhatsApp', it: 'WhatsApp'})
     },
     {
       name: 'Phone',
       icon: 'fas fa-phone',
-      url: 'tel:+2001223767592',
+      url: 'tel:+201223767592',
       color: '#34B7F1',
       label: getTextByLanguage({ar: 'اتصال', en: 'Call', fr: 'Appeler', it: 'Chiama'})
     },
@@ -78,7 +78,7 @@ const SocialButtons: React.FC = () => {
         <div className="flex flex-col items-center space-y-3 mb-4">
           {/* زر واتساب إضافي */}
           <button
-            onClick={() => handleSocialClick('https://wa.me/2001223767592')}
+            onClick={() => handleSocialClick('https://wa.me/201223767592')}
             className="flex items-center justify-center text-white rounded-full w-12 h-12 shadow-lg transition-all duration-300 transform hover:scale-110"
             style={{
               backgroundColor: '#25D366',

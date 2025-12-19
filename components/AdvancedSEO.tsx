@@ -9,12 +9,12 @@ interface AdvancedSEOProps {
   city?: string;
 }
 
-const AdvancedSEO: React.FC<AdvancedSEOProps> = ({ 
-  title, 
-  description, 
+const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
+  title,
+  description,
   keywords,
   canonicalUrl = 'https://ke-lawyer.com',
-  city 
+  city
 }) => {
   const { language } = useLanguage();
   const isRTL = language === 'ar';
@@ -117,21 +117,21 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
     ]
   };
 
-  const defaultTitle = language === 'ar' 
+  const defaultTitle = language === 'ar'
     ? 'محامي أجانب في مصر | كريم الديب | شرم الشيخ - القاهرة - الإسكندرية'
     : language === 'fr'
-    ? 'Avocat pour Étrangers en Égypte | Karim Eldib | Sharm El Sheikh - Le Caire - Alexandrie'
-    : language === 'it'
-    ? 'Avvocato per Stranieri in Egitto | Karim Eldib | Sharm El Sheikh - Cairo - Alessandria'
-    : 'Lawyer for Foreigners in Egypt | Karim Eldib | Sharm El Sheikh - Cairo - Alexandria';
+      ? 'Avocat pour Étrangers en Égypte | Karim Eldib | Sharm El Sheikh - Le Caire - Alexandrie'
+      : language === 'it'
+        ? 'Avvocato per Stranieri in Egitto | Karim Eldib | Sharm El Sheikh - Cairo - Alessandria'
+        : 'Lawyer for Foreigners in Egypt | Karim Eldib | Sharm El Sheikh - Cairo - Alexandria';
 
   const defaultDescription = language === 'ar'
     ? 'محامي أجانب متخصص في مصر. خدمات قانونية للأجانب في شرم الشيخ، القاهرة، الإسكندرية، الغردقة. محامي كريم الديب - استشارات قانونية، تأسيس شركات، إقامات، عقود دولية. محامي معتمد لدى القنصلية الفرنسية. خبرة 18 عام في خدمة الأجانب والمستثمرين. اتصل الآن: +20 122 376 7592'
     : language === 'fr'
-    ? 'Avocat spécialisé pour étrangers en Égypte. Services juridiques à Sharm El Sheikh, Le Caire, Alexandrie, Hurghada. Karim Eldib - Avocat international pour consultations juridiques, création de sociétés, permis de résidence, contrats internationaux. Avocat certifié au Consulat français. 18 ans d\'expérience au service des étrangers et investisseurs. Appelez maintenant: +20 122 376 7592'
-    : language === 'it'
-    ? 'Avvocato specializzato per stranieri in Egitto. Servizi legali a Sharm El Sheikh, Cairo, Alessandria, Hurghada. Karim Eldib - Avvocato internazionale per consulenze legali, costituzione società, permessi di soggiorno, contratti internazionali. Avvocato certificato al Consolato francese. 18 anni di esperienza al servizio di stranieri e investitori. Chiama ora: +20 122 376 7592'
-    : 'Specialized lawyer for foreigners in Egypt. Legal services in Sharm El Sheikh, Cairo, Alexandria, Hurghada. Karim Eldib - International lawyer for legal consultations, company formation, residence permits, international contracts. Certified lawyer at French Consulate. 18 years experience serving foreigners and investors. Call now: +20 122 376 7592';
+      ? 'Avocat spécialisé pour étrangers en Égypte. Services juridiques à Sharm El Sheikh, Le Caire, Alexandrie, Hurghada. Karim Eldib - Avocat international pour consultations juridiques, création de sociétés, permis de résidence, contrats internationaux. Avocat certifié au Consulat français. 18 ans d\'expérience au service des étrangers et investisseurs. Appelez maintenant: +20 122 376 7592'
+      : language === 'it'
+        ? 'Avvocato specializzato per stranieri in Egitto. Servizi legali a Sharm El Sheikh, Cairo, Alessandria, Hurghada. Karim Eldib - Avvocato internazionale per consulenze legali, costituzione società, permessi di soggiorno, contratti internazionali. Avvocato certificato al Consolato francese. 18 anni di esperienza al servizio di stranieri e investitori. Chiama ora: +20 122 376 7592'
+        : 'Specialized lawyer for foreigners in Egypt. Legal services in Sharm El Sheikh, Cairo, Alexandria, Hurghada. Karim Eldib - International lawyer for legal consultations, company formation, residence permits, international contracts. Certified lawyer at French Consulate. 18 years experience serving foreigners and investors. Call now: +20 122 376 7592';
 
   const combinedKeywords = [
     ...(keywords ? [keywords] : []),
@@ -156,7 +156,7 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
         ],
         "description": pageDescription,
         "url": canonicalUrl,
-        "telephone": "+2001223767592",
+        "telephone": "+201223767592",
         "email": "kingarim2411@gmail.com",
         "priceRange": "$$",
         "knowsLanguage": ["Arabic", "English", "French", "Italian"],
@@ -167,13 +167,13 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
             "alternateName": "شرم الشيخ"
           },
           {
-            "@type": "City", 
+            "@type": "City",
             "name": "Cairo",
             "alternateName": "القاهرة"
           },
           {
             "@type": "City",
-            "name": "Alexandria", 
+            "name": "Alexandria",
             "alternateName": "الإسكندرية"
           },
           {
@@ -191,7 +191,7 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
               "itemOffered": {
                 "@type": "Service",
                 "name": isRTL ? "محامي أجانب في شرم الشيخ" : "Lawyer for Foreigners in Sharm El Sheikh",
-                "description": isRTL 
+                "description": isRTL
                   ? "خدمات قانونية متخصصة للأجانب في شرم الشيخ. استشارات، إقامات، تأسيس شركات، عقود"
                   : "Specialized legal services for foreigners in Sharm El Sheikh. Consultations, residence permits, company formation, contracts",
                 "areaServed": "Sharm El Sheikh"
@@ -285,7 +285,7 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
   useEffect(() => {
     // Update document title
     document.title = pageTitle;
-    
+
     // Update meta tags
     const updateMetaTag = (name: string, content: string, isProperty = false) => {
       const attribute = isProperty ? 'property' : 'name';
@@ -301,25 +301,25 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
     // Basic meta tags
     updateMetaTag('description', pageDescription);
     updateMetaTag('keywords', combinedKeywords);
-    
+
     // Geo targeting
     updateMetaTag('geo.region', 'EG');
     updateMetaTag('geo.placename', 'Sharm El Sheikh, Cairo, Alexandria, Hurghada');
     updateMetaTag('geo.position', '27.915551;34.329750');
     updateMetaTag('ICBM', '27.915551, 34.329750');
-    
+
     // Language & Location
     updateMetaTag('language', language === 'ar' ? 'Arabic' : 'English');
     updateMetaTag('coverage', 'Egypt');
     updateMetaTag('distribution', 'global');
     updateMetaTag('target', 'foreigners in Egypt, expats, investors, international clients');
-    
+
     // Robots
     updateMetaTag('robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
     updateMetaTag('googlebot', 'index, follow');
     updateMetaTag('bingbot', 'index, follow');
     updateMetaTag('revisit-after', '1 days');
-    
+
     // Open Graph
     updateMetaTag('og:type', 'website', true);
     updateMetaTag('og:url', canonicalUrl, true);
@@ -328,24 +328,24 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
     updateMetaTag('og:image', `${canonicalUrl}/images/lawyer-7.jpg`, true);
     updateMetaTag('og:locale', language === 'ar' ? 'ar_EG' : 'en_US', true);
     updateMetaTag('og:site_name', isRTL ? 'مؤسسة كريم الديب للمحاماة' : 'Karim Eldib Law Firm', true);
-    
+
     // Twitter Card
     updateMetaTag('twitter:card', 'summary_large_image');
     updateMetaTag('twitter:title', pageTitle);
     updateMetaTag('twitter:description', pageDescription);
     updateMetaTag('twitter:image', `${canonicalUrl}/images/lawyer-7.jpg`);
-    
+
     // Author & Copyright
     updateMetaTag('author', 'Karim Eldib Law Firm');
     updateMetaTag('copyright', '© 2025 Karim Eldib Law Firm');
-    
+
     // City-specific
     if (city) {
       updateMetaTag('city', city);
       updateMetaTag('business:contact_data:locality', city, true);
       updateMetaTag('business:contact_data:country_name', 'Egypt', true);
     }
-    
+
     // Add canonical link
     let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
@@ -354,7 +354,7 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
       document.head.appendChild(canonicalLink);
     }
     canonicalLink.setAttribute('href', canonicalUrl);
-    
+
     // Add structured data
     let structuredDataScript = document.querySelector('script[type="application/ld+json"][data-seo="advanced"]');
     if (!structuredDataScript) {
@@ -364,11 +364,11 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
       document.head.appendChild(structuredDataScript);
     }
     structuredDataScript.textContent = JSON.stringify(structuredData);
-    
+
     // Update html attributes
     document.documentElement.lang = language === 'ar' ? 'ar-EG' : 'en-US';
     document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
-    
+
   }, [pageTitle, pageDescription, combinedKeywords, canonicalUrl, city, language, isRTL, structuredData]);
 
   return null;
