@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // قواعد مجموعة المقالات (articles)
+    match /articles/{articleId} {
+      // السماح للقراءة للجميع (عام)
+      allow read: if true;
+      
+      // السماح بالكتابة (إنشاء، تعديل، حذف) فقط للمستخدمين المسجلين (المشرفين)
+      allow write: if request.auth != null;
+    }
+    
+    // منع الوصول لأي مستندات أخرى افتراضياً
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

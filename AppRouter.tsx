@@ -1,8 +1,10 @@
+
 import React, { useEffect } from 'react';
 import { RouterProvider, createBrowserRouter, Outlet, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SocialButtons from './components/SocialButtons';
+import { AuthProvider } from './src/contexts/AuthContext';
 
 // Pages
 import Home from './pages/Home';
@@ -20,6 +22,13 @@ import BlogPost from './pages/blog/BlogPost';
 import SharmElSheikh from './pages/cities/SharmElSheikh';
 import Cairo from './pages/cities/Cairo';
 import Alexandria from './pages/cities/Alexandria';
+
+// Admin Pages
+import Login from './src/pages/admin/Login';
+import AdminLayout from './src/pages/admin/AdminLayout';
+import Dashboard from './src/pages/admin/Dashboard';
+import ArticleEditor from './src/pages/admin/ArticleEditor';
+import ProtectedRoute from './src/components/Admin/ProtectedRoute';
 
 // ScrollToTop component
 const ScrollToTop: React.FC = () => {
@@ -51,6 +60,24 @@ const Layout: React.FC = () => {
 // Router configuration
 const router = createBrowserRouter([
   {
+    path: '/admin/login',
+    element: <Login />
+  },
+  {
+    path: '/admin',
+    element: <ProtectedRoute />,
+    children: [
+      {
+        element: <AdminLayout />,
+        children: [
+          { index: true, element: <Dashboard /> },
+          { path: 'new', element: <ArticleEditor /> },
+          { path: 'edit/:id', element: <ArticleEditor /> }
+        ]
+      }
+    ]
+  },
+  {
     element: <Layout />,
     children: [
       { path: '/', element: <Home /> },
@@ -64,6 +91,7 @@ const router = createBrowserRouter([
       { path: '/egyptians-abroad', element: <EgyptiansAbroad /> },
       { path: '/arbitration-mediation', element: <ArbitrationMediation /> },
       { path: '/blog', element: <Blog /> },
+      // Update the blog post route to ensure it catches all slugs
       { path: '/blog/:slug', element: <BlogPost /> },
       { path: '/sharm-el-sheikh', element: <SharmElSheikh /> },
       { path: '/cairo', element: <Cairo /> },
@@ -73,7 +101,11 @@ const router = createBrowserRouter([
 ]);
 
 const AppRouter: React.FC = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  );
 };
 
 export default AppRouter;
