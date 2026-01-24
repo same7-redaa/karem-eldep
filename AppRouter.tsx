@@ -19,9 +19,12 @@ import EgyptiansAbroad from './pages/services/EgyptiansAbroad';
 import ArbitrationMediation from './pages/services/ArbitrationMediation';
 import Blog from './pages/blog/Blog';
 import BlogPost from './pages/blog/BlogPost';
-import SharmElSheikh from './pages/cities/SharmElSheikh';
+import SharmElSheikh from './pages/SharmElSheikh';
 import Cairo from './pages/cities/Cairo';
-import Alexandria from './pages/cities/Alexandria';
+import Alexandria from './pages/Alexandria';
+import FAQ from './pages/FAQ';
+import AboutUs from './pages/AboutUs';
+import Services from './pages/Services';
 
 // Admin Pages
 import Login from './src/pages/admin/Login';
@@ -96,6 +99,9 @@ const router = createBrowserRouter([
       { path: '/sharm-el-sheikh', element: <SharmElSheikh /> },
       { path: '/cairo', element: <Cairo /> },
       { path: '/alexandria', element: <Alexandria /> },
+      { path: '/faq', element: <FAQ /> },
+      { path: '/about-us', element: <AboutUs /> },
+      { path: '/services', element: <Services /> },
     ],
   },
 ]);

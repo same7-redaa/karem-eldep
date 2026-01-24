@@ -117,7 +117,7 @@ const News: React.FC = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-[#0b1a33] to-[#1a2d4d]" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* العنوان الرئيسي */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#c8a876] mb-6">
@@ -143,11 +143,11 @@ const News: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {newsArticles.map((article) => (
             <article key={article.id} className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 group hover:border-[#c8a876]/50">
-              
+
               {/* صورة المقال */}
               <div className="h-48 overflow-hidden relative">
-                <img 
-                  src={article.image} 
+                <img
+                  src={article.image}
                   alt={article.title}
                   className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-300"
                   onError={(e) => {
@@ -155,7 +155,7 @@ const News: React.FC = () => {
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                
+
                 {/* شارة الصحيفة */}
                 <div className="absolute top-3 right-3 bg-[#c8a876] text-[#0b1a33] px-3 py-1 rounded-full text-xs font-bold">
                   <i className="fas fa-newspaper ml-1"></i>
@@ -165,7 +165,7 @@ const News: React.FC = () => {
 
               {/* محتوى المقال */}
               <div className="p-6">
-                
+
                 {/* التاريخ */}
                 <div className="flex items-center gap-2 text-sm text-gray-400 mb-3">
                   <i className="fas fa-calendar-alt text-[#c8a876]"></i>
@@ -185,7 +185,7 @@ const News: React.FC = () => {
                 {/* التاجز */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {article.tags.slice(0, 2).map((tag, index) => (
-                    <span 
+                    <span
                       key={index}
                       className="bg-[#c8a876]/10 border border-[#c8a876]/30 text-[#c8a876] px-2 py-1 rounded-lg text-xs font-semibold"
                     >
@@ -195,11 +195,11 @@ const News: React.FC = () => {
                 </div>
 
                 {/* رابط القراءة */}
-                <a 
+                <a
                   href={article.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#c8a876] hover:text-white transition-colors duration-300 font-semibold text-sm"
+                  className="inline-flex items-center gap-2 text-[#c8a876] hover:text-white transition-colors duration-300 font-semibold text-sm mb-4"
                 >
                   {getTextByLanguage({
                     ar: 'قراءة الخبر كاملاً',
@@ -209,6 +209,85 @@ const News: React.FC = () => {
                   })}
                   <i className="fas fa-external-link-alt"></i>
                 </a>
+
+                {/* أزرار المشاركة */}
+                <div className="pt-4 border-t border-white/10">
+                  <p className="text-xs text-gray-400 mb-2">
+                    {getTextByLanguage({
+                      ar: 'شارك الخبر:',
+                      en: 'Share:',
+                      fr: 'Partager:',
+                      it: 'Condividi:'
+                    })}
+                  </p>
+                  <div className="flex gap-2">
+                    {/* Facebook */}
+                    <a
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(article.link)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#1877F2]/20 hover:bg-[#1877F2]/40 text-[#1877F2] transition-all duration-300 hover:scale-110"
+                      title="Facebook"
+                    >
+                      <i className="fab fa-facebook-f text-sm"></i>
+                    </a>
+
+                    {/* Twitter/X */}
+                    <a
+                      href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(article.link)}&text=${encodeURIComponent(article.title)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-black/20 hover:bg-black/40 text-white transition-all duration-300 hover:scale-110"
+                      title="Twitter/X"
+                    >
+                      <i className="fab fa-x-twitter text-sm"></i>
+                    </a>
+
+                    {/* LinkedIn */}
+                    <a
+                      href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(article.link)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#0A66C2]/20 hover:bg-[#0A66C2]/40 text-[#0A66C2] transition-all duration-300 hover:scale-110"
+                      title="LinkedIn"
+                    >
+                      <i className="fab fa-linkedin-in text-sm"></i>
+                    </a>
+
+                    {/* WhatsApp */}
+                    <a
+                      href={`https://wa.me/?text=${encodeURIComponent(article.title + ' ' + article.link)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-[#25D366]/20 hover:bg-[#25D366]/40 text-[#25D366] transition-all duration-300 hover:scale-110"
+                      title="WhatsApp"
+                    >
+                      <i className="fab fa-whatsapp text-sm"></i>
+                    </a>
+
+                    {/* Copy Link */}
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText(article.link);
+                        alert(getTextByLanguage({
+                          ar: 'تم نسخ الرابط!',
+                          en: 'Link copied!',
+                          fr: 'Lien copié!',
+                          it: 'Link copiato!'
+                        }));
+                      }}
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-500/20 hover:bg-gray-500/40 text-gray-300 transition-all duration-300 hover:scale-110"
+                      title={getTextByLanguage({
+                        ar: 'نسخ الرابط',
+                        en: 'Copy Link',
+                        fr: 'Copier le Lien',
+                        it: 'Copia Link'
+                      })}
+                    >
+                      <i className="fas fa-link text-sm"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
             </article>
           ))}

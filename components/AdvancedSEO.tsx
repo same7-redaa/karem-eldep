@@ -19,40 +19,180 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
   const { language } = useLanguage();
   const isRTL = language === 'ar';
 
-  // SEO Keywords للمدن الرئيسية
+  // SEO Keywords للمدن الرئيسية - محدثة بجميع الكلمات المستهدفة
   const cityKeywords = {
     ar: [
-      'محامي أجانب في شرم الشيخ', 'أفضل محامي في شرم الشيخ', 'محامي دولي في شرم الشيخ', 'مكتب محاماة في شرم الشيخ', 'محامي استثمار في شرم الشيخ', 'محامي عقارات في شرم الشيخ',
-      'محامي أجانب في الإسكندرية', 'أفضل محامي في الإسكندرية', 'محامي دولي في الإسكندرية', 'مكتب محاماة في الإسكندرية', 'محامي قضايا أجانب الإسكندرية',
-      'محامي أجانب في مصر', 'محامي زواج أجانب شرم الشيخ', 'محامي تأسيس شركات شرم الشيخ', 'محامي إقامات شرم الشيخ',
-      'محامي فرنسي في شرم الشيخ', 'محامي ايطالي في شرم الشيخ', 'محامي روسي في شرم الشيخ', 'محامي انجليزي في شرم الشيخ',
-      'كريم الديب محامي أجانب', 'محامي دولي كريم الديب',
-      'Lawyer Sharm El Sheikh', 'Lawyer Alexandria', 'Avocat Sharm El Sheikh', 'Avvocato Sharm El Sheikh'
+      // شرم الشيخ
+      'محامي في شرم الشيخ',
+      'أفضل محامي في شرم الشيخ',
+      'مكتب محاماة في شرم الشيخ',
+      'محامي أجانب في شرم الشيخ',
+      'محامي جنائي في شرم الشيخ',
+      'محامي قضايا مدنية في شرم الشيخ',
+      'محامي شركات في شرم الشيخ',
+      'محامي أحوال شخصية في شرم الشيخ',
+      'محامي طلاق في شرم الشيخ',
+      'محامي هجرة وإقامة في شرم الشيخ',
+      'محامي تأشيرات في شرم الشيخ',
+      'استشارات قانونية في شرم الشيخ',
+      'مستشار قانوني في شرم الشيخ',
+      'محامي تعويضات في شرم الشيخ',
+      'محامي قضايا عمال في شرم الشيخ',
+      'محامي نزاعات تجارية في شرم الشيخ',
+      'محامي فرنسي في شرم الشيخ',
+      'محامي إيطالي في شرم الشيخ',
+      'محامي إنجليزي في شرم الشيخ',
+      'محامي روسي في شرم الشيخ',
+
+      // الإسكندرية
+      'محامي في الإسكندرية',
+      'أفضل مكتب محاماة في الإسكندرية',
+      'مكتب محاماة في الإسكندرية',
+      'محامي قضايا أجانب في الإسكندرية',
+      'محامي هجرة وإقامة في الإسكندرية',
+      'محامي مدني في الإسكندرية',
+      'محامي جنائي في الإسكندرية',
+      'محامي طلاق في الإسكندرية',
+      'محامي شركات في الإسكندرية',
+      'محامي أحوال شخصية في الإسكندرية',
+      'محامي تأشيرات في الإسكندرية',
+      'مستشار قانوني في الإسكندرية',
+      'محامي تعويضات في الإسكندرية',
+      'محامي عمال في الإسكندرية',
+      'محامي قضايا تجارية في الإسكندرية',
+      'محامي مستثمرين أجانب في الإسكندرية',
+      'محامي فرنسي في الإسكندرية',
+      'محامي إيطالي في الإسكندرية',
+      'محامي إنجليزي في الإسكندرية',
+      'رقم محامي في الإسكندرية',
+
+      // مصر عام
+      'محامي أجانب في مصر',
+      'محامي للأجانب في مصر',
+      'محامي مستثمرين أجانب في مصر',
+      'محامي تأسيس شركات للأجانب',
+      'محامي عقارات للأجانب',
+      'محامي استثمار في مصر',
+      'محامي دولي في مصر',
+      'كريم الديب محامي أجانب',
+      'محامي دولي كريم الديب'
     ],
+
     en: [
-      'lawyer for foreigners in sharm el sheikh', 'best lawyer in sharm el sheikh', 'international lawyer sharm el sheikh', 'law firm in sharm el sheikh', 'legal services sharm el sheikh',
-      'lawyer for foreigners in alexandria', 'best lawyer in alexandria', 'international lawyer alexandria', 'law firm in alexandria', 'legal services alexandria',
-      'lawyer for foreigners in egypt', 'english speaking lawyer sharm el sheikh', 'english speaking lawyer alexandria',
-      'real estate lawyer sharm el sheikh', 'marriage lawyer sharm el sheikh', 'business lawyer sharm el sheikh',
-      'investment lawyer sharm el sheikh', 'residence permit lawyer sharm el sheikh',
-      'italian speaking lawyer sharm el sheikh', 'french speaking lawyer sharm el sheikh', 'russian speaking lawyer sharm el sheikh',
-      'karim eldib lawyer', 'attorney sharm el sheikh', 'solicitor sharm el sheikh'
+      // Sharm El Sheikh
+      'Lawyer in Sharm El Sheikh',
+      'Best Lawyer in Sharm El Sheikh',
+      'Law Firm in Sharm El Sheikh',
+      'Foreigners Lawyer in Sharm El Sheikh',
+      'Criminal Lawyer in Sharm El Sheikh',
+      'Civil Lawyer in Sharm El Sheikh',
+      'Corporate Lawyer in Sharm El Sheikh',
+      'Personal Status Lawyer in Sharm El Sheikh',
+      'Divorce Lawyer in Sharm El Sheikh',
+      'Immigration Lawyer in Sharm El Sheikh',
+      'Visa Lawyer in Sharm El Sheikh',
+      'Legal Consultation in Sharm El Sheikh',
+      'Legal Consultant in Sharm El Sheikh',
+      'Compensation Lawyer in Sharm El Sheikh',
+      'Labor Lawyer in Sharm El Sheikh',
+      'Business Litigation Lawyer in Sharm El Sheikh',
+      'Civil Rights Attorney Sharm El Sheikh',
+      'Criminal Defense Attorney Sharm El Sheikh',
+      'Family Law Attorney Sharm El Sheikh',
+      'Personal Injury Lawyer Sharm El Sheikh',
+      'French Lawyer in Sharm El Sheikh',
+      'Italian Lawyer in Sharm El Sheikh',
+      'English Lawyer in Sharm El Sheikh',
+      'Lawyer Phone Number Sharm El Sheikh',
+
+      // Alexandria
+      'Lawyer in Alexandria',
+      'Best Law Firm in Alexandria',
+      'Law Firm in Alexandria',
+      'Lawyer for Foreigners Cases in Alexandria',
+      'Immigration and Residency Lawyer in Alexandria',
+      'Civil Lawyer in Alexandria',
+      'Criminal Lawyer in Alexandria',
+      'Divorce Cases Lawyer in Alexandria',
+      'Corporate Lawyer in Alexandria',
+      'Personal Status Cases Lawyer in Alexandria',
+      'Visa Lawyer in Alexandria',
+      'Legal Advisor in Alexandria',
+      'Compensation Lawyer in Alexandria',
+      'Labor Cases Lawyer in Alexandria',
+      'Commercial Cases Lawyer in Alexandria',
+      'Lawyer for Foreign Investors in Alexandria',
+      'French Lawyer in Alexandria',
+      'Italian Lawyer in Alexandria',
+      'English Lawyer in Alexandria',
+      'Lawyer Contact Number in Alexandria',
+
+      // Egypt General
+      'Lawyer in Egypt',
+      'Best Law Firm in Egypt',
+      'Lawyer for Foreigners Cases in Egypt',
+      'Immigration and Residency Lawyer in Egypt',
+      'Foreign Investors Lawyer in Egypt',
+      'French Lawyer in Egypt',
+      'Italian Lawyer in Egypt',
+      'English Lawyer in Egypt',
+      'Legal services for foreigners',
+      'Company formation for foreigners',
+      'Property and investment lawyer',
+      'lawyer for foreign investors',
+      'international lawyer Egypt',
+      'karim eldib lawyer',
+      'attorney sharm el sheikh',
+      'real estate lawyer sharm el sheikh',
+      'business lawyer sharm el sheikh',
+      'investment lawyer sharm el sheikh',
+      'residence permit lawyer sharm el sheikh'
     ],
+
     fr: [
-      'avocat pour étrangers à sharm el sheikh', 'meilleur avocat à sharm el sheikh', 'avocat international sharm el sheikh', 'cabinet d\'avocats à sharm el sheikh',
-      'avocat pour étrangers à alexandrie', 'meilleur avocat à alexandrie', 'avocat international alexandrie', 'cabinet d\'avocats à alexandrie',
-      'avocat francophone sharm el sheikh', 'avocat francophone alexandrie',
-      'avocat immobilier sharm el sheikh', 'avocat mariage sharm el sheikh', 'avocat affaires sharm el sheikh',
-      'avocat résidence egypte', 'avocat investissement sharm el sheikh',
-      'maitre karim eldib', 'conseiller juridique sharm el sheikh'
+      'Avocat pour étrangers à Sharm El Sheikh',
+      'Meilleur avocat à Sharm El Sheikh',
+      'Cabinet d\'avocats à Sharm El Sheikh',
+      'Avocat francophone Sharm El Sheikh',
+      'Avocat pour étrangers à Alexandrie',
+      'Meilleur avocat à Alexandrie',
+      'Avocat francophone Alexandrie',
+      'Avocat pour étrangers en Égypte',
+      'Avocat français en Égypte',
+      'Services juridiques pour étrangers',
+      'Création d\'entreprise pour étrangers',
+      'Avocat immobilier et investissement',
+      'Avocat divorce Égypte',
+      'Avocat immigration Égypte',
+      'Avocat investisseurs étrangers',
+      'Avocat résidence Égypte',
+      'Avocat mariage Sharm El Sheikh',
+      'Avocat affaires Sharm El Sheikh',
+      'Conseiller juridique Sharm El Sheikh',
+      'Maitre Karim Eldib'
     ],
+
     it: [
-      'avvocato per stranieri a sharm el sheikh', 'miglior avvocato a sharm el sheikh', 'avvocato internazionale sharm el sheikh', 'studio legale a sharm el sheikh',
-      'avvocato per stranieri ad alessandria', 'miglior avvocato ad alessandria', 'avvocato internazionale alessandria', 'studio legale ad alessandria',
-      'avvocato italiano sharm el sheikh', 'avvocato italiano alessandria',
-      'avvocato immobiliare sharm el sheikh', 'avvocato matrimonio sharm el sheikh', 'avvocato affari sharm el sheikh',
-      'avvocato permesso di soggiorno sharm el sheikh', 'consulenza legale sharm el sheikh',
-      'avvocato karim eldib'
+      'Avvocato per stranieri a Sharm El Sheikh',
+      'Miglior avvocato a Sharm El Sheikh',
+      'Studio legale a Sharm El Sheikh',
+      'Avvocato italiano Sharm El Sheikh',
+      'Avvocato per stranieri ad Alessandria',
+      'Miglior avvocato ad Alessandria',
+      'Avvocato italiano Alessandria',
+      'Avvocato per stranieri in Egitto',
+      'Avvocato italiano in Egitto',
+      'Servizi legali per stranieri',
+      'Costituzione di società per stranieri',
+      'Avvocato immobiliare e investimenti',
+      'Avvocato divorzio Egitto',
+      'Avvocato immigrazione Egitto',
+      'Avvocato investitori stranieri',
+      'Avvocato permesso di soggiorno Sharm El Sheikh',
+      'Avvocato matrimonio Sharm El Sheikh',
+      'Avvocato affari Sharm El Sheikh',
+      'Consulenza legale Sharm El Sheikh',
+      'Avvocato Karim Eldib'
     ]
   };
 
@@ -65,12 +205,12 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
         : 'Lawyer for Foreigners in Egypt | Karim Eldib | Sharm El Sheikh - Cairo - Alexandria';
 
   const defaultDescription = language === 'ar'
-    ? 'أفضل محامي أجانب متخصص في مصر. خدمات قانونية شاملة في شرم الشيخ، القاهرة، الإسكندرية، الغردقة. تأسيس شركات، زواج أجانب، عقارات، إقامات. مكتب المحامي كريم الديب خبرة 18 عاماً.'
+    ? 'أفضل محامي أجانب متخصص في شرم الشيخ والإسكندرية ومصر. خدمات قانونية شاملة: قضايا الأجانب، إقامة وتأشيرات، تأسيس شركات، قضايا مدنية وجنائية، طلاق وأحوال شخصية، عقارات واستثمارات، قضايا عمالية. نتحدث العربية والإنجليزية والفرنسية والإيطالية. مكتب المحامي كريم الديب - خبرة 18 عاماً.'
     : language === 'fr'
-      ? 'Meilleur avocat pour étrangers en Égypte. Services juridiques à Sharm El Sheikh, Le Caire, Alexandrie, Hurghada. Création de sociétés, mariage, immobilier. Cabinet Karim Eldib, 18 ans d\'expérience.'
+      ? 'Meilleur avocat pour étrangers à Sharm El Sheikh, Alexandrie et Égypte. Services juridiques complets: affaires d\'étrangers, résidence et visas, création de sociétés, affaires civiles et pénales, divorce et statut personnel, immobilier et investissements. Nous parlons français, arabe, anglais et italien. Cabinet Karim Eldib - 18 ans d\'expérience.'
       : language === 'it'
-        ? 'Miglior avvocato per stranieri in Egitto. Servizi legali a Sharm El Sheikh, Cairo, Alessandria, Hurghada. Costituzione società, matrimonio, immobiliare. Studio Legale Karim Eldib.'
-        : 'Best lawyer for foreigners in Egypt. Expert legal services in Sharm El Sheikh, Cairo, Alexandria, Hurghada. Company formation, marriage, real estate, residence permits. Karim Eldib Law Firm.';
+        ? 'Miglior avvocato per stranieri a Sharm El Sheikh, Alessandria ed Egitto. Servizi legali completi: casi di stranieri, residenza e visti, costituzione di società, casi civili e penali, divorzio e stato personale, immobiliare e investimenti. Parliamo italiano, arabo, inglese e francese. Studio Legale Karim Eldib - 18 anni di esperienza.'
+        : 'Best lawyer for foreigners in Sharm El Sheikh, Alexandria and Egypt. Comprehensive legal services: foreigners cases, residence and visas, company formation, civil and criminal cases, divorce and personal status, real estate and investments, labor cases. We speak English, Arabic, French and Italian. Karim Eldib Law Firm - 18 years of experience.';
 
   const combinedKeywords = [
     ...(keywords ? [keywords] : []),

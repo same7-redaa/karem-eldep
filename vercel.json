@@ -1,8 +1,30 @@
 {
-  "rewrites": [
+  "redirects": [
+    {
+      "source": "/:path((?!admin).*)",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang"
+        }
+      ],
+      "destination": "/:path",
+      "permanent": true
+    }
+  ],
+  "headers": [
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
+        {
+          "key": "Link",
+          "value": "<https://ke-lawyer.com/$1>; rel=\"canonical\""
+        }
+      ]
     }
   ]
 }
