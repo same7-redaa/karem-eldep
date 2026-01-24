@@ -5,165 +5,163 @@
   <!-- Homepage -->
   <url>
     <loc>https://ke-lawyer.com/</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ke-lawyer.com/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://ke-lawyer.com/" />
+  </url>
+
+  <!-- About Us -->
+  <url>
+    <loc>https://ke-lawyer.com/about-us</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Services -->
+  <url>
+    <loc>https://ke-lawyer.com/services</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://ke-lawyer.com/faq</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Lawyer Profile -->
   <url>
     <loc>https://ke-lawyer.com/lawyer-profile</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/lawyer-profile?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/lawyer-profile?lang=en" />
   </url>
 
   <!-- Blog Main Page -->
   <url>
     <loc>https://ke-lawyer.com/blog</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/blog?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/blog?lang=en" />
   </url>
 
   <!-- Blog Posts -->
   <url>
     <loc>https://ke-lawyer.com/blog/guide-foreigners-legal-services-egypt-2025</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/blog/guide-foreigners-legal-services-egypt-2025?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/blog/guide-foreigners-legal-services-egypt-2025?lang=en" />
   </url>
 
   <url>
     <loc>https://ke-lawyer.com/blog/egyptians-abroad-legal-rights-protection</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/blog/egyptians-abroad-legal-rights-protection?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/blog/egyptians-abroad-legal-rights-protection?lang=en" />
   </url>
 
   <url>
     <loc>https://ke-lawyer.com/blog/foreign-investment-egypt-complete-guide</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/blog/foreign-investment-egypt-complete-guide?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/blog/foreign-investment-egypt-complete-guide?lang=en" />
   </url>
 
   <!-- Service Pages - High Priority -->
   <url>
     <loc>https://ke-lawyer.com/foreigners-in-egypt</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/foreigners-in-egypt?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/foreigners-in-egypt?lang=en" />
   </url>
 
   <url>
     <loc>https://ke-lawyer.com/egyptians-abroad</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/egyptians-abroad?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/egyptians-abroad?lang=en" />
   </url>
 
   <!-- Service Pages - Standard -->
   <url>
     <loc>https://ke-lawyer.com/commercial-law</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/commercial-law?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/commercial-law?lang=en" />
   </url>
 
   <url>
     <loc>https://ke-lawyer.com/family-law</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/family-law?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/family-law?lang=en" />
   </url>
 
   <url>
     <loc>https://ke-lawyer.com/civil-law</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/civil-law?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/civil-law?lang=en" />
   </url>
 
   <url>
     <loc>https://ke-lawyer.com/criminal-law</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/criminal-law?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/criminal-law?lang=en" />
   </url>
 
   <url>
     <loc>https://ke-lawyer.com/company-law</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/company-law?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/company-law?lang=en" />
   </url>
 
   <url>
     <loc>https://ke-lawyer.com/arbitration-mediation</loc>
-    <lastmod>2025-10-26</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/arbitration-mediation?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/arbitration-mediation?lang=en" />
   </url>
 
   <!-- City Pages - SEO Optimized -->
   <url>
     <loc>https://ke-lawyer.com/sharm-el-sheikh</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/sharm-el-sheikh?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/sharm-el-sheikh?lang=en" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ke-lawyer.com/sharm-el-sheikh?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://ke-lawyer.com/sharm-el-sheikh?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/sharm-el-sheikh" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/sharm-el-sheikh" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ke-lawyer.com/sharm-el-sheikh" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://ke-lawyer.com/sharm-el-sheikh" />
   </url>
 
   <url>
     <loc>https://ke-lawyer.com/cairo</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/cairo?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/cairo?lang=en" />
   </url>
 
   <url>
     <loc>https://ke-lawyer.com/alexandria</loc>
-    <lastmod>2026-01-24</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/alexandria?lang=ar" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/alexandria?lang=en" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ke-lawyer.com/alexandria?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://ke-lawyer.com/alexandria?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ke-lawyer.com/alexandria" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ke-lawyer.com/alexandria" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ke-lawyer.com/alexandria" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://ke-lawyer.com/alexandria" />
   </url>
 
 </urlset>
