@@ -3,7 +3,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
-  
+
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
@@ -12,18 +12,20 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section 
+    <section
       id="hero"
-      className="relative h-[70vh] min-h-[450px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]" 
+      className="relative h-[70vh] min-h-[450px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]"
       role="banner"
       aria-label={t('hero.title')}
     >
       {/* Background Image with optimization and blur placeholder */}
-      <img 
-        src="/france.png" 
+      <img
+        src="/france.png"
         alt="Karim El-Dib Law Firm Background"
+        width="1920"
+        height="1080"
         className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-        style={{ 
+        style={{
           filter: 'blur(0px)',
           opacity: 1
         }}
@@ -34,13 +36,13 @@ const Hero: React.FC = () => {
           (e.target as HTMLImageElement).style.filter = 'blur(0px)';
         }}
       />
-      
+
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#0b1a33] bg-opacity-70 z-[1]"></div>
-      
+
       {/* Gradient bottom */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0e1f3b] to-transparent z-[2]"></div>
-      
+
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <h1 className="text-2xl md:text-3xl lg:text-5xl font-extrabold font-sans mb-2 md:mb-3 leading-tight">
@@ -49,16 +51,16 @@ const Hero: React.FC = () => {
         <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-3 md:mb-4 font-medium text-[#d4a15c] font-sans">
           {t('hero.subtitle')}
         </p>
-        
+
         {/* محامي أجانب في شرم الشيخ والإسكندرية */}
         <p className="text-base md:text-lg lg:text-xl font-semibold text-[#c8a876] mb-4 md:mb-5">
           {t('hero.cities')}
         </p>
-        
+
         <p className="text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-4 md:mb-6 font-medium text-white/90 font-sans">
           {t('hero.consulate')}
         </p>
-        <button 
+        <button
           onClick={scrollToContact}
           className="bg-[#d4a15c] text-[#0b1a33] font-bold py-2 px-4 md:py-2.5 md:px-6 rounded-md text-sm md:text-base hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105"
         >
