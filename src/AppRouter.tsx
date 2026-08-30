@@ -1,37 +1,35 @@
-
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { RouterProvider, createBrowserRouter, Outlet, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SocialButtons from './components/SocialButtons';
-import { AuthProvider } from './contexts/AuthContext';
 
 // Pages
-import Home from './pages/Home';
-import LawyerProfile from './pages/LawyerProfile';
-import CivilLaw from './pages/services/CivilLaw';
-import CriminalLaw from './pages/services/CriminalLaw';
-import CommercialLaw from './pages/services/CommercialLaw';
-import FamilyLaw from './pages/services/FamilyLaw';
-import CompanyLaw from './pages/services/CompanyLaw';
-import ForeignersInEgypt from './pages/services/ForeignersInEgypt';
-import EgyptiansAbroad from './pages/services/EgyptiansAbroad';
-import ArbitrationMediation from './pages/services/ArbitrationMediation';
-import Blog from './pages/blog/Blog';
-import BlogPost from './pages/blog/BlogPost';
-import SharmElSheikh from './pages/cities/SharmElSheikh';
-import Cairo from './pages/cities/Cairo';
-import Alexandria from './pages/cities/Alexandria';
-import FAQ from './pages/FAQ';
-import AboutUs from './pages/AboutUs';
-import Services from './pages/Services';
+const Home = lazy(() => import('./pages/Home'));
+const LawyerProfile = lazy(() => import('./pages/LawyerProfile'));
+const CivilLaw = lazy(() => import('./pages/services/CivilLaw'));
+const CriminalLaw = lazy(() => import('./pages/services/CriminalLaw'));
+const CommercialLaw = lazy(() => import('./pages/services/CommercialLaw'));
+const FamilyLaw = lazy(() => import('./pages/services/FamilyLaw'));
+const CompanyLaw = lazy(() => import('./pages/services/CompanyLaw'));
+const ForeignersInEgypt = lazy(() => import('./pages/services/ForeignersInEgypt'));
+const EgyptiansAbroad = lazy(() => import('./pages/services/EgyptiansAbroad'));
+const ArbitrationMediation = lazy(() => import('./pages/services/ArbitrationMediation'));
+const Blog = lazy(() => import('./pages/blog/Blog'));
+const BlogPost = lazy(() => import('./pages/blog/BlogPost'));
+const SharmElSheikh = lazy(() => import('./pages/cities/SharmElSheikh'));
+const Cairo = lazy(() => import('./pages/cities/Cairo'));
+const Alexandria = lazy(() => import('./pages/cities/Alexandria'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+const AboutUs = lazy(() => import('./pages/AboutUs'));
+const Services = lazy(() => import('./pages/Services'));
 
 // Admin Pages
-import Login from './pages/admin/Login';
-import AdminLayout from './pages/admin/AdminLayout';
-import Dashboard from './pages/admin/Dashboard';
-import ArticleEditor from './pages/admin/ArticleEditor';
-import ProtectedRoute from './components/Admin/ProtectedRoute';
+const AdminRoot = lazy(() => import('./components/Admin/AdminRoutes').then(m => ({ default: m.AdminRoot })));
+const AdminProtected = lazy(() => import('./components/Admin/AdminRoutes').then(m => ({ default: m.AdminProtected })));
+const Dashboard = lazy(() => import('./components/Admin/AdminRoutes').then(m => ({ default: m.Dashboard })));
+const ArticleEditor = lazy(() => import('./components/Admin/AdminRoutes').then(m => ({ default: m.ArticleEditor })));
+const Login = lazy(() => import('./components/Admin/AdminRoutes').then(m => ({ default: m.Login })));
 
 // ScrollToTop component
 const ScrollToTop: React.FC = () => {
@@ -66,7 +64,13 @@ const Layout: React.FC = () => {
       <Header />
       <main className="min-h-screen">
         <div key={pathname} className="animate-fade-in-page">
-          <Outlet />
+          <Suspense fallback={
+            <div className="min-h-screen flex items-center justify-center bg-[#0b1a33]">
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#d4a15c]"></div>
+            </div>
+          }>
+            <Outlet />
+          </Suspense>
         </div>
       </main>
       <Footer />
@@ -78,19 +82,20 @@ const Layout: React.FC = () => {
 // Router configuration
 const router = createBrowserRouter([
   {
-    path: '/admin/login',
-    element: <Login />
-  },
-  {
     path: '/admin',
-    element: <ProtectedRoute />,
+    element: <Suspense fallback={<div className="min-h-screen bg-[#0b1a33]" />}><AdminRoot /></Suspense>,
     children: [
       {
-        element: <AdminLayout />,
+        path: 'login',
+        element: <Suspense fallback={<div className="min-h-screen bg-[#0b1a33]" />}><Login /></Suspense>
+      },
+      {
+        path: '',
+        element: <Suspense fallback={<div className="min-h-screen bg-[#0b1a33]" />}><AdminProtected /></Suspense>,
         children: [
-          { index: true, element: <Dashboard /> },
-          { path: 'new', element: <ArticleEditor /> },
-          { path: 'edit/:id', element: <ArticleEditor /> }
+          { index: true, element: <Suspense fallback={<div>Loading...</div>}><Dashboard /></Suspense> },
+          { path: 'new', element: <Suspense fallback={<div>Loading...</div>}><ArticleEditor /></Suspense> },
+          { path: 'edit/:id', element: <Suspense fallback={<div>Loading...</div>}><ArticleEditor /></Suspense> }
         ]
       }
     ]
@@ -123,9 +128,7 @@ const router = createBrowserRouter([
 
 const AppRouter: React.FC = () => {
   return (
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <RouterProvider router={router} />
   );
 };
 

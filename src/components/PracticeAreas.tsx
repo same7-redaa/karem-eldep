@@ -5,6 +5,7 @@ import type { PracticeArea } from '../types';
 
 interface PracticeAreaWithLink extends PracticeArea {
   path?: string;
+  image?: string;
 }
 
 const PracticeAreaCard: React.FC<{ area: PracticeAreaWithLink }> = ({ area }) => {
@@ -17,12 +18,18 @@ const PracticeAreaCard: React.FC<{ area: PracticeAreaWithLink }> = ({ area }) =>
             {/* Top accent line */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#d4a15c] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             
-            <div className="relative z-10 p-6 md:p-8 flex flex-col h-full">
-                {/* Icon */}
-                <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-lg bg-[#d4a15c]/10 group-hover:bg-[#d4a15c]/20 transition-all duration-300">
-                    <i className={`${area.icon} text-2xl md:text-3xl text-[#d4a15c] transition-transform duration-300 group-hover:scale-125`}></i>
+            {/* Background Image overlay instead of solid color, or just an image at the top */}
+            {area.image && (
+                <div className="relative h-48 w-full overflow-hidden">
+                    <img src={area.image} alt={area.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b1a33] to-transparent"></div>
+                    <div className="absolute top-4 right-4 h-12 w-12 rounded-lg bg-[#0b1a33]/80 backdrop-blur-sm flex items-center justify-center border border-[#d4a15c]/30">
+                        <i className={`${area.icon} text-xl text-[#d4a15c]`}></i>
+                    </div>
                 </div>
-                
+            )}
+            
+            <div className="relative z-10 p-6 md:p-8 flex flex-col h-full bg-[#0b1a33]/50">
                 {/* Title */}
                 <h3 className="text-lg md:text-xl font-serif font-bold mb-3 text-white group-hover:text-[#d4a15c] transition-colors duration-300">
                     {area.title}
@@ -53,16 +60,16 @@ const PracticeAreas: React.FC = () => {
   const { t } = useLanguage();
   
   const practiceAreas: PracticeAreaWithLink[] = [
-    { icon: 'fa-solid fa-balance-scale', title: t('services.civil'), description: t('services.civil.desc'), path: '/civil-law' },
-    { icon: 'fa-solid fa-gavel', title: t('services.criminal'), description: t('services.criminal.desc'), path: '/criminal-law' },
-    { icon: 'fa-solid fa-handshake', title: t('services.commercial'), description: t('services.commercial.desc'), path: '/commercial-law' },
-    { icon: 'fa-solid fa-heart', title: t('services.family'), description: t('services.family.desc'), path: '/family-law' },
-    { icon: 'fa-solid fa-building', title: t('services.companies'), description: t('services.companies.desc'), path: '/company-law' },
-    { icon: 'fa-solid fa-passport', title: t('services.foreigners'), description: t('services.foreigners.desc'), path: '/foreigners-in-egypt' },
-    { icon: 'fa-solid fa-plane', title: t('services.egyptians'), description: t('services.egyptians.desc'), path: '/egyptians-abroad' },
-    { icon: 'fa-solid fa-scale-balanced', title: t('services.arbitration'), description: t('services.arbitration.desc'), path: '/arbitration-mediation' },
-    { icon: 'fa-solid fa-globe', title: t('services.international'), description: t('services.international.desc'), path: '/arbitration-mediation' },
-    { icon: 'fa-solid fa-anchor', title: t('services.maritime'), description: t('services.maritime.desc'), path: '/commercial-law' },
+    { icon: 'fa-solid fa-balance-scale', title: t('services.civil'), description: t('services.civil.desc'), path: '/civil-law', image: '/images/services/civil-law.webp' },
+    { icon: 'fa-solid fa-gavel', title: t('services.criminal'), description: t('services.criminal.desc'), path: '/criminal-law', image: '/images/services/criminal-law.webp' },
+    { icon: 'fa-solid fa-handshake', title: t('services.commercial'), description: t('services.commercial.desc'), path: '/commercial-law', image: '/images/services/commercial-law.webp' },
+    { icon: 'fa-solid fa-heart', title: t('services.family'), description: t('services.family.desc'), path: '/family-law', image: '/images/services/family-law.webp' },
+    { icon: 'fa-solid fa-building', title: t('services.companies'), description: t('services.companies.desc'), path: '/company-law', image: '/images/services/company-law.webp' },
+    { icon: 'fa-solid fa-passport', title: t('services.foreigners'), description: t('services.foreigners.desc'), path: '/foreigners-in-egypt', image: '/images/services/foreigners-in-egypt.webp' },
+    { icon: 'fa-solid fa-plane', title: t('services.egyptians'), description: t('services.egyptians.desc'), path: '/egyptians-abroad', image: '/images/services/egyptians-abroad.webp' },
+    { icon: 'fa-solid fa-scale-balanced', title: t('services.arbitration'), description: t('services.arbitration.desc'), path: '/arbitration-mediation', image: '/images/services/arbitration-mediation.webp' },
+    { icon: 'fa-solid fa-globe', title: t('services.international'), description: t('services.international.desc'), path: '/arbitration-mediation', image: '/images/services/international-law.webp' },
+    { icon: 'fa-solid fa-anchor', title: t('services.maritime'), description: t('services.maritime.desc'), path: '/commercial-law', image: '/images/services/maritime.webp' },
   ];
 
   return (
@@ -84,8 +91,8 @@ const PracticeAreas: React.FC = () => {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-          {practiceAreas.map((area) => (
-            <PracticeAreaCard key={area.title} area={area} />
+          {practiceAreas.map((area, index) => (
+            <PracticeAreaCard key={index} area={area} />
           ))}
         </div>
       </div>

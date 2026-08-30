@@ -45,6 +45,7 @@ const Services: React.FC = () => {
             descFr: 'Services juridiques complets et spécialisés pour résidents et investisseurs étrangers en Égypte',
             descIt: 'Servizi legali completi e specializzati per residenti e investitori stranieri in Egitto',
             link: '/foreigners-in-egypt',
+            image: '/images/services/foreigners-in-egypt.webp',
             features: [
                 { ar: 'استشارات قانونية', en: 'Legal consultations', fr: 'Consultations juridiques', it: 'Consulenze legali' },
                 { ar: 'تمثيل قانوني', en: 'Legal representation', fr: 'Représentation juridique', it: 'Rappresentanza legale' },
@@ -63,6 +64,7 @@ const Services: React.FC = () => {
             descFr: 'Obtention et renouvellement de permis de résidence et visas pour toutes nationalités rapidement et efficacement',
             descIt: 'Ottenimento e rinnovo di permessi di soggiorno e visti per tutte le nazionalità in modo rapido ed efficiente',
             link: '/foreigners-in-egypt',
+            image: '/images/services/foreigners-in-egypt.webp',
             features: [
                 { ar: 'إقامة سياحية', en: 'Tourist residence', fr: 'Résidence touristique', it: 'Residenza turistica' },
                 { ar: 'إقامة عمل', en: 'Work residence', fr: 'Résidence de travail', it: 'Residenza di lavoro' },
@@ -81,6 +83,7 @@ const Services: React.FC = () => {
             descFr: 'Création de tous types de sociétés pour investisseurs étrangers avec obtention de toutes les licences',
             descIt: 'Costituzione di tutti i tipi di società per investitori stranieri con ottenimento di tutte le licenze',
             link: '/company-law',
+            image: '/images/services/company-law.webp',
             features: [
                 { ar: 'شركة ذات مسؤولية محدودة', en: 'LLC', fr: 'SARL', it: 'SRL' },
                 { ar: 'شركة الشخص الواحد', en: 'Single person company', fr: 'Société unipersonnelle', it: 'Società unipersonale' },
@@ -99,6 +102,7 @@ const Services: React.FC = () => {
             descFr: 'Achat, vente et investissement immobilier pour étrangers avec protection juridique complète',
             descIt: 'Acquisto, vendita e investimento immobiliare per stranieri con protezione legale completa',
             link: '/commercial-law',
+            image: '/images/services/commercial-law.webp',
             features: [
                 { ar: 'فحص قانوني للعقار', en: 'Legal property check', fr: 'Vérification juridique immobilière', it: 'Controllo legale immobiliare' },
                 { ar: 'صياغة العقود', en: 'Contract drafting', fr: 'Rédaction de contrats', it: 'Redazione contratti' },
@@ -117,6 +121,7 @@ const Services: React.FC = () => {
             descFr: 'Divorce, khul\', pension alimentaire et garde pour étrangers avec sensibilité et professionnalisme',
             descIt: 'Divorzio, khul\', alimenti e custodia per stranieri con sensibilità e professionalità',
             link: '/family-law',
+            image: '/images/services/family-law.webp',
             features: [
                 { ar: 'طلاق بالتراضي', en: 'Divorce by consent', fr: 'Divorce par consentement', it: 'Divorzio consensuale' },
                 { ar: 'طلاق للضرر', en: 'Divorce for harm', fr: 'Divorce pour préjudice', it: 'Divorzio per danno' },
@@ -135,6 +140,7 @@ const Services: React.FC = () => {
             descFr: 'Représentation juridique solide dans toutes les affaires civiles et pénales pour étrangers',
             descIt: 'Forte rappresentanza legale in tutti i casi civili e penali per stranieri',
             link: '/criminal-law',
+            image: '/images/services/criminal-law.webp',
             features: [
                 { ar: 'قضايا مدنية', en: 'Civil cases', fr: 'Affaires civiles', it: 'Casi civili' },
                 { ar: 'قضايا جنائية', en: 'Criminal cases', fr: 'Affaires pénales', it: 'Casi penali' },
@@ -153,6 +159,7 @@ const Services: React.FC = () => {
             descFr: 'Litiges du travail, indemnisation et droits des travailleurs étrangers en Égypte',
             descIt: 'Controversie di lavoro, compensazione e diritti dei lavoratori stranieri in Egitto',
             link: '/commercial-law',
+            image: '/images/services/company-law.webp',
             features: [
                 { ar: 'عقود العمل', en: 'Employment contracts', fr: 'Contrats de travail', it: 'Contratti di lavoro' },
                 { ar: 'نزاعات العمل', en: 'Labor disputes', fr: 'Litiges du travail', it: 'Controversie di lavoro' },
@@ -171,6 +178,7 @@ const Services: React.FC = () => {
             descFr: 'Services juridiques pour expatriés égyptiens à l\'étranger',
             descIt: 'Servizi legali per espatriati egiziani all\'estero',
             link: '/egyptians-abroad',
+            image: '/images/services/egyptians-abroad.webp',
             features: [
                 { ar: 'توكيلات رسمية', en: 'Official powers of attorney', fr: 'Procurations officielles', it: 'Procure ufficiali' },
                 { ar: 'إدارة الممتلكات', en: 'Property management', fr: 'Gestion immobilière', it: 'Gestione immobiliare' },
@@ -189,6 +197,7 @@ const Services: React.FC = () => {
             descFr: 'Représentation internationale, arbitrage commercial et résolution de litiges transfrontaliers',
             descIt: 'Rappresentanza internazionale, arbitrato commerciale e risoluzione controversie transfrontaliere',
             link: '/arbitration-mediation',
+            image: '/images/services/international-law.webp',
             features: [
                 { ar: 'تحكيم تجاري دولي', en: 'International commercial arbitration', fr: 'Arbitrage commercial international', it: 'Arbitrato commerciale internazionale' },
                 { ar: 'عقود عابرة للحدود', en: 'Cross-border contracts', fr: 'Contrats transfrontaliers', it: 'Contratti transfrontalieri' },
@@ -207,6 +216,7 @@ const Services: React.FC = () => {
             descFr: 'Résolution des litiges de transport maritime, dédouanement et contrats d\'énergie',
             descIt: 'Risoluzione controversie trasporto marittimo, sdoganamento e contratti energetici',
             link: '/commercial-law',
+            image: '/images/services/maritime.webp',
             features: [
                 { ar: 'نزاعات الشحن البحري', en: 'Maritime shipping disputes', fr: 'Litiges de transport maritime', it: 'Controversie trasporto marittimo' },
                 { ar: 'تخليص جمركي وبضائع', en: 'Customs clearance & cargo', fr: 'Dédouanement et cargaison', it: 'Sdoganamento e carico' },
@@ -278,16 +288,23 @@ const Services: React.FC = () => {
                 <div className="container mx-auto px-4">
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                         {services.map((service, index) => (
-                            <div key={index} className="bg-[#0e1f3b] rounded-lg p-6 border border-[#d4a15c]/20 hover:border-[#d4a15c]/50 transition-all duration-300 hover:transform hover:scale-105">
-                                <div className="flex items-center mb-4">
-                                    <div className="bg-[#d4a15c]/10 p-3 rounded-lg">
-                                        <service.icon className="w-7 h-7 text-[#d4a15c]" />
+                            <div key={index} className="bg-[#0e1f3b] h-full rounded-lg border border-[#d4a15c]/20 hover:border-[#d4a15c]/50 transition-all duration-300 hover:transform hover:scale-105 overflow-hidden flex flex-col">
+                                {service.image && (
+                                    <div className="relative h-48 w-full">
+                                        <img src={service.image} alt={getTitle(service)} className="w-full h-full object-cover" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0e1f3b] to-transparent"></div>
+                                        <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                                            <div className="bg-[#0e1f3b]/80 p-2 rounded-lg backdrop-blur-sm border border-[#d4a15c]/30">
+                                                <service.icon className="w-6 h-6 text-[#d4a15c]" />
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <h3 className="text-xl font-bold mb-3 text-white">{getTitle(service)}</h3>
-                                <p className="text-gray-400 leading-relaxed mb-4">{getDesc(service)}</p>
-
-                                <ul className="space-y-2 mb-6">
+                                )}
+                                <div className="p-6 flex-grow flex flex-col">
+                                    <h3 className="text-xl font-bold mb-3 text-white">{getTitle(service)}</h3>
+                                    <p className="text-gray-400 leading-relaxed mb-4 flex-grow">{getDesc(service)}</p>
+    
+                                    <ul className="space-y-2 mb-6">
                                     {service.features.map((feature, idx) => (
                                         <li key={idx} className="flex items-start gap-2 text-sm text-gray-300">
                                             <ArrowRight className="w-4 h-4 text-[#d4a15c] flex-shrink-0 mt-0.5" />
@@ -298,7 +315,7 @@ const Services: React.FC = () => {
 
                                 <Link
                                     to={service.link}
-                                    className="inline-flex items-center gap-2 text-[#d4a15c] hover:text-[#c8a876] font-semibold transition-colors"
+                                    className="inline-flex items-center gap-2 text-[#d4a15c] hover:text-[#c8a876] font-semibold transition-colors mt-auto"
                                 >
                                     {language === 'ar' && 'اعرف المزيد'}
                                     {language === 'en' && 'Learn More'}
@@ -306,6 +323,7 @@ const Services: React.FC = () => {
                                     {language === 'it' && 'Scopri di Più'}
                                     <ArrowRight className="w-4 h-4" />
                                 </Link>
+                                </div>
                             </div>
                         ))}
                     </div>
