@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
+@font-face {
+  font-family: 'VodafoneAr';
+  src: url('/fonts/vodafone-regular-ar.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VodafoneEn';
+  src: url('/fonts/vodafone-regular-en.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    font-family: 'VodafoneAr', 'Tajawal', sans-serif !important;
+  }
+  
+  html[dir="rtl"] * {
+    font-family: 'VodafoneAr', 'Tajawal', sans-serif !important;
+  }
+
+  html[dir="ltr"] * {
+    font-family: 'VodafoneEn', 'Tajawal', sans-serif !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 92.5% !important;
+  }
+  
+  body {
+    direction: rtl;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+  }
+  
+  /* استثناء الأيقونات من تطبيق خطوط النصوص */
+  html[dir="rtl"] i, html[dir="rtl"] i::before, html[dir="rtl"] i::after,
+  html[dir="rtl"] .fa, html[dir="rtl"] .fas, html[dir="rtl"] .far, html[dir="rtl"] .fal, html[dir="rtl"] .fab,
+  html[dir="rtl"] [class^="fa-"], html[dir="rtl"] [class*=" fa-"],
+  html[dir="ltr"] i, html[dir="ltr"] i::before, html[dir="ltr"] i::after,
+  html[dir="ltr"] .fa, html[dir="ltr"] .fas, html[dir="ltr"] .far, html[dir="ltr"] .fal, html[dir="ltr"] .fab,
+  html[dir="ltr"] [class^="fa-"], html[dir="ltr"] [class*=" fa-"],
+  i, i::before, i::after,
+  .fa, .fas, .far, .fal, .fab,
+  [class^="fa-"], [class*=" fa-"] {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+    font-style: normal !important;
+  }
+}
+
+@layer utilities {
+  .font-tajawal {
+    font-family: 'Tajawal', sans-serif !important;
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 0.3s ease-out forwards;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-page {
+  animation: fadeInPage 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
