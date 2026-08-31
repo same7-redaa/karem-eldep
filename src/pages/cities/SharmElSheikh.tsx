@@ -10,20 +10,20 @@ const SharmElSheikh: React.FC = () => {
     useEffect(() => {
         // SEO Meta Tags
         const title = language === 'ar'
-            ? 'محامي أجانب في شرم الشيخ | كريم الديب | أفضل محامي للأجانب'
+            ? 'محامي تحكيم دولي وقضايا أجانب في شرم الشيخ | كريم الديب'
             : language === 'fr'
-                ? 'Avocat pour Étrangers à Sharm El Sheikh | Karim Eldib'
+                ? 'Avocat Arbitrage International & Étrangers à Sharm El Sheikh | Karim Eldib'
                 : language === 'it'
-                    ? 'Avvocato per Stranieri a Sharm El Sheikh | Karim Eldib'
-                    : 'Lawyer for Foreigners in Sharm El Sheikh | Karim Eldib';
+                    ? 'Avvocato Arbitrato Internazionale e Stranieri a Sharm El Sheikh | Karim Eldib'
+                    : 'International Arbitration & Foreigners Lawyer in Sharm El Sheikh | Karim Eldib';
 
         const description = language === 'ar'
-            ? 'أفضل محامي أجانب في شرم الشيخ. خدمات قانونية متخصصة: إقامة وتأشيرات، تأسيس شركات، قضايا مدنية وجنائية، طلاق وأحوال شخصية، عقارات واستثمارات. نتحدث الفرنسية والإيطالية والإنجليزية.'
+            ? 'أفضل مكتب محاماة للتحكيم الدولي وقضايا الأجانب في شرم الشيخ. خدمات قانونية متخصصة للمستثمرين: تسوية منازعات الفنادق والاستثمارات السياحية، تأسيس شركات، إقامة وعقارات. نتحدث الفرنسية والإيطالية والإنجليزية.'
             : language === 'fr'
-                ? 'Meilleur avocat pour étrangers à Sharm El Sheikh. Services juridiques: résidence et visas, création de sociétés, affaires civiles et pénales, divorce, immobilier. Nous parlons français.'
+                ? 'Meilleur cabinet d\'avocats pour l\'arbitrage international et les étrangers à Charm el-Cheikh. Services de résolution des litiges d\'investissement hôtelier, création d\'entreprises, immobilier. Nous parlons français.'
                 : language === 'it'
-                    ? 'Miglior avvocato per stranieri a Sharm El Sheikh. Servizi legali: residenza e visti, costituzione società, casi civili e penali, divorzio, immobiliare. Parliamo italiano.'
-                    : 'Best lawyer for foreigners in Sharm El Sheikh. Legal services: residence permits, company formation, civil and criminal cases, divorce, real estate. We speak French, Italian, English.';
+                    ? 'Miglior studio legale per l\'arbitrato internazionale e gli stranieri a Sharm El Sheikh. Risoluzione delle controversie sugli investimenti alberghieri, costituzione di società, immobili. Parliamo italiano.'
+                    : 'Best law firm for international arbitration and foreigners in Sharm El Sheikh. Specialized legal services for investors: hotel & tourism disputes resolution, company formation, property ownership, and residency permits. We speak English, French, Italian.';
 
         document.title = title;
 
@@ -149,16 +149,16 @@ const SharmElSheikh: React.FC = () => {
                             <div>
                                 <h3 className="text-xl font-bold text-[#d4a15c] mb-2 flex items-center gap-2">
                                     <i className="fas fa-gavel"></i>
-                                    {language === 'ar' ? 'الوساطة وحل النزاعات الاستثمارية ودياً' : language === 'fr' ? 'Médiation & Règlement des Différends' : language === 'it' ? 'Mediazione e Risoluzione Controversie' : 'Mediation & Amicable Settlements'}
+                                    {language === 'ar' ? 'محامي تحكيم دولي وتسوية منازعات في شرم الشيخ' : language === 'fr' ? 'Avocat d\'Arbitrage & Règlement des Différends à Sharm' : language === 'it' ? 'Avvocato Arbitrato e Risoluzione Controversie a Sharm' : 'Arbitration Lawyer & Dispute Resolution in Sharm El Sheikh'}
                                 </h3>
                                 <p>
                                     {language === 'ar' 
-                                        ? 'نظراً لحساسية القطاع السياحي وتجنباً للتقاضي الطويل، نوفر خدمات وساطة وحلول بديلة متقدمة لحل النزاعات بين أصحاب الفنادق والمستثمرين الأجانب والمقاولين والشركات السياحية بصورة ودية وسريعة تضمن استمرار النشاط.'
+                                        ? 'نقدم تمثيلاً قانونياً متكاملاً للأجانب والفنادق والمنشآت السياحية في شرم الشيخ بواسطة محامي تحكيم دولي معتمد. نوفر خدمات تسوية المنازعات الاستثمارية والتجارية، وعقد جلسات الوساطة وحل النزاعات العابرة للحدود ودياً لتجنب التقاضي الطويل.'
                                         : language === 'fr'
-                                        ? 'Pour préserver les activités touristiques, nous offrons des services de médiation efficaces pour résoudre les litiges à l\'amiable.'
+                                        ? 'Nous fournissons une représentation par un avocat d\'arbitrage international à Charm el-Cheikh pour les investisseurs, hôtels et projets touristiques. Règlement des litiges.'
                                         : language === 'it'
-                                        ? 'Per preservare le attività turistiche, offriamo servizi di mediazione efficaci per risolvere le controversie in modo amichevole.'
-                                        : 'To protect tourism operations, we provide advanced mediation and dispute resolution options to settle conflicts between hoteliers, foreign investors, and travel operators.'}
+                                        ? 'Forniamo una rappresentanza da parte di un avvocato arbitro internazionale a Sharm per investitori, hotel e strutture turistiche. Risoluzione delle controversie.'
+                                        : 'We deliver expert representation by a certified international arbitration lawyer in Sharm El Sheikh for foreign investors, hotels, and tourist developments. Settle investment and commercial disputes amicably.'}
                                 </p>
                             </div>
                         </div>

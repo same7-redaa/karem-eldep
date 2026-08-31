@@ -1,41 +1,45 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import AdvancedSEO from '../../components/AdvancedSEO';
 
 const ArbitrationMediation: React.FC = () => {
   const { language, getTextByLanguage } = useLanguage();
   const isRTL = language === 'ar';
 
-  useEffect(() => {
-    const title = language === 'ar'
-      ? "محامي تحكيم ووساطة | المحامي كريم الديب"
-      : language === 'fr'
-      ? "Avocat Arbitrage et Médiation | Karim El-Dib"
-      : language === 'it'
-      ? "Avvocato Arbitrato e Mediazione | Karim El-Dib"
-      : "Arbitration & Mediation Lawyer | Lawyer Karim El-Dib";
-    
-    document.title = title;
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'محامي تحكيم ووساطة - المحامي كريم الديب خبير في التحكيم الدولي والتجاري والوساطة. حل النزاعات البديل للمصريين والأجانب. Arbitration lawyer Egypt.');
-    }
+  const seoTitle = language === 'ar'
+    ? 'محامي تحكيم دولي في مصر | تسوية المنازعات التجارية والاستثمارية'
+    : language === 'fr'
+    ? 'Avocat Arbitrage International Égypte | Résolution des Litiges'
+    : language === 'it'
+    ? 'Avvocato Arbitrato Internazionale Egitto | Risoluzione Controversie'
+    : 'International Arbitration Lawyer in Egypt | Commercial Dispute Resolution';
 
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'محامي تحكيم, التحكيم الدولي مصر, محامي وساطة, Arbitration lawyer Egypt, International arbitration Egypt, محامي تحكيم تجاري, مركز تحكيم القاهرة, ADR Egypt, كريم الديب محامي');
-    }
-  }, []);
+  const seoDescription = language === 'ar'
+    ? 'مكتب المحامي كريم الديب للتحكيم الدولي والوساطة في مصر. تمثيل قانوني أمام مركز القاهرة الإقليمي (CRCICA)، تسوية منازعات الاستثمار الأجنبي وتسييل وتنفيذ أحكام التحكيم الأجنبية.'
+    : language === 'fr'
+    ? 'Cabinet d\'arbitrage international en Égypte. Représentation devant le CRCICA, règlement des différends relatifs aux investissements et exécution des sentences arbitrales étrangères.'
+    : language === 'it'
+    ? 'Studio legale di arbitrato in Egitto. Rappresentanza presso CRCICA, risoluzione di controversie sugli investimenti ed esecuzione di lodi arbitrali stranieri.'
+    : 'International arbitration & commercial dispute lawyer in Egypt. Full legal representation before CRCICA, investment disputes, and enforcement of foreign arbitral awards.';
+
+  const seoKeywords = language === 'ar'
+    ? 'محامي تحكيم دولي في مصر, التحكيم التجاري الدولي بمصر, تسوية المنازعات الدولية, تنفيذ أحكام التحكيم الأجنبية في مصر, محامي منازعات تجارية دولية, محامي دولي في مصر, مكتب محاماة دولي في مصر, تسوية المنازعات الاستثمارية'
+    : 'International Arbitration Lawyer in Egypt, Commercial Arbitration in Egypt, Cross-Border Dispute Resolution, Enforcement of Foreign Arbitral Awards, Dispute Resolution Lawyer in Egypt, International Dispute Resolution in Egypt';
 
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
+      <AdvancedSEO 
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
+      />
       
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
         <img
           src="/images/services/arbitration-mediation.webp"
-          alt={isRTL ? "التحكيم والوساطة - مكتب كريم الديب للمحاماة" : "Arbitration & Mediation - Karim El-Dib Law Firm"}
+          alt={isRTL ? "التحكيم التجاري الدولي في مصر - مكتب كريم الديب للمحاماة" : "International Commercial Arbitration in Egypt - Karim El-Dib Law Firm"}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
@@ -44,14 +48,19 @@ const ArbitrationMediation: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0b1a33] to-transparent z-[2]"></div>
         <div className="relative z-10 container mx-auto px-4 md:px-6">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
-            {getTextByLanguage({ar: 'محامي التحكيم والوساطة', en: 'Arbitration & Mediation Lawyer', fr: 'Avocat en Arbitrage et Médiation', it: 'Avvocato in Arbitrato e Mediazione'})}
+            {getTextByLanguage({
+              ar: 'محامي تحكيم دولي في مصر - تسوية المنازعات الدولية',
+              en: 'International Arbitration & Dispute Resolution Lawyer in Egypt',
+              fr: 'Avocat en Arbitrage International & Résolution des Litiges en Égypte',
+              it: 'Avvocato in Arbitrato Internazionale e Risoluzione delle Controversie in Egitto'
+            })}
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-6 font-medium text-[#d4a15c]">
             {getTextByLanguage({
-              ar: 'المحامي كريم الديب - خبير في التحكيم الدولي والتجاري والوساطة. نقدم حلول بديلة لحل النزاعات بطريقة أسرع وأكثر كفاءة من التقاضي التقليدي.',
-              en: 'Lawyer Karim El-Dib - Expert in international and commercial arbitration and mediation. We provide alternative dispute resolution solutions faster and more efficiently than traditional litigation.',
-              fr: 'Avocat Karim El-Dib - Expert en arbitrage international, commercial et médiation. Nous fournissons des solutions alternatives de résolution des litiges rapides.',
-              it: 'Avvocato Karim El-Dib - Esperto in arbitrato internazionale, commerciale e mediazione. Forniamo soluzioni alternative veloci ed efficienti per la risoluzione delle controversie.'
+              ar: 'المؤسسة القانونية للأستاذ كريم الديب - متخصصون في التحكيم التجاري الدولي ومنازعات الاستثمار الأجنبي وتسييل وتنفيذ أحكام التحكيم الأجنبية في مصر. نقدم حلولاً متكاملة لتسوية المنازعات العابرة للحدود بطريقة أسرع وأكثر كفاءة.',
+              en: 'Karim El-Dib Law Firm - Specialized in international commercial arbitration, foreign investment disputes, and enforcement of foreign arbitral awards in Egypt. We provide comprehensive solutions for cross-border dispute resolution.',
+              fr: 'Maitre Karim El-Dib - Spécialisé en arbitrage commercial international, litiges d\'investissement étranger et exécution des sentences arbitrales en Égypte. Solutions de résolution des litiges transfrontaliers.',
+              it: 'Avvocato Karim El-Dib - Specializzato in arbitrato commerciale internazionale, controversie sugli investimenti esteri ed esecuzione di lodi arbitrali in Egitto. Soluzioni di risoluzione delle controversie.'
             })}
           </p>
         </div>

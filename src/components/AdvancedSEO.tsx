@@ -73,9 +73,34 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
       'محامي تأسيس شركات للأجانب',
       'محامي عقارات للأجانب',
       'محامي استثمار في مصر',
-      'محامي دولي في مصر',
       'كريم الديب محامي أجانب',
-      'محامي دولي كريم الديب'
+      'محامي دولي كريم الديب',
+      'محامي تحكيم دولي في مصر',
+      'محاماة التحكيم الدولي في مصر',
+      'التحكيم التجاري الدولي في مصر',
+      'محامي منازعات دولية في مصر',
+      'تسوية المنازعات الدولية في مصر',
+      'حل المنازعات التجارية الدولية',
+      'محامي منازعات تجارية دولية',
+      'محامي استثمار أجنبي في مصر',
+      'منازعات المستثمرين الأجانب في مصر',
+      'منازعات الاستثمار في مصر',
+      'تسوية المنازعات الاستثمارية',
+      'محامي شركات دولي في مصر',
+      'محامي دولي في مصر',
+      'مكتب محاماة دولي في مصر',
+      'محامي تحكيم دولي في الإسكندرية',
+      'محامي تحكيم دولي في شرم الشيخ',
+      'محامي منازعات تجارية في مصر',
+      'محامي عقود تجارية دولية',
+      'منازعات العقود التجارية الدولية',
+      'المنازعات العابرة للحدود',
+      'التقاضي في المنازعات الدولية',
+      'تنفيذ أحكام التحكيم الأجنبية في مصر',
+      'الاعتراف بأحكام التحكيم الأجنبية في مصر',
+      'تنفيذ أحكام التحكيم الدولي في مصر',
+      'الوساطة وتسوية المنازعات في مصر',
+      'التفاوض وتسوية المنازعات التجارية'
     ],
 
     en: [
@@ -144,9 +169,23 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
       'karim eldib lawyer',
       'attorney sharm el sheikh',
       'real estate lawyer sharm el sheikh',
-      'business lawyer sharm el sheikh',
       'investment lawyer sharm el sheikh',
-      'residence permit lawyer sharm el sheikh'
+      'residence permit lawyer sharm el sheikh',
+      'International Arbitration Lawyer in Egypt',
+      'International Arbitration in Egypt',
+      'International Dispute Resolution in Egypt',
+      'International Law Firm in Egypt',
+      'International Lawyers in Egypt',
+      'Commercial Arbitration in Egypt',
+      'International Commercial Arbitration',
+      'Cross-Border Dispute Resolution',
+      'International Commercial Disputes',
+      'Investment Disputes in Egypt',
+      'Foreign Investor Disputes in Egypt',
+      'Arbitration Lawyer in Alexandria',
+      'Arbitration Lawyer in Sharm El Sheikh',
+      'Dispute Resolution Lawyer in Egypt',
+      'Foreign Investors Lawyer Egypt'
     ],
 
     fr: [
@@ -433,6 +472,30 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
       document.head.appendChild(canonicalLink);
     }
     canonicalLink.setAttribute('href', canonicalUrl);
+
+    // Add hreflang alternate links for multilingual SEO targeting
+    const languagesList: ('ar' | 'en' | 'fr' | 'it')[] = ['ar', 'en', 'fr', 'it'];
+    const currentPath = window.location.pathname;
+    
+    // Remove existing hreflang link tags to avoid duplicates on route change
+    const existingHreflangs = document.querySelectorAll('link[rel="alternate"][hreflang]');
+    existingHreflangs.forEach(el => el.remove());
+    
+    // Create new hreflang link tags
+    languagesList.forEach(lang => {
+      const link = document.createElement('link');
+      link.setAttribute('rel', 'alternate');
+      link.setAttribute('hreflang', lang === 'ar' ? 'ar-eg' : lang === 'en' ? 'en-us' : lang === 'fr' ? 'fr-fr' : 'it-it');
+      link.setAttribute('href', `https://ke-lawyer.com${currentPath}?lang=${lang}`);
+      document.head.appendChild(link);
+    });
+
+    // Add x-default link tag (fallback)
+    const defaultLink = document.createElement('link');
+    defaultLink.setAttribute('rel', 'alternate');
+    defaultLink.setAttribute('hreflang', 'x-default');
+    defaultLink.setAttribute('href', `https://ke-lawyer.com${currentPath}`);
+    document.head.appendChild(defaultLink);
 
     // Add structured data
     let structuredDataScript = document.querySelector('script[type="application/ld+json"][data-seo="advanced"]');

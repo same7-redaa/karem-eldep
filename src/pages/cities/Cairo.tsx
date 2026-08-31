@@ -10,24 +10,24 @@ const Cairo: React.FC = () => {
   const isRTL = language === 'ar';
 
   const title = getTextByLanguage({
-    ar: 'محامي أجانب في القاهرة | كريم الديب | Lawyer for Foreigners Cairo',
-    en: 'Lawyer for Foreigners in Cairo | Karim Eldib | محامي أجانب القاهرة',
-    fr: 'Avocat pour Étrangers au Caire | Karim Eldib | محامي أجانب القاهرة',
-    it: 'Avvocato per Stranieri al Cairo | Karim Eldib | محامي أجانب القاهرة'
+    ar: 'محامي تحكيم دولي وقضايا أجانب في القاهرة | كريم الديب',
+    en: 'International Arbitration & Foreigners Lawyer in Cairo | Karim Eldib',
+    fr: 'Avocat Arbitrage International & Étrangers au Caire | Karim Eldib',
+    it: 'Avvocato Arbitrato Internazionale e Stranieri al Cairo | Karim Eldib'
   });
 
   const description = getTextByLanguage({
-    ar: 'محامي أجانب متخصص في القاهرة. المحامي كريم الديب يقدم خدمات قانونية شاملة للأجانب والمستثمرين في القاهرة: تأسيس شركات، استثمار أجنبي، تصاريح إقامة، عقود تجارية، استشارات قانونية. محامي يتحدث الإنجليزية والفرنسية. اتصل: +20 122 376 7592',
-    en: 'Specialized lawyer for foreigners in Cairo. Karim Eldib provides comprehensive legal services for foreigners and investors in Cairo: company formation, foreign investment, residence permits, commercial contracts, legal consultations. English and French speaking lawyer. Call: +20 122 376 7592',
-    fr: 'Avocat spécialisé pour étrangers au Caire. Karim Eldib offre des services juridiques complets pour les étrangers et investisseurs au Caire : création de sociétés, investissement étranger, permis de résidence, contrats commerciaux, consultations juridiques. Avocat parlant français et anglais. Appelez : +20 122 376 7592',
-    it: 'Avvocato specializzato per stranieri al Cairo. Karim Eldib fornisce servizi legali completi per stranieri e investitori al Cairo: costituzione società, investimenti esteri, permessi di soggiorno, contratti commerciali, consulenze legali. Avvocato che parla inglese e francese. Chiamata: +20 122 376 7592'
+    ar: 'مكتب المحامي كريم الديب للتحكيم الدولي وقضايا الأجانب في القاهرة. تأسيس شركات أمام الهيئة العامة للاستثمار (GAFI)، تمثيل أمام مركز القاهرة الإقليمي (CRCICA)، تسوية منازعات الاستثمار وعقود الاستيراد والتصدير. نتحدث العربية والإنجليزية والفرنسية والإيطالية.',
+    en: 'Karim Eldib Law Firm for international arbitration and foreigners in Cairo. Company formation before GAFI, representation before CRCICA, investment dispute resolution, and international commercial contracts. Speak English, French, Italian.',
+    fr: 'Cabinet Karim Eldib pour l\'arbitrage international et les étrangers au Caire. Création d\'entreprises (GAFI), représentation devant le CRCICA, et règlement des litiges d\'investissement. Nous parlons français.',
+    it: 'Studio Karim Eldib per l\'arbitrato internazionale e gli stranieri al Cairo. Costituzione di società (GAFI), rappresentanza presso CRCICA e risoluzione delle controversie sugli investimenti. Parliamo italiano.'
   });
 
   const keywords = getTextByLanguage({
-    ar: 'محامي أجانب في القاهرة, محامي اجانب القاهرة, محامي للأجانب القاهرة, محامي دولي القاهرة, محامي استثمار القاهرة, lawyer for foreigners cairo, international lawyer cairo, محامي يتكلم انجليزي القاهرة',
-    en: 'lawyer for foreigners cairo, international lawyer cairo, english speaking lawyer cairo, french speaking lawyer cairo, expat lawyer cairo, legal services cairo, foreign investment lawyer cairo, business lawyer cairo',
-    fr: 'avocat pour étrangers le caire, avocat international le caire, avocat francophone le caire, avocat expatriés le caire, services juridiques le caire, avocat investissement étranger le caire',
-    it: 'avvocato per stranieri cairo, avvocato internazionale cairo, avvocato italiano cairo, avvocato expat cairo, servizi legali cairo, avvocato investimenti esteri cairo'
+    ar: 'محامي تحكيم دولي في القاهرة, محامي استثمار أجنبي القاهرة, تسوية المنازعات في مصر, مركز القاهرة الإقليمي للتحكيم, محامي شركات دولي بمصر, مكتب محاماة دولي في القاهرة',
+    en: 'International Arbitration Lawyer in Cairo, International Dispute Resolution in Egypt, Foreign Investors Lawyer Egypt, CRCICA arbitration cairo, company formation GAFI, business disputes cairo',
+    fr: 'avocat arbitrage international le caire, resolution des litiges egypte, avocat investisseurs etrangers le caire, arbitrage CRCICA, creation societes GAFI',
+    it: 'avvocato arbitrato internazionale cairo, risoluzione controversie egitto, avvocato investitori stranieri cairo, arbitrato CRCICA, costituzione societa GAFI'
   });
 
   return (

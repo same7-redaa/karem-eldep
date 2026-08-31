@@ -1,47 +1,30 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import AdvancedSEO from '../../components/AdvancedSEO';
 
 const ForeignersInEgypt: React.FC = () => {
   const { language, getTextByLanguage } = useLanguage();
   const isRTL = language === 'ar';
 
-  useEffect(() => {
-    const title = language === 'ar'
-      ? "محامي أجانب في مصر | المحامي كريم الديب"
-      : language === 'fr'
-      ? "Avocat pour Étrangers en Égypte | Karim El-Dib"
-      : language === 'it'
-      ? "Avvocato per Stranieri in Egitto | Karim El-Dib"
-      : "Egyptian Lawyer for Foreigners | Karim El-Dib";
-    
-    document.title = title;
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      const description = language === 'ar'
-        ? 'محامي أجانب في مصر - المحامي كريم الديب خبير في تقديم الخدمات القانونية للأجانب. تأسيس شركات، تصاريح إقامة، عقود.'
-        : language === 'fr'
-        ? 'Avocat pour étrangers en Égypte - Karim El-Dib expert en services juridiques pour étrangers. Création de sociétés, permis de résidence, contrats.'
-        : language === 'it'
-        ? 'Avvocato per stranieri in Egitto - Karim El-Dib esperto in servizi legali per stranieri. Costituzione società, permessi di soggiorno, contratti.'
-        : 'Egyptian lawyer for foreigners providing comprehensive legal services in Egypt. Company formation, residence permits, contracts.';
-      
-      metaDescription.setAttribute('content', description);
-    }
+  const seoTitle = language === 'ar'
+    ? 'محامي استثمار أجنبي ومنازعات المستثمرين في مصر | كريم الديب'
+    : language === 'fr'
+    ? 'Avocat Investissement Étranger & Litiges en Égypte | Karim Eldib'
+    : language === 'it'
+    ? 'Avvocato Investimenti Esteri e Controversie in Egitto | Karim Eldib'
+    : 'Foreign Investor & Investment Disputes Lawyer in Egypt | Karim Eldib';
 
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      const keywords = language === 'ar'
-        ? 'محامي أجانب في مصر, محامي للأجانب بمصر, قانوني أجانب مصر, استشارات قانونية للأجانب, تأسيس شركات للأجانب في مصر, تصاريح إقامة أجانب مصر, كريم الديب محامي'
-        : language === 'fr'
-        ? 'avocat étrangers egypte, avocat pour étrangers egypte, services juridiques étrangers egypte, création sociétés étrangers egypte, permis résidence egypte, karim el-dib avocat'
-        : language === 'it'
-        ? 'avvocato stranieri egitto, avvocato per stranieri egitto, servizi legali stranieri egitto, costituzione società stranieri egitto, permessi soggiorno egitto, karim el-dib avvocato'
-        : 'egyptian lawyer for foreigners, lawyer for foreigners egypt, legal services foreigners egypt, company formation foreigners egypt, residence permits egypt, karim el-dib lawyer';
-      
-      metaKeywords.setAttribute('content', keywords);
-    }
-  }, [language]);
+  const seoDescription = language === 'ar'
+    ? 'مكتب المحامي كريم الديب لخدمات الأجانب والمستثمرين في مصر. تأسيس شركات، استشارات الاستثمار الأجنبي، وحل وتسوية منازعات المستثمرين الأجانب والتمثيل القانوني.'
+    : language === 'fr'
+    ? 'Cabinet d\'avocat pour investisseurs étrangers en Égypte. Création de sociétés, conseils en investissement et règlement des litiges et différends d\'investissement.'
+    : language === 'it'
+    ? 'Studio legale per investitori stranieri in Egitto. Costituzione di società, consulenza in materia di investimenti e risoluzione delle controversie.'
+    : 'Specialized lawyer for foreign investors and investment disputes in Egypt. Company formation, residence permits, and legal protection for international businesses.';
+
+  const seoKeywords = language === 'ar'
+    ? 'محامي استثمار أجنبي في مصر, منازعات المستثمرين الأجانب في مصر, منازعات الاستثمار في مصر, تسوية المنازعات الاستثمارية, محامي أجانب في مصر, محامي دولي في مصر, تأسيس شركات للأجانب'
+    : 'Foreign Investor Disputes in Egypt, Investment Disputes in Egypt, Foreign Investors Lawyer Egypt, Company formation for foreigners, property and investment lawyer';
 
   const services = [
     {
@@ -107,16 +90,16 @@ const ForeignersInEgypt: React.FC = () => {
     {
       icon: 'fas fa-chart-line',
       title: getTextByLanguage({
-        ar: 'الاستثمار الأجنبي',
-        en: 'Foreign Investment',
-        fr: 'Investissement Étranger',
-        it: 'Investimento Estero'
+        ar: 'منازعات الاستثمار والمستثمرين الأجانب',
+        en: 'Foreign Investor & Investment Disputes in Egypt',
+        fr: 'Litiges relatifs aux investissements étrangers en Égypte',
+        it: 'Controversie sugli investimenti esteri in Egitto'
       }),
       description: getTextByLanguage({
-        ar: 'استشارات قانونية شاملة للاستثمار الأجنبي في مصر',
-        en: 'Comprehensive legal consultations for foreign investment in Egypt',
-        fr: 'Consultations juridiques complètes pour l\'investissement étranger en Égypte',
-        it: 'Consulenze legali complete per investimenti esteri in Egitto'
+        ar: 'نقدم استشارات قانونية وتمثيلًا قانونيًا متكاملًا لحماية المستثمرين الأجانب وتسوية منازعات الاستثمار والتفاوض وحل النزاعات التجارية العابرة للحدود بموجب قانون الاستثمار رقم 72 لسنة 2017.',
+        en: 'We provide legal consultations and comprehensive legal representation to protect foreign investors, settle investment disputes, and negotiate cross-border commercial conflicts under Investment Law No. 72 of 2017.',
+        fr: 'Nous fournisons des consultations et une représentation complète pour protéger les investisseurs étrangers, régler les litiges d\'investissement sous la Loi d\'Investissement No. 72 de 2017.',
+        it: 'Forniamo consulenze e rappresentanza completa per tutelare gli investitori stranieri, risolvere controversie sugli investimenti ai sensi della Legge sugli Investimenti N. 72 del 2017.'
       })
     },
     {
@@ -197,6 +180,11 @@ const ForeignersInEgypt: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
+      <AdvancedSEO 
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
+      />
       
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">

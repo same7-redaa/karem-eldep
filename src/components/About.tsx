@@ -120,6 +120,48 @@ const About: React.FC = () => {
               <div className="grid grid-cols-3 gap-4 md:gap-6">
                 {stats.map((stat, index) => <StatCard key={index} stat={stat} index={index} />)}
               </div>
+
+              {/* الاعتمادات الدبلوماسية */}
+              <div className="bg-[#0b1a33]/60 border border-[#d4a15c]/20 rounded-lg p-4 transition-all duration-300 hover:border-[#d4a15c]/40">
+                <p className="text-xs font-semibold text-[#d4a15c] mb-3 text-center uppercase tracking-wider font-sans">
+                  {isRTL ? "الاعتمادات والتوثيقات الدبلوماسية الرسمية" : "Official Diplomatic Accreditations & Listings"}
+                </p>
+                <div className="grid grid-cols-3 gap-3 text-center items-stretch">
+                  <div className="p-2.5 bg-[#0b1a33]/90 rounded border border-white/5 hover:border-[#d4a15c]/30 transition-all flex flex-col justify-between">
+                    <div>
+                      <i className="fas fa-certificate text-lg text-[#d4a15c] mb-1.5 block"></i>
+                      <p className="text-[11px] md:text-xs text-white font-semibold font-sans leading-tight">
+                        {isRTL ? "القنصلية الفرنسية" : language === 'fr' ? "Consulat de France" : language === 'it' ? "Consolato Francese" : "French Consulate"}
+                      </p>
+                    </div>
+                    <p className="text-[9px] md:text-[10px] text-gray-400 mt-1 font-sans">
+                      {isRTL ? "منذ 2015" : "Since 2015"}
+                    </p>
+                  </div>
+                  <div className="p-2.5 bg-[#0b1a33]/90 rounded border border-white/5 hover:border-[#d4a15c]/30 transition-all flex flex-col justify-between">
+                    <div>
+                      <i className="fas fa-shield-halved text-lg text-[#d4a15c] mb-1.5 block"></i>
+                      <p className="text-[11px] md:text-xs text-white font-semibold font-sans leading-tight">
+                        {isRTL ? "السفارة البريطانية" : language === 'fr' ? "Ambassade du R-U" : language === 'it' ? "Ambasciata Britannica" : "British Embassy"}
+                      </p>
+                    </div>
+                    <p className="text-[9px] md:text-[10px] text-gray-400 mt-1 font-sans">
+                      {isRTL ? "منذ 2016" : "Since 2016"}
+                    </p>
+                  </div>
+                  <div className="p-2.5 bg-[#0b1a33]/90 rounded border border-white/5 hover:border-[#d4a15c]/30 transition-all flex flex-col justify-between">
+                    <div>
+                      <i className="fas fa-landmark text-lg text-[#d4a15c] mb-1.5 block"></i>
+                      <p className="text-[11px] md:text-xs text-white font-semibold font-sans leading-tight">
+                        {isRTL ? "السفارة البلجيكية" : language === 'fr' ? "Ambassade de Belgique" : language === 'it' ? "Ambasciata Belga" : "Belgian Embassy"}
+                      </p>
+                    </div>
+                    <p className="text-[9px] md:text-[10px] text-gray-400 mt-1 font-sans">
+                      {isRTL ? "منذ 2017" : "Since 2017"}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

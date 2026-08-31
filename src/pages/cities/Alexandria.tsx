@@ -10,20 +10,20 @@ const Alexandria: React.FC = () => {
     useEffect(() => {
         // SEO Meta Tags
         const title = language === 'ar'
-            ? 'محامي قضايا أجانب في الإسكندرية | كريم الديب | أفضل محامي للمستثمرين الأجانب'
+            ? 'محامي تحكيم دولي وقضايا أجانب في الإسكندرية | كريم الديب'
             : language === 'fr'
-                ? 'Avocat pour Affaires d\'Étrangers à Alexandrie | Karim Eldib'
+                ? 'Avocat Arbitrage International & Étrangers à Alexandrie | Karim Eldib'
                 : language === 'it'
-                    ? 'Avvocato per Casi di Stranieri ad Alessandria | Karim Eldib'
-                    : 'Lawyer for Foreigners Cases in Alexandria | Karim Eldib';
+                    ? 'Avvocato Arbitrato Internazionale e Stranieri ad Alessandria | Karim Eldib'
+                    : 'International Arbitration & Foreigners Lawyer in Alexandria | Karim Eldib';
 
         const description = language === 'ar'
-            ? 'أفضل مكتب محاماة للأجانب في الإسكندرية. خدمات قانونية متخصصة للمستثمرين الأجانب: تأسيس شركات، عقارات واستثمارات، إقامة وتأشيرات، قضايا مدنية وجنائية، طلاق وأحوال شخصية، قضايا عمالية. نتحدث الفرنسية والإيطالية والإنجليزية.'
+            ? 'أفضل مكتب محاماة للتحكيم الدولي وقضايا الأجانب في الإسكندرية. خدمات قانونية متخصصة: تسوية المنازعات التجارية والاستثمارية، تأسيس شركات، عقارات واستثمارات، إقامة وتأشيرات. نتحدث الفرنسية والإيطالية والإنجليزية.'
             : language === 'fr'
-                ? 'Meilleur cabinet d\'avocats pour étrangers à Alexandrie. Services juridiques pour investisseurs étrangers: création de sociétés, immobilier, résidence et visas, affaires civiles et pénales, divorce. Nous parlons français.'
+                ? 'Meilleur cabinet d\'avocats pour l\'arbitrage international et les étrangers à Alexandrie. Services juridiques : règlement des litiges commerciaux, création d\'entreprises, immobilier et visas. Nous parlons français.'
                 : language === 'it'
-                    ? 'Miglior studio legale per stranieri ad Alessandria. Servizi legali per investitori stranieri: costituzione società, immobiliare, residenza e visti, casi civili e penali, divorzio. Parliamo italiano.'
-                    : 'Best law firm for foreigners in Alexandria. Legal services for foreign investors: company formation, real estate, residence permits, civil and criminal cases, divorce. We speak French, Italian, English.';
+                    ? 'Miglior studio legale per l\'arbitrato internazionale e gli stranieri ad Alessandria. Servizi legali: risoluzione delle controversie commerciali, costituzione di società, immobili e visti. Parliamo italiano.'
+                    : 'Best law firm for international arbitration and foreigners in Alexandria. Specialized legal services: commercial & investment dispute resolution, company formation, real estate, and residency permits. We speak English, French, Italian.';
 
         document.title = title;
 
@@ -211,16 +211,16 @@ const Alexandria: React.FC = () => {
                             <div>
                                 <h3 className="text-xl font-bold text-[#d4a15c] mb-2 flex items-center gap-2">
                                     <i className="fas fa-gavel"></i>
-                                    {language === 'ar' ? 'التحكيم التجاري وتسوية النزاعات' : language === 'fr' ? 'Arbitrage & Résolution de Litiges' : language === 'it' ? 'Arbitrato e Risoluzione Controversie' : 'Commercial Arbitration & Dispute Resolution'}
+                                    {language === 'ar' ? 'محامي تحكيم دولي في الإسكندرية وتسوية النزاعات' : language === 'fr' ? 'Avocat d\'Arbitrage International à Alexandrie' : language === 'it' ? 'Avvocato Arbitrato Internazionale ad Alessandria' : 'Arbitration Lawyer & Dispute Resolution in Alexandria'}
                                 </h3>
                                 <p>
                                     {language === 'ar' 
-                                        ? 'نوفر خدمات صياغة اتفاقيات التحكيم، وإدارة إجراءات الوساطة وتسوية المنازعات التجارية ودياً للشركات، فضلاً عن التمثيل القانوني الفائق أمام هيئات التحكيم المحلية والدولية لتجنب إجراءات التقاضي الطويلة.'
+                                        ? 'يقدم مكتبنا تمثيلاً قانونياً متكاملاً كـ محامي تحكيم دولي في الإسكندرية. نوفر خدمات صياغة اتفاقيات التحكيم، وإدارة إجراءات الوساطة والتفاوض لتسوية المنازعات التجارية والاستثمارية ودياً للشركات، بالإضافة للتمثيل أمام مراكز التحكيم الإقليمية والدولية.'
                                         : language === 'fr'
-                                        ? 'Nous fournissons des services de rédaction d\'accords d\'arbitrage, de médiation et de représentation devant les tribunaux d\'arbitrage nationaux et internationaux.'
+                                        ? 'Nous agissons comme avocat d\'arbitrage international à Alexandrie, fournissant des services de médiation, de rédaction d\'accords d\'arbitrage et de représentation devant les tribunaux.'
                                         : language === 'it'
-                                        ? 'Forniamo servizi di redazione di accordi arbitrali, mediazione e rappresentanza presso tribunali arbitrali nazionali e internazionali.'
-                                        : 'We offer arbitration drafting, mediation and dispute resolution services, as well as representation before national and international arbitration tribunals.'}
+                                        ? 'Agiamo come avvocato arbitro internazionale ad Alessandria, fornendo servizi di mediazione, redazione di accordi arbitrali e rappresentanza presso tribunali.'
+                                        : 'We act as a specialized international arbitration lawyer in Alexandria, providing drafting of arbitration agreements, commercial mediation, dispute resolution, and legal representation before arbitral tribunals.'}
                                 </p>
                             </div>
                         </div>

@@ -59,6 +59,15 @@ const translations: Record<Language, Record<string, string>> = {
     'services.egyptians.desc': 'متابعة القضايا داخل مصر نيابة عنهم وإدارة شؤونهم العقارية والقانونية وتنفيذ الوكالات الشرعية والعامة وتقديم استشارات قانونية بلغات متعددة',
     'services.arbitration': 'التحكيم والوساطة',
     'services.arbitration.desc': 'تقديم خدمات التحكيم والوساطة لتسوية النزاعات التجارية والمدنية بطرق سلمية وفعالة',
+    'services.arbitration.detailed_title': 'التحكيم التجاري الدولي وتسوية المنازعات في مصر',
+    'services.arbitration.detailed_desc': 'يقدم مكتبنا تمثيلًا متكاملًا للأطراف في منازعات الاستثمار الدولي والتحكيم التجاري وعقود التجارة العابرة للحدود.',
+    'services.arbitration.cairo_center': 'تمثيل قانوني أمام مركز القاهرة الإقليمي للتحكيم (CRCICA)',
+    'services.arbitration.foreign_awards': 'تنفيذ أحكام التحكيم الأجنبية في مصر بموجب اتفاقية نيويورك 1958',
+    'services.arbitration.investment_disputes': 'منازعات الاستثمار الأجنبي والوساطة التجارية',
+    'services.arbitration.alex_title': 'محامي تحكيم دولي في الإسكندرية - تسوية منازعات الشحن والتجارة البحرية',
+    'services.arbitration.sharm_title': 'محامي تحكيم دولي في شرم الشيخ - فض منازعات الفنادق والاستثمار السياحي',
+    'services.foreigners.investment_title': 'منازعات المستثمرين الأجانب والاستثمار في مصر',
+    'services.foreigners.investment_desc': 'نقدم استشارات متخصصة لحماية المستثمرين الأجانب وتمثيلهم في منازعات الاستثمار أمام هيئات التحكيم والمحاكم الاقتصادية.',
     'services.international': 'القانون الدولي',
     'services.international.desc': 'تقديم الاستشارات والتمثيل القانوني في النزاعات والعقود الدولية والاتفاقيات العابرة للحدود للأفراد والشركات',
     'services.maritime': 'القانون البحري والتجارة الدولية',
@@ -143,6 +152,15 @@ const translations: Record<Language, Record<string, string>> = {
     'services.egyptians.desc': 'Following up cases within Egypt on their behalf, managing their real estate and legal affairs, implementing religious and general powers of attorney, and providing legal consultations in multiple languages',
     'services.arbitration': 'Arbitration & Mediation',
     'services.arbitration.desc': 'Providing arbitration and mediation services to resolve commercial and civil disputes through peaceful and effective methods',
+    'services.arbitration.detailed_title': 'International Commercial Arbitration & Dispute Resolution in Egypt',
+    'services.arbitration.detailed_desc': 'Our firm provides comprehensive representation for parties in international investment disputes, commercial arbitration, and cross-border trade contracts.',
+    'services.arbitration.cairo_center': 'Legal representation before the Cairo Regional Centre for International Commercial Arbitration (CRCICA)',
+    'services.arbitration.foreign_awards': 'Enforcement and recognition of foreign arbitral awards in Egypt under the 1958 New York Convention',
+    'services.arbitration.investment_disputes': 'Foreign investment disputes and commercial mediation in Egypt',
+    'services.arbitration.alex_title': 'Arbitration Lawyer in Alexandria - Shipping & Maritime Dispute Resolution',
+    'services.arbitration.sharm_title': 'Arbitration Lawyer in Sharm El Sheikh - Hotel & Tourism Investment Disputes',
+    'services.foreigners.investment_title': 'Foreign Investor & Investment Disputes in Egypt',
+    'services.foreigners.investment_desc': 'We provide specialized consultations to protect foreign investors and represent them in investment disputes before arbitration tribunals and economic courts.',
     'services.international': 'International Law',
     'services.international.desc': 'Providing legal consultations and representation in international disputes, treaties, and cross-border agreements for individuals and businesses',
     'services.maritime': 'Maritime & Shipping Law',
@@ -229,6 +247,15 @@ const translations: Record<Language, Record<string, string>> = {
     'services.egyptians.desc': 'Suivi des affaires en Égypte et consultations juridiques multilingues',
     'services.arbitration': 'Arbitrage et Médiation',
     'services.arbitration.desc': 'Services d\'arbitrage pour résoudre les litiges commerciaux et civils',
+    'services.arbitration.detailed_title': 'Arbitrage Commercial International & Résolution des Litiges en Égypte',
+    'services.arbitration.detailed_desc': 'Notre cabinet assure une représentation complète des parties dans les litiges relatifs aux investissements internationaux, l\'arbitrage commercial et les contrats commerciaux transfrontaliers.',
+    'services.arbitration.cairo_center': 'Représentation légale devant le Centre régional du Caire pour l\'arbitrage commercial international (CRCICA)',
+    'services.arbitration.foreign_awards': 'Exécution et reconnaissance des sentences arbitrales étrangères en Égypte sous la Convention de New York de 1958',
+    'services.arbitration.investment_disputes': 'Litiges relatifs aux investissements étrangers et médiation commerciale en Égypte',
+    'services.arbitration.alex_title': 'Avocat d\'arbitrage à Alexandrie - Résolution des litiges maritimes et de transport',
+    'services.arbitration.sharm_title': 'Avocat d\'arbitrage à Charm el-Cheikh - Litiges relatifs aux investissements hôteliers et touristiques',
+    'services.foreigners.investment_title': 'Litiges relatifs aux investissements étrangers en Égypte',
+    'services.foreigners.investment_desc': 'Nous fournissons des consultations spécialisées pour protéger les investisseurs étrangers et les représenter dans les litiges d\'investissement devant les tribunaux d\'arbitrage et les tribunaux économiques.',
     'services.international': 'Droit International',
     'services.international.desc': 'Consultations et représentation pour litiges internationaux, traités et contrats transfrontaliers pour particuliers et entreprises',
     'services.maritime': 'Droit Maritime et Commercial',
@@ -316,6 +343,15 @@ const translations: Record<Language, Record<string, string>> = {
     'services.egyptians.desc': 'Gestione affari in Egitto e consulenze legali multilingue',
     'services.arbitration': 'Arbitrato e Mediazione',
     'services.arbitration.desc': 'Servizi di arbitrato per risolvere controversie commerciali e civili',
+    'services.arbitration.detailed_title': 'Arbitrato Commerciale Internazionale e Risoluzione delle Controversie in Egitto',
+    'services.arbitration.detailed_desc': 'Il nostro studio fornisce una rappresentanza completa per le parti in controversie sugli investimenti internazionali, arbitrato commerciale e contratti commerciali transfrontalieri.',
+    'services.arbitration.cairo_center': 'Rappresentanza legale presso il Centro regionale del Cairo per l\'arbitrato commerciale internazionale (CRCICA)',
+    'services.arbitration.foreign_awards': 'Esecuzione e riconoscimento di lodi arbitrali stranieri in Egitto ai sensi della Convenzione di New York del 1958',
+    'services.arbitration.investment_disputes': 'Controversie sugli investimenti esteri e mediazione commerciale in Egitto',
+    'services.arbitration.alex_title': 'Avvocato arbitro ad Alessandria - Risoluzione delle controversie marittime e di spedizione',
+    'services.arbitration.sharm_title': 'Avvocato arbitro a Sharm El Sheikh - Controversie sugli investimenti alberghieri e turistici',
+    'services.foreigners.investment_title': 'Controversie sugli investimenti esteri in Egitto',
+    'services.foreigners.investment_desc': 'Forniamo consulenze specializzate per tutelare gli investitori stranieri e rappresentarli nelle controversie sugli investimenti dinanzi a tribunali arbitrali e tribunali economici.',
     'services.international': 'Diritto Internazionale',
     'services.international.desc': 'Consulenza e rappresentanza per controversie internazionali, trattati e contratti transfrontalieri per privati e imprese',
     'services.maritime': 'Diritto Marittimo e Commerciale',
@@ -359,10 +395,27 @@ const translations: Record<Language, Record<string, string>> = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Load language from localStorage or default to 'en'
+  // Load language: 1. Check URL query parameter (for SEO crawler indexing), 2. localStorage, 3. fallback to browser language or 'en'
   const [language, setLanguage] = useState<Language>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const langParam = params.get('lang');
+      if (langParam && ['ar', 'en', 'fr', 'it'].includes(langParam)) {
+        return langParam as Language;
+      }
+    }
     const savedLanguage = localStorage.getItem('preferredLanguage');
-    return (savedLanguage as Language) || 'en';
+    if (savedLanguage && ['ar', 'en', 'fr', 'it'].includes(savedLanguage)) {
+      return savedLanguage as Language;
+    }
+    // Fallback: detect browser language
+    if (typeof navigator !== 'undefined') {
+      const browserLang = navigator.language.split('-')[0];
+      if (['ar', 'en', 'fr', 'it'].includes(browserLang)) {
+        return browserLang as Language;
+      }
+    }
+    return 'en';
   });
 
   useEffect(() => {
@@ -372,6 +425,15 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     
     // Save language preference to localStorage
     localStorage.setItem('preferredLanguage', language);
+
+    // Sync URL query parameter (without reloading the page)
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      if (url.searchParams.get('lang') !== language) {
+        url.searchParams.set('lang', language);
+        window.history.replaceState({}, '', url.toString());
+      }
+    }
   }, [language]);
 
   const toggleLanguage = () => {

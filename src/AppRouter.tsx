@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense, lazy } from 'react';
-import { RouterProvider, createBrowserRouter, Outlet, useLocation } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, Outlet, useLocation, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SocialButtons from './components/SocialButtons';
@@ -122,6 +122,7 @@ const router = createBrowserRouter([
       { path: '/faq', element: <FAQ /> },
       { path: '/about-us', element: <AboutUs /> },
       { path: '/services', element: <Services /> },
+      { path: '*', element: <Navigate to="/" replace /> },
     ],
   },
 ]);

@@ -22,12 +22,14 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
             "المحامي كريم الديب",
             "مكتب الديب للمحاماة",
             "Karim Eldib Lawyer",
-            "Eldib Law Firm"
+            "Eldib Law Firm",
+            "Unlimited lawyers and Foreign services",
+            "Unlimited Lawyers"
           ],
           "description": isRTL 
             ? "مكتب قانوني معتمد متخصص في خدمة الأجانب في مصر والمصريين بالخارج مع خبرة 18 عام في القانون التجاري والجنائي والمدني"
             : "Accredited law firm specializing in serving foreigners in Egypt and Egyptians abroad with 18 years of experience in commercial, criminal and civil law",
-          "url": "https://eldib-co-law-firm.vercel.app",
+          "url": "https://ke-lawyer.com",
           "logo": "https://i.postimg.cc/G3FMRMY4/3.png",
           "image": "/karim-eldib-profile-main.jpeg",
           "founder": {
@@ -59,7 +61,10 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
           "sameAs": [
             "https://www.facebook.com/Unlimitedsharm",
             "https://www.instagram.com/karimeldeeb_lawyer/",
-            "https://www.tiktok.com/@lawyer.karim.eldee"
+            "https://www.tiktok.com/@lawyer.karim.eldee",
+            "https://www.misrconnect.com",
+            "https://maps.google.com/?q=Karim+El+Deeb+Lawyer+Alexandria",
+            "https://maps.google.com/?q=Karim+El+Deeb+Law+firm+Sharm+El+Sheikh"
           ],
           "priceRange": "$$",
           "areaServed": [
@@ -91,6 +96,15 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
               "@type": "EducationalOccupationalCredential",
               "name": isRTL ? "ترخيص مزاولة المهنة" : "Law Practice License",
               "credentialCategory": "license"
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": isRTL ? "محامي معتمد لدى القنصلية الفرنسية في مصر" : "Accredited Lawyer at the French Consulate in Egypt",
+              "credentialCategory": "certification",
+              "recognizedBy": {
+                "@type": "GovernmentOrganization",
+                "name": "Consulat Général de France en Égypte"
+              }
             }
           ],
           "knowsLanguage": ["ar", "en", "fr"],
@@ -136,7 +150,8 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
             "كريم الديب محامي",
             "المحامي كريم الديب",
             "Karim Eldib Lawyer",
-            "Attorney Karim Eldib"
+            "Attorney Karim Eldib",
+            "Maître Karim ELDIB"
           ],
           "jobTitle": isRTL ? "محامي ومستشار قانوني" : "Lawyer and Legal Consultant",
           "description": isRTL 
@@ -158,6 +173,15 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
               "@type": "EducationalOccupationalCredential", 
               "name": isRTL ? "ترخيص مزاولة المهنة" : "Law Practice License",
               "credentialCategory": "license"
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": isRTL ? "محامي معتمد لدى القنصلية الفرنسية في مصر" : "Accredited Lawyer at the French Consulate in Egypt",
+              "credentialCategory": "certification",
+              "recognizedBy": {
+                "@type": "GovernmentOrganization",
+                "name": "Consulat Général de France en Égypte"
+              }
             }
           ],
           "knowsLanguage": ["ar", "en", "fr"],
