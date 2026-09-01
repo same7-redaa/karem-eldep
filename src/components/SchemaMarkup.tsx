@@ -74,6 +74,10 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
             },
             {
               "@type": "AdministrativeArea",
+              "name": "Cairo"
+            },
+            {
+              "@type": "AdministrativeArea",
               "name": "Alexandria"
             },
             {
@@ -82,6 +86,7 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
             }
           ],
           "serviceType": [
+            isRTL ? "التحكيم التجاري الدولي وتسوية منازعات الاستثمار" : "International Commercial Arbitration & Investment Disputes",
             isRTL ? "خدمات قانونية للأجانب في مصر" : "Legal services for foreigners in Egypt",
             isRTL ? "خدمات قانونية للمصريين بالخارج" : "Legal services for Egyptians abroad",
             isRTL ? "القانون التجاري" : "Commercial Law",
@@ -107,7 +112,7 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
               }
             }
           ],
-          "knowsLanguage": ["ar", "en", "fr"],
+          "knowsLanguage": ["ar", "en", "fr", "it"],
           "openingHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",
@@ -184,10 +189,11 @@ const SchemaMarkup: React.FC<SchemaMarkupProps> = ({ type, data }) => {
               }
             }
           ],
-          "knowsLanguage": ["ar", "en", "fr"],
+          "knowsLanguage": ["ar", "en", "fr", "it"],
           "expertise": [
-            isRTL ? "قانون الأجانب" : "Immigration Law",
-            isRTL ? "القانون التجاري" : "Commercial Law",
+            isRTL ? "التحكيم التجاري الدولي وتسوية منازعات الاستثمار" : "International Commercial Arbitration",
+            isRTL ? "قانون الأجانب والاستثمار" : "Foreigners & Investment Law",
+            isRTL ? "القانون التجاري والشركات" : "Commercial & Corporate Law",
             isRTL ? "القانون الجنائي" : "Criminal Law",
             isRTL ? "القانون المدني" : "Civil Law"
           ]

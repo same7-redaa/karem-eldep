@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 import AdvancedSEO from '../../components/AdvancedSEO';
 import Hero from '../../components/Hero';
@@ -45,10 +46,10 @@ const Cairo: React.FC = () => {
           <div className="max-w-7xl mx-auto">
             <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 text-[#d4a15c]">
               {getTextByLanguage({
-                ar: 'محامي أجانب متخصص في القاهرة',
-                en: 'Specialized Lawyer for Foreigners in Cairo',
-                fr: 'Avocat Spécialisé pour Étrangers au Caire',
-                it: 'Avvocato Specializzato per Stranieri al Cairo'
+                ar: 'محامي تحكيم دولي وأجانب متخصص في القاهرة',
+                en: 'Specialized International Arbitration & Foreigners Lawyer in Cairo',
+                fr: 'Avocat Spécialisé en Arbitrage International & Étrangers au Caire',
+                it: 'Avvocato Specializzato in Arbitrato Internazionale e Stranieri al Cairo'
               })}
             </h1>
             
@@ -62,6 +63,27 @@ const Cairo: React.FC = () => {
                 })}
               </h2>
               <ul className="space-y-3">
+                <li className="flex items-start gap-3 bg-[#d4a15c]/10 p-3 rounded-lg border border-[#d4a15c]/30">
+                  <span className="text-[#d4a15c] text-xl">⚖️</span>
+                  <div>
+                    <Link to="/arbitration-mediation" className="text-[#d4a15c] hover:underline font-bold text-base md:text-lg block">
+                      {getTextByLanguage({
+                        ar: 'التحكيم التجاري الدولي وتسوية منازعات الاستثمار (CRCICA)',
+                        en: 'International Commercial Arbitration & Investment Disputes (CRCICA)',
+                        fr: 'Arbitrage Commercial International & Différends d\'Investissement (CRCICA)',
+                        it: 'Arbitrato Commerciale Internazionale e Controversie sugli Investimenti (CRCICA)'
+                      })}
+                    </Link>
+                    <p className="text-gray-300 text-xs md:text-sm mt-1">
+                      {getTextByLanguage({
+                        ar: 'تمثيل قانوني أمام مركز القاهرة الإقليمي للتحكيم التجاري الدولي وتنفيذ أحكام التحكيم الأجنبية في مصر.',
+                        en: 'Full legal representation before CRCICA and enforcement of foreign arbitral awards in Egypt.',
+                        fr: 'Représentation légale devant le CRCICA et exécution des sentences arbitrales étrangères en Égypte.',
+                        it: 'Rappresentanza legale dinanzi al CRCICA ed esecuzione di lodi arbitrali stranieri in Egitto.'
+                      })}
+                    </p>
+                  </div>
+                </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#d4a15c] text-xl">✓</span>
                   <span>{getTextByLanguage({
