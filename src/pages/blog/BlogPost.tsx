@@ -10,6 +10,8 @@ import { useParams, Link } from 'react-router-dom';
 // Import removed
 // Import removed
 
+import { staticArticles } from '../../data/staticArticles';
+
 const BlogPost: React.FC = () => {
   const { language } = useLanguage();
   const isRTL = language === 'ar';
@@ -31,11 +33,18 @@ const BlogPost: React.FC = () => {
         if (!querySnapshot.empty) {
           const docData = querySnapshot.docs[0].data();
           setArticle(docData);
+        } else if (slug && staticArticles[slug]) {
+          setArticle(staticArticles[slug]);
         } else {
           setArticle(null);
         }
       } catch (error) {
         console.error("Error fetching article:", error);
+        if (slug && staticArticles[slug]) {
+          setArticle(staticArticles[slug]);
+        } else {
+          setArticle(null);
+        }
       } finally {
         setLoading(false);
       }

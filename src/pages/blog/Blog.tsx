@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
+import { staticArticles } from '../../data/staticArticles';
+
 const Blog: React.FC = () => {
   const { language } = useLanguage();
   const isRTL = language === 'ar';
@@ -24,7 +26,7 @@ const Blog: React.FC = () => {
     // Fetch articles from Firebase
     const fetchArticles = async () => {
       try {
-        const { collection, getDocs, query, orderBy, where } = await import('firebase/firestore');
+        const { collection, getDocs, query, where } = await import('firebase/firestore');
         const { db } = await import('../../lib/firebase');
 
         const q = query(
@@ -38,12 +40,21 @@ const Blog: React.FC = () => {
           fetchedArticles.push({ id: doc.id, ...doc.data() });
         });
 
-        // Sort client-side to avoid Firestore index requirement
+        // Merge with staticArticles (avoiding duplicates if already in Firestore)
+        const existingSlugs = new Set(fetchedArticles.map(a => a.slug));
+        Object.values(staticArticles).forEach(statArt => {
+          if (!existingSlugs.has(statArt.slug)) {
+            fetchedArticles.push(statArt);
+          }
+        });
+
+        // Sort client-side
         fetchedArticles.sort((a, b) => (a.order || 0) - (b.order || 0));
 
         setArticles(fetchedArticles);
       } catch (error) {
         console.error("Error fetching articles:", error);
+        setArticles(Object.values(staticArticles));
       } finally {
         setLoading(false);
       }
