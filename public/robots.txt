@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
+Sitemap: https://www.ke-lawyer.com/sitemap.xml
 Sitemap: https://ke-lawyer.com/sitemap.xml
 
 # Allow search engines to crawl all pages

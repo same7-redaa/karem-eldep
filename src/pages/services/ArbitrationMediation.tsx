@@ -8,32 +8,212 @@ const ArbitrationMediation: React.FC = () => {
   const isRTL = language === 'ar';
 
   const seoTitle = language === 'ar'
-    ? 'محامي تحكيم دولي في مصر | تسوية المنازعات التجارية والاستثمارية'
+    ? 'محامي تحكيم دولي في مصر | منازعات الاستثمار والتحكيم التجاري | كريم الديب'
     : language === 'fr'
-    ? 'Avocat Arbitrage International Égypte | Résolution des Litiges'
+    ? 'Avocat Arbitrage International Égypte | Litiges Investissement & Commercial | Karim Eldib'
     : language === 'it'
-    ? 'Avvocato Arbitrato Internazionale Egitto | Risoluzione Controversie'
-    : 'International Arbitration Lawyer in Egypt | Commercial Dispute Resolution';
+    ? 'Avvocato Arbitrato Internazionale Egitto | Controversie Investimento | Karim Eldib'
+    : 'International Arbitration Lawyer in Egypt | Investment & Commercial Dispute Resolution | Karim Eldib';
 
   const seoDescription = language === 'ar'
-    ? 'مكتب المحامي كريم الديب للتحكيم الدولي والوساطة في مصر. تمثيل قانوني أمام مركز القاهرة الإقليمي (CRCICA)، تسوية منازعات الاستثمار الأجنبي وتسييل وتنفيذ أحكام التحكيم الأجنبية.'
+    ? 'محامي كريم الديب — مكتب محاماة دولي متخصص في التحكيم التجاري الدولي، منازعات المستثمرين الأجانب، تسوية المنازعات الدولية، وتنفيذ أحكام التحكيم الأجنبية في مصر. تمثيل أمام CRCICA وICCوUNCITRAL. مصر — الإسكندرية — القاهرة — شرم الشيخ.'
     : language === 'fr'
-    ? 'Cabinet d\'arbitrage international en Égypte. Représentation devant le CRCICA, règlement des différends relatifs aux investissements et exécution des sentences arbitrales étrangères.'
+    ? 'Cabinet Karim Eldib — Spécialiste en arbitrage commercial international, litiges d\'investissement étranger, résolution des différends transfrontaliers et exécution de sentences arbitrales en Égypte. Représentation devant CRCICA, ICC et UNCITRAL.'
     : language === 'it'
-    ? 'Studio legale di arbitrato in Egitto. Rappresentanza presso CRCICA, risoluzione di controversie sugli investimenti ed esecuzione di lodi arbitrali stranieri.'
-    : 'International arbitration & commercial dispute lawyer in Egypt. Full legal representation before CRCICA, investment disputes, and enforcement of foreign arbitral awards.';
+    ? 'Studio Karim Eldib — Specialista in arbitrato commerciale internazionale, controversie sugli investimenti esteri, risoluzione delle dispute transfrontaliere ed esecuzione di lodi arbitrali in Egitto. CRCICA, ICC, UNCITRAL.'
+    : 'Karim Eldib — International Arbitration & Dispute Resolution Lawyer in Egypt. Expert in international commercial arbitration, investment disputes, cross-border dispute resolution, and enforcement of foreign arbitral awards. Representation before CRCICA, ICC, LCIA & UNCITRAL in Cairo, Alexandria & Sharm El Sheikh.';
 
   const seoKeywords = language === 'ar'
-    ? 'محامي تحكيم دولي في مصر, التحكيم التجاري الدولي بمصر, تسوية المنازعات الدولية, تنفيذ أحكام التحكيم الأجنبية في مصر, محامي منازعات تجارية دولية, محامي دولي في مصر, مكتب محاماة دولي في مصر, تسوية المنازعات الاستثمارية'
-    : 'International Arbitration Lawyer in Egypt, Commercial Arbitration in Egypt, Cross-Border Dispute Resolution, Enforcement of Foreign Arbitral Awards, Dispute Resolution Lawyer in Egypt, International Dispute Resolution in Egypt';
+    ? 'محامي تحكيم دولي في مصر, التحكيم التجاري الدولي في مصر, محاماة التحكيم الدولي في مصر, تسوية المنازعات الدولية في مصر, محامي منازعات دولية في مصر, حل المنازعات التجارية الدولية, محامي منازعات تجارية دولية, محامي استثمار أجنبي في مصر, منازعات المستثمرين الأجانب في مصر, منازعات الاستثمار في مصر, تسوية المنازعات الاستثمارية, محامي شركات دولي في مصر, محامي دولي في مصر, مكتب محاماة دولي في مصر, محامي تحكيم دولي في الإسكندرية, محامي تحكيم دولي في شرم الشيخ, محامي منازعات تجارية في مصر, محامي عقود تجارية دولية, منازعات العقود التجارية الدولية, المنازعات العابرة للحدود, التقاضي في المنازعات الدولية, تنفيذ أحكام التحكيم الأجنبية في مصر, الاعتراف بأحكام التحكيم الأجنبية في مصر, تنفيذ أحكام التحكيم الدولي في مصر, الوساطة وتسوية المنازعات في مصر, التفاوض وتسوية المنازعات التجارية'
+    : 'International Arbitration Lawyer in Egypt, International Arbitration in Egypt, International Dispute Resolution in Egypt, International Law Firm in Egypt, International Lawyers in Egypt, Commercial Arbitration in Egypt, International Commercial Arbitration, Cross-Border Dispute Resolution, International Commercial Disputes, Investment Disputes in Egypt, Foreign Investor Disputes in Egypt, Arbitration Lawyer in Alexandria, Arbitration Lawyer in Sharm El Sheikh, Dispute Resolution Lawyer in Egypt, Foreign Investors Lawyer Egypt, CRCICA arbitration Egypt, enforcement foreign arbitral awards Egypt, investment arbitration Egypt';
+
+  // ─── FAQ Schema (FAQPage) ───────────────────────────────────────────────────
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": language === 'ar'
+      ? [
+          {
+            "@type": "Question",
+            "name": "ما هو التحكيم التجاري الدولي في مصر؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "التحكيم التجاري الدولي في مصر هو وسيلة بديلة لفض النزاعات خارج المحاكم، يحكمه القانون رقم 27 لسنة 1994. يُعيَّن محكمون متخصصون لإصدار قرار ملزم في النزاعات التجارية والاستثمارية الدولية، وتنفذ أحكامه دولياً وفقاً لاتفاقية نيويورك 1958."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "كيف يتم تنفيذ أحكام التحكيم الأجنبية في مصر؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "تُنفذ أحكام التحكيم الأجنبية في مصر بموجب اتفاقية نيويورك 1958 والقانون رقم 27 لسنة 1994. يُقدَّم طلب الاعتراف والتنفيذ أمام محكمة الاستئناف، وتُصدر الأمر بالتنفيذ بعد التحقق من شروط الصحة الشكلية وعدم مخالفة النظام العام."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ما هو مركز القاهرة الإقليمي للتحكيم (CRCICA)؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "مركز القاهرة الإقليمي للتحكيم التجاري الدولي (CRCICA) هو أبرز مركز تحكيم دولي في أفريقيا والشرق الأوسط، يعمل وفق قواعد UNCITRAL. يُقدم مكتب كريم الديب تمثيلاً قانونياً كاملاً أمام CRCICA في القاهرة."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "ما خيارات تسوية منازعات الاستثمار الأجنبي في مصر؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "تشمل خيارات تسوية منازعات الاستثمار الأجنبي في مصر: التحكيم الدولي أمام ICSID وICCوCRCICA، والوساطة التجارية، والتفاوض المباشر، والتقاضي أمام المحاكم المصرية. يُرجَّح التحكيم الدولي في معظم اتفاقيات الاستثمار الثنائية (BITs)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل يقدم مكتب كريم الديب خدمات التحكيم في الإسكندرية وشرم الشيخ؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم، يُقدم مكتب كريم الديب خدمات التحكيم التجاري الدولي وتسوية المنازعات في الإسكندرية وشرم الشيخ والقاهرة وجميع أنحاء مصر، مع التمثيل أمام مراكز التحكيم المحلية والدولية."
+            }
+          }
+        ]
+      : [
+          {
+            "@type": "Question",
+            "name": "What is international commercial arbitration in Egypt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "International commercial arbitration in Egypt is an alternative dispute resolution (ADR) method governed by Law No. 27 of 1994. Specialized arbitrators are appointed to issue a binding award in international commercial and investment disputes. Awards are internationally enforceable under the 1958 New York Convention."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to enforce foreign arbitral awards in Egypt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Foreign arbitral awards are enforced in Egypt under the New York Convention 1958 and Law No. 27 of 1994. A recognition and enforcement petition is filed before the Court of Appeal, which issues an exequatur order after verifying formal validity requirements and ensuring non-violation of Egyptian public order."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is CRCICA and how does it handle arbitration cases in Egypt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Cairo Regional Centre for International Commercial Arbitration (CRCICA) is the leading international arbitration center in Africa and the Middle East, operating under UNCITRAL rules. Karim Eldib Law Firm provides full legal representation before CRCICA in Cairo for commercial and investment disputes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the options for resolving investment disputes in Egypt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Options for resolving foreign investment disputes in Egypt include: international arbitration before ICSID, ICC, LCIA, and CRCICA; commercial mediation; direct negotiation; and Egyptian court litigation. International arbitration is typically preferred under Bilateral Investment Treaties (BITs)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Karim Eldib Law Firm handle arbitration in Alexandria and Sharm El Sheikh?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Karim Eldib Law Firm provides international commercial arbitration and dispute resolution services in Alexandria, Sharm El Sheikh, Cairo, and across Egypt, with representation before both local and international arbitration centers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is cross-border dispute resolution and how does it work in Egypt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cross-border dispute resolution refers to resolving commercial and investment disputes between parties from different countries. In Egypt, this is primarily handled through international arbitration under ICC, UNCITRAL, or CRCICA rules, or through bilateral investment treaty arbitration before ICSID."
+            }
+          }
+        ]
+  };
+
+  // ─── LegalService Schema (Arbitration-specific) ────────────────────────────
+  const legalServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "@id": "https://www.ke-lawyer.com/arbitration-mediation#legalservice",
+    "name": language === 'ar'
+      ? "مكتب كريم الديب للتحكيم التجاري الدولي وتسوية المنازعات"
+      : "Karim Eldib International Arbitration & Dispute Resolution Law Firm",
+    "alternateName": [
+      "International Arbitration Lawyer Egypt",
+      "محامي تحكيم دولي مصر",
+      "Dispute Resolution Lawyer in Egypt",
+      "Karim Eldib CRCICA"
+    ],
+    "description": seoDescription,
+    "url": "https://www.ke-lawyer.com/arbitration-mediation",
+    "telephone": "+201223767592",
+    "knowsLanguage": ["Arabic", "English", "French", "Italian"],
+    "areaServed": [
+      { "@type": "Country", "name": "Egypt" },
+      { "@type": "City", "name": "Cairo", "alternateName": "القاهرة" },
+      { "@type": "City", "name": "Alexandria", "alternateName": "الإسكندرية" },
+      { "@type": "City", "name": "Sharm El Sheikh", "alternateName": "شرم الشيخ" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "International Arbitration & Dispute Resolution Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "International Commercial Arbitration in Egypt",
+            "description": "Full legal representation in international commercial arbitration before CRCICA, ICC, LCIA and UNCITRAL in Egypt."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Investment Disputes & Foreign Investor Disputes in Egypt",
+            "description": "Legal representation for investment disputes and foreign investor disputes in Egypt, including ICSID arbitration and bilateral investment treaty claims."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Enforcement of Foreign Arbitral Awards in Egypt",
+            "description": "Enforcement and recognition of foreign arbitral awards in Egypt under the New York Convention 1958 and Egyptian Law No. 27 of 1994."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Cross-Border Dispute Resolution",
+            "description": "Cross-border and international commercial dispute resolution through arbitration, mediation and negotiation in Egypt."
+          }
+        }
+      ]
+    },
+    "sameAs": [
+      "https://www.ke-lawyer.com",
+      "https://www.facebook.com/Unlimitedsharm"
+    ]
+  };
 
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
-      <AdvancedSEO 
+      <AdvancedSEO
         title={seoTitle}
         description={seoDescription}
         keywords={seoKeywords}
+        canonicalUrl="https://www.ke-lawyer.com/arbitration-mediation"
       />
+
+      {/* Inject FAQ + LegalService Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(legalServiceSchema) }}
+      />
+
+
       
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
@@ -377,80 +557,177 @@ const ArbitrationMediation: React.FC = () => {
           </div>
         </div>
 
-        {/* تغطية الخدمة في المحافظات */}
-        <div className="mb-16 bg-[#1a2d4d]/50 rounded-2xl p-8 border border-[#c8a876]/20">
-          <h2 className="text-3xl font-bold text-center text-[#c8a876] mb-8">
-            {getTextByLanguage({
-              ar: 'تغطية الخدمة والمناطق المستهدفة في مصر',
-              en: 'Service Coverage & Operation Areas in Egypt',
-              fr: 'Couverture du Service & Zones d\'Opération en Égypte',
-              it: 'Copertura del Servizio e Aree Operative in Egitto'
-            })}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Alexandria */}
-            <div className="bg-[#0b1a33]/60 rounded-xl p-6 border border-[#c8a876]/10 flex flex-col justify-between items-center text-center">
-              <div>
-                <h3 className="text-lg font-bold text-white mb-2">
-                  {getTextByLanguage({ ar: 'المكتب الرئيسي - الإسكندرية', en: 'Main Office - Alexandria', fr: 'Bureau Principal - Alexandrie', it: 'Ufficio Principale - Alessandria' })}
-                </h3>
-                <p className="text-sm text-gray-300 mb-4">
-                  {getTextByLanguage({
-                    ar: 'نقدم خدمات التمثيل والتحكيم والوساطة المباشرة للمستثمرين والشركات التجارية في مكتبنا الرئيسي بالإسكندرية.',
-                    en: 'We provide direct representation, arbitration, and mediation services for investors and commercial businesses at our Alexandria Main Office.',
-                    fr: 'Nous offrons des services d\'arbitrage, de médiation et de représentation directe pour les investisseurs et entreprises à notre bureau d\'Alexandrie.',
-                    it: 'Offriamo servizi di arbitrato, mediazione e rappresentanza diretta per investitori e imprese presso il nostro ufficio principale di Alessandria.'
-                  })}
-                </p>
-              </div>
-              <Link to="/alexandria" className="text-sm text-[#c8a876] hover:text-white hover:underline font-semibold">
-                {getTextByLanguage({ ar: 'تفاصيل فرع الإسكندرية ←', en: 'Alexandria Office Details ←', fr: 'Détails du Bureau d\'Alexandrie ←', it: 'Dettagli Ufficio Alessandria ←' })}
-              </Link>
-            </div>
 
-            {/* Sharm El Sheikh */}
-            <div className="bg-[#0b1a33]/60 rounded-xl p-6 border border-[#c8a876]/10 flex flex-col justify-between items-center text-center">
+        {/* ═══ Investment Disputes in Egypt ══════════════════════════════════ */}
+        <div className="mb-16 bg-gradient-to-br from-[#1a2d4d] to-[#0e1f3b] rounded-2xl p-8 border border-[#c8a876]/20">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-[#c8a876] mb-4 text-center">
+              {getTextByLanguage({
+                ar: 'منازعات الاستثمار ومنازعات المستثمرين الأجانب في مصر',
+                en: 'Investment Disputes & Foreign Investor Disputes in Egypt',
+                fr: 'Litiges d\'Investissement & Litiges des Investisseurs Étrangers en Égypte',
+                it: 'Controversie sugli Investimenti & Stranieri in Egitto'
+              })}
+            </h2>
+            <div className="w-20 h-1 bg-[#c8a876] mx-auto mb-8"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-300 leading-relaxed">
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
-                  {getTextByLanguage({ ar: 'فرع شرم الشيخ', en: 'Sharm El Sheikh Branch', fr: 'Succursale - Sharm El Sheikh', it: 'Filiale - Sharm El Sheikh' })}
-                </h3>
-                <p className="text-sm text-gray-300 mb-4">
+                <h3 className="text-xl font-bold text-white mb-3">
                   {getTextByLanguage({
-                    ar: 'دعم كامل للمستثمرين الأجانب والفنادق والمنشآت السياحية في شرم الشيخ وجنوب سيناء لتسوية النزاعات وحلها ودياً.',
-                    en: 'Full support for foreign investors, hotels, and tourism businesses in Sharm El Sheikh & South Sinai to settle and resolve disputes amicably.',
-                    fr: 'Soutien complet aux investisseurs, hôtels et entreprises touristiques à Charm el-Cheikh et dans le Sinaï Sud pour régler les litiges.',
-                    it: 'Supporto completo per investitori stranieri, hotel e imprese turistiche a Sharm El Sheikh e nel Sinai del Sud per risolvere controversie.'
+                    ar: 'حماية حقوق المستثمر الأجنبي في مصر',
+                    en: 'Protecting Foreign Investor Rights in Egypt',
+                    fr: 'Protection des Droits des Investisseurs Étrangers en Égypte',
+                    it: 'Protezione dei Diritti degli Investitori Stranieri in Egitto'
+                  })}
+                </h3>
+                <p className="mb-4">
+                  {getTextByLanguage({
+                    ar: 'يُكفل قانون الاستثمار المصري رقم 72 لسنة 2017 حقوق المستثمرين الأجانب ويمنحهم الحق في اللجوء إلى التحكيم الدولي لتسوية منازعاتهم مع الدولة المصرية أو الأطراف التجارية الأخرى. يمتلك مكتب كريم الديب خبرة واسعة في تمثيل المستثمرين الأجانب.',
+                    en: 'Egyptian Investment Law No. 72 of 2017 guarantees foreign investor rights and grants them the right to resort to international arbitration to settle disputes with the Egyptian state or other commercial parties. Karim Eldib Law Firm has extensive experience representing foreign investors.',
+                    fr: 'La loi égyptienne sur l\'investissement n° 72 de 2017 garantit les droits des investisseurs étrangers et leur accorde le droit de recourir à l\'arbitrage international. Le cabinet Karim Eldib a une vaste expérience dans la représentation des investisseurs étrangers.',
+                    it: 'La legge egiziana sugli investimenti n. 72 del 2017 garantisce i diritti degli investitori stranieri e concede loro il diritto di ricorrere all\'arbitrato internazionale. Lo Studio Karim Eldib ha ampia esperienza nella rappresentanza di investitori stranieri.'
                   })}
                 </p>
+                <ul className="space-y-2">
+                  {[
+                    getTextByLanguage({ ar: 'تحكيم منازعات الاستثمار أمام ICSID', en: 'Investment arbitration before ICSID', fr: 'Arbitrage d\'investissement devant l\'ICSID', it: 'Arbitrato degli investimenti davanti all\'ICSID' }),
+                    getTextByLanguage({ ar: 'مطالبات اتفاقيات الاستثمار الثنائية (BITs)', en: 'Bilateral Investment Treaty (BIT) claims', fr: 'Réclamations de traités bilatéraux d\'investissement', it: 'Reclami da trattati bilaterali di investimento' }),
+                    getTextByLanguage({ ar: 'النزاعات مع الجهات الحكومية المصرية', en: 'Disputes with Egyptian government entities', fr: 'Litiges avec les entités gouvernementales égyptiennes', it: 'Controversie con enti governativi egiziani' }),
+                    getTextByLanguage({ ar: 'منازعات عقود الامتياز والتراخيص', en: 'Concession and licensing contract disputes', fr: 'Litiges de concessions et de licences', it: 'Controversie su concessioni e licenze' }),
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <i className="fas fa-check-circle text-[#c8a876] text-sm flex-shrink-0"></i>
+                      <span className="text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <Link to="/sharm-el-sheikh" className="text-sm text-[#c8a876] hover:text-white hover:underline font-semibold">
-                {getTextByLanguage({ ar: 'تفاصيل فرع شرم الشيخ ←', en: 'Sharm El Sheikh Branch Details ←', fr: 'Détails de la Succursale de Charm ←', it: 'Dettagli Filiale Sharm ←' })}
-              </Link>
-            </div>
-
-            {/* Cairo */}
-            <div className="bg-[#0b1a33]/60 rounded-xl p-6 border border-[#c8a876]/10 flex flex-col justify-between items-center text-center">
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
-                  {getTextByLanguage({ ar: 'مكتب التمثيل - القاهرة', en: 'Representation Office - Cairo', fr: 'Bureau de Représentation - Le Caire', it: 'Ufficio di Rappresentanza - Il Cairo' })}
-                </h3>
-                <p className="text-sm text-gray-300 mb-4">
+                <h3 className="text-xl font-bold text-white mb-3">
                   {getTextByLanguage({
-                    ar: 'تمثيل كامل أمام هيئات التحكيم بمركز القاهرة الإقليمي للتحكيم التجاري الدولي (CRCICA) ومباشرة إجراءات التأسيس والمستندات.',
-                    en: 'Full representation before arbitration tribunals at Cairo Regional Centre (CRCICA) and direct handling of company formation papers.',
-                    fr: 'Représentation devant les tribunaux d\'arbitrage du Centre de Caire (CRCICA) et traitement direct des documents de création.',
-                    it: 'Rappresentanza davanti ai tribunali arbitrali del Centro del Cairo (CRCICA) e gestione diretta dei documenti di costituzione.'
+                    ar: 'المنازعات العابرة للحدود والتجارة الدولية',
+                    en: 'Cross-Border Disputes & International Commercial Disputes',
+                    fr: 'Litiges Transfrontaliers & Disputes Commerciales Internationales',
+                    it: 'Controversie Transfrontaliere & Dispute Commerciali Internazionali'
+                  })}
+                </h3>
+                <p className="mb-4">
+                  {getTextByLanguage({
+                    ar: 'تشمل خدماتنا في تسوية المنازعات الدولية: منازعات عقود الاستيراد والتصدير، النزاعات بين الشركات متعددة الجنسيات، الخلافات على حقوق الملكية الفكرية الدولية، ونزاعات عقود البناء والإنشاء الدولية.',
+                    en: 'Our international dispute resolution services include: import/export contract disputes, multinational company disputes, international intellectual property rights conflicts, and international construction contract disputes.',
+                    fr: 'Nos services de résolution des litiges internationaux comprennent: litiges de contrats import/export, différends entre multinationales, conflits de propriété intellectuelle internationale, et litiges de contrats de construction internationaux.',
+                    it: 'I nostri servizi di risoluzione delle controversie internazionali includono: dispute su contratti import/export, controversie tra multinazionali, conflitti di proprietà intellettuale internazionale e dispute su contratti di costruzione internazionali.'
                   })}
                 </p>
+                <div className="bg-[#0b1a33]/60 rounded-lg p-4 border border-[#c8a876]/10">
+                  <p className="text-[#c8a876] font-semibold text-sm mb-2">
+                    {getTextByLanguage({ ar: 'تواصل مع محامي تحكيم دولي في مصر', en: 'Contact an International Arbitration Lawyer in Egypt', fr: 'Contactez un Avocat en Arbitrage International en Égypte', it: 'Contatta un Avvocato di Arbitrato Internazionale in Egitto' })}
+                  </p>
+                  <p className="text-gray-300 text-sm">
+                    {getTextByLanguage({ ar: '+20 122 376 7592 | kingarim2411@gmail.com', en: '+20 122 376 7592 | kingarim2411@gmail.com', fr: '+20 122 376 7592 | kingarim2411@gmail.com', it: '+20 122 376 7592 | kingarim2411@gmail.com' })}
+                  </p>
+                </div>
               </div>
-              <Link to="/cairo" className="text-sm text-[#c8a876] hover:text-white hover:underline font-semibold">
-                {getTextByLanguage({ ar: 'تفاصيل خدمات القاهرة ←', en: 'Cairo Services Details ←', fr: 'Détails des Services du Caire ←', it: 'Dettagli Servizi Cairo ←' })}
-              </Link>
             </div>
           </div>
         </div>
 
+        {/* ═══ Enforcement of Foreign Arbitral Awards ════════════════════════ */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center text-[#c8a876] mb-4">
+            {getTextByLanguage({
+              ar: 'تنفيذ أحكام التحكيم الأجنبية في مصر والاعتراف بها',
+              en: 'Enforcement of Foreign Arbitral Awards in Egypt',
+              fr: 'Exécution des Sentences Arbitrales Étrangères en Égypte',
+              it: 'Esecuzione di Lodi Arbitrali Stranieri in Egitto'
+            })}
+          </h2>
+          <div className="w-20 h-1 bg-[#c8a876] mx-auto mb-10"></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: 'fas fa-file-signature',
+                title: getTextByLanguage({ ar: 'اتفاقية نيويورك 1958', en: 'New York Convention 1958', fr: 'Convention de New York 1958', it: 'Convenzione di New York 1958' }),
+                text: getTextByLanguage({
+                  ar: 'مصر طرف في اتفاقية نيويورك منذ 1959، مما يتيح تنفيذ أحكام التحكيم الأجنبية من 170+ دولة في مصر.',
+                  en: 'Egypt has been a signatory to the New York Convention since 1959, enabling enforcement of foreign arbitral awards from 170+ countries in Egypt.',
+                  fr: 'L\'Égypte est signataire de la Convention de New York depuis 1959, permettant l\'exécution de sentences arbitrales étrangères de plus de 170 pays.',
+                  it: 'L\'Egitto è firmatario della Convenzione di New York dal 1959, consentendo l\'esecuzione di lodi arbitrali stranieri da oltre 170 paesi.'
+                })
+              },
+              {
+                icon: 'fas fa-gavel',
+                title: getTextByLanguage({ ar: 'القانون رقم 27 لسنة 1994', en: 'Egyptian Arbitration Law No. 27/1994', fr: 'Loi Égyptienne d\'Arbitrage n°27/1994', it: 'Legge Egiziana sull\'Arbitrato n.27/1994' }),
+                text: getTextByLanguage({
+                  ar: 'يُنظم القانون 27/1994 إجراءات تنفيذ أحكام التحكيم الأجنبية والدولية في مصر عبر طلب الاعتراف أمام محكمة الاستئناف.',
+                  en: 'Law 27/1994 regulates the recognition and enforcement of foreign and international arbitral awards in Egypt through the Court of Appeal.',
+                  fr: 'La loi 27/1994 régit la reconnaissance et l\'exécution des sentences arbitrales étrangères et internationales en Égypte via la Cour d\'appel.',
+                  it: 'La legge 27/1994 regola il riconoscimento e l\'esecuzione dei lodi arbitrali stranieri e internazionali in Egitto tramite la Corte d\'Appello.'
+                })
+              },
+              {
+                icon: 'fas fa-balance-scale',
+                title: getTextByLanguage({ ar: 'إجراءات التنفيذ والاعتراف', en: 'Recognition & Enforcement Procedure', fr: 'Procédure de Reconnaissance & Exécution', it: 'Procedura di Riconoscimento & Esecuzione' }),
+                text: getTextByLanguage({
+                  ar: 'يُقدم مكتب كريم الديب طلب الاعتراف والتنفيذ، ويُرفق مستندات الحكم والترجمة المعتمدة، ويتابع الإجراءات حتى صدور أمر التنفيذ.',
+                  en: 'Karim Eldib Law Firm files the recognition and enforcement petition, attaches award documents and certified translations, and follows up until the exequatur order is issued.',
+                  fr: 'Le cabinet Karim Eldib dépose la requête en reconnaissance et exécution, joint les documents de la sentence et les traductions certifiées, jusqu\'à l\'ordonnance exequatur.',
+                  it: 'Lo Studio Karim Eldib deposita la richiesta di riconoscimento ed esecuzione, allega i documenti del lodo e le traduzioni certificate, fino all\'emissione dell\'ordine di exequatur.'
+                })
+              }
+            ].map((card, i) => (
+              <div key={i} className="bg-[#1a2d4d] rounded-xl p-6 border border-[#c8a876]/10 hover:border-[#c8a876]/40 transition-colors duration-300">
+                <i className={`${card.icon} text-3xl text-[#c8a876] mb-4 block text-center`}></i>
+                <h3 className="text-lg font-bold text-white mb-3 text-center">{card.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{card.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ═══ FAQ Section (visual) ═══════════════════════════════════════════ */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center text-[#c8a876] mb-4">
+            {getTextByLanguage({
+              ar: 'أسئلة شائعة عن التحكيم الدولي في مصر',
+              en: 'Frequently Asked Questions — International Arbitration in Egypt',
+              fr: 'Questions Fréquentes — Arbitrage International en Égypte',
+              it: 'Domande Frequenti — Arbitrato Internazionale in Egitto'
+            })}
+          </h2>
+          <div className="w-20 h-1 bg-[#c8a876] mx-auto mb-10"></div>
+          <div className="space-y-4 max-w-4xl mx-auto">
+            {(language === 'ar'
+              ? [
+                  { q: 'ما هو التحكيم التجاري الدولي في مصر؟', a: 'التحكيم التجاري الدولي في مصر هو وسيلة بديلة لفض النزاعات خارج المحاكم، يحكمه القانون رقم 27 لسنة 1994. يُعيَّن محكمون متخصصون لإصدار قرار ملزم في النزاعات التجارية والاستثمارية الدولية، وتُنفَّذ أحكامه دولياً وفقاً لاتفاقية نيويورك 1958.' },
+                  { q: 'كيف يتم تنفيذ أحكام التحكيم الأجنبية في مصر؟', a: 'تُنفَّذ أحكام التحكيم الأجنبية في مصر بموجب اتفاقية نيويورك 1958 والقانون رقم 27 لسنة 1994. يُقدَّم طلب الاعتراف والتنفيذ أمام محكمة الاستئناف، وتُصدِر أمر التنفيذ بعد التحقق من الصحة الشكلية وعدم مخالفة النظام العام.' },
+                  { q: 'ما خيارات تسوية منازعات الاستثمار الأجنبي في مصر؟', a: 'تشمل الخيارات: التحكيم الدولي أمام ICSID وICCوCRCICA، الوساطة التجارية، التفاوض المباشر، والتقاضي أمام المحاكم المصرية. يُرجَّح التحكيم الدولي في معظم اتفاقيات الاستثمار الثنائية (BITs).' },
+                  { q: 'هل تخدم مكتب كريم الديب في الإسكندرية وشرم الشيخ والقاهرة؟', a: 'نعم، يُقدم مكتب كريم الديب خدمات التحكيم الدولي وتسوية المنازعات في الإسكندرية وشرم الشيخ والقاهرة وجميع أنحاء مصر، مع التمثيل أمام مراكز التحكيم المحلية والدولية.' },
+                ]
+              : [
+                  { q: 'What is international commercial arbitration in Egypt?', a: 'International commercial arbitration in Egypt is an ADR method governed by Law No. 27 of 1994. Specialized arbitrators issue a binding award in commercial and investment disputes. Awards are enforceable in 170+ countries under the New York Convention 1958.' },
+                  { q: 'How to enforce foreign arbitral awards in Egypt?', a: 'Foreign arbitral awards are enforced in Egypt under the New York Convention 1958 and Law No. 27 of 1994. A recognition petition is filed before the Court of Appeal, which issues an exequatur order after verifying formal requirements and non-violation of public order.' },
+                  { q: 'What are the options for resolving investment disputes in Egypt?', a: 'Options include: international arbitration before ICSID, ICC, LCIA, and CRCICA; commercial mediation; direct negotiation; and Egyptian court litigation. International arbitration is typically preferred under Bilateral Investment Treaties (BITs).' },
+                  { q: 'What is CRCICA and how does it handle arbitration in Egypt?', a: 'CRCICA (Cairo Regional Centre for International Commercial Arbitration) is the leading arbitration center in Africa and the Middle East, operating under UNCITRAL rules. Karim Eldib Law Firm provides full legal representation before CRCICA in Cairo.' },
+                  { q: 'Does Karim Eldib handle arbitration in Alexandria and Sharm El Sheikh?', a: 'Yes. Karim Eldib Law Firm provides international arbitration and dispute resolution services in Alexandria, Sharm El Sheikh, Cairo, and across Egypt, with representation before both local and international arbitration centers.' },
+                  { q: 'What is cross-border dispute resolution?', a: 'Cross-border dispute resolution handles commercial and investment disputes between parties from different countries, primarily through international arbitration under ICC, UNCITRAL, or CRCICA rules, or ICSID treaty arbitration.' },
+                ]
+            ).map((faq, i) => (
+              <details key={i} className="bg-[#1a2d4d] rounded-xl border border-[#c8a876]/10 group">
+                <summary className="flex items-center justify-between p-5 cursor-pointer list-none">
+                  <span className="font-semibold text-white group-open:text-[#c8a876] transition-colors duration-200">{faq.q}</span>
+                  <i className="fas fa-chevron-down text-[#c8a876] group-open:rotate-180 transition-transform duration-300 flex-shrink-0 ml-4"></i>
+                </summary>
+                <div className="px-5 pb-5 text-gray-300 leading-relaxed border-t border-[#c8a876]/10 pt-4">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+
         <div className="bg-gradient-to-r from-[#c8a876] to-[#b8956a] rounded-lg p-12 text-center">
+
           <h2 className="text-3xl md:text-4xl font-bold text-[#0b1a33] mb-6">
             {getTextByLanguage({ar: 'هل تريد حل نزاعك بالتحكيم أو الوساطة؟', en: 'Want to Resolve Your Dispute Through Arbitration or Mediation?', fr: 'Voulez-vous résoudre votre litige par arbitrage ou médiation?', it: 'Vuoi risolvere la tua controversia tramite arbitrato o mediazione?'})}
           </h2>

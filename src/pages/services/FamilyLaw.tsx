@@ -8,18 +8,22 @@ const FamilyLaw: React.FC = () => {
 
   useEffect(() => {
     const title = language === 'ar'
-      ? "محامي أحوال شخصية | قانون الأسرة | المحامي كريم الديب"
+      ? "محامي أحوال شخصية وقانون الأسرة للأجانب | كريم الديب - مصر"
       : language === 'fr'
-      ? "Avocat Droit de la Famille | Karim El-Dib"
+      ? "Avocat Droit de la Famille pour Étrangers en Égypte | Karim El-Dib"
       : language === 'it'
-      ? "Avvocato Diritto di Famiglia | Karim El-Dib"
-      : "Family Law Lawyer | Lawyer Karim El-Dib";
+      ? "Avvocato Diritto di Famiglia per Stranieri in Egitto | Karim El-Dib"
+      : "Family Lawyer for Foreigners in Egypt | Divorce, Custody & Immigration | Karim El-Dib";
     
     document.title = title;
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'محامي أحوال شخصية - المحامي كريم الديب خبير في قانون الأسرة والأحوال الشخصية. قضايا الطلاق، الخلع، النفقة، الحضانة، الميراث للمصريين والأجانب. Family law lawyer Egypt.');
+      metaDescription.setAttribute('content',
+        language === 'en'
+          ? 'Family & Immigration Lawyer for Foreigners in Egypt — Karim Eldib. Divorce, child custody, alimony & residence permits for expats in Cairo, Alexandria & Sharm El Sheikh. Free consultation. English, French & Italian spoken.'
+          : 'محامي أحوال شخصية للأجانب في مصر — كريم الديب. طلاق، حضانة، نفقة، وإقامة للمقيمين الأجانب في القاهرة والإسكندرية وشرم الشيخ. استشارة مجانية. نتحدث العربية والإنجليزية والفرنسية.'
+      );
     }
 
     const metaKeywords = document.querySelector('meta[name="keywords"]');

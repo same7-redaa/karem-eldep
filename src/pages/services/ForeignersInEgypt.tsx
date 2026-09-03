@@ -7,20 +7,20 @@ const ForeignersInEgypt: React.FC = () => {
   const isRTL = language === 'ar';
 
   const seoTitle = language === 'ar'
-    ? 'محامي استثمار أجنبي ومنازعات المستثمرين في مصر | كريم الديب'
+    ? 'محامي الأجانب والمستثمرين في مصر | إقامة وتأشيرات وشركات | كريم الديب'
     : language === 'fr'
-    ? 'Avocat Investissement Étranger & Litiges en Égypte | Karim Eldib'
+    ? 'Avocat pour Étrangers en Égypte | Résidence, Visa & Investissement | Karim Eldib'
     : language === 'it'
-    ? 'Avvocato Investimenti Esteri e Controversie in Egitto | Karim Eldib'
-    : 'Foreign Investor & Investment Disputes Lawyer in Egypt | Karim Eldib';
+    ? 'Avvocato per Stranieri in Egitto | Residenza, Visto & Investimenti | Karim Eldib'
+    : 'Immigration & Foreigners Lawyer in Egypt | Residence Permits, Visas & Company Formation | Karim Eldib';
 
   const seoDescription = language === 'ar'
-    ? 'مكتب المحامي كريم الديب لخدمات الأجانب والمستثمرين في مصر. تأسيس شركات، استشارات الاستثمار الأجنبي، وحل وتسوية منازعات المستثمرين الأجانب والتمثيل القانوني.'
+    ? 'محامي كريم الديب — متخصص في خدمات الأجانب والمقيمين في مصر. إقامة وتأشيرات، تأسيس شركات، عقود العمل، عقارات، ومنازعات الاستثمار. خبرة 18 عاماً. استشارة مجانية.'
     : language === 'fr'
-    ? 'Cabinet d\'avocat pour investisseurs étrangers en Égypte. Création de sociétés, conseils en investissement et règlement des litiges et différends d\'investissement.'
+    ? 'Avocat Karim Eldib pour étrangers en Égypte. Résidence, visas, création d\'entreprises, contrats et litiges d\'investissement. 18 ans d\'expérience. Consultation gratuite. Nous parlons français.'
     : language === 'it'
-    ? 'Studio legale per investitori stranieri in Egitto. Costituzione di società, consulenza in materia di investimenti e risoluzione delle controversie.'
-    : 'Specialized lawyer for foreign investors and investment disputes in Egypt. Company formation, residence permits, and legal protection for international businesses.';
+    ? 'Avvocato Karim Eldib per stranieri in Egitto. Residenza, visti, costituzione società e controversie. 18 anni di esperienza. Consulenza gratuita. Parliamo italiano.'
+    : 'Immigration & Foreigners Lawyer in Egypt — Karim Eldib. Expert in residence permits, visas, company formation & investment disputes in Cairo, Alexandria & Sharm El Sheikh. Free consultation. English, French & Italian spoken.';
 
   const seoKeywords = language === 'ar'
     ? 'محامي استثمار أجنبي في مصر, منازعات المستثمرين الأجانب في مصر, منازعات الاستثمار في مصر, تسوية المنازعات الاستثمارية, محامي أجانب في مصر, محامي دولي في مصر, تأسيس شركات للأجانب'

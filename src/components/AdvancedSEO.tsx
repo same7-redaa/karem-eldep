@@ -13,7 +13,7 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
   title,
   description,
   keywords,
-  canonicalUrl = 'https://ke-lawyer.com',
+  canonicalUrl = 'https://www.ke-lawyer.com',
   city
 }) => {
   const { language } = useLanguage();
@@ -249,7 +249,7 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
       ? 'Meilleur avocat pour étrangers à Sharm El Sheikh, Alexandrie et Égypte. Services juridiques complets: affaires d\'étrangers, résidence et visas, création de sociétés, affaires civiles et pénales, divorce et statut personnel, immobilier et investissements. Nous parlons français, arabe, anglais et italien. Cabinet Karim Eldib - 18 ans d\'expérience.'
       : language === 'it'
         ? 'Miglior avvocato per stranieri a Sharm El Sheikh, Alessandria ed Egitto. Servizi legali completi: casi di stranieri, residenza e visti, costituzione di società, casi civili e penali, divorzio e stato personale, immobiliare e investimenti. Parliamo italiano, arabo, inglese e francese. Studio Legale Karim Eldib - 18 anni di esperienza.'
-        : 'Best lawyer for foreigners in Sharm El Sheikh, Alexandria and Egypt. Comprehensive legal services: foreigners cases, residence and visas, company formation, civil and criminal cases, divorce and personal status, real estate and investments, labor cases. We speak English, Arabic, French and Italian. Karim Eldib Law Firm - 18 years of experience.';
+        : 'Immigration, Family & Criminal Defense Lawyer in Egypt | Karim Eldib Law Firm. Serving foreigners & expats in Cairo, Alexandria & Sharm El Sheikh. Expert in residence permits, company formation, divorce & civil cases. Free consultation. English, French, Italian & Arabic spoken.';
 
   const combinedKeywords = [
     ...(keywords ? [keywords] : []),
@@ -486,7 +486,7 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
       const link = document.createElement('link');
       link.setAttribute('rel', 'alternate');
       link.setAttribute('hreflang', lang === 'ar' ? 'ar-eg' : lang === 'en' ? 'en-us' : lang === 'fr' ? 'fr-fr' : 'it-it');
-      link.setAttribute('href', `https://ke-lawyer.com${currentPath}?lang=${lang}`);
+      link.setAttribute('href', `https://www.ke-lawyer.com${currentPath}?lang=${lang}`);
       document.head.appendChild(link);
     });
 
@@ -494,7 +494,7 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
     const defaultLink = document.createElement('link');
     defaultLink.setAttribute('rel', 'alternate');
     defaultLink.setAttribute('hreflang', 'x-default');
-    defaultLink.setAttribute('href', `https://ke-lawyer.com${currentPath}`);
+    defaultLink.setAttribute('href', `https://www.ke-lawyer.com${currentPath}`);
     document.head.appendChild(defaultLink);
 
     // Add structured data
