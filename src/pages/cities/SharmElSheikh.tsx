@@ -18,12 +18,12 @@ const SharmElSheikh: React.FC = () => {
                     : 'International Arbitration & Foreigners Lawyer in Sharm El Sheikh | Karim Eldib';
 
         const description = language === 'ar'
-            ? 'أفضل مكتب محاماة للتحكيم الدولي وقضايا الأجانب في شرم الشيخ. خدمات قانونية متخصصة للمستثمرين: تسوية منازعات الفنادق والاستثمارات السياحية، تأسيس شركات، إقامة وعقارات. نتحدث الفرنسية والإيطالية والإنجليزية.'
+            ? 'محامي تحكيم دولي في شرم الشيخ — كريم الديب. متخصص في التحكيم التجاري الدولي لمنازعات الفنادق والاستثمار السياحي، تسوية منازعات المستثمرين الأجانب، تنفيذ أحكام التحكيم، تأسيس شركات وإقامة. استشارة مجانية.'
             : language === 'fr'
-                ? 'Meilleur cabinet d\'avocats pour l\'arbitrage international et les étrangers à Charm el-Cheikh. Services de résolution des litiges d\'investissement hôtelier, création d\'entreprises, immobilier. Nous parlons français.'
+                ? 'Avocat en arbitrage international à Sharm El Sheikh — Karim Eldib. Spécialiste en arbitrage commercial international, litiges d\'investissement hôtelier et touristique, résolution des différends transfrontaliers. Consultation gratuite. Nous parlons français.'
                 : language === 'it'
-                    ? 'Miglior studio legale per l\'arbitrato internazionale e gli stranieri a Sharm El Sheikh. Risoluzione delle controversie sugli investimenti alberghieri, costituzione di società, immobili. Parliamo italiano.'
-                    : 'Best law firm for international arbitration and foreigners in Sharm El Sheikh. Specialized legal services for investors: hotel & tourism disputes resolution, company formation, property ownership, and residency permits. We speak English, French, Italian.';
+                    ? 'Avvocato di arbitrato internazionale a Sharm El Sheikh — Karim Eldib. Specialista in arbitrato commerciale internazionale, controversie sugli investimenti alberghieri e turistici. Consulenza gratuita. Parliamo italiano.'
+                    : 'International Arbitration Lawyer in Sharm El Sheikh, Egypt — Karim Eldib. Expert in commercial arbitration, hotel & tourism investment disputes, cross-border dispute resolution, and enforcement of foreign arbitral awards. Free consultation. English, French & Italian spoken.';
 
         document.title = title;
 
@@ -47,20 +47,23 @@ const SharmElSheikh: React.FC = () => {
             },
             "telephone": "+20-122-376-7592",
             "email": "kingarim2411@gmail.com",
-            "url": "https://ke-lawyer.com/sharm-el-sheikh",
+            "url": "https://www.ke-lawyer.com/sharm-el-sheikh",
             "priceRange": "$$",
             "areaServed": {
                 "@type": "City",
-                "name": "Sharm El Sheikh"
+                "name": "Sharm El Sheikh",
+                "alternateName": "شرم الشيخ"
             },
             "knowsLanguage": ["ar", "en", "fr", "it"],
             "serviceType": [
+                language === 'ar' ? "محامي تحكيم دولي في شرم الشيخ" : "International Arbitration Lawyer in Sharm El Sheikh",
+                language === 'ar' ? "تسوية منازعات الاستثمار والفنادق" : "Hotel & Investment Dispute Resolution",
+                language === 'ar' ? "منازعات المستثمرين الأجانب" : "Foreign Investor Disputes in Egypt",
+                language === 'ar' ? "تنفيذ أحكام التحكيم الأجنبية" : "Enforcement of Foreign Arbitral Awards",
                 language === 'ar' ? "خدمات قانونية للأجانب" : "Legal Services for Foreigners",
                 language === 'ar' ? "إقامة وتأشيرات" : "Residence Permits and Visas",
                 language === 'ar' ? "تأسيس شركات" : "Company Formation",
-                language === 'ar' ? "قضايا مدنية وجنائية" : "Civil and Criminal Cases",
-                language === 'ar' ? "طلاق وأحوال شخصية" : "Divorce and Personal Status",
-                language === 'ar' ? "عقارات واستثمارات" : "Real Estate and Investments"
+                language === 'ar' ? "طلاق وأحوال شخصية" : "Divorce and Personal Status"
             ]
         };
 

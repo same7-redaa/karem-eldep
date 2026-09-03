@@ -18,12 +18,12 @@ const Alexandria: React.FC = () => {
                     : 'International Arbitration & Foreigners Lawyer in Alexandria | Karim Eldib';
 
         const description = language === 'ar'
-            ? 'أفضل مكتب محاماة للتحكيم الدولي وقضايا الأجانب في الإسكندرية. خدمات قانونية متخصصة: تسوية المنازعات التجارية والاستثمارية، تأسيس شركات، عقارات واستثمارات، إقامة وتأشيرات. نتحدث الفرنسية والإيطالية والإنجليزية.'
+            ? 'محامي تحكيم دولي في الإسكندرية — كريم الديب. متخصص في التحكيم التجاري الدولي، منازعات المستثمرين الأجانب، تسوية المنازعات الدولية، تنفيذ أحكام التحكيم الأجنبية، تأسيس شركات وإقامة. استشارة مجانية.'
             : language === 'fr'
-                ? 'Meilleur cabinet d\'avocats pour l\'arbitrage international et les étrangers à Alexandrie. Services juridiques : règlement des litiges commerciaux, création d\'entreprises, immobilier et visas. Nous parlons français.'
+                ? 'Avocat en arbitrage international à Alexandrie — Karim Eldib. Spécialiste en arbitrage commercial international, litiges d\'investissements étrangers, résolution des différends transfrontaliers et exécution de sentences arbitrales. Consultation gratuite.'
                 : language === 'it'
-                    ? 'Miglior studio legale per l\'arbitrato internazionale e gli stranieri ad Alessandria. Servizi legali: risoluzione delle controversie commerciali, costituzione di società, immobili e visti. Parliamo italiano.'
-                    : 'Best law firm for international arbitration and foreigners in Alexandria. Specialized legal services: commercial & investment dispute resolution, company formation, real estate, and residency permits. We speak English, French, Italian.';
+                    ? 'Avvocato di arbitrato internazionale ad Alessandria — Karim Eldib. Specialista in arbitrato commerciale internazionale, controversie di investimento estero, risoluzione dispute transfrontaliere. Consulenza gratuita.'
+                    : 'International Arbitration Lawyer in Alexandria, Egypt — Karim Eldib. Expert in commercial arbitration, foreign investment disputes, cross-border dispute resolution, and enforcement of foreign arbitral awards. Free consultation. English, French & Italian spoken.';
 
         document.title = title;
 
@@ -47,21 +47,23 @@ const Alexandria: React.FC = () => {
             },
             "telephone": "+20-122-376-7592",
             "email": "kingarim2411@gmail.com",
-            "url": "https://ke-lawyer.com/alexandria",
+            "url": "https://www.ke-lawyer.com/alexandria",
             "priceRange": "$$",
             "areaServed": {
                 "@type": "City",
-                "name": "Alexandria"
+                "name": "Alexandria",
+                "alternateName": "الإسكندرية"
             },
             "knowsLanguage": ["ar", "en", "fr", "it"],
             "serviceType": [
+                language === 'ar' ? "محامي تحكيم دولي في الإسكندرية" : "International Arbitration Lawyer in Alexandria",
+                language === 'ar' ? "تسوية المنازعات التجارية الدولية" : "International Commercial Dispute Resolution",
+                language === 'ar' ? "منازعات المستثمرين الأجانب" : "Foreign Investor Disputes",
+                language === 'ar' ? "تنفيذ أحكام التحكيم الأجنبية" : "Enforcement of Foreign Arbitral Awards",
                 language === 'ar' ? "خدمات قانونية للمستثمرين الأجانب" : "Legal Services for Foreign Investors",
                 language === 'ar' ? "تأسيس شركات للأجانب" : "Company Formation for Foreigners",
-                language === 'ar' ? "عقارات واستثمارات" : "Real Estate and Investments",
                 language === 'ar' ? "إقامة وتأشيرات" : "Residence Permits and Visas",
-                language === 'ar' ? "قضايا مدنية وجنائية" : "Civil and Criminal Cases",
-                language === 'ar' ? "طلاق وأحوال شخصية" : "Divorce and Personal Status",
-                language === 'ar' ? "قضايا عمالية وتجارية" : "Labor and Commercial Cases"
+                language === 'ar' ? "طلاق وأحوال شخصية" : "Divorce and Personal Status"
             ]
         };
 
