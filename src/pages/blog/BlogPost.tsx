@@ -1,16 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { useParams, Link } from 'react-router-dom';
-
-// Import removed
-// Import removed
-// Import removed
-// Import removed
-// Import removed
-// Import removed
-// Import removed
-
-import { staticArticles } from '../../data/staticArticles';
+import AdvancedSEO from '../../components/AdvancedSEO';
+import { staticArticles, slugAliases } from '../../data/staticArticles';
 
 const BlogPost: React.FC = () => {
   const { language } = useLanguage();
@@ -18,6 +10,15 @@ const BlogPost: React.FC = () => {
   const { slug } = useParams();
   const [article, setArticle] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+
+  // Helper to resolve static article by slug or alias
+  const getStaticArticle = (s?: string) => {
+    if (!s) return null;
+    if (staticArticles[s]) return staticArticles[s];
+    const resolvedSlug = slugAliases[s];
+    if (resolvedSlug && staticArticles[resolvedSlug]) return staticArticles[resolvedSlug];
+    return null;
+  };
 
   // Fetch article effect
   useEffect(() => {
@@ -33,18 +34,14 @@ const BlogPost: React.FC = () => {
         if (!querySnapshot.empty) {
           const docData = querySnapshot.docs[0].data();
           setArticle(docData);
-        } else if (slug && staticArticles[slug]) {
-          setArticle(staticArticles[slug]);
         } else {
-          setArticle(null);
+          const staticArt = getStaticArticle(slug);
+          setArticle(staticArt);
         }
       } catch (error) {
         console.error("Error fetching article:", error);
-        if (slug && staticArticles[slug]) {
-          setArticle(staticArticles[slug]);
-        } else {
-          setArticle(null);
-        }
+        const staticArt = getStaticArticle(slug);
+        setArticle(staticArt);
       } finally {
         setLoading(false);
       }
@@ -113,6 +110,12 @@ const BlogPost: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200 py-20" dir={isRTL ? 'rtl' : 'ltr'}>
+      <AdvancedSEO
+        title={`${title} | ${isRTL ? 'المحامي كريم الديب' : 'Karim El-Dib Law Firm'}`}
+        description={excerpt}
+        keywords={article.tags?.join(', ')}
+        canonicalUrl={`https://www.ke-lawyer.com/blog/${article.slug || slug}`}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* العودة للمقالات */}

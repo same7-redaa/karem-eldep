@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import AdvancedSEO from '../../components/AdvancedSEO';
 
 const EgyptiansAbroad: React.FC = () => {
   const { language, getTextByLanguage } = useLanguage();
@@ -319,7 +320,11 @@ const EgyptiansAbroad: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
-      
+      <AdvancedSEO
+        title={language === 'ar' ? "خدمات المصريين بالخارج | المحامي كريم الديب - مصر" : "Legal Services for Egyptian Expats Abroad | Karim El-Dib"}
+        description={language === 'ar' ? "خدمات قانونية متكاملة للمصريين في الخارج - المحامي كريم الديب. متابعة قضايا، إدارة عقارات، توكيلات، استشارات قانونية عن بعد." : "Comprehensive legal services for Egyptian expats abroad. Real estate management, powers of attorney, inheritance and court representation in Egypt."}
+        canonicalUrl="https://www.ke-lawyer.com/egyptians-abroad"
+      />
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
         <img

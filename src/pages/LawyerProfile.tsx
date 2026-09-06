@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import SchemaMarkup from '../components/SchemaMarkup';
+import AdvancedSEO from '../components/AdvancedSEO';
 
 const LawyerProfile: React.FC = () => {
   const { language, getTextByLanguage } = useLanguage();
@@ -47,6 +48,11 @@ const LawyerProfile: React.FC = () => {
   return (
     <>
       <SchemaMarkup type="lawyer" />
+      <AdvancedSEO
+        title={language === 'ar' ? "المحامي كريم الديب | محامي دولي وقضايا أجانب في مصر" : "Karim El-Dib Lawyer | International Lawyer in Egypt"}
+        description={language === 'ar' ? "المحامي كريم الديب - محامي دولي معتمد بخبرة 18 عاماً في خدمة الأجانب والمستثمرين والمصريين بالخارج." : "Lawyer Karim El-Dib - Certified international lawyer with 18 years of experience serving foreigners and investors in Egypt."}
+        canonicalUrl="https://www.ke-lawyer.com/lawyer-profile"
+      />
       <div className="min-h-screen bg-[#0b1a33] text-gray-200 py-20" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         

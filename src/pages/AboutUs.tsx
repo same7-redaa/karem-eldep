@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Award, Users, Globe2, Scale, Heart, Target, CheckCircle, TrendingUp } from 'lucide-react';
+import AdvancedSEO from '../components/AdvancedSEO';
 
 const AboutUs: React.FC = () => {
     const { language } = useLanguage();
@@ -185,6 +186,11 @@ const AboutUs: React.FC = () => {
 
     return (
         <div className={`min-h-screen bg-[#0b1a33] text-gray-200 ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'}>
+            <AdvancedSEO
+                title={title}
+                description={description}
+                canonicalUrl="https://www.ke-lawyer.com/about-us"
+            />
             {/* Hero Section */}
             <section className="relative py-20 bg-gradient-to-br from-[#0b1a33] via-[#0e1f3b] to-[#0b1a33]">
                 <div className="absolute inset-0 opacity-10">

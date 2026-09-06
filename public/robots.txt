@@ -3,14 +3,23 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://www.ke-lawyer.com/sitemap.xml
-Sitemap: https://ke-lawyer.com/sitemap.xml
 
-# Allow search engines to crawl all pages
+# Block Admin & Private Routes from Search Indexing
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# High Priority Pages for Search Engines
+Allow: /
 Allow: /lawyer-profile
+Allow: /about-us
+Allow: /services
+Allow: /faq
 Allow: /foreigners-in-egypt
 Allow: /egyptians-abroad
-
-# City Pages - High Priority for Local SEO
 Allow: /sharm-el-sheikh
 Allow: /cairo
 Allow: /alexandria
@@ -23,26 +32,22 @@ Allow: /arbitration-mediation
 Allow: /blog
 Allow: /blog/*
 
-# Allow images
+# Allow Images and Media
 Allow: /images/
 Allow: *.jpg
 Allow: *.jpeg
 Allow: *.png
 Allow: *.webp
 
-# Block unnecessary crawling
-Disallow: /api/
-Disallow: /_next/
-Disallow: /static/
-
-# Crawl delay (optional - helps prevent server overload)
-Crawl-delay: 1
-
-# Specific crawlers
+# Crawl Delay & Specific Bots
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
+Disallow: /admin
+Disallow: /admin/
+Disallow: /admin/*

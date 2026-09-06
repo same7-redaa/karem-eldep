@@ -426,22 +426,34 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     // Save language preference to localStorage
     localStorage.setItem('preferredLanguage', language);
 
-    // Sync URL query parameter (without reloading the page)
+    // Only update URL param if the URL already has a lang query param
     if (typeof window !== 'undefined') {
       const url = new URL(window.location.href);
-      if (url.searchParams.get('lang') !== language) {
+      if (url.searchParams.has('lang') && url.searchParams.get('lang') !== language) {
         url.searchParams.set('lang', language);
         window.history.replaceState({}, '', url.toString());
       }
     }
   }, [language]);
 
+  const handleSetLanguage = (lang: Language) => {
+    setLanguage(lang);
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', lang);
+      window.history.replaceState({}, '', url.toString());
+    }
+  };
+
   const toggleLanguage = () => {
     setLanguage(prev => {
-      if (prev === 'ar') return 'en';
-      if (prev === 'en') return 'fr';
-      if (prev === 'fr') return 'it';
-      return 'ar';
+      const next: Language = prev === 'ar' ? 'en' : prev === 'en' ? 'fr' : prev === 'fr' ? 'it' : 'ar';
+      if (typeof window !== 'undefined') {
+        const url = new URL(window.location.href);
+        url.searchParams.set('lang', next);
+        window.history.replaceState({}, '', url.toString());
+      }
+      return next;
     });
   };
 
@@ -454,7 +466,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t, getTextByLanguage }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, toggleLanguage, t, getTextByLanguage }}>
       {children}
     </LanguageContext.Provider>
   );

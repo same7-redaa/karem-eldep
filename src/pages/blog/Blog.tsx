@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import AdvancedSEO from '../../components/AdvancedSEO';
 
 import { staticArticles } from '../../data/staticArticles';
 
@@ -72,6 +73,11 @@ const Blog: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200 py-20" dir={isRTL ? 'rtl' : 'ltr'}>
+      <AdvancedSEO
+        title="مقالات قانونية | مدونة المحامي كريم الديب | Legal Blog Egypt"
+        description="مقالات قانونية متخصصة من المحامي كريم الديب في قضايا الأجانب والتحكيم وتأسيس الشركات والأحوال الشخصية في مصر."
+        canonicalUrl="https://www.ke-lawyer.com/blog"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Hero Section */}

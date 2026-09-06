@@ -72,7 +72,7 @@ const CivilLaw: React.FC = () => {
       ogUrl.setAttribute('property', 'og:url');
       document.head.appendChild(ogUrl);
     }
-    ogUrl.setAttribute('content', 'https://ke-lawyer.com/services/civil-law');
+    ogUrl.setAttribute('content', 'https://www.ke-lawyer.com/civil-law');
 
     let ogImage = document.querySelector('meta[property="og:image"]');
     if (!ogImage) {
@@ -128,7 +128,7 @@ const CivilLaw: React.FC = () => {
       canonical.setAttribute('rel', 'canonical');
       document.head.appendChild(canonical);
     }
-    canonical.setAttribute('href', 'https://ke-lawyer.com/services/civil-law');
+    canonical.setAttribute('href', 'https://www.ke-lawyer.com/civil-law');
 
     // Alternate Language Tags
     let alternateLangAr = document.querySelector('link[rel="alternate"][hreflang="ar"]');
@@ -296,7 +296,7 @@ const CivilLaw: React.FC = () => {
         },
         {
           "@type": "Attorney",
-          "@id": "https://ke-lawyer.com/services/civil-law#attorney",
+          "@id": "https://www.ke-lawyer.com/civil-law#attorney",
           "name": "Karim El-Dib",
           "jobTitle": isRTL ? "محامي ومستشار قانوني" : "Lawyer and Legal Consultant",
           "worksFor": {
@@ -320,13 +320,13 @@ const CivilLaw: React.FC = () => {
         },
         {
           "@type": "WebPage",
-          "@id": "https://ke-lawyer.com/services/civil-law#webpage",
-          "url": "https://ke-lawyer.com/services/civil-law",
+          "@id": "https://www.ke-lawyer.com/civil-law#webpage",
+          "url": "https://www.ke-lawyer.com/civil-law",
           "name": isRTL ? "محامي قانون مدني في مصر | المحامي كريم الديب" : "Civil Law Lawyer in Egypt | Lawyer Karim El-Dib",
           "isPartOf": {
             "@type": "WebSite",
-            "@id": "https://ke-lawyer.com/#website",
-            "url": "https://ke-lawyer.com",
+            "@id": "https://www.ke-lawyer.com/#website",
+            "url": "https://www.ke-lawyer.com",
             "name": isRTL ? "مكتب كريم الديب للمحاماة" : "Karim El-Dib Law Firm",
             "publisher": {
               "@type": "Organization",
@@ -346,19 +346,19 @@ const CivilLaw: React.FC = () => {
                 "@type": "ListItem",
                 "position": 1,
                 "name": isRTL ? "الرئيسية" : "Home",
-                "item": "https://ke-lawyer.com"
+                "item": "https://www.ke-lawyer.com"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": isRTL ? "الخدمات" : "Services",
-                "item": "https://ke-lawyer.com/services"
+                "item": "https://www.ke-lawyer.com/services"
               },
               {
                 "@type": "ListItem",
                 "position": 3,
                 "name": isRTL ? "القانون المدني" : "Civil Law",
-                "item": "https://ke-lawyer.com/services/civil-law"
+                "item": "https://www.ke-lawyer.com/civil-law"
               }
             ]
           }

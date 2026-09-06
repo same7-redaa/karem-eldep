@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import AdvancedSEO from '../../components/AdvancedSEO';
 
 const FamilyLaw: React.FC = () => {
   const { language, getTextByLanguage } = useLanguage();
@@ -34,7 +35,11 @@ const FamilyLaw: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
-      
+      <AdvancedSEO
+        title={language === 'ar' ? "محامي أحوال شخصية وقانون الأسرة للأجانب في مصر | كريم الديب" : "Family Lawyer for Foreigners in Egypt | Karim El-Dib"}
+        description={language === 'ar' ? "محامي أحوال شخصية للأجانب في مصر — كريم الديب. طلاق، حضانة، نفقة، وإقامة للمقيمين الأجانب." : "Family and divorce lawyer for foreigners and mixed marriages in Egypt. Child custody, alimony, and residence permits."}
+        canonicalUrl="https://www.ke-lawyer.com/family-law"
+      />
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
         <img

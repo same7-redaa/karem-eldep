@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Users, FileText, Building2, Home, Heart, Scale, Briefcase, Globe2, ArrowRight, Anchor, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import AdvancedSEO from '../components/AdvancedSEO';
 
 const Services: React.FC = () => {
     const { language } = useLanguage();
@@ -255,7 +256,11 @@ const Services: React.FC = () => {
 
     return (
         <div className={`min-h-screen bg-[#0b1a33] text-gray-200 ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'}>
-            
+            <AdvancedSEO
+                title={title}
+                description={description}
+                canonicalUrl="https://www.ke-lawyer.com/services"
+            />
             {/* Hero Section */}
             <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
                 <img

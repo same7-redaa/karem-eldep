@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import AdvancedSEO from '../../components/AdvancedSEO';
 
 const CommercialLaw: React.FC = () => {
   const { language, getTextByLanguage } = useLanguage();
@@ -340,7 +341,11 @@ const steps = [
 
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
-      
+      <AdvancedSEO
+        title={language === 'ar' ? "محامي قانون تجاري | تأسيس شركات في مصر | المحامي كريم الديب" : "Commercial Lawyer | Company Formation Egypt | Lawyer Karim El-Dib"}
+        description={language === 'ar' ? "محامي قانون تجاري - المحامي كريم الديب خبير في تأسيس الشركات والقانون التجاري. تأسيس شركات للأجانب والمصريين، عقود تجارية، استثمار." : "Commercial lawyer Egypt, company formation, business law. Expert in foreign companies, commercial contracts, corporate compliance."}
+        canonicalUrl="https://www.ke-lawyer.com/commercial-law"
+      />
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
         <img

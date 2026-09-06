@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { MapPin, Phone, Mail, Clock, Globe2, Award, Shield, Zap } from 'lucide-react';
 import PracticeAreas from '../../components/PracticeAreas';
+import AdvancedSEO from '../../components/AdvancedSEO';
 
 const Alexandria: React.FC = () => {
     const { language, t } = useLanguage();
@@ -141,6 +142,12 @@ const Alexandria: React.FC = () => {
 
     return (
         <div className={`min-h-screen bg-[#0b1a33] text-gray-200 ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'}>
+            <AdvancedSEO
+                title={title}
+                description={description}
+                canonicalUrl="https://www.ke-lawyer.com/alexandria"
+                city="Alexandria"
+            />
             {/* Hero Section */}
             <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0b1a33] via-[#0e1f3b] to-[#0b1a33]"></div>

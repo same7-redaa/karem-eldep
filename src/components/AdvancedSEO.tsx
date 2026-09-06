@@ -481,12 +481,14 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
     const existingHreflangs = document.querySelectorAll('link[rel="alternate"][hreflang]');
     existingHreflangs.forEach(el => el.remove());
     
+    const cleanPath = currentPath === '/' ? '' : currentPath.replace(/\/$/, '');
+    
     // Create new hreflang link tags
     languagesList.forEach(lang => {
       const link = document.createElement('link');
       link.setAttribute('rel', 'alternate');
       link.setAttribute('hreflang', lang === 'ar' ? 'ar-eg' : lang === 'en' ? 'en-us' : lang === 'fr' ? 'fr-fr' : 'it-it');
-      link.setAttribute('href', `https://www.ke-lawyer.com${currentPath}?lang=${lang}`);
+      link.setAttribute('href', `https://www.ke-lawyer.com${cleanPath || '/'}?lang=${lang}`);
       document.head.appendChild(link);
     });
 
@@ -494,7 +496,7 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
     const defaultLink = document.createElement('link');
     defaultLink.setAttribute('rel', 'alternate');
     defaultLink.setAttribute('hreflang', 'x-default');
-    defaultLink.setAttribute('href', `https://www.ke-lawyer.com${currentPath}`);
+    defaultLink.setAttribute('href', `https://www.ke-lawyer.com${cleanPath || '/'}`);
     document.head.appendChild(defaultLink);
 
     // Add structured data

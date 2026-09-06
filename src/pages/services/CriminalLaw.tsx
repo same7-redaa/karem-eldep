@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
+import AdvancedSEO from '../../components/AdvancedSEO';
 
 const CriminalLaw: React.FC = () => {
   const { language, getTextByLanguage } = useLanguage();
@@ -30,7 +31,11 @@ const CriminalLaw: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
-      
+      <AdvancedSEO
+        title={language === 'ar' ? "محامي قانون جنائي في مصر | المحامي كريم الديب" : "Criminal Defense Lawyer in Egypt | Lawyer Karim El-Dib"}
+        description={language === 'ar' ? "محامي قانون جنائي - المحامي كريم الديب خبير في الدفاع الجنائي والقضايا الجنائية للمصريين والأجانب في مصر." : "Criminal defense lawyer in Egypt. Expert representation in criminal cases for Egyptians and foreigners."}
+        canonicalUrl="https://www.ke-lawyer.com/criminal-law"
+      />
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
         <img
