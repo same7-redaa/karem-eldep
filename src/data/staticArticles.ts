@@ -453,11 +453,90 @@ export const staticArticles: Record<string, StaticArticle> = {
       <h2>Types of Residency in Egypt</h2>
       <p>Egypt provides several residency pathways for foreigners, including investment residency, property ownership residency, and work permits.</p>
     `
+  },
+
+  'international-arbitration-lawyer-egypt-investment-disputes': {
+    id: 'arbitration-investment-lawyer-egypt',
+    slug: 'international-arbitration-lawyer-egypt-investment-disputes',
+    title: 'محامي تحكيم دولي في مصر ومنازعات الاستثمار: الدليل الشامل لحل النزاعات التجارية العابرة للحدود',
+    title_en: 'International Arbitration Lawyer in Egypt & Cross-Border Investment Dispute Resolution Guide',
+    title_fr: 'Avocat d\'Arbitrage International en Égypte & Règlement des Litiges d\'Investissement Transfrontaliers',
+    title_it: 'Avvocato di Arbitrato Internazionale in Egitto e Risoluzione Controversie Commerciali',
+    excerpt: 'دليل متخصص من مكتب محاماة دولي في مصر حول التحكيم التجاري الدولي، تسوية منازعات المستثمرين الأجانب، التقاضي الدولي، وتنفيذ أحكام التحكيم في القاهرة والإسكندرية وشرم الشيخ.',
+    excerpt_en: 'Comprehensive guide by an international law firm in Egypt on international commercial arbitration, foreign investor disputes, cross-border dispute resolution, and arbitral award enforcement.',
+    excerpt_fr: 'Guide complet par un cabinet d\'avocats international en Égypte sur l\'arbitrage commercial international et le règlement des différends relatifs aux investissements étrangers.',
+    excerpt_it: 'Guida completa di uno studio legale internazionale in Egitto sull\'arbitrato commerciale internazionale e la risoluzione delle controversie sugli investimenti esteri.',
+    image: '/images/services/arbitration-mediation.webp',
+    date: '2026-09-07',
+    category: 'التحكيم الدولي',
+    readTime: '12 دقيقة',
+    tags: [
+      'محامي تحكيم دولي في مصر',
+      'التحكيم التجاري الدولي',
+      'منازعات المستثمرين الأجانب',
+      'محامي شركات دولي',
+      'تسوية المنازعات الاستثمارية',
+      'تنفيذ أحكام التحكيم الأجنبية'
+    ],
+    isPublished: true,
+    order: 12,
+    content: `
+      <h2>دور محامي تحكيم دولي في مصر لحماية الأعمال والاستثمارات الأجنبية</h2>
+      <p>يُمثل <strong>التحكيم التجاري الدولي في مصر</strong> الركيزة الأساسية لحماية حقوق الشركات متعددة الجنسيات والمستثمرين في العقود العابرة للحدود. عند نشوء أي نزاع تجاري، فإن الاستعانة بـ <strong>محامي تحكيم دولي في مصر</strong> يضمن صياغة استراتيجية قانونية محكمة ترتكز على مبادئ قانون التحكيم المصري رقم 27 لسنة 1994 وقواعد الأونسيترال الدولية (UNCITRAL).</p>
+
+      <h2>تسوية منازعات المستثمرين الأجانب ومنازعات الاستثمار في مصر</h2>
+      <p>تتطلب <strong>تسوية المنازعات الاستثمارية</strong> و<strong>منازعات المستثمرين الأجانب في مصر</strong> دراية عميقة بالاتفاقيات الثنائية لحماية الاستثمار (BITs) ومعاهدات الاستثمار متعددة الأطراف (ICSID). يقدم <strong>محامي استثمار أجنبي في مصر</strong> حلولاً قانونية متكاملة تشمل:</p>
+      <ul>
+        <li><strong>التفاوض وتسوية المنازعات التجارية:</strong> إدارة المفاوضات الودية والوساطة لحل الخلافات المالية والعقدية قبل تصعيدها.</li>
+        <li><strong>الوساطة وتسوية المنازعات في مصر:</strong> تفعيل بنود الوساطة التعاقدية لتقليل التكاليف وسرعة التوصل لحلول ترضي أطراف التعاقد.</li>
+        <li><strong>التمثيل أمام هيئات التحكيم الدولية:</strong> مباشرة إجراءات التحكيم أمام مركز القاهرة الإقليمي للتحكيم التجاري الدولي (CRCICA)، غرفة التجارة الدولية بباريس (ICC)، ومحكمة لندن للتحكيم الدولي (LCIA).</li>
+      </ul>
+
+      <h2>حل المنازعات التجارية الدولية وصياغة عقود التجارة العابرة للحدود</h2>
+      <p>إن تجنب <strong>منازعات العقود التجارية الدولية</strong> يبدأ من الصياغة المحترفة. بصفتنا <strong>مكتب محاماة دولي في مصر</strong> و<strong>محامي عقود تجارية دولية</strong>، نتولى إعداد ومراجعة اتفاقيات التوزيع، الشراكات الاستراتيجية، عقود المقاولات الدولية (FIDIC)، واتفاقيات الاستثمار المباشر بما يضمن وجود شرط تحكيم قطعي ومحكم يمنع أي تنازع في الاختصاص القضائي.</p>
+
+      <h2>التقاضي في المنازعات الدولية والمنازعات العابرة للحدود</h2>
+      <p>عندما تقتضي الضرورة، يتولى <strong>محامي منازعات تجارية دولية</strong> إدارة <strong>المنازعات العابرة للحدود</strong> و<strong>التقاضي في المنازعات الدولية</strong> أمام الدوائر التجارية والاستثمارية بمحاكم الاستئناف ومحكمة النقض المصرية، مع تأمين الأوامر الوقتية والتحفظية على الأصول والأموال محل النزاع.</p>
+
+      <h2>تنفيذ والاعتراف بأحكام التحكيم الأجنبية في مصر (اتفاقية نيويورك 1958)</h2>
+      <p>صدور حكم التحكيم لا يكتمل أثره إلا بـ <strong>تنفيذ أحكام التحكيم الدولي في مصر</strong>. يتولى فريقنا إجراءات <strong>الاعتراف بأحكام التحكيم الأجنبية في مصر</strong> واستصدار أمر الإيداع والأمر بالتنفيذ (Exequatur) وفقاً للمادة 58 من القانون رقم 27 لسنة 1994 وبنود اتفاقية نيويورك، مع التصدي الفوري لأي دعاوى بطلان كيدية تُقام لعرقلة التنفيذ.</p>
+
+      <h2>حضور إقليمي متخصص: القاهرة، الإسكندرية، وشرم الشيخ</h2>
+      <p>بفضل خبرة تتجاوز 18 عاماً واعتماد رسمي لدى القنصلية الفرنسية والعديد من السفارات الأوروبية، توفر مؤسسة كريم الديب خدمات <strong>محامي تحكيم دولي في الإسكندرية</strong> للنزاعات البحرية والتجارية، و<strong>محامي تحكيم دولي في شرم الشيخ</strong> للمنازعات العقارية والسياحية، إلى جانب مقرنا الرئيسي لخدمة قضايا التحكيم بالقاهرة الكبرى.</p>
+    `,
+    content_en: `
+      <h2>Leading International Arbitration Lawyer in Egypt & Dispute Resolution Firm</h2>
+      <p>As premier <strong>international lawyers in Egypt</strong>, Karim El-Dib Law Firm provides top-tier legal counsel in <strong>commercial arbitration in Egypt</strong>, cross-border corporate transactions, and complex international dispute resolution.</p>
+
+      <h2>Resolving Foreign Investor & Investment Disputes in Egypt</h2>
+      <p>Navigating <strong>foreign investor disputes in Egypt</strong> and <strong>investment disputes in Egypt</strong> requires specialized expertise in bilateral investment treaties (BITs), ICSID proceedings, and CRCICA arbitrations. Our dedicated <strong>foreign investors lawyer Egypt</strong> team delivers decisive strategic advantages.</p>
+
+      <h2>Core Areas of International Legal Practice:</h2>
+      <ul>
+        <li><strong>International Commercial Arbitration:</strong> Representation before CRCICA, ICC, LCIA, and Ad-Hoc arbitral tribunals.</li>
+        <li><strong>Cross-Border Dispute Resolution:</strong> Handling multinational commercial litigation, breach of contract, and shareholder disputes.</li>
+        <li><strong>International Commercial Disputes:</strong> Negotiation, structured mediation, and amicable commercial dispute settlements.</li>
+        <li><strong>Enforcement of Foreign Arbitral Awards:</strong> Full recognition and execution of foreign arbitration awards under the 1958 New York Convention.</li>
+      </ul>
+
+      <h2>Regional Hubs: Arbitration Lawyer in Alexandria & Sharm El Sheikh</h2>
+      <p>Whether you require an <strong>arbitration lawyer in Alexandria</strong> for maritime and logistics disputes, an <strong>arbitration lawyer in Sharm El Sheikh</strong> for hospitality and real estate conflicts, or corporate litigation in Cairo, our <strong>international law firm in Egypt</strong> delivers unmatched legal defense.</p>
+    `,
+    content_fr: `
+      <h2>Avocat d'Arbitrage Commercial International en Égypte</h2>
+      <p>Spécialisé dans le règlement des litiges commerciaux internationaux, l'arbitrage devant le CRCICA et l'exécution des sentences arbitrales étrangères en Égypte sous la Convention de New York.</p>
+    `,
+    content_it: `
+      <h2>Avvocato per Arbitrato Internazionale e Risoluzione Controversie in Egitto</h2>
+      <p>Consulenza legale specializzata per investitori e società estere in controversie commerciali, arbitrato CRCICA ed esecuzione forzata di lodi arbitrali in Egitto.</p>
+    `
   }
 };
 
 // Aliases mapping for old slugs to avoid any Soft 404
 export const slugAliases: Record<string, string> = {
+  'international-arbitration-lawyer-in-egypt': 'international-arbitration-lawyer-egypt-investment-disputes',
+  'arbitration-lawyer-egypt': 'international-arbitration-lawyer-egypt-investment-disputes',
   'best-lawyer-foreigners-sharm-el-sheikh-guide-2026': 'foreign-lawyer-sharm-el-sheikh',
   'foreign-lawyer-sharm': 'foreign-lawyer-sharm-el-sheikh',
   'enforcement-foreign-arbitral-awards-egypt-guide-2026': 'enforcement-foreign-arbitral-awards-egypt-guide',
@@ -466,3 +545,4 @@ export const slugAliases: Record<string, string> = {
   'christian-divorce-case-2025': 'divorce-for-foreigners-in-egypt-comprehensive-guide',
   'rent-control-decision-2025': 'guide-foreigners-legal-services-egypt-2025'
 };
+
