@@ -135,3 +135,4 @@ if (lawStart !== -1 && lawEnd !== -1) {
 }
 
 console.log('All service pages cleaned up and harmonized!');
+

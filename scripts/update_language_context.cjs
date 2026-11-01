@@ -148,3 +148,4 @@ file = file.slice(0, providerIndex) + newProvider;
 
 fs.writeFileSync('src/contexts/LanguageContext.tsx', file, 'utf8');
 console.log("LanguageContext.tsx updated successfully!");
+

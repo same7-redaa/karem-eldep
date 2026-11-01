@@ -111,3 +111,4 @@ code = code.replace(aliasMarker, aliasMarker + newAliases);
 
 fs.writeFileSync('src/data/staticArticles.ts', code, 'utf8');
 console.log('staticArticles.ts updated with 2 high-value 2026 articles!');
+

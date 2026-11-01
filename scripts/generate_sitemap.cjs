@@ -87,3 +87,4 @@ xml += `</urlset>\n`;
 
 fs.writeFileSync('public/sitemap.xml', xml, 'utf8');
 console.log(`Generated public/sitemap.xml with ${mainPages.length * 2 + articleSlugs.length * 2} bilingual URLs!`);
+

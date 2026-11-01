@@ -293,3 +293,4 @@ export default Footer;
 
 fs.writeFileSync('src/components/Footer.tsx', footerCode, 'utf8');
 console.log('Footer.tsx updated with comprehensive internal links!');
+

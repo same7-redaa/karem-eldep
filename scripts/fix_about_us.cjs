@@ -38,3 +38,4 @@ const replacement = `const AboutUs: React.FC = () => {
 code = code.slice(0, sIndex) + replacement + code.slice(eIndex);
 fs.writeFileSync('src/pages/AboutUs.tsx', code, 'utf8');
 console.log("AboutUs.tsx updated successfully!");
+

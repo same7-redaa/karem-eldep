@@ -385,3 +385,4 @@ for (const p of pages) {
 }
 
 console.log(`Pre-rendering completed! Successfully wrote ${count} static HTML files to dist/`);
+

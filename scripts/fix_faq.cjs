@@ -41,3 +41,4 @@ code = code.slice(0, sIndex) + replacement + code.slice(eIndex);
 // Also remove unused useEffect import if any, or keep it clean
 fs.writeFileSync('src/pages/FAQ.tsx', code, 'utf8');
 console.log("FAQ.tsx updated successfully!");
+

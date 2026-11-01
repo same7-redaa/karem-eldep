@@ -37,3 +37,4 @@ const replacement = `const SharmElSheikh: React.FC = () => {
 code = code.slice(0, sIndex) + replacement + code.slice(eIndex);
 fs.writeFileSync('src/pages/cities/SharmElSheikh.tsx', code, 'utf8');
 console.log("SharmElSheikh.tsx updated successfully!");
+

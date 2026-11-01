@@ -9,3 +9,4 @@ html = html.replace('/france.png', '/france.webp');
 
 fs.writeFileSync('index.html', html, 'utf8');
 console.log('index.html updated successfully!');
+
