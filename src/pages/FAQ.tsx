@@ -21,54 +21,21 @@ const FAQ: React.FC = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
     const [searchTerm, setSearchTerm] = useState('');
 
-    useEffect(() => {
-        // SEO Meta Tags
-        const title = language === 'ar'
-            ? 'الأسئلة الشائعة | محامي أجانب في مصر | كريم الديب'
-            : language === 'fr'
-                ? 'Questions Fréquentes | Avocat pour Étrangers en Égypte | Karim Eldib'
-                : language === 'it'
-                    ? 'Domande Frequenti | Avvocato per Stranieri in Egitto | Karim Eldib'
-                    : 'Frequently Asked Questions | Lawyer for Foreigners in Egypt | Karim Eldib';
+    const title = language === 'ar'
+        ? 'الأسئلة الشائعة حول الخدمات القانونية والتحكيم في مصر | كريم الديب'
+        : language === 'fr'
+            ? 'Questions Fréquentes | Avocat pour Étrangers en Égypte | Karim Eldib'
+            : language === 'it'
+                ? 'Domande Frequenti | Avvocato per Stranieri in Egitto | Karim Eldib'
+                : 'Frequently Asked Questions | Legal Services for Foreigners in Egypt | Karim Eldib';
 
-        const description = language === 'ar'
-            ? 'إجابات شاملة على الأسئلة الشائعة حول الخدمات القانونية للأجانب في مصر: الإقامة، التأشيرات، تأسيس الشركات، الطلاق، العقارات، والاستثمار.'
-            : language === 'fr'
-                ? 'Réponses complètes aux questions fréquentes sur les services juridiques pour étrangers en Égypte: résidence, visas, création d\'entreprise, divorce, immobilier et investissement.'
-                : language === 'it'
-                    ? 'Risposte complete alle domande frequenti sui servizi legali per stranieri in Egitto: residenza, visti, costituzione società, divorzio, immobiliare e investimenti.'
-                    : 'Comprehensive answers to frequently asked questions about legal services for foreigners in Egypt: residence, visas, company formation, divorce, real estate, and investment.';
-
-        document.title = title;
-
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute('content', description);
-        }
-
-        // FAQPage Schema Markup
-        const faqSchema = {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqs.map(faq => ({
-                "@type": "Question",
-                "name": language === 'ar' ? faq.questionAr : language === 'fr' ? faq.questionFr : language === 'it' ? faq.questionIt : faq.questionEn,
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": language === 'ar' ? faq.answerAr : language === 'fr' ? faq.answerFr : language === 'it' ? faq.answerIt : faq.answerEn
-                }
-            }))
-        };
-
-        const scriptTag = document.createElement('script');
-        scriptTag.type = 'application/ld+json';
-        scriptTag.text = JSON.stringify(faqSchema);
-        document.head.appendChild(scriptTag);
-
-        return () => {
-            document.head.removeChild(scriptTag);
-        };
-    }, [language]);
+    const description = language === 'ar'
+        ? 'إجابات شاملة على الأسئلة الشائعة حول الخدمات القانونية للأجانب في مصر: الإقامة، التأشيرات، تأسيس الشركات، التحكيم التجاري، الطلاق، العقارات، والاستثمار.'
+        : language === 'fr'
+            ? 'Réponses complètes aux questions fréquentes sur les services juridiques pour étrangers en Égypte: résidence, visas, création d\'entreprise, divorce, immobilier et investissement.'
+            : language === 'it'
+                ? 'Risposte complete alle domande frequenti sui servizi legali per stranieri in Egitto: residenza, visti, costituzione società, divorzio, immobiliare e investimenti.'
+                : 'Comprehensive answers to frequently asked questions about legal services for foreigners in Egypt: residence, visas, company formation, commercial arbitration, divorce & real estate.';
 
     const faqs: FAQItem[] = [
         // قضايا الأجانب

@@ -1,11 +1,29 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-type Language = 'ar' | 'en' | 'fr' | 'it';
+export type Language = 'ar' | 'en' | 'fr' | 'it';
+
+export const getLanguageFromPath = (pathname: string): Language | null => {
+  if (pathname === '/en' || pathname.startsWith('/en/')) return 'en';
+  if (pathname === '/fr' || pathname.startsWith('/fr/')) return 'fr';
+  if (pathname === '/it' || pathname.startsWith('/it/')) return 'it';
+  if (pathname === '/ar' || pathname.startsWith('/ar/')) return 'ar';
+  return null;
+};
+
+export const getLocalizedPath = (pathname: string, targetLang: Language): string => {
+  // Strip existing language prefix
+  const clean = pathname.replace(/^\/(en|ar|fr|it)(\/|$)/, '/') || '/';
+  if (targetLang === 'ar') {
+    return clean;
+  }
+  return clean === '/' ? `/${targetLang}` : `/${targetLang}${clean}`;
+};
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   toggleLanguage: () => void;
+  switchLanguage: (lang: Language) => void;
   t: (key: string) => string;
   getTextByLanguage: (texts: { ar: string; en: string; fr: string; it: string }) => string;
 }
@@ -395,78 +413,77 @@ const translations: Record<Language, Record<string, string>> = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Load language: 1. Check URL query parameter (for SEO crawler indexing), 2. localStorage, 3. fallback to browser language or 'en'
-  const [language, setLanguage] = useState<Language>(() => {
+  const detectLanguage = (): Language => {
     if (typeof window !== 'undefined') {
+      const fromPath = getLanguageFromPath(window.location.pathname);
+      if (fromPath) return fromPath;
+
       const params = new URLSearchParams(window.location.search);
       const langParam = params.get('lang');
       if (langParam && ['ar', 'en', 'fr', 'it'].includes(langParam)) {
         return langParam as Language;
       }
     }
-    const savedLanguage = localStorage.getItem('preferredLanguage');
+    const savedLanguage = typeof window !== 'undefined' ? localStorage.getItem('preferredLanguage') : null;
     if (savedLanguage && ['ar', 'en', 'fr', 'it'].includes(savedLanguage)) {
       return savedLanguage as Language;
     }
-    // Fallback: detect browser language
-    if (typeof navigator !== 'undefined') {
-      const browserLang = navigator.language.split('-')[0];
-      if (['ar', 'en', 'fr', 'it'].includes(browserLang)) {
-        return browserLang as Language;
-      }
-    }
-    return 'en';
-  });
+    return 'ar';
+  };
+
+  const [language, setLanguageState] = useState<Language>(detectLanguage);
 
   useEffect(() => {
-    // Set document direction based on language
-    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
-    document.documentElement.lang = language;
-    
-    // Save language preference to localStorage
-    localStorage.setItem('preferredLanguage', language);
+    // Sync on pathname change or popstate
+    const syncWithLocation = () => {
+      const detected = detectLanguage();
+      setLanguageState(prev => prev !== detected ? detected : prev);
+    };
 
-    // Only update URL param if the URL already has a lang query param
-    if (typeof window !== 'undefined') {
-      const url = new URL(window.location.href);
-      if (url.searchParams.has('lang') && url.searchParams.get('lang') !== language) {
-        url.searchParams.set('lang', language);
-        window.history.replaceState({}, '', url.toString());
-      }
-    }
+    syncWithLocation();
+    window.addEventListener('popstate', syncWithLocation);
+    return () => window.removeEventListener('popstate', syncWithLocation);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = language === 'ar' ? 'ar' : language;
+    localStorage.setItem('preferredLanguage', language);
   }, [language]);
 
-  const handleSetLanguage = (lang: Language) => {
-    setLanguage(lang);
+  const switchLanguage = (targetLang: Language) => {
     if (typeof window !== 'undefined') {
-      const url = new URL(window.location.href);
-      url.searchParams.set('lang', lang);
-      window.history.replaceState({}, '', url.toString());
+      const targetPath = getLocalizedPath(window.location.pathname, targetLang) + window.location.search;
+      setLanguageState(targetLang);
+      if (window.location.pathname !== targetPath) {
+        window.history.pushState({}, '', targetPath);
+        // Dispatch popstate event to let Router know if needed
+        window.dispatchEvent(new PopStateEvent('popstate'));
+      }
+    } else {
+      setLanguageState(targetLang);
     }
+  };
+
+  const handleSetLanguage = (lang: Language) => {
+    switchLanguage(lang);
   };
 
   const toggleLanguage = () => {
-    setLanguage(prev => {
-      const next: Language = prev === 'ar' ? 'en' : prev === 'en' ? 'fr' : prev === 'fr' ? 'it' : 'ar';
-      if (typeof window !== 'undefined') {
-        const url = new URL(window.location.href);
-        url.searchParams.set('lang', next);
-        window.history.replaceState({}, '', url.toString());
-      }
-      return next;
-    });
+    const next: Language = language === 'ar' ? 'en' : language === 'en' ? 'fr' : language === 'fr' ? 'it' : 'ar';
+    switchLanguage(next);
   };
 
   const t = (key: string): string => {
-    return translations[language][key] || key;
+    return translations[language]?.[key] || translations['ar']?.[key] || key;
   };
 
   const getTextByLanguage = (texts: { ar: string; en: string; fr: string; it: string }): string => {
-    return texts[language];
+    return texts[language] || texts['ar'] || '';
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, toggleLanguage, t, getTextByLanguage }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, toggleLanguage, switchLanguage, t, getTextByLanguage }}>
       {children}
     </LanguageContext.Provider>
   );

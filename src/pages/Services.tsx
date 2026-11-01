@@ -8,31 +8,21 @@ const Services: React.FC = () => {
     const { language } = useLanguage();
     const isRTL = language === 'ar';
 
-    useEffect(() => {
-        // SEO Meta Tags
-        const title = language === 'ar'
-            ? 'خدماتنا القانونية | محامي أجانب في مصر | كريم الديب'
-            : language === 'fr'
-                ? 'Nos Services Juridiques | Avocat pour Étrangers en Égypte'
-                : language === 'it'
-                    ? 'I Nostri Servizi Legali | Avvocato per Stranieri in Egitto'
-                    : 'Our Legal Services | Lawyer for Foreigners in Egypt';
+    const title = language === 'ar'
+        ? 'الخدمات القانونية ومنازعات الاستثمار والتحكيم الدولي في مصر | كريم الديب'
+        : language === 'fr'
+            ? 'Nos Services Juridiques & Arbitrage International en Égypte | Karim Eldib'
+            : language === 'it'
+                ? 'I Nostri Servizi Legali & Arbitrato Internazionale in Egitto | Karim Eldib'
+                : 'Legal Services, Foreign Investment & Arbitration in Egypt | Karim Eldib';
 
-        const description = language === 'ar'
-            ? 'خدمات قانونية شاملة للأجانب في مصر: إقامة وتأشيرات، تأسيس شركات، عقارات واستثمارات، طلاق وأحوال شخصية، قضايا مدنية وجنائية، قضايا عمالية. نتحدث 4 لغات.'
-            : language === 'fr'
-                ? 'Services juridiques complets pour étrangers en Égypte: résidence et visas, création d\'entreprise, immobilier, divorce, affaires civiles et pénales. Nous parlons 4 langues.'
-                : language === 'it'
-                    ? 'Servizi legali completi per stranieri in Egitto: residenza e visti, costituzione società, immobiliare, divorzio, casi civili e penali. Parliamo 4 lingue.'
-                    : 'Comprehensive legal services for foreigners in Egypt: residence permits, company formation, real estate, divorce, civil and criminal cases. We speak 4 languages.';
-
-        document.title = title;
-
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute('content', description);
-        }
-    }, [language]);
+    const description = language === 'ar'
+        ? 'خدمات قانونية شاملة ومتخصصة للأجانب والشركات في مصر: التحكيم التجاري الدولي، تأسيس الشركات، إقامة وتأشيرات، عقارات واستثمارات، قضايا مدنية وجنائية وقانون الأسرة. نتحدث 4 لغات.'
+        : language === 'fr'
+            ? 'Services juridiques complets pour étrangers et investisseurs en Égypte: arbitrage international, création d\'entreprise, résidence, immobilier, divorce et litiges. Nous parlons 4 langues.'
+            : language === 'it'
+                ? 'Servizi legali completi per stranieri e investitori in Egitto: arbitrato internazionale, costituzione società, residenza, contratti e contenzioso. Parliamo 4 lingue.'
+                : 'Comprehensive legal services for foreigners and international businesses in Egypt: commercial arbitration, company formation, residence permits, real estate, civil and criminal cases.';
 
     const services = [
         {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import SchemaMarkup from '../components/SchemaMarkup';
 import AdvancedSEO from '../components/AdvancedSEO';
@@ -7,45 +7,7 @@ const LawyerProfile: React.FC = () => {
   const { language, getTextByLanguage } = useLanguage();
   const isRTL = language === 'ar';
 
-  useEffect(() => {
-    const title = language === 'ar' 
-      ? "المحامي كريم الديب | خبرة دولية في القانون المصري"
-      : language === 'fr'
-      ? "Avocat Karim El-Dib | Expertise Internationale en Droit Égyptien"
-      : language === 'it'
-      ? "Avvocato Karim El-Dib | Esperienza Internazionale in Diritto Egiziano"
-      : "Karim El-Dib Lawyer | International Expertise in Egyptian Law";
-    
-    document.title = title;
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      const description = language === 'ar'
-        ? 'المحامي كريم الديب - خبرة واسعة في القانون المصري والدولي. محامي دولي في مصر متخصص في خدمة المصريين المغتربين والأجانب في مصر.'
-        : language === 'fr'
-        ? 'Avocat Karim El-Dib - Large expérience en droit égyptien et international. Avocat international en Égypte spécialisé dans les services aux expatriés égyptiens et étrangers en Égypte.'
-        : language === 'it'
-        ? 'Avvocato Karim El-Dib - Vasta esperienza in diritto egiziano e internazionale. Avvocato internazionale in Egitto specializzato nei servizi per espatriati egiziani e stranieri in Egitto.'
-        : 'Karim El-Dib - International lawyer in Egypt with extensive expertise in Egyptian and international law. Specialized in serving Egyptian expats and foreigners in Egypt.';
-      
-      metaDescription.setAttribute('content', description);
-    }
-
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      const keywords = language === 'ar'
-        ? 'كريم الديب محامي, المحامي كريم الديب, محامي دولي في مصر, محامي أجانب في مصر, خدمات المصريين المغتربين'
-        : language === 'fr'
-        ? 'karim el-dib avocat, avocat international egypte, avocat pour étrangers egypte, services expatriés égyptiens'
-        : language === 'it'
-        ? 'karim el-dib avvocato, avvocato internazionale egitto, avvocato per stranieri egitto, servizi espatriati egiziani'
-        : 'karim el-dib lawyer, international lawyer egypt, lawyer for foreigners egypt, egyptian expats services';
-      
-      metaKeywords.setAttribute('content', keywords);
-    }
-  }, [language]);
-
-  return (
+    return (
     <>
       <SchemaMarkup type="lawyer" />
       <AdvancedSEO

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import AdvancedSEO from '../../components/AdvancedSEO';
@@ -7,33 +7,7 @@ const FamilyLaw: React.FC = () => {
   const { language, getTextByLanguage } = useLanguage();
   const isRTL = language === 'ar';
 
-  useEffect(() => {
-    const title = language === 'ar'
-      ? "محامي أحوال شخصية وقانون الأسرة للأجانب | كريم الديب - مصر"
-      : language === 'fr'
-      ? "Avocat Droit de la Famille pour Étrangers en Égypte | Karim El-Dib"
-      : language === 'it'
-      ? "Avvocato Diritto di Famiglia per Stranieri in Egitto | Karim El-Dib"
-      : "Family Lawyer for Foreigners in Egypt | Divorce, Custody & Immigration | Karim El-Dib";
-    
-    document.title = title;
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content',
-        language === 'en'
-          ? 'Family & Immigration Lawyer for Foreigners in Egypt — Karim Eldib. Divorce, child custody, alimony & residence permits for expats in Cairo, Alexandria & Sharm El Sheikh. Free consultation. English, French & Italian spoken.'
-          : 'محامي أحوال شخصية للأجانب في مصر — كريم الديب. طلاق، حضانة، نفقة، وإقامة للمقيمين الأجانب في القاهرة والإسكندرية وشرم الشيخ. استشارة مجانية. نتحدث العربية والإنجليزية والفرنسية.'
-      );
-    }
-
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'محامي أحوال شخصية, محامي قانون الأسرة, محامي طلاق, محامي خلع, محامي نفقة, محامي حضانة أطفال, قضايا الأسرة محامي, محامي زواج أجانب, قانون الأحوال الشخصية, Family law lawyer Egypt, كريم الديب محامي');
-    }
-  }, []);
-
-  return (
+    return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
         title={language === 'ar' ? "محامي أحوال شخصية وقانون الأسرة للأجانب في مصر | كريم الديب" : "Family Lawyer for Foreigners in Egypt | Karim El-Dib"}

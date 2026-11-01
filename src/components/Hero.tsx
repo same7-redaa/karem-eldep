@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
     >
       {/* Background Image with optimization and blur placeholder */}
       <img
-        src="/france.png"
+        src="/france.webp"
         alt="Karim El-Dib Law Firm Background"
         width="1920"
         height="1080"

@@ -37,6 +37,7 @@ const Cairo: React.FC = () => {
         title={title}
         description={description}
         keywords={keywords}
+        canonicalUrl="https://www.ke-lawyer.com/cairo"
         city="Cairo"
       />
       <div className="min-h-screen bg-[#0e1f3b]">

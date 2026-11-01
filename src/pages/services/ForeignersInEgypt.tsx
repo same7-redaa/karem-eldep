@@ -184,6 +184,7 @@ const ForeignersInEgypt: React.FC = () => {
         title={seoTitle}
         description={seoDescription}
         keywords={seoKeywords}
+        canonicalUrl="https://www.ke-lawyer.com/foreigners-in-egypt"
       />
       
       {/* Hero Section */}

@@ -11,6 +11,28 @@ const Header: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isRTL = language === 'ar';
+  const getLocalizedLink = (path: string) => {
+    if (language === 'ar') return path;
+    return `/${language}${path === '/' ? '' : path}`;
+  };
+
+  const handleLanguageSwitch = (targetLang: 'ar' | 'en' | 'fr' | 'it') => {
+    setIsLangMenuOpen(false);
+    const clean = location.pathname.replace(/^\/(en|ar|fr|it)(\/|$)/, '/') || '/';
+    let targetPath = clean;
+    if (targetLang === 'en') {
+      targetPath = clean === '/' ? '/en' : `/en${clean}`;
+    } else if (targetLang === 'fr') {
+      targetPath = clean === '/' ? '/fr' : `/fr${clean}`;
+    } else if (targetLang === 'it') {
+      targetPath = clean === '/' ? '/it' : `/it${clean}`;
+    } else {
+      targetPath = clean;
+    }
+    setLanguage(targetLang);
+    navigate(targetPath);
+  };
+
   
   const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const branchesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -256,7 +278,7 @@ const Header: React.FC = () => {
               onMouseLeave={handleServicesLeave}
             >
               <Link 
-                to="/services"
+                to={getLocalizedLink("/services")}
                 className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap flex items-center gap-1"
               >
                 {getTextByLanguage({ar: 'الخدمات', en: 'Services', fr: 'Services', it: 'Servizi'})}
@@ -276,7 +298,7 @@ const Header: React.FC = () => {
               </button>
             </div>
 
-            <Link to="/lawyer-profile" className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap">
+            <Link to={getLocalizedLink("/lawyer-profile")} className="text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 tracking-wide text-sm lg:text-base whitespace-nowrap">
               {getTextByLanguage({ar: 'عن مدير المؤسسة', en: 'About the Director', fr: 'À propos du Directeur', it: 'Sul Direttore'})}
             </Link>
 
@@ -311,25 +333,25 @@ const Header: React.FC = () => {
               {isLangMenuOpen && (
                 <div className="absolute top-full mt-2 right-0 bg-[#0b1a33] border border-white/20 rounded-md shadow-lg overflow-hidden z-50 min-w-[120px]">
                   <button
-                    onClick={() => { setLanguage('ar'); setIsLangMenuOpen(false); }}
+                    onClick={() => handleLanguageSwitch('ar')}
                     className={`w-full px-4 py-2 text-right hover:bg-white/10 transition-colors ${language === 'ar' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
                   >
                     🇪🇬 العربية
                   </button>
                   <button
-                    onClick={() => { setLanguage('en'); setIsLangMenuOpen(false); }}
+                    onClick={() => handleLanguageSwitch('en')}
                     className={`w-full px-4 py-2 text-left hover:bg-white/10 transition-colors ${language === 'en' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
                   >
                     🇬🇧 English
                   </button>
                   <button
-                    onClick={() => { setLanguage('fr'); setIsLangMenuOpen(false); }}
+                    onClick={() => handleLanguageSwitch('fr')}
                     className={`w-full px-4 py-2 text-left hover:bg-white/10 transition-colors ${language === 'fr' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
                   >
                     🇫🇷 Français
                   </button>
                   <button
-                    onClick={() => { setLanguage('it'); setIsLangMenuOpen(false); }}
+                    onClick={() => handleLanguageSwitch('it')}
                     className={`w-full px-4 py-2 text-left hover:bg-white/10 transition-colors ${language === 'it' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
                   >
                     🇮🇹 Italiano
@@ -355,25 +377,25 @@ const Header: React.FC = () => {
               {isLangMenuOpen && (
                 <div className="absolute top-full mt-2 right-0 bg-[#0b1a33] border border-white/20 rounded-md shadow-lg overflow-hidden z-50 min-w-[100px]">
                   <button
-                    onClick={() => { setLanguage('ar'); setIsLangMenuOpen(false); }}
+                    onClick={() => handleLanguageSwitch('ar')}
                     className={`w-full px-3 py-2 text-sm text-right hover:bg-white/10 transition-colors ${language === 'ar' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
                   >
                     🇪🇬 AR
                   </button>
                   <button
-                    onClick={() => { setLanguage('en'); setIsLangMenuOpen(false); }}
+                    onClick={() => handleLanguageSwitch('en')}
                     className={`w-full px-3 py-2 text-sm text-left hover:bg-white/10 transition-colors ${language === 'en' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
                   >
                     🇬🇧 EN
                   </button>
                   <button
-                    onClick={() => { setLanguage('fr'); setIsLangMenuOpen(false); }}
+                    onClick={() => handleLanguageSwitch('fr')}
                     className={`w-full px-3 py-2 text-sm text-left hover:bg-white/10 transition-colors ${language === 'fr' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
                   >
                     🇫🇷 FR
                   </button>
                   <button
-                    onClick={() => { setLanguage('it'); setIsLangMenuOpen(false); }}
+                    onClick={() => handleLanguageSwitch('it')}
                     className={`w-full px-3 py-2 text-sm text-left hover:bg-white/10 transition-colors ${language === 'it' ? 'bg-white/20 text-[#d4a15c]' : 'text-white'}`}
                   >
                     🇮🇹 IT
@@ -401,7 +423,7 @@ const Header: React.FC = () => {
               {services.map((service, index) => (
                 <Link
                   key={index}
-                  to={service.path}
+                  to={getLocalizedLink(service.path)}
                   onClick={() => setIsServicesOpen(false)}
                   className="text-xs lg:text-sm text-gray-300 hover:text-[#d4a15c] font-semibold transition-colors duration-200 whitespace-nowrap"
                 >
@@ -423,7 +445,7 @@ const Header: React.FC = () => {
               {branches.map((branch, index) => (
                 <Link
                   key={index}
-                  to={branch.path}
+                  to={getLocalizedLink(branch.path)}
                   onClick={() => setIsBranchesOpen(false)}
                   className="text-xs lg:text-sm text-gray-300 hover:text-[#d4a15c] font-semibold transition-colors duration-200"
                 >

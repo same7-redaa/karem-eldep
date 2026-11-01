@@ -7,73 +7,21 @@ const AboutUs: React.FC = () => {
     const { language } = useLanguage();
     const isRTL = language === 'ar';
 
-    useEffect(() => {
-        // SEO Meta Tags
-        const title = language === 'ar'
-            ? 'من نحن | المحامي كريم الديب | 18 عاماً من الخبرة في خدمة الأجانب'
-            : language === 'fr'
-                ? 'À Propos | Avocat Karim Eldib | 18 Ans d\'Expérience'
-                : language === 'it'
-                    ? 'Chi Siamo | Avvocato Karim Eldib | 18 Anni di Esperienza'
-                    : 'About Us | Lawyer Karim El-Dib | 18 Years of Experience';
+    const title = language === 'ar'
+        ? 'من نحن | المحامي كريم الديب | 18 عاماً من الخبرة في خدمة الأجانب والتحكيم الدولي'
+        : language === 'fr'
+            ? 'À Propos | Avocat Karim Eldib | 18 Ans d\'Expérience en Égypte'
+            : language === 'it'
+                ? 'Chi Siamo | Avvocato Karim Eldib | 18 Anni di Esperienza in Egitto'
+                : 'About Us | Lawyer Karim El-Dib | 18 Years Experience in Egypt';
 
-        const description = language === 'ar'
-            ? 'تعرف على المحامي كريم الديب، صاحب 18 عاماً من الخبرة المتخصصة في خدمة الأجانب والمستثمرين في مصر. مكتب محاماة دولي يتحدث 4 لغات ويقدم خدمات قانونية شاملة في شرم الشيخ والإسكندرية.'
-            : language === 'fr'
-                ? 'Découvrez l\'avocat Karim El-Dib, 18 ans d\'expérience spécialisée dans les services aux étrangers et investisseurs en Égypte. Cabinet d\'avocats international parlant 4 langues.'
-                : language === 'it'
-                    ? 'Scopri l\'avvocato Karim El-Dib, 18 anni di esperienza specializzata nei servizi per stranieri e investitori in Egitto. Studio legale internazionale che parla 4 lingue.'
-                    : 'Meet Lawyer Karim El-Dib, 18 years of specialized experience serving foreigners and investors in Egypt. International law firm speaking 4 languages.';
-
-        document.title = title;
-
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute('content', description);
-        }
-
-        // Organization Schema Markup
-        const schema = {
-            "@context": "https://schema.org",
-            "@type": "LegalService",
-            "name": language === 'ar' ? "مؤسسة كريم الديب للمحاماة الدولية" : "Karim El-Dib International Law Firm",
-            "description": description,
-            "founder": {
-                "@type": "Person",
-                "name": "Karim El-Dib",
-                "jobTitle": language === 'ar' ? "محامي ومستشار قانوني" : "Lawyer and Legal Consultant",
-                "knowsLanguage": ["ar", "en", "fr", "it"]
-            },
-            "foundingDate": "2006",
-            "areaServed": ["EG"],
-            "address": [
-                {
-                    "@type": "PostalAddress",
-                    "streetAddress": "14 El Shohada Street",
-                    "addressLocality": "Alexandria",
-                    "addressCountry": "EG"
-                },
-                {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Al Hadaba",
-                    "addressLocality": "Sharm El Sheikh",
-                    "addressCountry": "EG"
-                }
-            ],
-            "telephone": "+20-122-376-7592",
-            "email": "kingarim2411@gmail.com",
-            "url": "https://ke-lawyer.com"
-        };
-
-        const scriptTag = document.createElement('script');
-        scriptTag.type = 'application/ld+json';
-        scriptTag.text = JSON.stringify(schema);
-        document.head.appendChild(scriptTag);
-
-        return () => {
-            document.head.removeChild(scriptTag);
-        };
-    }, [language]);
+    const description = language === 'ar'
+        ? 'تعرف على المحامي كريم الديب، صاحب 18 عاماً من الخبرة المتخصصة في خدمة الأجانب والمستثمرين في مصر. مكتب محاماة دولي يتحدث 4 لغات ويقدم خدمات قانونية شاملة في شرم الشيخ والإسكندرية والقاهرة.'
+        : language === 'fr'
+            ? 'Découvrez l\'avocat Karim El-Dib, 18 ans d\'expérience spécialisée dans les services aux étrangers et investisseurs en Égypte. Cabinet d\'avocats international parlant 4 langues.'
+            : language === 'it'
+                ? 'Scopri l\'avvocato Karim El-Dib, 18 anni di esperienza specializzata nei servizi per stranieri e investitori in Egitto. Studio legale internazionale che parla 4 lingue.'
+                : 'Meet Lawyer Karim El-Dib, 18 years of specialized experience serving foreigners and investors in Egypt. International law firm speaking 4 languages in Alexandria, Cairo & Sharm El Sheikh.';
 
     const stats = [
         {

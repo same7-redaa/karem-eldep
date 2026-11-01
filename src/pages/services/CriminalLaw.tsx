@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import AdvancedSEO from '../../components/AdvancedSEO';
@@ -7,29 +7,7 @@ const CriminalLaw: React.FC = () => {
   const { language, getTextByLanguage } = useLanguage();
   const isRTL = language === 'ar';
 
-  useEffect(() => {
-    const title = language === 'ar'
-      ? "محامي قانون جنائي | المحامي كريم الديب"
-      : language === 'fr'
-      ? "Avocat Droit Pénal | Karim El-Dib"
-      : language === 'it'
-      ? "Avvocato Diritto Penale | Karim El-Dib"
-      : "Criminal Defense Lawyer | Lawyer Karim El-Dib";
-    
-    document.title = title;
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'محامي قانون جنائي - المحامي كريم الديب خبير في الدفاع الجنائي والقضايا الجنائية. دفاع قوي للمصريين والأجانب في مصر. Criminal defense lawyer Egypt.');
-    }
-
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'محامي قانون جنائي, محامي جنائي مصر, دفاع جنائي, قضايا جنائية, محامي دفاع, Criminal lawyer Egypt, كريم الديب محامي, المحامي كريم الديب');
-    }
-  }, []);
-
-  return (
+    return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
         title={language === 'ar' ? "محامي قانون جنائي في مصر | المحامي كريم الديب" : "Criminal Defense Lawyer in Egypt | Lawyer Karim El-Dib"}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import AdvancedSEO from '../../components/AdvancedSEO';
@@ -7,29 +7,7 @@ const CommercialLaw: React.FC = () => {
   const { language, getTextByLanguage } = useLanguage();
   const isRTL = language === 'ar';
 
-  useEffect(() => {
-    const title = language === 'ar'
-      ? "محامي قانون تجاري | تأسيس شركات في مصر | المحامي كريم الديب"
-      : language === 'fr'
-      ? "Avocat Droit Commercial | Création Sociétés Égypte | Karim El-Dib"
-      : language === 'it'
-      ? "Avvocato Diritto Commerciale | Costituzione Società Egitto | Karim El-Dib"
-      : "Commercial Lawyer | Company Formation Egypt | Lawyer Karim El-Dib";
-    
-    document.title = title;
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'محامي قانون تجاري - المحامي كريم الديب خبير في تأسيس الشركات والقانون التجاري. تأسيس شركات للأجانب والمصريين، عقود تجارية، استثمار. Commercial lawyer Egypt, company formation, business law.');
-    }
-
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'تأسيس شركات في مصر, محامي قانون تجاري, تأسيس شركة مصر, محامي شركات, عقود تجارية, محامي استثمار, تأسيس شركة أجنبية مصر, Commercial lawyer Egypt, Company formation Egypt, Business lawyer Cairo, كريم الديب محامي');
-    }
-  }, []);
-
-  const services = [
+    const services = [
     {
       icon: 'fas fa-building',
       title: getTextByLanguage({

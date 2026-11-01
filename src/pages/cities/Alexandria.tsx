@@ -8,76 +8,21 @@ const Alexandria: React.FC = () => {
     const { language, t } = useLanguage();
     const isRTL = language === 'ar';
 
-    useEffect(() => {
-        // SEO Meta Tags
-        const title = language === 'ar'
-            ? 'محامي تحكيم دولي وقضايا أجانب في الإسكندرية | كريم الديب'
-            : language === 'fr'
-                ? 'Avocat Arbitrage International & Étrangers à Alexandrie | Karim Eldib'
-                : language === 'it'
-                    ? 'Avvocato Arbitrato Internazionale e Stranieri ad Alessandria | Karim Eldib'
-                    : 'International Arbitration & Foreigners Lawyer in Alexandria | Karim Eldib';
+    const title = language === 'ar'
+        ? 'محامي تحكيم دولي وقضايا أجانب في الإسكندرية | كريم الديب'
+        : language === 'fr'
+            ? 'Avocat Arbitrage International & Étrangers à Alexandrie | Karim Eldib'
+            : language === 'it'
+                ? 'Avvocato Arbitrato Internazionale e Stranieri ad Alessandria | Karim Eldib'
+                : 'International Arbitration & Foreigners Lawyer in Alexandria | Karim Eldib';
 
-        const description = language === 'ar'
-            ? 'محامي تحكيم دولي في الإسكندرية — كريم الديب. متخصص في التحكيم التجاري الدولي، منازعات المستثمرين الأجانب، تسوية المنازعات الدولية، تنفيذ أحكام التحكيم الأجنبية، تأسيس شركات وإقامة. استشارة مجانية.'
-            : language === 'fr'
-                ? 'Avocat en arbitrage international à Alexandrie — Karim Eldib. Spécialiste en arbitrage commercial international, litiges d\'investissements étrangers, résolution des différends transfrontaliers et exécution de sentences arbitrales. Consultation gratuite.'
-                : language === 'it'
-                    ? 'Avvocato di arbitrato internazionale ad Alessandria — Karim Eldib. Specialista in arbitrato commerciale internazionale, controversie di investimento estero, risoluzione dispute transfrontaliere. Consulenza gratuita.'
-                    : 'International Arbitration Lawyer in Alexandria, Egypt — Karim Eldib. Expert in commercial arbitration, foreign investment disputes, cross-border dispute resolution, and enforcement of foreign arbitral awards. Free consultation. English, French & Italian spoken.';
-
-        document.title = title;
-
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute('content', description);
-        }
-
-        // Schema Markup
-        const schema = {
-            "@context": "https://schema.org",
-            "@type": "LegalService",
-            "name": language === 'ar' ? "مكتب المحامي كريم الديب - الإسكندرية (المكتب الرئيسي)" : "Karim El-Dib Law Office - Alexandria (Main Office)",
-            "description": description,
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": language === 'ar' ? "14 شارع الشهداء" : "14 El Shohada Street",
-                "addressLocality": "Alexandria",
-                "addressRegion": "Alexandria",
-                "addressCountry": "EG"
-            },
-            "telephone": "+20-122-376-7592",
-            "email": "kingarim2411@gmail.com",
-            "url": "https://www.ke-lawyer.com/alexandria",
-            "priceRange": "$$",
-            "areaServed": {
-                "@type": "City",
-                "name": "Alexandria",
-                "alternateName": "الإسكندرية"
-            },
-            "knowsLanguage": ["ar", "en", "fr", "it"],
-            "serviceType": [
-                language === 'ar' ? "محامي تحكيم دولي في الإسكندرية" : "International Arbitration Lawyer in Alexandria",
-                language === 'ar' ? "تسوية المنازعات التجارية الدولية" : "International Commercial Dispute Resolution",
-                language === 'ar' ? "منازعات المستثمرين الأجانب" : "Foreign Investor Disputes",
-                language === 'ar' ? "تنفيذ أحكام التحكيم الأجنبية" : "Enforcement of Foreign Arbitral Awards",
-                language === 'ar' ? "خدمات قانونية للمستثمرين الأجانب" : "Legal Services for Foreign Investors",
-                language === 'ar' ? "تأسيس شركات للأجانب" : "Company Formation for Foreigners",
-                language === 'ar' ? "إقامة وتأشيرات" : "Residence Permits and Visas",
-                language === 'ar' ? "طلاق وأحوال شخصية" : "Divorce and Personal Status"
-            ]
-        };
-
-        const scriptTag = document.createElement('script');
-        scriptTag.type = 'application/ld+json';
-        scriptTag.text = JSON.stringify(schema);
-        document.head.appendChild(scriptTag);
-
-        return () => {
-            document.head.removeChild(scriptTag);
-        };
-    }, [language]);
-
+    const description = language === 'ar'
+        ? 'محامي تحكيم دولي في الإسكندرية — كريم الديب. متخصص في التحكيم التجاري الدولي، منازعات المستثمرين الأجانب، تسوية المنازعات الدولية، تنفيذ أحكام التحكيم الأجنبية، تأسيس شركات وإقامة. استشارة مجانية.'
+        : language === 'fr'
+            ? 'Avocat en arbitrage international à Alexandrie — Karim Eldib. Spécialiste en arbitrage commercial international, litiges d\'investissements étrangers, résolution des différends transfrontaliers et exécution de sentences arbitrales. Consultation gratuite.'
+            : language === 'it'
+                ? 'Avvocato di arbitrato internazionale ad Alessandria — Karim Eldib. Specialista in arbitrato commerciale internazionale, controversie di investimento estero, risoluzione dispute transfrontaliere. Consulenza gratuite.'
+                : 'International Arbitration Lawyer in Alexandria, Egypt — Karim Eldib. Expert in commercial arbitration, foreign investment disputes, cross-border dispute resolution, and enforcement of foreign arbitral awards. Free consultation. English, French & Italian spoken.';
 
     const features = [
         {

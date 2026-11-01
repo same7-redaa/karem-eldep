@@ -8,75 +8,21 @@ const SharmElSheikh: React.FC = () => {
     const { language, t } = useLanguage();
     const isRTL = language === 'ar';
 
-    useEffect(() => {
-        // SEO Meta Tags
-        const title = language === 'ar'
-            ? 'محامي تحكيم دولي وقضايا أجانب في شرم الشيخ | كريم الديب'
-            : language === 'fr'
-                ? 'Avocat Arbitrage International & Étrangers à Sharm El Sheikh | Karim Eldib'
-                : language === 'it'
-                    ? 'Avvocato Arbitrato Internazionale e Stranieri a Sharm El Sheikh | Karim Eldib'
-                    : 'International Arbitration & Foreigners Lawyer in Sharm El Sheikh | Karim Eldib';
+    const title = language === 'ar'
+        ? 'محامي تحكيم دولي وقضايا أجانب في شرم الشيخ | كريم الديب'
+        : language === 'fr'
+            ? 'Avocat Arbitrage International & Étrangers à Sharm El Sheikh | Karim Eldib'
+            : language === 'it'
+                ? 'Avvocato Arbitrato Internazionale e Stranieri a Sharm El Sheikh | Karim Eldib'
+                : 'International Arbitration & Foreigners Lawyer in Sharm El Sheikh | Karim Eldib';
 
-        const description = language === 'ar'
-            ? 'محامي تحكيم دولي في شرم الشيخ — كريم الديب. متخصص في التحكيم التجاري الدولي لمنازعات الفنادق والاستثمار السياحي، تسوية منازعات المستثمرين الأجانب، تنفيذ أحكام التحكيم، تأسيس شركات وإقامة. استشارة مجانية.'
-            : language === 'fr'
-                ? 'Avocat en arbitrage international à Sharm El Sheikh — Karim Eldib. Spécialiste en arbitrage commercial international, litiges d\'investissement hôtelier et touristique, résolution des différends transfrontaliers. Consultation gratuite. Nous parlons français.'
-                : language === 'it'
-                    ? 'Avvocato di arbitrato internazionale a Sharm El Sheikh — Karim Eldib. Specialista in arbitrato commerciale internazionale, controversie sugli investimenti alberghieri e turistici. Consulenza gratuita. Parliamo italiano.'
-                    : 'International Arbitration Lawyer in Sharm El Sheikh, Egypt — Karim Eldib. Expert in commercial arbitration, hotel & tourism investment disputes, cross-border dispute resolution, and enforcement of foreign arbitral awards. Free consultation. English, French & Italian spoken.';
-
-        document.title = title;
-
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute('content', description);
-        }
-
-        // Schema Markup
-        const schema = {
-            "@context": "https://schema.org",
-            "@type": "LegalService",
-            "name": language === 'ar' ? "مكتب المحامي كريم الديب - شرم الشيخ" : "Karim El-Dib Law Office - Sharm El Sheikh",
-            "description": description,
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": language === 'ar' ? "الهضبة" : "Al Hadaba",
-                "addressLocality": "Sharm El Sheikh",
-                "addressRegion": "South Sinai",
-                "addressCountry": "EG"
-            },
-            "telephone": "+20-122-376-7592",
-            "email": "kingarim2411@gmail.com",
-            "url": "https://www.ke-lawyer.com/sharm-el-sheikh",
-            "priceRange": "$$",
-            "areaServed": {
-                "@type": "City",
-                "name": "Sharm El Sheikh",
-                "alternateName": "شرم الشيخ"
-            },
-            "knowsLanguage": ["ar", "en", "fr", "it"],
-            "serviceType": [
-                language === 'ar' ? "محامي تحكيم دولي في شرم الشيخ" : "International Arbitration Lawyer in Sharm El Sheikh",
-                language === 'ar' ? "تسوية منازعات الاستثمار والفنادق" : "Hotel & Investment Dispute Resolution",
-                language === 'ar' ? "منازعات المستثمرين الأجانب" : "Foreign Investor Disputes in Egypt",
-                language === 'ar' ? "تنفيذ أحكام التحكيم الأجنبية" : "Enforcement of Foreign Arbitral Awards",
-                language === 'ar' ? "خدمات قانونية للأجانب" : "Legal Services for Foreigners",
-                language === 'ar' ? "إقامة وتأشيرات" : "Residence Permits and Visas",
-                language === 'ar' ? "تأسيس شركات" : "Company Formation",
-                language === 'ar' ? "طلاق وأحوال شخصية" : "Divorce and Personal Status"
-            ]
-        };
-
-        const scriptTag = document.createElement('script');
-        scriptTag.type = 'application/ld+json';
-        scriptTag.text = JSON.stringify(schema);
-        document.head.appendChild(scriptTag);
-
-        return () => {
-            document.head.removeChild(scriptTag);
-        };
-    }, [language]);
+    const description = language === 'ar'
+        ? 'محامي تحكيم دولي في شرم الشيخ — كريم الديب. متخصص في التحكيم التجاري الدولي لمنازعات الفنادق والاستثمار السياحي، تسوية منازعات المستثمرين الأجانب، تنفيذ أحكام التحكيم، تأسيس شركات وإقامة. استشارة مجانية.'
+        : language === 'fr'
+            ? 'Avocat en arbitrage international à Sharm El Sheikh — Karim Eldib. Spécialiste en arbitrage commercial international, litiges d\'investissement hôtelier et touristique, résolution des différends transfrontaliers. Consultation gratuite. Nous parlons français.'
+            : language === 'it'
+                ? 'Avvocato di arbitrato internazionale a Sharm El Sheikh — Karim Eldib. Specialista in arbitrato commerciale internazionale, controversie sugli investimenti alberghieri e turistici. Consulenza gratuita. Parliamo italiano.'
+                : 'International Arbitration Lawyer in Sharm El Sheikh, Egypt — Karim Eldib. Expert in commercial arbitration, hotel & tourism investment disputes, cross-border dispute resolution, and enforcement of foreign arbitral awards. Free consultation. English, French & Italian spoken.';
 
     const languages = [
         { icon: Globe2, name: 'Français', flag: '🇫🇷' },

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 import AdvancedSEO from '../../components/AdvancedSEO';
@@ -7,29 +7,7 @@ const CompanyLaw: React.FC = () => {
   const { language, getTextByLanguage } = useLanguage();
   const isRTL = language === 'ar';
 
-  useEffect(() => {
-    const title = language === 'ar'
-      ? "محامي قانون الشركات | المحامي كريم الديب"
-      : language === 'fr'
-      ? "Avocat Droit des Sociétés | Karim El-Dib"
-      : language === 'it'
-      ? "Avvocato Diritto Societario | Karim El-Dib"
-      : "Company Law Lawyer | Lawyer Karim El-Dib";
-    
-    document.title = title;
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'محامي قانون الشركات - المحامي كريم الديب خبير في قانون الشركات وتأسيس الشركات والحوكمة المؤسسية. خدمات قانونية شاملة للشركات المحلية والدولية. Company law lawyer Egypt.');
-    }
-
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'محامي قانون الشركات, تأسيس شركات مصر, حوكمة الشركات, محامي شركات, قانون الاستثمار, Company law Egypt, Corporate lawyer, كريم الديب محامي, المحامي كريم الديب');
-    }
-  }, []);
-
-  return (
+    return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
         title={language === 'ar' ? "محامي قانون الشركات | المحامي كريم الديب" : "Corporate Law Lawyer in Egypt | Lawyer Karim El-Dib"}
