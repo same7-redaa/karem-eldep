@@ -1,303 +1,145 @@
 import React, { useEffect } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLocation } from 'react-router-dom';
+import { getLanguageFromPath } from '../contexts/LanguageContext';
+import { DOMAIN, BUSINESS, buildBusinessGraph, ORG_ID, WEBSITE_ID } from '../data/business';
 
 interface AdvancedSEOProps {
   title?: string;
   description?: string;
+  /** @deprecated meta keywords are ignored by Google; kept for backwards compatibility */
   keywords?: string;
+  /** Canonical URL of the Arabic (default) version. The English URL is derived from it. */
   canonicalUrl?: string;
   city?: string;
+  /** Extra JSON-LD nodes for this page (FAQPage, BreadcrumbList, Service...) */
+  schema?: Record<string, any>[];
 }
 
-const DOMAIN = 'https://www.ke-lawyer.com';
+/** Head data collected during server-side prerender (scripts/prerender.mjs reads it). */
+export const ssrHead: { current: null | {
+  title: string;
+  description: string;
+  canonical: string;
+  arHref: string;
+  enHref: string;
+  lang: 'ar' | 'en';
+} } = { current: null };
 
-const AdvancedSEO: React.FC<AdvancedSEOProps> = ({
-  title,
-  description,
-  keywords,
-  canonicalUrl,
-  city
-}) => {
-  const { language } = useLanguage();
-  const isRTL = language === 'ar';
+const DEFAULT_TITLE = {
+  ar: 'المحامي كريم الديب | محامي في الإسكندرية وشرم الشيخ | قضايا أجانب وتحكيم دولي',
+  en: 'Karim Eldib Law Firm | Lawyer in Alexandria & Sharm El Sheikh, Egypt',
+};
+const DEFAULT_DESC = {
+  ar: 'مكتب المحامي كريم الديب للمحاماة في الإسكندرية وشرم الشيخ: قضايا جنائية ومدنية وأحوال شخصية، تأسيس شركات، إقامات الأجانب، والتحكيم الدولي. خبرة منذ 2006 ونتحدث 4 لغات.',
+  en: 'Karim Eldib Law Firm — English-speaking lawyers in Alexandria & Sharm El Sheikh, Egypt: criminal, civil & family law, company formation, residency for foreigners and international arbitration. Since 2006.',
+};
 
-  // Calculate clean path without language prefix
-  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '/';
-  const cleanPath = currentPath.replace(/^\/(en|ar|fr|it)(\/|$)/, '/') || '/';
-  const normalizedCleanPath = cleanPath === '/' ? '/' : cleanPath.replace(/\/$/, '');
+// Escape < and & as unicode escapes so JSON-LD can never break out of the <script> tag
+const BACKSLASH = String.fromCharCode(92);
+const safeJson = (data: unknown) =>
+  JSON.stringify(data).replace(/[<&]/g, c => `${BACKSLASH}u00${c.charCodeAt(0).toString(16)}`);
 
-  // Calculate self-referencing canonical URL
-  const resolvedCanonical = canonicalUrl
-    ? (language === 'en' && !canonicalUrl.includes('/en')
-        ? canonicalUrl.replace(DOMAIN, `${DOMAIN}/en`)
-        : canonicalUrl)
-    : (language === 'ar'
-        ? `${DOMAIN}${normalizedCleanPath}`
-        : `${DOMAIN}/${language}${normalizedCleanPath === '/' ? '' : normalizedCleanPath}`);
+const AdvancedSEO: React.FC<AdvancedSEOProps> = ({ title, description, canonicalUrl, schema }) => {
+  const { pathname } = useLocation();
 
-  // SEO Keywords للمدن الرئيسية
-  const cityKeywords: Record<'ar' | 'en' | 'fr' | 'it', string[]> = {
-    ar: [
-      'محامي في شرم الشيخ',
-      'أفضل محامي في شرم الشيخ',
-      'مكتب محاماة في شرم الشيخ',
-      'محامي أجانب في شرم الشيخ',
-      'محامي جنائي في شرم الشيخ',
-      'محامي شركات في شرم الشيخ',
-      'محامي أحوال شخصية في شرم الشيخ',
-      'استشارات قانونية في شرم الشيخ',
-      'محامي في الإسكندرية',
-      'أفضل مكتب محاماة في الإسكندرية',
-      'مكتب محاماة في الإسكندرية',
-      'محامي قضايا أجانب في الإسكندرية',
-      'محامي هجرة وإقامة في الإسكندرية',
-      'محامي شركات في الإسكندرية',
-      'محامي أحوال شخصية في الإسكندرية',
-      'محامي أجانب في مصر',
-      'محامي مستثمرين أجانب في مصر',
-      'محامي تأسيس شركات للأجانب',
-      'كريم الديب محامي أجانب',
-      'محامي تحكيم دولي في مصر',
-      'التحكيم التجاري الدولي في مصر',
-      'محامي منازعات دولية في مصر',
-      'تسوية المنازعات الدولية في مصر',
-      'تنفيذ أحكام التحكيم الأجنبية في مصر',
-      'مركز القاهرة الإقليمي للتحكيم CRCICA'
-    ],
-    en: [
-      'Lawyer in Sharm El Sheikh',
-      'Best lawyer in Sharm El Sheikh',
-      'Law firm in Sharm El Sheikh',
-      'Foreigners lawyer Sharm El Sheikh',
-      'Criminal lawyer Sharm El Sheikh',
-      'Corporate lawyer Sharm El Sheikh',
-      'Family lawyer Sharm El Sheikh',
-      'Immigration lawyer Sharm El Sheikh',
-      'Lawyer in Alexandria',
-      'Best law firm in Alexandria',
-      'Law firm in Alexandria',
-      'Foreigners lawyer Alexandria',
-      'Lawyer in Egypt',
-      'Best lawyer in Egypt',
-      'English speaking lawyer Egypt',
-      'International arbitration lawyer Egypt',
-      'Commercial arbitration in Egypt',
-      'Foreign investment lawyer Egypt',
-      'Company formation Egypt',
-      'Enforcement foreign arbitral awards Egypt',
-      'CRCICA arbitration Egypt'
-    ],
-    fr: [
-      'Avocat pour étrangers à Sharm El Sheikh',
-      'Cabinet d\'avocats à Sharm El Sheikh',
-      'Avocat francophone Sharm El Sheikh',
-      'Avocat pour étrangers à Alexandrie',
-      'Avocat francophone Alexandrie',
-      'Avocat pour étrangers en Égypte',
-      'Services juridiques pour étrangers',
-      'Création d\'entreprise pour étrangers',
-      'Arbitrage commercial international Égypte',
-      'Exécution sentences arbitrales Égypte'
-    ],
-    it: [
-      'Avvocato per stranieri a Sharm El Sheikh',
-      'Studio legale a Sharm El Sheikh',
-      'Avvocato italiano Sharm El Sheikh',
-      'Avvocato per stranieri ad Alessandria',
-      'Avvocato per stranieri in Egitto',
-      'Servizi legali per stranieri',
-      'Costituzione di società per stranieri',
-      'Arbitrato internazionale Egitto'
-    ]
-  };
+  // Language comes from the URL (never from localStorage) so the canonical is always stable.
+  const pathLang = getLanguageFromPath(pathname);
+  const lang: 'ar' | 'en' = pathLang === 'en' ? 'en' : 'ar';
+  const isAr = lang === 'ar';
 
-  const defaultTitle = language === 'ar'
-    ? 'المحامي كريم الديب | محامي تحكيم دولي وقضايا أجانب في مصر | شرم الشيخ - الإسكندرية - القاهرة'
-    : language === 'fr'
-      ? 'Cabinet Karim Eldib | Avocat Arbitrage International & Étrangers en Égypte'
-      : language === 'it'
-        ? 'Studio Karim Eldib | Avvocato Arbitrato Internazionale & Stranieri in Egitto'
-        : 'Karim Eldib Law Firm | International Arbitration & Foreigners Lawyer in Egypt';
+  // Clean (language-less) path
+  let cleanPath = pathname.replace(/^\/(en|ar|fr|it)(\/|$)/, '/') || '/';
+  if (canonicalUrl) {
+    try { cleanPath = new URL(canonicalUrl).pathname; } catch { /* keep path */ }
+  }
+  cleanPath = cleanPath === '/' ? '/' : cleanPath.replace(/\/$/, '');
 
-  const defaultDescription = language === 'ar'
-    ? 'مؤسسة المحامي كريم الديب للمحاماة والتحكيم الدولي في مصر. خدمات متخصصة للأجانب والمستثمرين والمصريين بالخارج: تأسيس شركات، إقامات، عقارات، تحكيم تجاري دولي، وقضايا أسرة وجنائي. نتحدث العربية والإنجليزية والفرنسية والإيطالية.'
-    : language === 'fr'
-      ? 'Cabinet Karim Eldib - Avocats spécialisés en arbitrage international, droit des affaires et litiges pour étrangers et investisseurs en Égypte. Présence à Alexandrie, Sharm El Sheikh et Le Caire.'
-      : language === 'it'
-        ? 'Studio Karim Eldib - Assistenza legale specializzata per stranieri e investitori in Egitto: arbitrato internazionale, societario, immobiliare e diritto di famiglia.'
-        : 'Karim Eldib Law Firm — Premier international law firm in Egypt specializing in international commercial arbitration, investment disputes, company formation, residence permits & expat legal services in Cairo, Alexandria & Sharm El Sheikh.';
+  const arHref = `${DOMAIN}${cleanPath === '/' ? '/' : cleanPath}`;
+  const enHref = `${DOMAIN}/en${cleanPath === '/' ? '' : cleanPath}`;
+  const canonical = isAr ? arHref : enHref;
 
-  const combinedKeywords = [
-    ...(keywords ? [keywords] : []),
-    ...(cityKeywords[language] || cityKeywords['ar']),
-  ].join(', ');
+  const pageTitle = title || DEFAULT_TITLE[lang];
+  const pageDescription = description || DEFAULT_DESC[lang];
 
-  const pageTitle = title || defaultTitle;
-  const pageDescription = description || defaultDescription;
-
-  // Structured Data
   const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
+      ...buildBusinessGraph(isAr),
       {
-        "@type": "LegalService",
-        "@id": `${DOMAIN}#legalservice`,
-        "name": isRTL ? "مؤسسة كريم الديب للمحاماة والتحكيم الدولي" : "Karim Eldib Law Firm & International Arbitration",
-        "alternateName": [
-          "كريم الديب محامي",
-          "المحامي كريم الديب",
-          "Karim Eldib Lawyer",
-          "Unlimited lawyers and foreign services"
-        ],
-        "description": pageDescription,
-        "url": DOMAIN,
-        "telephone": "+201223767592",
-        "email": "kingarim2411@gmail.com",
-        "priceRange": "$$",
-        "image": `${DOMAIN}/images/lawyer-7.jpg`,
-        "address": [
-          {
-            "@type": "PostalAddress",
-            "streetAddress": "14 شارع الشهداء (محطة الرمل)",
-            "addressLocality": "الإسكندرية",
-            "addressRegion": "Alexandria",
-            "addressCountry": "EG"
-          },
-          {
-            "@type": "PostalAddress",
-            "streetAddress": "الهضبة",
-            "addressLocality": "شرم الشيخ",
-            "addressRegion": "South Sinai",
-            "addressCountry": "EG"
-          }
-        ],
-        "areaServed": [
-          { "@type": "Country", "name": "Egypt" },
-          { "@type": "City", "name": "Cairo" },
-          { "@type": "City", "name": "Alexandria" },
-          { "@type": "City", "name": "Sharm El Sheikh" }
-        ]
+        '@type': 'WebPage',
+        '@id': `${canonical}#webpage`,
+        url: canonical,
+        name: pageTitle,
+        description: pageDescription,
+        inLanguage: lang,
+        isPartOf: { '@id': WEBSITE_ID },
+        about: { '@id': ORG_ID },
       },
-      {
-        "@type": "Attorney",
-        "@id": `${DOMAIN}#attorney`,
-        "name": isRTL ? "كريم الديب" : "Karim Eldib",
-        "jobTitle": isRTL ? "محامي بالنقض ومحكم دولي" : "Attorney at Cassation & International Arbitrator",
-        "worksFor": { "@id": `${DOMAIN}#legalservice` },
-        "telephone": "+201223767592",
-        "knowsLanguage": ["Arabic", "English", "French", "Italian"]
-      },
-      {
-        "@type": "WebPage",
-        "@id": `${resolvedCanonical}#webpage`,
-        "url": resolvedCanonical,
-        "name": pageTitle,
-        "description": pageDescription,
-        "inLanguage": language,
-        "isPartOf": {
-          "@type": "WebSite",
-          "@id": `${DOMAIN}#website`,
-          "url": DOMAIN,
-          "name": isRTL ? "مؤسسة كريم الديب للمحاماة" : "Karim Eldib Law Firm"
-        }
-      }
-    ]
+      ...(schema || []),
+    ],
   };
+
+  // Expose head data to the build-time prerenderer
+  if (typeof document === 'undefined') {
+    ssrHead.current = { title: pageTitle, description: pageDescription, canonical, arHref, enHref, lang };
+  }
 
   useEffect(() => {
-    // 1. Update document title
     document.title = pageTitle;
 
-    // Helper to set meta tags
-    const updateMetaTag = (name: string, content: string, isProperty = false) => {
-      const attribute = isProperty ? 'property' : 'name';
-      let element = document.querySelector(`meta[${attribute}="${name}"]`);
-      if (!element) {
-        element = document.createElement('meta');
-        element.setAttribute(attribute, name);
-        document.head.appendChild(element);
+    const setMeta = (key: string, content: string, isProperty = false) => {
+      const attr = isProperty ? 'property' : 'name';
+      let el = document.querySelector(`meta[${attr}="${key}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, key);
+        document.head.appendChild(el);
       }
-      element.setAttribute('content', content);
+      el.setAttribute('content', content);
     };
 
-    // 2. Standard Meta Tags
-    updateMetaTag('description', pageDescription);
-    updateMetaTag('keywords', combinedKeywords);
-    updateMetaTag('robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
-    updateMetaTag('googlebot', 'index, follow');
-    updateMetaTag('bingbot', 'index, follow');
-    updateMetaTag('language', language === 'ar' ? 'ar' : language);
-    updateMetaTag('author', 'Karim Eldib Law Firm');
+    setMeta('description', pageDescription);
+    setMeta('og:type', 'website', true);
+    setMeta('og:url', canonical, true);
+    setMeta('og:title', pageTitle, true);
+    setMeta('og:description', pageDescription, true);
+    setMeta('og:image', BUSINESS.image, true);
+    setMeta('og:site_name', isAr ? BUSINESS.nameAr : BUSINESS.nameEn, true);
+    setMeta('og:locale', isAr ? 'ar_EG' : 'en_US', true);
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta('twitter:title', pageTitle);
+    setMeta('twitter:description', pageDescription);
+    setMeta('twitter:image', BUSINESS.image);
 
-    // 3. Geo Targeting
-    updateMetaTag('geo.region', 'EG');
-    updateMetaTag('geo.placename', city || 'Cairo, Alexandria, Sharm El Sheikh, Egypt');
-
-    // 4. Open Graph Tags
-    updateMetaTag('og:type', 'website', true);
-    updateMetaTag('og:url', resolvedCanonical, true);
-    updateMetaTag('og:title', pageTitle, true);
-    updateMetaTag('og:description', pageDescription, true);
-    updateMetaTag('og:image', `${DOMAIN}/images/lawyer-7.jpg`, true);
-    updateMetaTag('og:site_name', isRTL ? 'مؤسسة كريم الديب للمحاماة والتحكيم الدولي' : 'Karim Eldib Law Firm', true);
-    updateMetaTag('og:locale', language === 'ar' ? 'ar_EG' : language === 'en' ? 'en_US' : language === 'fr' ? 'fr_FR' : 'it_IT', true);
-
-    // 5. Twitter Tags
-    updateMetaTag('twitter:card', 'summary_large_image');
-    updateMetaTag('twitter:url', resolvedCanonical);
-    updateMetaTag('twitter:title', pageTitle);
-    updateMetaTag('twitter:description', pageDescription);
-    updateMetaTag('twitter:image', `${DOMAIN}/images/lawyer-7.jpg`);
-
-    // 6. Update Canonical Link
     let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
       canonicalLink = document.createElement('link');
       canonicalLink.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalLink);
     }
-    canonicalLink.setAttribute('href', resolvedCanonical);
+    canonicalLink.setAttribute('href', canonical);
 
-    // 7. Manage Hreflang Alternate Links (Bidirectional & Clean)
-    const existingHreflangs = document.querySelectorAll('link[rel="alternate"][hreflang]');
-    existingHreflangs.forEach(el => el.remove());
-
-    const arHref = `${DOMAIN}${normalizedCleanPath}`;
-    const enHref = `${DOMAIN}/en${normalizedCleanPath === '/' ? '' : normalizedCleanPath}`;
-    const frHref = `${DOMAIN}/fr${normalizedCleanPath === '/' ? '' : normalizedCleanPath}`;
-    const itHref = `${DOMAIN}/it${normalizedCleanPath === '/' ? '' : normalizedCleanPath}`;
-
-    const addHreflang = (hreflang: string, href: string) => {
+    // hreflang: only languages that actually exist (ar + en)
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
+    ([['ar', arHref], ['en', enHref], ['x-default', arHref]] as const).forEach(([hl, href]) => {
       const link = document.createElement('link');
       link.setAttribute('rel', 'alternate');
-      link.setAttribute('hreflang', hreflang);
+      link.setAttribute('hreflang', hl);
       link.setAttribute('href', href);
       document.head.appendChild(link);
-    };
+    });
 
-    addHreflang('ar', arHref);
-    addHreflang('en', enHref);
-    addHreflang('fr', frHref);
-    addHreflang('it', itHref);
-    addHreflang('x-default', arHref);
+    document.documentElement.lang = lang;
+    document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+  }, [pageTitle, pageDescription, canonical, arHref, enHref, lang, isAr]);
 
-    // 8. Structured Data
-    let structuredDataScript = document.querySelector('script[type="application/ld+json"][data-seo="advanced"]');
-    if (!structuredDataScript) {
-      structuredDataScript = document.createElement('script');
-      structuredDataScript.setAttribute('type', 'application/ld+json');
-      structuredDataScript.setAttribute('data-seo', 'advanced');
-      document.head.appendChild(structuredDataScript);
-    }
-    structuredDataScript.textContent = JSON.stringify(structuredData);
-
-    // 9. Update HTML lang & dir
-    document.documentElement.lang = language;
-    document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
-
-  }, [pageTitle, pageDescription, combinedKeywords, resolvedCanonical, city, language, isRTL, normalizedCleanPath]);
-
-  return null;
+  // JSON-LD is rendered in the markup so it is present in the prerendered HTML.
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: safeJson(structuredData) }}
+    />
+  );
 };
 
 export default AdvancedSEO;

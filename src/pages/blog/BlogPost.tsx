@@ -8,8 +8,10 @@ const BlogPost: React.FC = () => {
   const { language } = useLanguage();
   const isRTL = language === 'ar';
   const { slug } = useParams();
-  const [article, setArticle] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+  // Static articles render immediately (and in the prerendered HTML); Firestore may override later.
+  const initialStatic = slug ? (staticArticles[slug] || staticArticles[slugAliases[slug]]) || null : null;
+  const [article, setArticle] = useState<any>(initialStatic);
+  const [loading, setLoading] = useState(!initialStatic);
 
   // Helper to resolve static article by slug or alias
   const getStaticArticle = (s?: string) => {
@@ -23,7 +25,7 @@ const BlogPost: React.FC = () => {
   // Fetch article effect
   useEffect(() => {
     const fetchArticle = async () => {
-      setLoading(true);
+      if (!getStaticArticle(slug)) setLoading(true);
       try {
         const { collection, getDocs, query, where } = await import('firebase/firestore');
         const { db } = await import('../../lib/firebase');
@@ -34,6 +36,8 @@ const BlogPost: React.FC = () => {
         if (!querySnapshot.empty) {
           const docData = querySnapshot.docs[0].data();
           setArticle(docData);
+        } else if (getStaticArticle(slug)) {
+          // keep the static article already shown
         } else {
           const staticArt = getStaticArticle(slug);
           setArticle(staticArt);

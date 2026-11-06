@@ -129,21 +129,15 @@ const ArbitrationMediation: React.FC = () => {
   // ─── LegalService Schema (Arbitration-specific) ────────────────────────────
   const legalServiceSchema = {
     "@context": "https://schema.org",
-    "@type": "LegalService",
-    "@id": "https://www.ke-lawyer.com/arbitration-mediation#legalservice",
+    "@type": "Service",
+    "@id": "https://www.ke-lawyer.com/arbitration-mediation#service",
+    "serviceType": "International Commercial Arbitration",
     "name": language === 'ar'
-      ? "مكتب كريم الديب للتحكيم التجاري الدولي وتسوية المنازعات"
-      : "Karim Eldib International Arbitration & Dispute Resolution Law Firm",
-    "alternateName": [
-      "International Arbitration Lawyer Egypt",
-      "محامي تحكيم دولي مصر",
-      "Dispute Resolution Lawyer in Egypt",
-      "Karim Eldib CRCICA"
-    ],
+      ? "التحكيم التجاري الدولي وتسوية المنازعات"
+      : "International Arbitration & Dispute Resolution",
+    "provider": { "@id": "https://www.ke-lawyer.com/#organization" },
     "description": seoDescription,
     "url": "https://www.ke-lawyer.com/arbitration-mediation",
-    "telephone": "+201223767592",
-    "knowsLanguage": ["Arabic", "English", "French", "Italian"],
     "areaServed": [
       { "@type": "Country", "name": "Egypt" },
       { "@type": "City", "name": "Cairo", "alternateName": "القاهرة" },
@@ -187,11 +181,7 @@ const ArbitrationMediation: React.FC = () => {
           }
         }
       ]
-    },
-    "sameAs": [
-      "https://www.ke-lawyer.com",
-      "https://www.facebook.com/Unlimitedsharm"
-    ]
+    }
   };
 
   return (

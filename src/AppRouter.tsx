@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense, lazy } from 'react';
-import { RouterProvider, createBrowserRouter, Outlet, useLocation, Navigate } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, Outlet, useLocation, Navigate, RouteObject } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SocialButtons from './components/SocialButtons';
@@ -35,9 +35,13 @@ const Login = lazy(() => import('./components/Admin/AdminRoutes').then(m => ({ d
 // ScrollToTop component
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
+  const isFirst = React.useRef(true);
 
   useEffect(() => {
     const html = document.documentElement;
+    // Enable the page fade animation only for navigations after the first load
+    if (isFirst.current) isFirst.current = false;
+    else html.classList.add('js-navigated');
     const originalScrollBehavior = html.style.scrollBehavior;
     html.style.scrollBehavior = 'auto';
     
@@ -94,8 +98,8 @@ const Layout: React.FC = () => {
   );
 };
 
-// Router configuration
-const router = createBrowserRouter([
+// Route configuration (shared by the browser router and the build-time prerenderer)
+export const routes: RouteObject[] = [
   {
     path: '/admin',
     element: <Suspense fallback={<div className="min-h-screen bg-[#0b1a33]" />}><AdminRoot /></Suspense>,
@@ -234,12 +238,13 @@ const router = createBrowserRouter([
       { path: '*', element: <Navigate to="/" replace /> },
     ],
   },
-]);
+];
+
+let router: ReturnType<typeof createBrowserRouter> | null = null;
 
 const AppRouter: React.FC = () => {
-  return (
-    <RouterProvider router={router} />
-  );
+  if (!router) router = createBrowserRouter(routes);
+  return <RouterProvider router={router} />;
 };
 
 export default AppRouter;

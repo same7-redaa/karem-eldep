@@ -98,8 +98,8 @@ const Footer: React.FC = () => {
   const cityLinks = [
     {
       name: getTextByLanguage({
-        ar: 'المكتب الرئيسي - الإسكندرية (14 شارع الشهداء / فؤاد)',
-        en: 'Main Office - Alexandria (14 El Shohada / Fouad St)',
+        ar: 'المكتب الرئيسي - الإسكندرية (29 المسلة غرب وشريف باشا، العطارين)',
+        en: 'Main Office - Alexandria (29 El Masalla Gharb & Sherif Pasha St., El Attarin)',
         fr: 'Bureau Principal - Alexandrie',
         it: 'Ufficio Principale - Alessandria'
       }),
@@ -107,8 +107,8 @@ const Footer: React.FC = () => {
     },
     {
       name: getTextByLanguage({
-        ar: 'فرع شرم الشيخ - الهضبة / جنوب سيناء',
-        en: 'Sharm El Sheikh Branch - Hadaba / South Sinai',
+        ar: 'فرع شرم الشيخ - 123 شارع البحر / جنوب سيناء',
+        en: 'Sharm El Sheikh Branch - 123 El Bahr St. / South Sinai',
         fr: 'Succursale - Sharm El Sheikh',
         it: 'Filiale - Sharm El Sheikh'
       }),

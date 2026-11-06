@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
                   </h3>
 
                   <a
-                    href="https://www.google.com/maps/place/Karim+El+Deeb+Lawyer/@31.1997224,29.8994763,17z"
+                    href="https://maps.app.goo.gl/ZbXQ8WdAtYyER15E6"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 group/link"
@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
                   </h3>
 
                   <a
-                    href="https://www.google.com/maps/place/Karim+El+Deeb+Law+firm/@27.8524719,34.3032662,17z"
+                    href="https://maps.app.goo.gl/vUJRRpyVskkFGsFt9"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 text-gray-300 hover:text-[#d4a15c] transition-colors duration-300 group/link"

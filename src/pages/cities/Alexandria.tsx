@@ -1,332 +1,191 @@
-import React, { useEffect } from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
-import { MapPin, Phone, Mail, Clock, Globe2, Award, Shield, Zap } from 'lucide-react';
-import PracticeAreas from '../../components/PracticeAreas';
-import AdvancedSEO from '../../components/AdvancedSEO';
+import React from 'react';
+import CityLandingPage, { CityPageData } from '../../components/CityLandingPage';
 
-const Alexandria: React.FC = () => {
-    const { language, t } = useLanguage();
-    const isRTL = language === 'ar';
-
-    const title = language === 'ar'
-        ? 'محامي تحكيم دولي وقضايا أجانب في الإسكندرية | كريم الديب'
-        : language === 'fr'
-            ? 'Avocat Arbitrage International & Étrangers à Alexandrie | Karim Eldib'
-            : language === 'it'
-                ? 'Avvocato Arbitrato Internazionale e Stranieri ad Alessandria | Karim Eldib'
-                : 'International Arbitration & Foreigners Lawyer in Alexandria | Karim Eldib';
-
-    const description = language === 'ar'
-        ? 'محامي تحكيم دولي في الإسكندرية — كريم الديب. متخصص في التحكيم التجاري الدولي، منازعات المستثمرين الأجانب، تسوية المنازعات الدولية، تنفيذ أحكام التحكيم الأجنبية، تأسيس شركات وإقامة. استشارة مجانية.'
-        : language === 'fr'
-            ? 'Avocat en arbitrage international à Alexandrie — Karim Eldib. Spécialiste en arbitrage commercial international, litiges d\'investissements étrangers, résolution des différends transfrontaliers et exécution de sentences arbitrales. Consultation gratuite.'
-            : language === 'it'
-                ? 'Avvocato di arbitrato internazionale ad Alessandria — Karim Eldib. Specialista in arbitrato commerciale internazionale, controversie di investimento estero, risoluzione dispute transfrontaliere. Consulenza gratuite.'
-                : 'International Arbitration Lawyer in Alexandria, Egypt — Karim Eldib. Expert in commercial arbitration, foreign investment disputes, cross-border dispute resolution, and enforcement of foreign arbitral awards. Free consultation. English, French & Italian spoken.';
-
-    const features = [
-        {
-            icon: Award,
-            titleAr: 'خبرة 18 عاماً',
-            titleEn: '18 Years of Experience',
-            titleFr: '18 Ans d\'Expérience',
-            titleIt: '18 Anni di Esperienza',
-            descAr: 'خبرة طويلة في خدمة الأجانب والمستثمرين',
-            descEn: 'Long experience serving foreigners and investors',
-            descFr: 'Longue expérience au service des étrangers et investisseurs',
-            descIt: 'Lunga esperienza al servizio di stranieri e investitori'
-        },
-        {
-            icon: Globe2,
-            titleAr: '4 لغات',
-            titleEn: '4 Languages',
-            titleFr: '4 Langues',
-            titleIt: '4 Lingue',
-            descAr: 'نتحدث العربية والإنجليزية والفرنسية والإيطالية',
-            descEn: 'We speak Arabic, English, French and Italian',
-            descFr: 'Nous parlons arabe, anglais, français et italien',
-            descIt: 'Parliamo arabo, inglese, francese e italiano'
-        },
-        {
-            icon: Shield,
-            titleAr: 'خدمات شاملة',
-            titleEn: 'Comprehensive Services',
-            titleFr: 'Services Complets',
-            titleIt: 'Servizi Completi',
-            descAr: 'جميع الخدمات القانونية للأجانب في مكان واحد',
-            descEn: 'All legal services for foreigners in one place',
-            descFr: 'Tous les services juridiques pour étrangers en un seul endroit',
-            descIt: 'Tutti i servizi legali per stranieri in un unico posto'
-        }
-    ];
-
-    const languages = [
-        { icon: Globe2, name: 'Français' },
-        { icon: Globe2, name: 'Italiano' },
-        { icon: Globe2, name: 'English' },
-        { icon: Globe2, name: 'العربية' }
-    ];
-
-    const getTitle = (item: any) => {
-        switch (language) {
-            case 'ar': return item.titleAr;
-            case 'fr': return item.titleFr;
-            case 'it': return item.titleIt;
-            default: return item.titleEn;
-        }
-    };
-
-    const getDesc = (item: any) => {
-        switch (language) {
-            case 'ar': return item.descAr;
-            case 'fr': return item.descFr;
-            case 'it': return item.descIt;
-            default: return item.descEn;
-        }
-    };
-
-    return (
-        <div className={`min-h-screen bg-[#0b1a33] text-gray-200 ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'}>
-            <AdvancedSEO
-                title={title}
-                description={description}
-                canonicalUrl="https://www.ke-lawyer.com/alexandria"
-                city="Alexandria"
-            />
-            {/* Hero Section */}
-            <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0b1a33] via-[#0e1f3b] to-[#0b1a33]"></div>
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0" style={{
-                        backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(212, 161, 92, 0.15) 1px, transparent 0)',
-                        backgroundSize: '40px 40px'
-                    }}></div>
-                </div>
-
-                <div className="container mx-auto px-4 relative z-10">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="mb-4">
-                            <span className="inline-flex items-center gap-2 bg-[#d4a15c] text-[#0b1a33] px-4 py-2 rounded-full font-bold text-sm">
-                                <Award className="w-4 h-4" />
-                                {language === 'ar' ? 'المكتب الرئيسي' : language === 'fr' ? 'Bureau Principal' : language === 'it' ? 'Ufficio Principale' : 'Main Office'}
-                            </span>
-                        </div>
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-white">
-                            {language === 'ar' && 'محامي قضايا أجانب في الإسكندرية'}
-                            {language === 'en' && 'Lawyer for Foreigners Cases in Alexandria'}
-                            {language === 'fr' && 'Avocat pour Affaires d\'Étrangers à Alexandrie'}
-                            {language === 'it' && 'Avvocato per Casi di Stranieri ad Alessandria'}
-                        </h1>
-                        <p className="text-xl md:text-2xl mb-6 text-[#d4a15c] font-medium">
-                            {language === 'ar' && 'مكتب المحامي كريم الديب - متخصصون في خدمة المستثمرين الأجانب'}
-                            {language === 'en' && 'Karim El-Dib Law Office - Specialists in Serving Foreign Investors'}
-                            {language === 'fr' && 'Cabinet Karim El-Dib - Spécialistes au Service des Investisseurs Étrangers'}
-                            {language === 'it' && 'Studio Karim El-Dib - Specialisti al Servizio degli Investitori Stranieri'}
-                        </p>
-                        <div className="flex flex-wrap justify-center gap-3">
-                            {languages.map((lang, index) => (
-                                <div key={index} className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-[#d4a15c]/30">
-                                    <lang.icon className="w-4 h-4 text-[#d4a15c]" />
-                                    <span className="text-sm font-medium">{lang.name}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <PracticeAreas />
-
-            {/* تفصيل الخدمات القانونية في الإسكندرية */}
-            <section className="py-16 bg-[#1a2d4d]/30 border-t border-b border-[#d4a15c]/10">
-                <div className="container mx-auto px-4 max-w-7xl">
-                    <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#d4a15c]">
-                        {language === 'ar' ? 'تفاصيل نطاق خدماتنا القانونية في الإسكندرية (المكتب الرئيسي)' : language === 'fr' ? 'Détails de nos Services Juridiques à Alexandrie (Bureau Principal)' : language === 'it' ? 'Dettagli dei Nostri Servizi Legali ad Alessandria (Ufficio Principale)' : 'Detailed Legal Services Scope in Alexandria (Main Office)'}
-                    </h2>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-300 leading-relaxed text-sm md:text-base">
-                        <div className="space-y-6">
-                            <div>
-                                <h3 className="text-xl font-bold text-[#d4a15c] mb-2 flex items-center gap-2">
-                                    <i className="fas fa-ship"></i>
-                                    {language === 'ar' ? 'القانون التجاري والبحري وتأسيس الشركات' : language === 'fr' ? 'Droit Commercial, Maritime & Sociétés' : language === 'it' ? 'Diritto Commerciale, Marittimo e Società' : 'Commercial, Maritime & Corporate Law'}
-                                </h3>
-                                <p>
-                                    {language === 'ar' 
-                                        ? 'بصفتها الميناء الرئيسي لمصر، فإن مكتبنا بالإسكندرية يتخصص في القانون البحري، ومنازعات الشحن والجمارك، وعقود النقل، بجانب تأسيس وهيكلة الشركات الاستثمارية للشركاء المحليين والأجانب، والحصول على التراخيص التجارية والصناعية اللازمة.'
-                                        : language === 'fr'
-                                        ? 'En tant que principal port d\'Égypte, notre bureau d\'Alexandrie est spécialisé en droit maritime, litiges de transport et douanes, ainsi que dans la création de sociétés d\'investissement.'
-                                        : language === 'it'
-                                        ? 'Essendo il porto principale dell\'Egitto, il nostro ufficio di Alessandria è specializzato in diritto marittimo, controversie di spedizione e doganali, nonché nella costituzione di società.'
-                                        : 'As Egypt\'s primary port, our Alexandria main office specializes in maritime law, shipping and customs disputes, and transport agreements, alongside company formation and commercial licensing.'}
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 className="text-xl font-bold text-[#d4a15c] mb-2 flex items-center gap-2">
-                                    <i className="fas fa-gavel"></i>
-                                    {language === 'ar' ? 'محامي تحكيم دولي في الإسكندرية وتسوية النزاعات' : language === 'fr' ? 'Avocat d\'Arbitrage International à Alexandrie' : language === 'it' ? 'Avvocato Arbitrato Internazionale ad Alessandria' : 'Arbitration Lawyer & Dispute Resolution in Alexandria'}
-                                </h3>
-                                <p>
-                                    {language === 'ar' 
-                                        ? 'يقدم مكتبنا تمثيلاً قانونياً متكاملاً كـ محامي تحكيم دولي في الإسكندرية. نوفر خدمات صياغة اتفاقيات التحكيم، وإدارة إجراءات الوساطة والتفاوض لتسوية المنازعات التجارية والاستثمارية ودياً للشركات، بالإضافة للتمثيل أمام مراكز التحكيم الإقليمية والدولية.'
-                                        : language === 'fr'
-                                        ? 'Nous agissons comme avocat d\'arbitrage international à Alexandrie, fournissant des services de médiation, de rédaction d\'accords d\'arbitrage et de représentation devant les tribunaux.'
-                                        : language === 'it'
-                                        ? 'Agiamo come avvocato arbitro internazionale ad Alessandria, fornendo servizi di mediazione, redazione di accordi arbitrali e rappresentanza presso tribunali.'
-                                        : 'We act as a specialized international arbitration lawyer in Alexandria, providing drafting of arbitration agreements, commercial mediation, dispute resolution, and legal representation before arbitral tribunals.'}
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="space-y-6">
-                            <div>
-                                <h3 className="text-xl font-bold text-[#d4a15c] mb-2 flex items-center gap-2">
-                                    <i className="fas fa-users"></i>
-                                    {language === 'ar' ? 'خدمات الأجانب والمغتربين والأحوال الشخصية' : language === 'fr' ? 'Services Étrangers, Expatriés & Statut Personnel' : language === 'it' ? 'Servizi Stranieri, Espatriati e Stato Personale' : 'Foreigners, Expats & Family Law'}
-                                </h3>
-                                <p>
-                                    {language === 'ar' 
-                                        ? 'يتخصص مكتبنا الرئيسي في إنهاء إجراءات زواج الأجانب وتوثيقها بوزارة العدل بالإسكندرية، ومساعدة المغتربين المصريين في تسييل التركات وإدارة الممتلكات وحل نزاعات الميراث، بجانب تملك العقارات للأجانب وتراخيص الإقامة.'
-                                        : language === 'fr'
-                                        ? 'Nous gérons les mariages d\'étrangers à Alexandrie, aidons les expatriés à liquider les successions et à gérer les biens, et conseillons sur l\'acquisition de biens par des étrangers.'
-                                        : language === 'it'
-                                        ? 'Gestiamo matrimoni di stranieri ad Alessandria, assistiamo gli espatriati a liquidare eredità e gestire beni, e consigliamo sull\'acquisto di proprietà.'
-                                        : 'Our main office handles foreign marriages at the Alexandria Notary, assists expats in inheritance liquidation and property management, and secures expat residence and property deeds.'}
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 className="text-xl font-bold text-[#d4a15c] mb-2 flex items-center gap-2">
-                                    <i className="fas fa-balance-scale"></i>
-                                    {language === 'ar' ? 'التقاضي المدني والدفاع الجنائي' : language === 'fr' ? 'Litige Civil & Défense Pénale' : language === 'it' ? 'Contenzioso Civile e Difesa Penale' : 'Civil Litigation & Criminal Defense'}
-                                </h3>
-                                <p>
-                                    {language === 'ar' 
-                                        ? 'نمثل الموكلين أمام محاكم الإسكندرية في القضايا المدنية، والنزاعات العقارية، ومطالبات التعويضات. كما نوفر دفاعاً جنائياً قوياً وفعالاً للأجانب والمصريين في مختلف القضايا الجنائية والمالية.'
-                                        : language === 'fr'
-                                        ? 'Nous représentons les clients devant les tribunaux d\'Alexandrie pour les affaires civiles, immobilières et d\'indemnisation, ainsi qu\'en défense pénale.'
-                                        : language === 'it'
-                                        ? 'Rappresentiamo i clienti presso i tribunali di Alessandria per cause civili, immobiliari e di risarcimento, nonché in difesa penale.'
-                                        : 'We represent clients before Alexandria courts in civil, real estate and damage claims, alongside providing robust criminal defense for both expats and locals.'}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Why Choose Us Section */}
-            <section className="py-16 bg-[#0b1a33]">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
-                        {language === 'ar' && 'لماذا تختار مكتبنا في الإسكندرية؟'}
-                        {language === 'en' && 'Why Choose Our Office in Alexandria?'}
-                        {language === 'fr' && 'Pourquoi Choisir Notre Cabinet à Alexandrie?'}
-                        {language === 'it' && 'Perché Scegliere il Nostro Studio ad Alessandria?'}
-                    </h2>
-
-                    <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                        {features.map((feature, index) => (
-                            <div key={index} className="bg-[#0e1f3b] rounded-lg p-6 border border-[#d4a15c]/20 text-center">
-                                <div className="flex justify-center mb-4">
-                                    <div className="bg-[#d4a15c]/10 p-4 rounded-full">
-                                        <feature.icon className="w-8 h-8 text-[#d4a15c]" />
-                                    </div>
-                                </div>
-                                <h3 className="text-xl font-bold mb-3 text-white">{getTitle(feature)}</h3>
-                                <p className="text-gray-400">{getDesc(feature)}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Contact Section */}
-            <section className="py-16 bg-[#0e1f3b]">
-                <div className="container mx-auto px-4">
-                    <div className="max-w-7xl mx-auto bg-[#0b1a33] rounded-lg p-8 border border-[#d4a15c]/20">
-                        <h2 className="text-3xl font-bold text-center mb-8 text-white">
-                            {language === 'ar' && 'اتصل بمكتبنا الرئيسي في الإسكندرية'}
-                            {language === 'en' && 'Contact Our Main Office in Alexandria'}
-                            {language === 'fr' && 'Contactez Notre Bureau Principal à Alexandrie'}
-                            {language === 'it' && 'Contatta il Nostro Ufficio Principale ad Alessandria'}
-                        </h2>
-
-                        <div className="grid md:grid-cols-2 gap-6 mb-8">
-                            <div className="flex items-start gap-4">
-                                <div className="bg-[#d4a15c]/10 p-3 rounded-lg flex-shrink-0">
-                                    <MapPin className="w-6 h-6 text-[#d4a15c]" />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-white mb-2">
-                                        {language === 'ar' ? 'العنوان' : language === 'fr' ? 'Adresse' : language === 'it' ? 'Indirizzo' : 'Address'}
-                                    </h3>
-                                    <p className="text-gray-400">
-                                        {language === 'ar' ? '14 شارع الشهداء، الإسكندرية' : '14 El Shohada Street, Alexandria'}
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start gap-4">
-                                <div className="bg-[#d4a15c]/10 p-3 rounded-lg flex-shrink-0">
-                                    <Phone className="w-6 h-6 text-[#d4a15c]" />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-white mb-2">
-                                        {language === 'ar' ? 'الهاتف' : language === 'fr' ? 'Téléphone' : language === 'it' ? 'Telefono' : 'Phone'}
-                                    </h3>
-                                    <a href="tel:+201223767592" className="text-[#d4a15c] hover:text-[#c8a876] font-semibold transition-colors">
-                                        +20 122 376 7592
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start gap-4">
-                                <div className="bg-[#d4a15c]/10 p-3 rounded-lg flex-shrink-0">
-                                    <Mail className="w-6 h-6 text-[#d4a15c]" />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-white mb-2">
-                                        {language === 'ar' ? 'البريد الإلكتروني' : language === 'fr' ? 'Email' : language === 'it' ? 'Email' : 'Email'}
-                                    </h3>
-                                    <a href="mailto:kingarim2411@gmail.com" className="text-[#d4a15c] hover:text-[#c8a876] transition-colors">
-                                        kingarim2411@gmail.com
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start gap-4">
-                                <div className="bg-[#d4a15c]/10 p-3 rounded-lg flex-shrink-0">
-                                    <Clock className="w-6 h-6 text-[#d4a15c]" />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-white mb-2">
-                                        {language === 'ar' ? 'ساعات العمل' : language === 'fr' ? 'Horaires' : language === 'it' ? 'Orari' : 'Working Hours'}
-                                    </h3>
-                                    <p className="text-gray-400">
-                                        {language === 'ar' ? 'السبت - الخميس: 9:00 - 17:00' : 'Saturday - Thursday: 9:00 AM - 5:00 PM'}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="text-center">
-                            <a
-                                href="tel:+201223767592"
-                                className="inline-block bg-[#d4a15c] text-[#0b1a33] px-8 py-3 rounded-md font-bold text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105"
-                            >
-                                {language === 'ar' && 'احجز استشارة الآن'}
-                                {language === 'en' && 'Book a Consultation Now'}
-                                {language === 'fr' && 'Réserver une Consultation'}
-                                {language === 'it' && 'Prenota una Consulenza'}
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    );
+const data: CityPageData = {
+  branch: 'alexandria',
+  seoTitle: {
+    ar: 'محامي في الإسكندرية | مكتب محاماة لجميع القضايا | المحامي كريم الديب',
+    en: 'Lawyer in Alexandria, Egypt | English-Speaking Law Firm | Karim Eldib',
+  },
+  seoDescription: {
+    ar: 'محامي في الإسكندرية منذ 2006 – مكتب المحامي كريم الديب يخدم كل أحياء الإسكندرية: قضايا جنائية ومدنية وأسرة، تأسيس شركات، قضايا الأجانب والتحكيم. اتصل: 01223767592',
+    en: 'Looking for a lawyer in Alexandria, Egypt? Karim Eldib Law Firm serves all of Alexandria and handles criminal, civil, family & corporate cases for locals and foreigners. English, French & Italian spoken.',
+  },
+  badge: { ar: 'المكتب الرئيسي – الإسكندرية', en: 'Main Office – Alexandria' },
+  h1: {
+    ar: 'محامي في الإسكندرية – مكتب المحامي كريم الديب للمحاماة',
+    en: 'Lawyer in Alexandria, Egypt – Karim Eldib Law Firm',
+  },
+  subtitle: {
+    ar: 'تمثيل قانوني أمام محاكم الإسكندرية للأفراد والشركات والأجانب – بالعربية والإنجليزية والفرنسية والإيطالية',
+    en: 'Representation before Alexandria courts for individuals, companies and foreigners – in English, Arabic, French and Italian',
+  },
+  intro: [
+    {
+      ar: 'إذا كنت تبحث عن محامي في الإسكندرية يجمع بين الخبرة في المحاكم المصرية والقدرة على التعامل مع القضايا ذات الطابع الدولي، فمكتب المحامي كريم الديب هو المقر الرئيسي لمؤسستنا في الإسكندرية منذ عام 2006، ويخدم الموكلين في كل أحياء المدينة. نتولى القضايا الجنائية والمدنية وقضايا الأحوال الشخصية، وتأسيس الشركات، والعقود التجارية، وقضايا الأجانب والإقامة، والتحكيم التجاري.',
+      en: 'If you need a lawyer in Alexandria who knows the Egyptian courts and can also handle cases with an international dimension, Karim Eldib Law Firm has run its main office in Alexandria since 2006, serving clients across the whole city. We handle criminal defense, civil litigation, family and personal-status cases, company formation, commercial contracts, residency matters for foreigners, and commercial arbitration.',
+    },
+    {
+      ar: 'يخدم مكتبنا في الإسكندرية الموكلين المصريين المقيمين داخل مصر وخارجها، والأجانب المقيمين في الإسكندرية والساحل الشمالي، والشركات العاملة في ميناء الإسكندرية والمناطق الحرة. نشرح لك موقفك القانوني بوضوح، ونحدد الأتعاب كتابياً قبل البدء، ونتابع معك كل خطوة في القضية.',
+      en: 'Our Alexandria office serves Egyptian clients at home and abroad, foreign residents of Alexandria and the North Coast, and companies operating around Alexandria Port and the free zones. As an English-speaking law firm in Alexandria, we explain your legal position clearly, agree fees in writing before work begins, and keep you updated at every stage of your case.',
+    },
+  ],
+  servicesHeading: { ar: 'خدماتنا القانونية في الإسكندرية', en: 'Our Legal Services in Alexandria' },
+  services: [
+    {
+      path: '/criminal-law', icon: 'fas fa-balance-scale',
+      title: { ar: 'محامي جنائي في الإسكندرية', en: 'Criminal Lawyer in Alexandria' },
+      text: {
+        ar: 'الحضور أمام النيابة وأقسام الشرطة، والدفاع في الجنح والجنايات، والاستئناف والنقض، مع تمثيل عاجل للأجانب.',
+        en: 'Representation at the prosecution and police stations, defense in misdemeanour and felony cases, appeals and cassation, with urgent help for foreigners.',
+      },
+    },
+    {
+      path: '/family-law', icon: 'fas fa-users',
+      title: { ar: 'محامي أحوال شخصية في الإسكندرية', en: 'Family Lawyer in Alexandria' },
+      text: {
+        ar: 'الطلاق والخلع، النفقة والحضانة والرؤية، توثيق زواج الأجانب، والاعتراف بأحكام الطلاق الأجنبية.',
+        en: 'Divorce and khul\', alimony, custody and visitation, foreign marriage registration and recognition of foreign divorce judgments.',
+      },
+    },
+    {
+      path: '/civil-law', icon: 'fas fa-home',
+      title: { ar: 'محامي مدني وعقارات في الإسكندرية', en: 'Civil & Property Lawyer in Alexandria' },
+      text: {
+        ar: 'دعاوى التعويض، صحة ونفاذ العقود، منازعات الإيجار والملكية، والميراث وقسمة التركات.',
+        en: 'Compensation claims, contract validation suits, rent and ownership disputes, inheritance and estate division.',
+      },
+    },
+    {
+      path: '/company-law', icon: 'fas fa-building',
+      title: { ar: 'محامي شركات في الإسكندرية', en: 'Corporate Lawyer in Alexandria' },
+      text: {
+        ar: 'تأسيس الشركات للمصريين والأجانب، السجل التجاري والتراخيص، وصياغة عقود الشركاء واللوائح.',
+        en: 'Company formation for Egyptians and foreigners, commercial registry and licensing, shareholder agreements and by-laws.',
+      },
+    },
+    {
+      path: '/commercial-law', icon: 'fas fa-ship',
+      title: { ar: 'القانون التجاري والبحري بالإسكندرية', en: 'Commercial & Maritime Law in Alexandria' },
+      text: {
+        ar: 'العقود التجارية، منازعات الشحن والجمارك والنقل البحري المرتبطة بميناء الإسكندرية، وتحصيل المستحقات.',
+        en: 'Commercial contracts, shipping, customs and maritime transport disputes linked to Alexandria Port, and debt recovery.',
+      },
+    },
+    {
+      path: '/foreigners-in-egypt', icon: 'fas fa-passport',
+      title: { ar: 'محامي أجانب في الإسكندرية', en: 'Lawyer for Foreigners in Alexandria' },
+      text: {
+        ar: 'الإقامات وتصاريح العمل، شراء العقارات، الزواج والطلاق، وأي نزاع قانوني يواجهه الأجنبي في الإسكندرية.',
+        en: 'Residency and work permits, buying property, marriage and divorce, and any legal dispute a foreigner faces in Alexandria.',
+      },
+    },
+    {
+      path: '/arbitration-mediation', icon: 'fas fa-gavel',
+      title: { ar: 'محامي تحكيم في الإسكندرية', en: 'Arbitration Lawyer in Alexandria' },
+      text: {
+        ar: 'صياغة شروط التحكيم، التمثيل في التحكيم التجاري المحلي والدولي، وتنفيذ أحكام التحكيم في مصر.',
+        en: 'Drafting arbitration clauses, representation in domestic and international commercial arbitration, and enforcing awards in Egypt.',
+      },
+    },
+    {
+      path: '/egyptians-abroad', icon: 'fas fa-globe',
+      title: { ar: 'خدمات المصريين بالخارج', en: 'Services for Egyptians Abroad' },
+      text: {
+        ar: 'متابعة قضاياك وعقاراتك في الإسكندرية وأنت بالخارج بموجب توكيل رسمي، مع تقارير دورية.',
+        en: 'We follow your Alexandria cases and property while you live abroad under a formal power of attorney, with regular updates.',
+      },
+    },
+  ],
+  courtsHeading: { ar: 'المحاكم والجهات التي نتعامل معها في الإسكندرية', en: 'Courts & Authorities We Handle in Alexandria' },
+  courtsText: {
+    ar: 'نترافع أمام محاكم الإسكندرية الجزئية والابتدائية ومحكمة استئناف الإسكندرية ومحاكم الأسرة والمحكمة الاقتصادية، ونحضر أمام النيابات العامة وأقسام الشرطة، ونتابع الإجراءات لدى الشهر العقاري والسجل التجاري ومصلحة الجوازات والهجرة. ونتولى الطعون أمام محكمة النقض.',
+    en: 'We appear before the Alexandria district and primary courts, the Alexandria Court of Appeal, family courts and the Economic Court, attend public prosecution offices and police stations, and handle procedures at the Notary (Shahr El Akary), the Commercial Registry and the Passports & Immigration authority. Cassation appeals are handled before the Court of Cassation.',
+  },
+  areasHeading: { ar: 'المناطق التي نخدمها', en: 'Areas We Serve' },
+  areas: [
+    { ar: 'العطارين ومحطة الرمل', en: 'Attarin & Raml Station' },
+    { ar: 'المنشية', en: 'Mansheya' },
+    { ar: 'سموحة', en: 'Smouha' },
+    { ar: 'سيدي جابر', en: 'Sidi Gaber' },
+    { ar: 'ستانلي ورشدي', en: 'Stanley & Roushdy' },
+    { ar: 'سان ستيفانو', en: 'San Stefano' },
+    { ar: 'المندرة والمنتزه', en: 'Mandara & Montaza' },
+    { ar: 'العجمي', en: 'Agami' },
+    { ar: 'العامرية وبرج العرب', en: 'Amreya & Borg El Arab' },
+    { ar: 'الساحل الشمالي', en: 'North Coast' },
+  ],
+  whyHeading: { ar: 'لماذا تختار مكتبنا في الإسكندرية؟', en: 'Why Choose Our Alexandria Law Firm?' },
+  why: [
+    {
+      title: { ar: 'خبرة منذ 2006', en: 'Practising Since 2006' },
+      text: { ar: 'سنوات من العمل اليومي أمام محاكم ونيابات الإسكندرية.', en: 'Years of day-to-day practice before Alexandria courts and prosecutors.' },
+    },
+    {
+      title: { ar: '4 لغات', en: '4 Languages' },
+      text: { ar: 'نتحدث العربية والإنجليزية والفرنسية والإيطالية مع موكلينا مباشرة.', en: 'We speak English, French, Italian and Arabic directly with clients.' },
+    },
+    {
+      title: { ar: 'وضوح في الأتعاب', en: 'Clear Fees' },
+      text: { ar: 'نحدد نطاق العمل والأتعاب كتابياً قبل البدء.', en: 'Scope of work and fees are agreed in writing before we start.' },
+    },
+    {
+      title: { ar: 'متابعة عن بُعد', en: 'Remote Follow-Up' },
+      text: { ar: 'تحديثات عبر واتساب والبريد للموكلين داخل مصر وخارجها.', en: 'Updates by WhatsApp and email for clients in Egypt and abroad.' },
+    },
+  ],
+  faqHeading: { ar: 'أسئلة شائعة عن المحامي في الإسكندرية', en: 'FAQ – Hiring a Lawyer in Alexandria' },
+  faq: [
+    {
+      q: { ar: 'أين يقع مكتب المحامي كريم الديب في الإسكندرية؟', en: 'Where is your law office in Alexandria?' },
+      a: {
+        ar: 'المكتب الرئيسي في 29 المسلة غرب وشريف باشا، العطارين، الإسكندرية، وهو مفتوح 24 ساعة طوال أيام الأسبوع. يمكنك التواصل معنا في أي وقت على 01223767592.',
+        en: 'Our main office is at 29 El Masalla Gharb & Sherif Pasha St., El Attarin, Alexandria, and is open 24 hours, 7 days a week. You can reach us any time on +20 122 376 7592.',
+      },
+    },
+    {
+      q: { ar: 'هل يوجد محامي يتحدث الإنجليزية في الإسكندرية؟', en: 'Is there an English-speaking lawyer in Alexandria?' },
+      a: {
+        ar: 'نعم، نقدم الاستشارات ونتابع القضايا بالإنجليزية والفرنسية والإيطالية إلى جانب العربية، ونوفر ترجمة المستندات اللازمة للمحكمة.',
+        en: 'Yes. We advise and run cases in English, French and Italian as well as Arabic, and arrange certified translation of documents needed in court.',
+      },
+    },
+    {
+      q: { ar: 'ما أنواع القضايا التي يتولاها مكتبكم في الإسكندرية؟', en: 'What types of cases do you handle in Alexandria?' },
+      a: {
+        ar: 'القضايا الجنائية، والمدنية والعقارية، والأحوال الشخصية، وتأسيس الشركات والعقود التجارية والبحرية، وقضايا الأجانب والإقامة، والتحكيم التجاري.',
+        en: 'Criminal defense, civil and property disputes, family law, company formation, commercial and maritime contracts, residency matters for foreigners, and commercial arbitration.',
+      },
+    },
+    {
+      q: { ar: 'هل يمكنني متابعة قضيتي في الإسكندرية وأنا خارج مصر؟', en: 'Can you handle my Alexandria case while I live abroad?' },
+      a: {
+        ar: 'نعم، يكفي عمل توكيل رسمي من القنصلية المصرية في بلد إقامتك، ونتولى الإجراءات نيابة عنك مع إرسال تحديثات منتظمة.',
+        en: 'Yes. You sign a power of attorney at the Egyptian consulate where you live, and we handle the proceedings on your behalf with regular progress updates.',
+      },
+    },
+    {
+      q: { ar: 'كيف أحجز استشارة مع محامي في الإسكندرية؟', en: 'How do I book a consultation with a lawyer in Alexandria?' },
+      a: {
+        ar: 'تواصل معنا عبر الهاتف أو واتساب على 01223767592 لتحديد موعد في المكتب أو استشارة عن بُعد، وسنوضح لك الأتعاب قبل البدء.',
+        en: 'Call or WhatsApp +20 122 376 7592 to book an in-office or remote consultation. We confirm the fee with you before the consultation.',
+      },
+    },
+    {
+      q: { ar: 'هل تساعدون الأجانب في توثيق الزواج بالإسكندرية؟', en: 'Do you help foreigners register a marriage in Alexandria?' },
+      a: {
+        ar: 'نعم، نجهز المستندات المطلوبة ونتابع توثيق زواج الأجانب لدى الشهر العقاري بالإسكندرية، ونقدم المشورة بشأن الاعتراف به في بلد الموكل.',
+        en: 'Yes. We prepare the required documents, follow the foreign marriage registration at the Alexandria Notary office, and advise on recognition in your home country.',
+      },
+    },
+  ],
+  otherBranch: { path: '/sharm-el-sheikh', text: { ar: 'فرعنا في شرم الشيخ', en: 'Our Sharm El Sheikh office' } },
+  relatedArticle: {
+    path: '/blog/foreign-lawyer-alexandria',
+    text: { ar: 'اقرأ: دليل الأجانب للخدمات القانونية في الإسكندرية', en: 'Read: Legal guide for foreigners in Alexandria' },
+  },
 };
+
+const Alexandria: React.FC = () => <CityLandingPage data={data} />;
 
 export default Alexandria;

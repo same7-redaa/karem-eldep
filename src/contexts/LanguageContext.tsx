@@ -113,9 +113,9 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.subtitle': 'نحن هنا لمساعدتك - تواصل معنا الآن',
     'contact.info': 'معلومات التواصل والعناوين',
     'contact.alex': 'مكتب الإسكندرية',
-    'contact.alex.address': 'محطة الرمل 14 شارع الشهداء متفرع من شارع الغرفة التجارية',
+    'contact.alex.address': '29 المسلة غرب وشريف باشا، العطارين، الإسكندرية',
     'contact.sharm': 'مكتب شرم الشيخ',
-    'contact.sharm.address': '123 ش البحر الهضبة شرم الشيخ',
+    'contact.sharm.address': '123 شارع البحر، شرم الشيخ',
     'contact.methods': 'طرق التواصل',
     'contact.whatsapp': 'واتساب',
     'contact.social': 'تابعنا على وسائل التواصل الاجتماعي',
@@ -206,9 +206,9 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.subtitle': 'We are here to help you - Contact us now',
     'contact.info': 'Contact Information and Addresses',
     'contact.alex': 'Alexandria Office',
-    'contact.alex.address': 'Raml Station, 14 Al-Shohada Street, branching from Chamber of Commerce Street',
+    'contact.alex.address': '29 El Masalla Gharb & Sherif Pasha St., El Attarin, Alexandria',
     'contact.sharm': 'Sharm El Sheikh Office',
-    'contact.sharm.address': '123 Al-Bahr Street, Al-Hadaba, Sharm El Sheikh',
+    'contact.sharm.address': '123 El Bahr St., Sharm El Sheikh',
     'contact.methods': 'Contact Methods',
     'contact.whatsapp': 'WhatsApp',
     'contact.social': 'Follow Us on Social Media',
@@ -302,9 +302,9 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.subtitle': 'Nous sommes là pour vous aider',
     'contact.info': 'Informations de contact et adresses',
     'contact.alex': 'Bureau d\'Alexandrie',
-    'contact.alex.address': 'Station Raml, 14 rue Al-Shohada, Chambre de Commerce',
+    'contact.alex.address': '29 El Masalla Gharb & Sherif Pasha St., El Attarin, Alexandrie',
     'contact.sharm': 'Bureau de Sharm El Sheikh',
-    'contact.sharm.address': '123 rue Al-Bahr, Al-Hadaba, Sharm El Sheikh',
+    'contact.sharm.address': '123 El Bahr St., Charm el-Cheikh',
     'contact.methods': 'Méthodes de contact',
     'contact.whatsapp': 'WhatsApp',
     'contact.social': 'Suivez-nous sur les réseaux sociaux',
@@ -398,9 +398,9 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.subtitle': 'Siamo qui per aiutarti',
     'contact.info': 'Informazioni di contatto e indirizzi',
     'contact.alex': 'Ufficio di Alessandria',
-    'contact.alex.address': 'Stazione Raml, 14 via Al-Shohada, Camera di Commercio',
+    'contact.alex.address': '29 El Masalla Gharb & Sherif Pasha St., El Attarin, Alessandria',
     'contact.sharm': 'Ufficio di Sharm El Sheikh',
-    'contact.sharm.address': '123 via Al-Bahr, Al-Hadaba, Sharm El Sheikh',
+    'contact.sharm.address': '123 El Bahr St., Sharm El Sheikh',
     'contact.methods': 'Metodi di contatto',
     'contact.whatsapp': 'WhatsApp',
     'contact.social': 'Seguici sui social media',
@@ -412,8 +412,9 @@ const translations: Record<Language, Record<string, string>> = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const LanguageProvider: React.FC<{ children: React.ReactNode; initialLanguage?: Language }> = ({ children, initialLanguage }) => {
   const detectLanguage = (): Language => {
+    if (initialLanguage) return initialLanguage;
     if (typeof window !== 'undefined') {
       const fromPath = getLanguageFromPath(window.location.pathname);
       if (fromPath) return fromPath;
@@ -423,6 +424,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       if (langParam && ['ar', 'en', 'fr', 'it'].includes(langParam)) {
         return langParam as Language;
       }
+      // Public pages: the URL is the source of truth (Arabic has no prefix).
+      // Must match the prerendered HTML, so never use localStorage here.
+      if (!window.location.pathname.startsWith('/admin')) return 'ar';
     }
     const savedLanguage = typeof window !== 'undefined' ? localStorage.getItem('preferredLanguage') : null;
     if (savedLanguage && ['ar', 'en', 'fr', 'it'].includes(savedLanguage)) {

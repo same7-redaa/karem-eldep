@@ -2,15 +2,19 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "ke-lawyer.com"
-        }
-      ],
+      "has": [{ "type": "host", "value": "ke-lawyer.com" }],
       "destination": "https://www.ke-lawyer.com/:path*",
       "permanent": true
-    }
+    },
+    { "source": "/", "has": [{ "type": "query", "key": "lang", "value": "en" }], "destination": "/en", "permanent": true },
+    { "source": "/ar", "destination": "/", "permanent": true },
+    { "source": "/ar/:path*", "destination": "/:path*", "permanent": true },
+    { "source": "/fr", "destination": "/en", "permanent": true },
+    { "source": "/fr/:path*", "destination": "/en/:path*", "permanent": true },
+    { "source": "/it", "destination": "/en", "permanent": true },
+    { "source": "/it/:path*", "destination": "/en/:path*", "permanent": true },
+    { "source": "/services/:slug(civil-law|criminal-law|commercial-law|family-law|company-law|foreigners-in-egypt|egyptians-abroad|arbitration-mediation)", "destination": "/:slug", "permanent": true },
+    { "source": "/en/services/:slug(civil-law|criminal-law|commercial-law|family-law|company-law|foreigners-in-egypt|egyptians-abroad|arbitration-mediation)", "destination": "/en/:slug", "permanent": true }
   ],
   "cleanUrls": true,
   "trailingSlash": false,

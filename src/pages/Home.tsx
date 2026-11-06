@@ -7,7 +7,6 @@ import TeamSection from '../components/TeamSection';
 import BlogSection from '../components/BlogSection';
 import News from '../components/News';
 import Contact from '../components/Contact';
-import SchemaMarkup from '../components/SchemaMarkup';
 import AdvancedSEO from '../components/AdvancedSEO';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -36,12 +35,9 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <AdvancedSEO 
-        title={seoTitle}
-        description={seoDescription}
-        keywords={seoKeywords}
-      />
-      <SchemaMarkup type="organization" />
+      {/* Uses the site default title/description (targets Alexandria & Sharm El Sheikh) */}
+      <AdvancedSEO />
+      
       <Hero />
       <About />
       <PracticeAreas />

@@ -177,7 +177,12 @@ const CivilLaw: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
-      
+      <AdvancedSEO
+        title={isRTL ? "محامي مدني وعقارات وتعويضات في مصر | المحامي كريم الديب" : "Civil & Property Litigation Lawyer in Egypt | Karim Eldib Law Firm"}
+        description={isRTL ? "محامي قانون مدني في الإسكندرية وشرم الشيخ: دعاوى التعويض، صحة ونفاذ العقود، المنازعات العقارية والإيجارات، والميراث وقسمة التركات." : "Civil litigation lawyer in Alexandria & Sharm El Sheikh: compensation claims, contract validation, real estate and rent disputes, inheritance and estate division."}
+        canonicalUrl="https://www.ke-lawyer.com/civil-law"
+      />
+
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
         <img

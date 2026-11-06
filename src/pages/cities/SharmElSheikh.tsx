@@ -1,246 +1,174 @@
-import React, { useEffect } from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
-import { MapPin, Phone, Mail, Clock, Globe2 } from 'lucide-react';
-import PracticeAreas from '../../components/PracticeAreas';
-import AdvancedSEO from '../../components/AdvancedSEO';
+import React from 'react';
+import CityLandingPage, { CityPageData } from '../../components/CityLandingPage';
 
-const SharmElSheikh: React.FC = () => {
-    const { language, t } = useLanguage();
-    const isRTL = language === 'ar';
-
-    const title = language === 'ar'
-        ? 'محامي تحكيم دولي وقضايا أجانب في شرم الشيخ | كريم الديب'
-        : language === 'fr'
-            ? 'Avocat Arbitrage International & Étrangers à Sharm El Sheikh | Karim Eldib'
-            : language === 'it'
-                ? 'Avvocato Arbitrato Internazionale e Stranieri a Sharm El Sheikh | Karim Eldib'
-                : 'International Arbitration & Foreigners Lawyer in Sharm El Sheikh | Karim Eldib';
-
-    const description = language === 'ar'
-        ? 'محامي تحكيم دولي في شرم الشيخ — كريم الديب. متخصص في التحكيم التجاري الدولي لمنازعات الفنادق والاستثمار السياحي، تسوية منازعات المستثمرين الأجانب، تنفيذ أحكام التحكيم، تأسيس شركات وإقامة. استشارة مجانية.'
-        : language === 'fr'
-            ? 'Avocat en arbitrage international à Sharm El Sheikh — Karim Eldib. Spécialiste en arbitrage commercial international, litiges d\'investissement hôtelier et touristique, résolution des différends transfrontaliers. Consultation gratuite. Nous parlons français.'
-            : language === 'it'
-                ? 'Avvocato di arbitrato internazionale a Sharm El Sheikh — Karim Eldib. Specialista in arbitrato commerciale internazionale, controversie sugli investimenti alberghieri e turistici. Consulenza gratuita. Parliamo italiano.'
-                : 'International Arbitration Lawyer in Sharm El Sheikh, Egypt — Karim Eldib. Expert in commercial arbitration, hotel & tourism investment disputes, cross-border dispute resolution, and enforcement of foreign arbitral awards. Free consultation. English, French & Italian spoken.';
-
-    const languages = [
-        { icon: Globe2, name: 'Français', flag: '🇫🇷' },
-        { icon: Globe2, name: 'Italiano', flag: '🇮🇹' },
-        { icon: Globe2, name: 'English', flag: '🇬🇧' },
-        { icon: Globe2, name: 'العربية', flag: '🇸🇦' }
-    ];
-
-    return (
-        <div className={`min-h-screen bg-[#0b1a33] text-gray-200 ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'}>
-            <AdvancedSEO
-                title={title}
-                description={description}
-                canonicalUrl="https://www.ke-lawyer.com/sharm-el-sheikh"
-                city="Sharm El Sheikh"
-            />
-            {/* Hero Section */}
-            <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0b1a33] via-[#0e1f3b] to-[#0b1a33]"></div>
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0" style={{
-                        backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(212, 161, 92, 0.15) 1px, transparent 0)',
-                        backgroundSize: '40px 40px'
-                    }}></div>
-                </div>
-
-                <div className="container mx-auto px-4 relative z-10">
-                    <div className="max-w-7xl mx-auto">
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-white">
-                            {language === 'ar' && 'محامي أجانب في شرم الشيخ'}
-                            {language === 'en' && 'Lawyer for Foreigners in Sharm El Sheikh'}
-                            {language === 'fr' && 'Avocat pour Étrangers à Sharm El Sheikh'}
-                            {language === 'it' && 'Avvocato per Stranieri a Sharm El Sheikh'}
-                        </h1>
-                        <p className="text-xl md:text-2xl mb-6 text-[#d4a15c] font-medium">
-                            {language === 'ar' && 'المحامي كريم الديب - خبرة 18 عاماً في خدمة الأجانب'}
-                            {language === 'en' && 'Lawyer Karim El-Dib - 18 Years of Experience Serving Foreigners'}
-                            {language === 'fr' && 'Avocat Karim El-Dib - 18 Ans d\'Expérience au Service des Étrangers'}
-                            {language === 'it' && 'Avvocato Karim El-Dib - 18 Anni di Esperienza al Servizio degli Stranieri'}
-                        </p>
-                        <div className="flex flex-wrap justify-center gap-3">
-                            {languages.map((lang, index) => (
-                                <div key={index} className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-[#d4a15c]/30">
-                                    <lang.icon className="w-4 h-4 text-[#d4a15c]" />
-                                    <span className="text-sm font-medium">{lang.name}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <PracticeAreas />
-
-            {/* تفصيل الخدمات القانونية في شرم الشيخ */}
-            <section className="py-16 bg-[#1a2d4d]/30 border-t border-b border-[#d4a15c]/10">
-                <div className="container mx-auto px-4 max-w-7xl">
-                    <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#d4a15c]">
-                        {language === 'ar' ? 'تفاصيل نطاق خدماتنا القانونية في شرم الشيخ (فرع جنوب سيناء)' : language === 'fr' ? 'Détails de nos Services Juridiques à Sharm (Succursale de Charm)' : language === 'it' ? 'Dettagli dei Nostri Servizi Legali a Sharm (Filiale Sharm)' : 'Detailed Legal Services Scope in Sharm El Sheikh (South Sinai Branch)'}
-                    </h2>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-300 leading-relaxed text-sm md:text-base">
-                        <div className="space-y-6">
-                            <div>
-                                <h3 className="text-xl font-bold text-[#d4a15c] mb-2 flex items-center gap-2">
-                                    <i className="fas fa-umbrella-beach"></i>
-                                    {language === 'ar' ? 'الاستثمار السياحي وتأسيس شركات الفنادق' : language === 'fr' ? 'Investissement Touristique & Sociétés Hôtelières' : language === 'it' ? 'Investimenti Turistici e Società Alberghiere' : 'Tourism Investment & Hotel Corporations'}
-                                </h3>
-                                <p>
-                                    {language === 'ar' 
-                                        ? 'نظراً لأن شرم الشيخ هي رائدة السياحة في مصر، فإن مكتبنا هناك يتخصص في صياغة عقود إدارة وتشييد الفنادق والقرى السياحية، وتأسيس شركات التنمية السياحية، والحصول على التراخيص البيئية والأمنية والفنية لمختلف المنشآت والأنشطة الترفيهية.'
-                                        : language === 'fr'
-                                        ? 'Charm el-Cheikh étant le cœur du tourisme, notre bureau est spécialisé dans les contrats de gestion hôtelière et le développement de projets de villégiature.'
-                                        : language === 'it'
-                                        ? 'Essendo Sharm il cuore del turismo, il nostro ufficio è specializzato in contratti di gestione alberghiera e sviluppo di progetti di resort.'
-                                        : 'Given Sharm\'s status as Egypt\'s tourism hub, our branch specializes in hotel management and construction agreements, tourism development company formation, and securing environmental and operational permits.'}
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 className="text-xl font-bold text-[#d4a15c] mb-2 flex items-center gap-2">
-                                    <i className="fas fa-gavel"></i>
-                                    {language === 'ar' ? 'محامي تحكيم دولي وتسوية منازعات في شرم الشيخ' : language === 'fr' ? 'Avocat d\'Arbitrage & Règlement des Différends à Sharm' : language === 'it' ? 'Avvocato Arbitrato e Risoluzione Controversie a Sharm' : 'Arbitration Lawyer & Dispute Resolution in Sharm El Sheikh'}
-                                </h3>
-                                <p>
-                                    {language === 'ar' 
-                                        ? 'نقدم تمثيلاً قانونياً متكاملاً للأجانب والفنادق والمنشآت السياحية في شرم الشيخ بواسطة محامي تحكيم دولي معتمد. نوفر خدمات تسوية المنازعات الاستثمارية والتجارية، وعقد جلسات الوساطة وحل النزاعات العابرة للحدود ودياً لتجنب التقاضي الطويل.'
-                                        : language === 'fr'
-                                        ? 'Nous fournissons une représentation par un avocat d\'arbitrage international à Charm el-Cheikh pour les investisseurs, hôtels et projets touristiques. Règlement des litiges.'
-                                        : language === 'it'
-                                        ? 'Forniamo una rappresentanza da parte di un avvocato arbitro internazionale a Sharm per investitori, hotel e strutture turistiche. Risoluzione delle controversie.'
-                                        : 'We deliver expert representation by a certified international arbitration lawyer in Sharm El Sheikh for foreign investors, hotels, and tourist developments. Settle investment and commercial disputes amicably.'}
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="space-y-6">
-                            <div>
-                                <h3 className="text-xl font-bold text-[#d4a15c] mb-2 flex items-center gap-2">
-                                    <i className="fas fa-key"></i>
-                                    {language === 'ar' ? 'تملك العقارات للأجانب وتراخيص الإقامة' : language === 'fr' ? 'Propriété Étrangère & Permis de Séjour' : language === 'it' ? 'Proprietà Straniera e Permessi di Soggiorno' : 'Foreign Property Ownership & Residence Permits'}
-                                </h3>
-                                <p>
-                                    {language === 'ar' 
-                                        ? 'نساعد الأجانب والجاليات المقيمة في شرم الشيخ في صياغة وتسجيل عقود بيع وشراء العقارات السكنية والسياحية، وإنهاء تراخيص إقامة المستثمرين والزوار، بجانب إتمام إجراءات وتوثيق زواج الأجانب بمكتب الشهر العقاري المختص.'
-                                        : language === 'fr'
-                                        ? 'Nous aidons les étrangers à acheter des biens, à obtenir des permis de séjour d\'investisseur et à enregistrer des mariages d\'étrangers à Charm.'
-                                        : language === 'it'
-                                        ? 'Assistiamo gli stranieri nell\'acquisto di proprietà, nell\'ottenimento di permessi di soggiorno e nella registrazione di matrimoni.'
-                                        : 'We assist foreign residents and buyers in drafting property deeds in Sharm, securing investor and tourist residency visas, and completing legal foreign marriage registrations.'}
-                                </p>
-                            </div>
-
-                            <div>
-                                <h3 className="text-xl font-bold text-[#d4a15c] mb-2 flex items-center gap-2">
-                                    <i className="fas fa-balance-scale"></i>
-                                    {language === 'ar' ? 'الدفاع الجنائي وتمثيل الأجانب والزوار' : language === 'fr' ? 'Défense Pénale & Représentation' : language === 'it' ? 'Difesa Penale e Rappresentanza Stranieri' : 'Criminal Defense & Visitor Representation'}
-                                </h3>
-                                <p>
-                                    {language === 'ar' 
-                                        ? 'نوفر دعماً قانونياً ودفاعاً جنائياً على مدار الساعة للزوار والأجانب المقيمين في مواجهة أي محاضر شرطية أو تحقيقات، والتمثيل القانوني الكامل أمام نيابة شرم الشيخ ومحكمة جنح وجنايات جنوب سيناء بالطور.'
-                                        : language === 'fr'
-                                        ? 'Nous fournissons une défense pénale 24h/24 pour les visiteurs et expatriés devant les procureurs et tribunaux de Charm et du Sinaï Sud.'
-                                        : language === 'it'
-                                        ? 'Forniamo una difesa penale 24 ore su 24 per visitatori ed espatriati presso le procure e i tribunali di Sharm e del Sinai del Sud.'
-                                        : 'We deliver round-the-clock criminal defense for foreign tourists and residents facing police reports or urgent legal investigations in Sharm El Sheikh.'}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Contact Section */}
-            <section className="py-16 bg-[#0b1a33]">
-                <div className="container mx-auto px-4">
-                    <div className="max-w-7xl mx-auto bg-[#0e1f3b] rounded-lg p-8 border border-[#d4a15c]/20">
-                        <h2 className="text-3xl font-bold text-center mb-8 text-white">
-                            {language === 'ar' && 'اتصل بنا في شرم الشيخ'}
-                            {language === 'en' && 'Contact Us in Sharm El Sheikh'}
-                            {language === 'fr' && 'Contactez-nous à Sharm El Sheikh'}
-                            {language === 'it' && 'Contattaci a Sharm El Sheikh'}
-                        </h2>
-
-                        <div className="grid md:grid-cols-2 gap-6 mb-8">
-                            <div className="flex items-start gap-4">
-                                <div className="bg-[#d4a15c]/10 p-3 rounded-lg flex-shrink-0">
-                                    <MapPin className="w-6 h-6 text-[#d4a15c]" />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-white mb-2">
-                                        {language === 'ar' ? 'العنوان' : language === 'fr' ? 'Adresse' : language === 'it' ? 'Indirizzo' : 'Address'}
-                                    </h3>
-                                    <p className="text-gray-400">
-                                        {language === 'ar' ? 'الهضبة، شرم الشيخ' : 'Al Hadaba, Sharm El Sheikh'}
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start gap-4">
-                                <div className="bg-[#d4a15c]/10 p-3 rounded-lg flex-shrink-0">
-                                    <Phone className="w-6 h-6 text-[#d4a15c]" />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-white mb-2">
-                                        {language === 'ar' ? 'الهاتف' : language === 'fr' ? 'Téléphone' : language === 'it' ? 'Telefono' : 'Phone'}
-                                    </h3>
-                                    <a href="tel:+201223767592" className="text-[#d4a15c] hover:text-[#c8a876] font-semibold transition-colors">
-                                        +20 122 376 7592
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start gap-4">
-                                <div className="bg-[#d4a15c]/10 p-3 rounded-lg flex-shrink-0">
-                                    <Mail className="w-6 h-6 text-[#d4a15c]" />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-white mb-2">
-                                        {language === 'ar' ? 'البريد الإلكتروني' : language === 'fr' ? 'Email' : language === 'it' ? 'Email' : 'Email'}
-                                    </h3>
-                                    <a href="mailto:kingarim2411@gmail.com" className="text-[#d4a15c] hover:text-[#c8a876] transition-colors">
-                                        kingarim2411@gmail.com
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start gap-4">
-                                <div className="bg-[#d4a15c]/10 p-3 rounded-lg flex-shrink-0">
-                                    <Clock className="w-6 h-6 text-[#d4a15c]" />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-white mb-2">
-                                        {language === 'ar' ? 'ساعات العمل' : language === 'fr' ? 'Horaires' : language === 'it' ? 'Orari' : 'Working Hours'}
-                                    </h3>
-                                    <p className="text-gray-400">
-                                        {language === 'ar' ? 'السبت - الخميس: 9:00 - 17:00' : 'Saturday - Thursday: 9:00 AM - 5:00 PM'}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="text-center">
-                            <a
-                                href="tel:+201223767592"
-                                className="inline-block bg-[#d4a15c] text-[#0b1a33] px-8 py-3 rounded-md font-bold text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105"
-                            >
-                                {language === 'ar' && 'احجز استشارة الآن'}
-                                {language === 'en' && 'Book a Consultation Now'}
-                                {language === 'fr' && 'Réserver une Consultation'}
-                                {language === 'it' && 'Prenota una Consulenza'}
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    );
+const data: CityPageData = {
+  branch: 'sharm',
+  seoTitle: {
+    ar: 'محامي في شرم الشيخ | مكتب محاماة لجميع القضايا | المحامي كريم الديب',
+    en: 'Lawyer in Sharm El Sheikh, Egypt | English & Italian Speaking | Karim Eldib',
+  },
+  seoDescription: {
+    ar: 'محامي في شرم الشيخ – مكتب المحامي كريم الديب يخدم كل مناطق شرم الشيخ وجنوب سيناء: قضايا الأجانب والسياح، عقارات وحق انتفاع، إقامات، قضايا جنائية وأسرة وشركات. اتصل: 01223767592',
+    en: 'Need a lawyer in Sharm El Sheikh? Karim Eldib Law Firm serves all of Sharm El Sheikh and helps tourists, expats & investors: police cases, property & usufruct, residency, family & company law. English, Italian & French spoken.',
+  },
+  badge: { ar: 'فرع شرم الشيخ – جنوب سيناء', en: 'Sharm El Sheikh Office – South Sinai' },
+  h1: {
+    ar: 'محامي في شرم الشيخ – مكتب المحامي كريم الديب للمحاماة',
+    en: 'Lawyer in Sharm El Sheikh, Egypt – Karim Eldib Law Firm',
+  },
+  subtitle: {
+    ar: 'خدمات قانونية للمقيمين والسياح والمستثمرين في شرم الشيخ وجنوب سيناء – بالعربية والإنجليزية والإيطالية والفرنسية',
+    en: 'Legal help for residents, tourists and investors in Sharm El Sheikh and South Sinai – in English, Italian, French and Arabic',
+  },
+  intro: [
+    {
+      ar: 'شرم الشيخ مدينة يعيش ويعمل ويستثمر فيها آلاف المصريين والأجانب، ولهذا تحتاج قضاياها إلى محامي في شرم الشيخ يعرف المحاكم والنيابات المحلية ويتحدث لغة الموكل. يقدم مكتب المحامي كريم الديب في شرم الشيخ تمثيلاً قانونياً كاملاً في القضايا الجنائية والمدنية والأحوال الشخصية، وعقود العقارات وحق الانتفاع، وتأسيس الشركات السياحية، وإقامات الأجانب.',
+      en: 'Sharm El Sheikh is home to thousands of Egyptians and foreigners who live, work and invest there, so cases here need a lawyer in Sharm El Sheikh who knows the local courts and prosecutors and speaks the client\'s language. Karim Eldib Law Firm in Sharm El Sheikh provides full representation in criminal, civil and family cases, property and usufruct contracts, tourism company formation, and residency for foreigners.',
+    },
+    {
+      ar: 'إذا كنت سائحاً وتعرضت لمشكلة أثناء إقامتك، أو مقيماً أجنبياً يحتاج إلى عقد أو إقامة، أو مستثمراً في قطاع الفنادق والسياحة، نتواصل معك بسرعة ونشرح لك الخطوات بوضوح ونحدد الأتعاب كتابياً قبل البدء.',
+      en: 'Whether you are a tourist who ran into trouble during your stay, a foreign resident who needs a contract or residency permit, or an investor in hotels and tourism, we respond quickly, explain the next steps clearly and agree fees in writing before starting.',
+    },
+  ],
+  servicesHeading: { ar: 'خدماتنا القانونية في شرم الشيخ', en: 'Our Legal Services in Sharm El Sheikh' },
+  services: [
+    {
+      path: '/foreigners-in-egypt', icon: 'fas fa-passport',
+      title: { ar: 'محامي أجانب في شرم الشيخ', en: 'Lawyer for Foreigners in Sharm El Sheikh' },
+      text: {
+        ar: 'الإقامات السياحية والعقارية وتصاريح العمل، ومساعدة الأجانب في أي إجراء قانوني داخل جنوب سيناء.',
+        en: 'Tourist and property residency, work permits, and help with any legal procedure foreigners face in South Sinai.',
+      },
+    },
+    {
+      path: '/criminal-law', icon: 'fas fa-balance-scale',
+      title: { ar: 'محامي جنائي في شرم الشيخ', en: 'Criminal Lawyer in Sharm El Sheikh' },
+      text: {
+        ar: 'حضور عاجل أمام أقسام الشرطة والنيابة للسياح والمقيمين، والدفاع في الجنح والجنايات والاستئناف.',
+        en: 'Urgent attendance at police stations and the prosecution for tourists and residents, plus defense and appeals.',
+      },
+    },
+    {
+      path: '/civil-law', icon: 'fas fa-key',
+      title: { ar: 'محامي عقارات وحق انتفاع في شرم الشيخ', en: 'Property & Usufruct Lawyer in Sharm El Sheikh' },
+      text: {
+        ar: 'مراجعة عقود الشقق والفيلات وحق الانتفاع قبل التوقيع، ومنازعات المطورين والإيجار والتعويضات.',
+        en: 'Reviewing apartment, villa and usufruct contracts before you sign, and handling developer, rent and compensation disputes.',
+      },
+    },
+    {
+      path: '/family-law', icon: 'fas fa-users',
+      title: { ar: 'محامي أحوال شخصية في شرم الشيخ', en: 'Family Lawyer in Sharm El Sheikh' },
+      text: {
+        ar: 'توثيق زواج الأجانب، الطلاق والنفقة والحضانة، والزواج المختلط بين مصريين وأجانب.',
+        en: 'Foreign and mixed marriages, divorce, alimony and child custody between Egyptian and foreign spouses.',
+      },
+    },
+    {
+      path: '/company-law', icon: 'fas fa-umbrella-beach',
+      title: { ar: 'محامي شركات واستثمار سياحي', en: 'Corporate & Tourism Investment Lawyer' },
+      text: {
+        ar: 'تأسيس شركات السياحة والغوص والمطاعم، التراخيص، وعقود إدارة الفنادق والشراكات.',
+        en: 'Setting up tour, diving and restaurant companies, licensing, hotel management agreements and partnerships.',
+      },
+    },
+    {
+      path: '/arbitration-mediation', icon: 'fas fa-gavel',
+      title: { ar: 'محامي تحكيم في شرم الشيخ', en: 'Arbitration Lawyer in Sharm El Sheikh' },
+      text: {
+        ar: 'تسوية منازعات الفنادق والمقاولات والاستثمار السياحي بالتحكيم والوساطة، وتنفيذ أحكام التحكيم.',
+        en: 'Resolving hotel, construction and tourism investment disputes by arbitration and mediation, and enforcing awards.',
+      },
+    },
+  ],
+  courtsHeading: { ar: 'المحاكم والجهات التي نتعامل معها في جنوب سيناء', en: 'Courts & Authorities We Handle in South Sinai' },
+  courtsText: {
+    ar: 'نترافع أمام محكمة شرم الشيخ الجزئية ومحكمة الطور الابتدائية ومحاكم الأسرة ومحاكم الاستئناف المختصة، ونحضر أمام نيابة شرم الشيخ وأقسام الشرطة، ونتابع الإجراءات لدى الشهر العقاري ومكتب الجوازات والهجرة في جنوب سيناء.',
+    en: 'We appear before the Sharm El Sheikh District Court, the El Tor Primary Court, family courts and the competent appeal courts, attend the Sharm El Sheikh prosecution and police stations, and handle procedures at the South Sinai Notary and Passports & Immigration offices.',
+  },
+  areasHeading: { ar: 'المناطق التي نخدمها', en: 'Areas We Serve' },
+  areas: [
+    { ar: 'الهضبة', en: 'Hadaba' },
+    { ar: 'خليج نعمة', en: 'Naama Bay' },
+    { ar: 'نبق', en: 'Nabq' },
+    { ar: 'شرم الميا (السوق القديم)', en: 'Sharm El Maya (Old Market)' },
+    { ar: 'خليج القرش', en: 'Sharks Bay' },
+    { ar: 'هضبة أم السيد', en: 'Um El Sid' },
+    { ar: 'دهب', en: 'Dahab' },
+    { ar: 'نويبع', en: 'Nuweiba' },
+    { ar: 'الطور', en: 'El Tor' },
+  ],
+  whyHeading: { ar: 'لماذا تختار مكتبنا في شرم الشيخ؟', en: 'Why Choose Our Sharm El Sheikh Law Firm?' },
+  why: [
+    {
+      title: { ar: 'نتحدث لغتك', en: 'We Speak Your Language' },
+      text: { ar: 'الإنجليزية والإيطالية والفرنسية والعربية، دون وسيط.', en: 'English, Italian, French and Arabic – no middleman.' },
+    },
+    {
+      title: { ar: 'استجابة سريعة', en: 'Fast Response' },
+      text: { ar: 'تواصل مباشر عبر الهاتف وواتساب في الحالات العاجلة.', en: 'Direct phone and WhatsApp contact for urgent matters.' },
+    },
+    {
+      title: { ar: 'خبرة منذ 2006', en: 'Practising Since 2006' },
+      text: { ar: 'خبرة طويلة مع قضايا الأجانب والاستثمار السياحي.', en: 'Long experience with foreigners\' cases and tourism investment.' },
+    },
+    {
+      title: { ar: 'وضوح في الأتعاب', en: 'Clear Fees' },
+      text: { ar: 'نحدد نطاق العمل والأتعاب كتابياً قبل البدء.', en: 'Scope and fees agreed in writing before we start.' },
+    },
+  ],
+  faqHeading: { ar: 'أسئلة شائعة عن المحامي في شرم الشيخ', en: 'FAQ – Hiring a Lawyer in Sharm El Sheikh' },
+  faq: [
+    {
+      q: { ar: 'أين يقع مكتبكم في شرم الشيخ؟', en: 'Where is your office in Sharm El Sheikh?' },
+      a: {
+        ar: 'مكتبنا في 123 شارع البحر، شرم الشيخ، جنوب سيناء، وهو مفتوح 24 ساعة طوال أيام الأسبوع. للحالات العاجلة اتصل أو راسلنا على واتساب 01223767592.',
+        en: 'Our office is at 123 El Bahr St., Sharm El Sheikh, South Sinai, and is open 24 hours, 7 days a week. For urgent matters call or WhatsApp +20 122 376 7592.',
+      },
+    },
+    {
+      q: { ar: 'تعرضت لمشكلة مع الشرطة كسائح في شرم الشيخ، ماذا أفعل؟', en: 'I am a tourist and have a problem with the police in Sharm El Sheikh. What should I do?' },
+      a: {
+        ar: 'لا توقّع على أي محضر لا تفهمه، واطلب التواصل مع محامٍ وسفارتك. اتصل بنا مباشرة لنحضر معك أمام القسم أو النيابة ونشرح لك موقفك بلغتك.',
+        en: 'Do not sign any statement you do not understand, and ask to contact a lawyer and your embassy. Call us directly so we can attend the police station or prosecution with you and explain your position in your language.',
+      },
+    },
+    {
+      q: { ar: 'هل يستطيع الأجنبي شراء عقار في شرم الشيخ؟', en: 'Can a foreigner buy property in Sharm El Sheikh?' },
+      a: {
+        ar: 'التملك في جنوب سيناء يخضع لقواعد خاصة، وغالباً ما يتم شراء الوحدات بنظام حق الانتفاع لمدد طويلة. نراجع العقد ومستندات المطور قبل التوقيع لحماية حقوقك.',
+        en: 'Ownership in South Sinai follows special rules, and units are often sold to foreigners on a long-term usufruct basis. We review the contract and the developer\'s documents before you sign to protect your rights.',
+      },
+    },
+    {
+      q: { ar: 'هل يوجد محامي يتحدث الإيطالية أو الإنجليزية في شرم الشيخ؟', en: 'Is there an Italian or English-speaking lawyer in Sharm El Sheikh?' },
+      a: {
+        ar: 'نعم، نتعامل مع موكلينا بالإيطالية والإنجليزية والفرنسية إلى جانب العربية.',
+        en: 'Yes. We work with clients in Italian, English and French as well as Arabic.',
+      },
+    },
+    {
+      q: { ar: 'هل تساعدون في إقامات الأجانب في شرم الشيخ؟', en: 'Do you help with residency permits in Sharm El Sheikh?' },
+      a: {
+        ar: 'نعم، نجهز ملفات الإقامة السياحية والعقارية وإقامة الزواج وتصاريح العمل ونتابعها لدى الجوازات.',
+        en: 'Yes. We prepare and follow up tourist, property-based and marriage residency files and work permits with the immigration office.',
+      },
+    },
+    {
+      q: { ar: 'هل يمكن توثيق زواج أجنبي من مصرية أو مصري في شرم الشيخ؟', en: 'Can a foreigner marry an Egyptian in Sharm El Sheikh?' },
+      a: {
+        ar: 'نعم، نجهز المستندات المطلوبة من السفارة والشهر العقاري ونتابع التوثيق، وننصحك بشأن الاعتراف بالزواج في بلدك.',
+        en: 'Yes. We prepare the documents required by your embassy and the Notary, follow the registration, and advise on recognition of the marriage in your home country.',
+      },
+    },
+  ],
+  otherBranch: { path: '/alexandria', text: { ar: 'مكتبنا الرئيسي في الإسكندرية', en: 'Our Alexandria main office' } },
+  relatedArticle: {
+    path: '/blog/foreign-lawyer-sharm-el-sheikh',
+    text: { ar: 'اقرأ: دليل الأجانب للخدمات القانونية في شرم الشيخ', en: 'Read: Legal guide for foreigners in Sharm El Sheikh' },
+  },
 };
+
+const SharmElSheikh: React.FC = () => <CityLandingPage data={data} />;
 
 export default SharmElSheikh;
