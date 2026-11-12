@@ -41,7 +41,7 @@ const data: CityPageData = {
       },
     },
     {
-      path: '/family-law', icon: 'fas fa-users',
+      path: '/alexandria/family-lawyer', icon: 'fas fa-users',
       title: { ar: 'محامي أحوال شخصية في الإسكندرية', en: 'Family Lawyer in Alexandria' },
       text: {
         ar: 'الطلاق والخلع، النفقة والحضانة والرؤية، توثيق زواج الأجانب، والاعتراف بأحكام الطلاق الأجنبية.',
@@ -49,15 +49,15 @@ const data: CityPageData = {
       },
     },
     {
-      path: '/civil-law', icon: 'fas fa-home',
-      title: { ar: 'محامي مدني وعقارات في الإسكندرية', en: 'Civil & Property Lawyer in Alexandria' },
+      path: '/alexandria/civil-lawyer', icon: 'fas fa-home',
+      title: { ar: 'محامي مدني في الإسكندرية', en: 'Civil Lawyer in Alexandria' },
       text: {
         ar: 'دعاوى التعويض، صحة ونفاذ العقود، منازعات الإيجار والملكية، والميراث وقسمة التركات.',
         en: 'Compensation claims, contract validation suits, rent and ownership disputes, inheritance and estate division.',
       },
     },
     {
-      path: '/company-law', icon: 'fas fa-building',
+      path: '/alexandria/corporate-lawyer', icon: 'fas fa-building',
       title: { ar: 'محامي شركات في الإسكندرية', en: 'Corporate Lawyer in Alexandria' },
       text: {
         ar: 'تأسيس الشركات للمصريين والأجانب، السجل التجاري والتراخيص، وصياغة عقود الشركاء واللوائح.',
@@ -65,15 +65,15 @@ const data: CityPageData = {
       },
     },
     {
-      path: '/commercial-law', icon: 'fas fa-ship',
-      title: { ar: 'القانون التجاري والبحري بالإسكندرية', en: 'Commercial & Maritime Law in Alexandria' },
+      path: '/alexandria/commercial-lawyer', icon: 'fas fa-ship',
+      title: { ar: 'محامي تجاري في الإسكندرية', en: 'Commercial Lawyer in Alexandria' },
       text: {
         ar: 'العقود التجارية، منازعات الشحن والجمارك والنقل البحري المرتبطة بميناء الإسكندرية، وتحصيل المستحقات.',
         en: 'Commercial contracts, shipping, customs and maritime transport disputes linked to Alexandria Port, and debt recovery.',
       },
     },
     {
-      path: '/foreigners-in-egypt', icon: 'fas fa-passport',
+      path: '/alexandria/lawyer-for-foreigners', icon: 'fas fa-passport',
       title: { ar: 'محامي أجانب في الإسكندرية', en: 'Lawyer for Foreigners in Alexandria' },
       text: {
         ar: 'الإقامات وتصاريح العمل، شراء العقارات، الزواج والطلاق، وأي نزاع قانوني يواجهه الأجنبي في الإسكندرية.',
@@ -81,8 +81,8 @@ const data: CityPageData = {
       },
     },
     {
-      path: '/arbitration-mediation', icon: 'fas fa-gavel',
-      title: { ar: 'محامي تحكيم في الإسكندرية', en: 'Arbitration Lawyer in Alexandria' },
+      path: '/alexandria/international-arbitration-lawyer', icon: 'fas fa-gavel',
+      title: { ar: 'محامي تحكيم دولي في الإسكندرية', en: 'International Arbitration Lawyer in Alexandria' },
       text: {
         ar: 'صياغة شروط التحكيم، التمثيل في التحكيم التجاري المحلي والدولي، وتنفيذ أحكام التحكيم في مصر.',
         en: 'Drafting arbitration clauses, representation in domestic and international commercial arbitration, and enforcing awards in Egypt.',
@@ -94,6 +94,46 @@ const data: CityPageData = {
       text: {
         ar: 'متابعة قضاياك وعقاراتك في الإسكندرية وأنت بالخارج بموجب توكيل رسمي، مع تقارير دورية.',
         en: 'We follow your Alexandria cases and property while you live abroad under a formal power of attorney, with regular updates.',
+      },
+    },
+    {
+      path: '/alexandria/real-estate-lawyer', icon: 'fas fa-key',
+      title: { ar: 'محامي عقارات في الإسكندرية', en: 'Real Estate Lawyer in Alexandria' },
+      text: {
+        ar: 'فحص الملكية قبل الشراء، صحة التوقيع وصحة ونفاذ، التسجيل بالشهر العقاري، ومنازعات الإيجار والملكية.',
+        en: 'Title checks before purchase, contract validation suits, registration, and rent and ownership disputes.',
+      },
+    },
+    {
+      path: '/alexandria/immigration-lawyer', icon: 'fas fa-id-card',
+      title: { ar: 'محامي هجرة وإقامات في الإسكندرية', en: 'Immigration Lawyer in Alexandria' },
+      text: {
+        ar: 'إقامات الأجانب وتصاريح العمل، الجنسية المصرية، وتجهيز وتصديق مستندات ملفات الهجرة.',
+        en: 'Residence and work permits, Egyptian nationality, and preparing and legalising documents for emigration files.',
+      },
+    },
+    {
+      path: '/alexandria/international-lawyer', icon: 'fas fa-globe-africa',
+      title: { ar: 'محامي دولي في الإسكندرية', en: 'International Lawyer in Alexandria' },
+      text: {
+        ar: 'تنفيذ الأحكام الأجنبية في مصر، العقود الدولية، والميراث والأموال عبر الحدود.',
+        en: 'Enforcing foreign judgments in Egypt, international contracts, and cross-border inheritance and assets.',
+      },
+    },
+    {
+      path: '/alexandria/maritime-arbitration-lawyer', icon: 'fas fa-anchor',
+      title: { ar: 'محامي تحكيم بحري في الإسكندرية', en: 'Maritime Arbitration Lawyer in Alexandria' },
+      text: {
+        ar: 'منازعات سندات الشحن وتلف البضائع، الحجز التحفظي على السفن، والتحكيم البحري.',
+        en: 'Bill of lading and cargo damage disputes, ship arrest, and maritime arbitration.',
+      },
+    },
+    {
+      path: '/alexandria/mediation-lawyer', icon: 'fas fa-handshake',
+      title: { ar: 'محامي وساطة في الإسكندرية', en: 'Mediation Lawyer in Alexandria' },
+      text: {
+        ar: 'تسوية المنازعات التجارية والمدنية والأسرية ودياً، وصياغة عقد صلح ملزم وقابل للتنفيذ.',
+        en: 'Amicable settlement of commercial, civil and family disputes, and a binding, enforceable settlement agreement.',
       },
     },
   ],

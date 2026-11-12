@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import SocialButtons from './components/SocialButtons';
 import { useLanguage, getLanguageFromPath } from './contexts/LanguageContext';
+import { alexandriaServiceSlugs } from './data/alexandriaServices';
 
 // Pages
 const Home = lazy(() => import('./pages/Home'));
@@ -21,6 +22,7 @@ const BlogPost = lazy(() => import('./pages/blog/BlogPost'));
 const SharmElSheikh = lazy(() => import('./pages/cities/SharmElSheikh'));
 const Cairo = lazy(() => import('./pages/cities/Cairo'));
 const Alexandria = lazy(() => import('./pages/cities/Alexandria'));
+const AlexandriaServicePage = lazy(() => import('./components/AlexandriaServicePage'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const Services = lazy(() => import('./pages/Services'));
@@ -138,6 +140,7 @@ export const routes: RouteObject[] = [
       { path: '/sharm-el-sheikh', element: <SharmElSheikh /> },
       { path: '/cairo', element: <Cairo /> },
       { path: '/alexandria', element: <Alexandria /> },
+      ...alexandriaServiceSlugs.map(s => ({ path: `/alexandria/${s}`, element: <AlexandriaServicePage slug={s} /> })),
       { path: '/faq', element: <FAQ /> },
       { path: '/about-us', element: <AboutUs /> },
       { path: '/services', element: <Services /> },
@@ -158,6 +161,7 @@ export const routes: RouteObject[] = [
       { path: '/en/sharm-el-sheikh', element: <SharmElSheikh /> },
       { path: '/en/cairo', element: <Cairo /> },
       { path: '/en/alexandria', element: <Alexandria /> },
+      ...alexandriaServiceSlugs.map(s => ({ path: `/en/alexandria/${s}`, element: <AlexandriaServicePage slug={s} /> })),
       { path: '/en/faq', element: <FAQ /> },
       { path: '/en/about-us', element: <AboutUs /> },
       { path: '/en/services', element: <Services /> },

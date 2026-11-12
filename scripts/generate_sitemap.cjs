@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const DOMAIN = 'https://www.ke-lawyer.com';
-const TODAY = '2026-11-01';
+const TODAY = new Date().toISOString().slice(0, 10);
 
 const mainPages = [
   { path: '', priority: '1.0', changefreq: 'daily' },
@@ -22,6 +22,12 @@ const mainPages = [
   { path: '/faq', priority: '0.8', changefreq: 'monthly' },
   { path: '/blog', priority: '0.9', changefreq: 'daily' }
 ];
+
+// Alexandria practice-area pages (slugs read from the data file so the sitemap never drifts)
+const alexSrc = fs.readFileSync('src/data/alexandriaServices.ts', 'utf8');
+for (const m of alexSrc.matchAll(/^\s{4}slug:\s*'([a-z0-9-]+)'/gm)) {
+  mainPages.push({ path: `/alexandria/${m[1]}`, priority: '0.8', changefreq: 'monthly' });
+}
 
 const articleSlugs = [
   'international-commercial-arbitration-egypt-guide-2026',

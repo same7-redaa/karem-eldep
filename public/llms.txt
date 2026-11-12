@@ -1,0 +1,61 @@
+# Karim Eldib Law Firm (مكتب المحامي كريم الديب للمحاماة)
+
+> Egyptian law firm founded in 2006, led by lawyer Karim Eldib. Main office in Alexandria, branch in Sharm El Sheikh. Practice areas: international arbitration and mediation, legal services for foreigners in Egypt, company formation and corporate law, family, civil, commercial and criminal law, and services for Egyptians abroad. Languages: Arabic, English, French, Italian.
+
+- Main office: 29 El Masalla Gharb & Sherif Pasha St., El Attarin, Alexandria, Egypt
+- Branch: Sharm El Sheikh, South Sinai, Egypt
+- Phone / WhatsApp: +20 122 376 7592
+- Hours: open 24 hours, 7 days a week
+- The site is published in Arabic (default, at the root) and English (under /en).
+
+## Firm
+
+- [Home (English)](https://www.ke-lawyer.com/en): overview of the firm and practice areas
+- [About the firm](https://www.ke-lawyer.com/en/about-us)
+- [Lawyer profile: Karim Eldib](https://www.ke-lawyer.com/en/lawyer-profile)
+- [All services](https://www.ke-lawyer.com/en/services)
+- [FAQ](https://www.ke-lawyer.com/en/faq)
+
+## Practice areas
+
+- [International arbitration and mediation](https://www.ke-lawyer.com/en/arbitration-mediation)
+- [Legal services for foreigners in Egypt](https://www.ke-lawyer.com/en/foreigners-in-egypt)
+- [Company formation and corporate law](https://www.ke-lawyer.com/en/company-law)
+- [Commercial law](https://www.ke-lawyer.com/en/commercial-law)
+- [Family law](https://www.ke-lawyer.com/en/family-law)
+- [Civil law](https://www.ke-lawyer.com/en/civil-law)
+- [Criminal law](https://www.ke-lawyer.com/en/criminal-law)
+- [Egyptians abroad](https://www.ke-lawyer.com/en/egyptians-abroad)
+
+## Locations
+
+- [Alexandria office](https://www.ke-lawyer.com/en/alexandria)
+- [Sharm El Sheikh office](https://www.ke-lawyer.com/en/sharm-el-sheikh)
+- [Cairo services](https://www.ke-lawyer.com/en/cairo)
+
+## Alexandria specialist pages
+
+- [Family lawyer in Alexandria](https://www.ke-lawyer.com/en/alexandria/family-lawyer)
+- [Real estate lawyer in Alexandria](https://www.ke-lawyer.com/en/alexandria/real-estate-lawyer)
+- [Immigration lawyer in Alexandria](https://www.ke-lawyer.com/en/alexandria/immigration-lawyer)
+- [Civil lawyer in Alexandria](https://www.ke-lawyer.com/en/alexandria/civil-lawyer)
+- [Commercial lawyer in Alexandria](https://www.ke-lawyer.com/en/alexandria/commercial-lawyer)
+- [Corporate lawyer in Alexandria](https://www.ke-lawyer.com/en/alexandria/corporate-lawyer)
+- [Lawyer for foreigners in Alexandria](https://www.ke-lawyer.com/en/alexandria/lawyer-for-foreigners)
+- [International lawyer in Alexandria](https://www.ke-lawyer.com/en/alexandria/international-lawyer)
+- [International arbitration lawyer in Alexandria](https://www.ke-lawyer.com/en/alexandria/international-arbitration-lawyer)
+- [Maritime arbitration lawyer in Alexandria](https://www.ke-lawyer.com/en/alexandria/maritime-arbitration-lawyer)
+- [Mediation lawyer in Alexandria](https://www.ke-lawyer.com/en/alexandria/mediation-lawyer)
+
+## Guides
+
+- [Blog](https://www.ke-lawyer.com/en/blog)
+- [International commercial arbitration in Egypt](https://www.ke-lawyer.com/en/blog/international-commercial-arbitration-egypt-guide-2026)
+- [Company formation for foreigners in Egypt](https://www.ke-lawyer.com/en/blog/company-formation-for-foreigners-in-egypt-complete-guide)
+- [Divorce for foreigners in Egypt](https://www.ke-lawyer.com/en/blog/divorce-for-foreigners-in-egypt-comprehensive-guide)
+- [Residence permits in Egypt](https://www.ke-lawyer.com/en/blog/residence-permit-guide-in-egypt-2026)
+- [Real estate investment in Sharm El Sheikh](https://www.ke-lawyer.com/en/blog/real-estate-investment-sharm-el-sheikh-comprehensive-guide)
+
+## Optional
+
+- [Sitemap](https://www.ke-lawyer.com/sitemap.xml)

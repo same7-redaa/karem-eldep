@@ -481,7 +481,7 @@ const CivilLaw: React.FC = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://wa.me/201009955509"
+              href="https://wa.me/201223767592"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#0b1a33] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#1a2d4d] transition-colors duration-300"

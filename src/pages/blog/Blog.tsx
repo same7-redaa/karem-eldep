@@ -13,17 +13,11 @@ const Blog: React.FC = () => {
     return texts[language as keyof typeof texts] || texts.en;
   };
 
-  const [articles, setArticles] = React.useState<any[]>([]);
-  const [loading, setLoading] = React.useState(true);
+  // Start from the static articles so the list (and its links) is in the prerendered HTML.
+  const sortedStatic = Object.values(staticArticles).sort((a, b) => (a.order || 0) - (b.order || 0));
+  const [articles, setArticles] = React.useState<any[]>(sortedStatic);
 
   useEffect(() => {
-    // SEO Meta updates
-    document.title = "مقالات قانونية | مدونة المحامي كريم الديب | Legal Blog Egypt";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'مقالات قانونية متخصصة من المحامي كريم الديب. نصائح قانونية، أحكام محاكم، قوانين جديدة للمصريين والأجانب في مصر. Legal blog Egypt by Karim El-Dib lawyer.');
-    }
-
     // Fetch articles from Firebase
     const fetchArticles = async () => {
       try {
@@ -55,9 +49,7 @@ const Blog: React.FC = () => {
         setArticles(fetchedArticles);
       } catch (error) {
         console.error("Error fetching articles:", error);
-        setArticles(Object.values(staticArticles));
-      } finally {
-        setLoading(false);
+        // keep the static list already shown
       }
     };
 
@@ -74,8 +66,10 @@ const Blog: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200 py-20" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
-        title="مقالات قانونية | مدونة المحامي كريم الديب | Legal Blog Egypt"
-        description="مقالات قانونية متخصصة من المحامي كريم الديب في قضايا الأجانب والتحكيم وتأسيس الشركات والأحوال الشخصية في مصر."
+        title={isRTL ? 'مقالات قانونية | مدونة المحامي كريم الديب' : 'Legal Articles | Karim Eldib Law Firm Blog'}
+        description={isRTL
+          ? 'مقالات قانونية من المحامي كريم الديب في قضايا الأجانب والتحكيم وتأسيس الشركات والأحوال الشخصية في مصر.'
+          : 'Legal articles by Karim Eldib Law Firm on foreigners in Egypt, arbitration, company formation and family law.'}
         canonicalUrl="https://www.ke-lawyer.com/blog"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -166,7 +160,7 @@ const Blog: React.FC = () => {
 
                 {/* رابط القراءة */}
                 <Link
-                  to={`/blog/${article.slug}`}
+                  to={`${isRTL ? "" : "/en"}/blog/${article.slug}`}
                   className="inline-flex items-center gap-2 bg-[#c8a876] text-[#0b1a33] px-6 py-3 rounded-lg font-semibold hover:bg-white transition-all duration-300 hover:gap-3"
                 >
                   {getTextByLanguage({
@@ -206,7 +200,7 @@ const Blog: React.FC = () => {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="https://wa.me/201009955509"
+                href="https://wa.me/201223767592"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-[#c8a876] text-[#0b1a33] px-8 py-4 rounded-xl font-bold hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-[#c8a876]/50"

@@ -65,7 +65,7 @@ const Header: React.FC = () => {
       case '/foreigners-in-egypt':
         return {
           text: getTextByLanguage({ ar: 'استشارة أجانب', en: 'Expat Consultation', fr: 'Consultation Expatriés', it: 'Consulenza Stranieri' }),
-          link: 'https://wa.me/201009955509',
+          link: 'https://wa.me/201223767592',
           isExternal: true
         };
       case '/egyptians-abroad':
@@ -78,7 +78,7 @@ const Header: React.FC = () => {
       case '/company-law':
         return {
           text: getTextByLanguage({ ar: 'تأسيس شركات', en: 'Form Company', fr: 'Créer Société', it: 'Costituire Società' }),
-          link: 'https://wa.me/201009955509',
+          link: 'https://wa.me/201223767592',
           isExternal: true
         };
       case '/family-law':
@@ -90,7 +90,7 @@ const Header: React.FC = () => {
       case '/civil-law':
         return {
           text: getTextByLanguage({ ar: 'استشارة', en: 'Consultation', fr: 'Consultation', it: 'Consulenza' }),
-          link: 'https://wa.me/201009955509',
+          link: 'https://wa.me/201223767592',
           isExternal: true
         };
       case '/criminal-law':

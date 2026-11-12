@@ -10,8 +10,8 @@ const CriminalLaw: React.FC = () => {
     return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
-        title={language === 'ar' ? "محامي قانون جنائي في مصر | المحامي كريم الديب" : "Criminal Defense Lawyer in Egypt | Lawyer Karim El-Dib"}
-        description={language === 'ar' ? "محامي قانون جنائي - المحامي كريم الديب خبير في الدفاع الجنائي والقضايا الجنائية للمصريين والأجانب في مصر." : "Criminal defense lawyer in Egypt. Expert representation in criminal cases for Egyptians and foreigners."}
+        title={language === 'ar' ? "محامي جنايات وجنح في مصر | كريم الديب" : "Criminal Defense Lawyer in Egypt | Karim Eldib"}
+        description={language === 'ar' ? "دفاع جنائي للمصريين والأجانب: حضور التحقيقات، التمثيل أمام محاكم الجنح والجنايات، الاستئناف والنقض، قضايا المخدرات والجرائم الإلكترونية وجرائم الأموال. مكاتب في الإسكندرية وشرم الشيخ." : "Criminal defense for Egyptians and foreigners: attending investigations, representation before misdemeanor and felony courts, appeals, drug, cybercrime and financial crime cases. Offices in Alexandria and Sharm El Sheikh."}
         canonicalUrl="https://www.ke-lawyer.com/criminal-law"
       />
       {/* Hero Section */}

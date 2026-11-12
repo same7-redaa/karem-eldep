@@ -5,6 +5,9 @@ export interface StaticArticle {
   title_en?: string;
   title_fr?: string;
   title_it?: string;
+  /** Short <title> for search results (about 60 chars max). Falls back to `title`. */
+  seoTitle?: string;
+  seoTitle_en?: string;
   excerpt: string;
   excerpt_en?: string;
   excerpt_fr?: string;
@@ -15,6 +18,7 @@ export interface StaticArticle {
   content_it?: string;
   image?: string;
   date: string;
+  dateModified?: string;
   category: string;
   readTime: string;
   tags: string[];
@@ -30,6 +34,8 @@ export const staticArticles: Record<string, StaticArticle> = {
     title_en: 'Comprehensive Legal Services Guide for Foreigners & Companies in Egypt 2026: Business, Residency & Arbitration',
     title_fr: 'Guide Juridique Complet pour Étrangers et Sociétés en Égypte 2026',
     title_it: 'Guida Legale Completa per Stranieri e Imprese in Egitto 2026',
+    seoTitle: 'الخدمات القانونية للأجانب والشركات في مصر 2026',
+    seoTitle_en: 'Legal Services for Foreigners & Companies in Egypt 2026',
     excerpt: 'الدليل القانوني المرجعي لعام 2026: تأسيس الشركات للأجانب، إقامات وتأشيرات العمل، الفحص العقاري، والتحكيم التجاري الدولي مع مؤسسة كريم الديب للمحاماة.',
     excerpt_en: 'The definitive 2026 legal guide: company formation for foreigners, residency visas, real estate due diligence, and international arbitration in Egypt.',
     excerpt_fr: 'Guide de référence 2026: création de sociétés pour étrangers, visas de résidence, audit immobilier et arbitrage international en Égypte.',
@@ -79,6 +85,8 @@ export const staticArticles: Record<string, StaticArticle> = {
     title_en: 'International Arbitration & Foreign Investors Lawyer in Egypt 2026: CRCICA Representation & Award Enforcement',
     title_fr: 'Avocat Arbitrage International & Investisseurs Étrangers en Égypte 2026',
     title_it: 'Avvocato Arbitrato Internazionale & Investitori Stranieri in Egitto 2026',
+    seoTitle: 'محامي تحكيم دولي ومنازعات استثمار في مصر 2026',
+    seoTitle_en: 'Arbitration Lawyer for Foreign Investors in Egypt 2026',
     excerpt: 'الدليل المتخصص في التحكيم التجاري الدولي بمصر: شروط وضوابط شرط التحكيم، فض منازعات الطاقة والإنشاءات، والتمثيل أمام CRCICA وتنفيذ الأحكام الأجنبية باتفاقية نيويورك.',
     excerpt_en: 'Specialized legal guide to international commercial arbitration in Egypt: arbitration clauses, CRCICA representation, and foreign award enforcement under the 1958 New York Convention.',
     excerpt_fr: 'Guide spécialisé de l\'arbitrage commercial international en Égypte, représentation devant le CRCICA et exécution des sentences étrangères.',
@@ -125,6 +133,8 @@ export const staticArticles: Record<string, StaticArticle> = {
     title_en: 'International Commercial Arbitration & Foreign Investment Disputes in Egypt 2026',
     title_fr: 'Arbitrage Commercial International & Règlement des Litiges d\'Investissement en Égypte 2026',
     title_it: 'Arbitrato Commerciale Internazionale e Controversie sugli Investimenti in Egitto 2026',
+    seoTitle: 'التحكيم التجاري الدولي في مصر: دليل 2026',
+    seoTitle_en: 'International Commercial Arbitration in Egypt: 2026 Guide',
     excerpt: 'دليل شامل حول التحكيم التجاري الدولي وتسوية منازعات المستثمرين الأجانب أمام مركز القاهرة الإقليمي (CRCICA) وتنفيذ أحكام التحكيم بمصر.',
     excerpt_en: 'Comprehensive legal guide on international commercial arbitration, investor dispute resolution before CRCICA, and arbitral award enforcement in Egypt.',
     excerpt_fr: 'Guide juridique complet sur l\'arbitrage commercial international, la résolution des litiges d\'investissement devant le CRCICA et l\'exécution des sentences en Égypte.',
@@ -193,6 +203,8 @@ export const staticArticles: Record<string, StaticArticle> = {
     title_en: 'Enforcement and Recognition of Foreign Arbitral Awards in Egypt (New York Convention Guide)',
     title_fr: 'Exécution des Sentences Arbitrales Étrangères en Égypte (Convention de New York)',
     title_it: 'Esecuzione e Riconoscimento di Lodi Arbitrali Stranieri in Egitto',
+    seoTitle: 'تنفيذ أحكام التحكيم الأجنبية في مصر',
+    seoTitle_en: 'Enforcing Foreign Arbitral Awards in Egypt',
     excerpt: 'شروط وإجراءات وضع الصيغة التنفيذية لأحكام التحكيم الأجنبية في مصر، حالات رفض التنفيذ، وتسييل الأصول والحجز التحفظي.',
     excerpt_en: 'Legal requirements, court procedures, and exequatur orders for enforcing foreign arbitral awards in Egypt under the 1958 New York Convention.',
     excerpt_fr: 'Conditions et procédures d\'exequatur pour l\'exécution des sentences arbitrales étrangères en Égypte selon la Convention de New York.',
@@ -240,31 +252,60 @@ export const staticArticles: Record<string, StaticArticle> = {
     title_en: 'Foreigners Lawyer in Sharm El Sheikh: Legal Services, Residency & Real Estate Guide',
     title_fr: 'Avocat pour Étrangers à Sharm El Sheikh : Guide Juridique Complet',
     title_it: 'Avvocato per Stranieri a Sharm El Sheikh: Guida Legale Completa',
-    excerpt: 'دليل شامل لاختيار أفضل محامي متخصص للأجانب في شرم الشيخ - استخراج الإقامات، تأسيس الشركات، عقود العقارات، والزواج والطلاق.',
+    seoTitle: 'محامي أجانب في شرم الشيخ: دليل 2026',
+    seoTitle_en: 'Lawyer for Foreigners in Sharm El Sheikh: 2026 Guide',
+    excerpt: 'متى يحتاج الأجنبي إلى محامٍ في شرم الشيخ، وكيف يختاره ويتحقق منه، وكيف يعمل التوكيل، وعلامات التحذير قبل التعاقد.',
     excerpt_en: 'Comprehensive guide to hiring a specialized lawyer for foreigners in Sharm El Sheikh. Residency permits, company formation, real estate contracts, and family law.',
     excerpt_fr: 'Guide complet pour choisir le meilleur avocat pour étrangers à Sharm El Sheikh : permis de séjour, création d\'entreprise, contrats immobiliers et divorce.',
     excerpt_it: 'Guida completa per scegliere il miglior avvocato per stranieri a Sharm El Sheikh: permessi di soggiorno, societario, contratti immobiliari e divorzio.',
     image: '/images/services/foreigners-in-egypt.webp',
     date: '2026-01-24',
+    dateModified: '2026-11-12',
     category: 'خدمات الأجانب',
-    readTime: '10 دقائق',
+    readTime: '3 دقائق',
     tags: ['محامي أجانب شرم الشيخ', 'إقامة الأجانب', 'عقارات شرم الشيخ', 'تأسيس شركات', 'كريم الديب'],
     isPublished: true,
     order: 3,
     content: `
-      <h2>لماذا تحتاج إلى محامي متخصص في شرم الشيخ؟</h2>
-      <p>تعتبر مدينة شرم الشيخ مقصداً رئيسياً للجاليات الأجنبية والمستثمرين الدوليين. تختلف الإجراءات القانونية الخاصة بتملك العقارات واستخراج تصاريح الإقامة وتأسيس الشركات للأجانب في محافظة جنوب سيناء عن باقي المحافظات، مما يتطلب محامياً متمرساً يفهم الضوابط الخاصة بالمنطقة.</p>
-      
-      <h2>الخدمات القانونية الرئيسية للأجانب في شرم الشيخ</h2>
+
+      <p>يعيش في شرم الشيخ ويستثمر فيها عدد كبير من الأجانب، وتختلف بعض إجراءاتها القانونية عن باقي المحافظات لأنها جزء من محافظة جنوب سيناء. يشرح هذا الدليل متى تحتاج إلى محامٍ، وما الذي يجب أن تتحقق منه قبل توكيله، وكيف تسير العلاقة معه.</p>
+
+      <h2>متى تحتاج إلى محامٍ في شرم الشيخ؟</h2>
       <ul>
-        <li><strong>تصاريح الإقامة والتأشيرات:</strong> إقامة مستثمر، إقامة عقارية، إقامات الزواج والعمل وحل مشكلات غرامات الإقامة.</li>
-        <li><strong>شراء وتملك العقارات:</strong> الفحص النافي للجهالة، صياغة عقود حق الانتفاع والتملك، وتوثيق العقود رسمياً.</li>
-        <li><strong>تأسيس الشركات والأنشطة السياحية:</strong> إنشاء شركات ذات مسؤولية محدودة، تراخيص الغوص والأنشطة الفندقية.</li>
-        <li><strong>قضايا الأحوال الشخصية:</strong> عقود الزواج المدني وتوثيقها بالقنصليات، وقضايا الطلاق والخلع والنفقة والحضانة.</li>
+        <li><strong>شراء عقار أو الانتفاع به:</strong> قواعد التملك في سيناء خاصة، وأي خطأ في صيغة العقد يصعب إصلاحه لاحقاً.</li>
+        <li><strong>الإقامة:</strong> عند ارتباطها بعقار أو شركة أو زواج، أو عند وجود إقامة منتهية أو طلب مرفوض.</li>
+        <li><strong>تأسيس نشاط:</strong> شركات الغوص والرحلات والمطاعم والفنادق تحتاج إلى تراخيص من جهات متعددة.</li>
+        <li><strong>الزواج والطلاق:</strong> الزواج المختلط وتوثيقه، وقضايا الطلاق والحضانة عند وجود طرف أجنبي.</li>
+        <li><strong>النزاعات:</strong> خلافات مع مطور أو شريك أو مستأجر، أو قضايا جنائية تحتاج حضوراً عاجلاً.</li>
       </ul>
 
-      <h2>خبرة مؤسسة المحامي كريم الديب في شرم الشيخ</h2>
-      <p>يقدم مكتب المحامي كريم الديب خدمات قانونية معتمدة منذ أكثر من 18 عاماً باللغات الإنجليزية والفرنسية والإيطالية، مع وجود مقر مباشر وممثلين دائمين في شرم الشيخ.</p>
+      <h2>كيف تختار المحامي؟</h2>
+      <h3>1. القيد في نقابة المحامين</h3>
+      <p>اطلب رقم القيد ودرجة القيد. المحامي فقط له حق تمثيلك أمام المحاكم، وليس السمسار أو "المخلص" أو مكتب الخدمات.</p>
+      <h3>2. الخبرة في ملفات الأجانب</h3>
+      <p>ملفات الأجانب تتضمن تطبيق قوانين أجنبية أحياناً، وترجمة وتصديق مستندات، والتعامل مع القنصليات. اسأل عن خبرته في نوع ملفك تحديداً.</p>
+      <h3>3. اللغة</h3>
+      <p>يجب أن تفهم ما يحدث في ملفك وما توقعه. المحامي الذي يتحدث لغتك يقلل سوء الفهم، لكن اطلب ترجمة للمستندات المهمة أيضاً.</p>
+      <h3>4. الوجود المحلي</h3>
+      <p>بعض الإجراءات تحتاج حضوراً شخصياً أمام جهات في جنوب سيناء، ووجود مكتب في المدينة يختصر الوقت.</p>
+      <h3>5. الوضوح في الأتعاب</h3>
+      <p>اطلب اتفاق أتعاب مكتوباً يحدد نطاق العمل، وما يشمله المبلغ، وما يعد مصروفات إضافية مثل الرسوم الحكومية والترجمة.</p>
+
+      <h2>التوكيل: كيف يعمل المحامي نيابة عنك؟</h2>
+      <p>يعمل المحامي بموجب توكيل رسمي يُحرر في الشهر العقاري داخل مصر، أو في القنصلية المصرية إذا كنت في الخارج. حدد في التوكيل الأعمال المطلوبة فقط، واحتفظ بصورة منه، ويمكنك إلغاؤه في أي وقت.</p>
+
+      <h2>علامات تحذير</h2>
+      <ul>
+        <li>من يطلب توكيلاً عاماً شاملاً بالبيع دون سبب واضح.</li>
+        <li>من يضمن نتيجة قضية قبل أن يطلع على المستندات.</li>
+        <li>من يرفض إعطاء إيصالات بما تدفعه.</li>
+        <li>من يقترح تسجيل عقار أو شركة باسم شخص آخر للالتفاف على القانون.</li>
+      </ul>
+
+      <h2>مكتب المحامي كريم الديب في شرم الشيخ</h2>
+      <p>يعمل المكتب منذ 2006، ومقره الرئيسي في الإسكندرية مع فرع في شرم الشيخ. يقدم خدماته للأجانب بالعربية والإنجليزية والفرنسية والإيطالية في الإقامة والعقارات وتأسيس الشركات وقضايا الأسرة والتقاضي. العنوان ووسائل التواصل في صفحة <a href="/sharm-el-sheikh">مكتب شرم الشيخ</a>، وتفاصيل الخدمات في صفحة <a href="/foreigners-in-egypt">خدمات الأجانب في مصر</a>.</p>
+
+      <p><em>هذا المقال معلومات عامة وليس استشارة قانونية.</em></p>
     `,
     content_en: `
       <h2>Why You Need a Specialized Lawyer in Sharm El Sheikh</h2>
@@ -287,6 +328,8 @@ export const staticArticles: Record<string, StaticArticle> = {
     title_en: 'Foreigners Lawyer in Alexandria: Legal Services, Investment & Maritime Law',
     title_fr: 'Avocat pour Étrangers à Alexandrie : Services Juridiques et Investissement',
     title_it: 'Avvocato per Stranieri ad Alessandria: Servizi Legali e Diritto Marittimo',
+    seoTitle: 'محامي أجانب في الإسكندرية',
+    seoTitle_en: 'Lawyer for Foreigners in Alexandria',
     excerpt: 'الخدمات القانونية المتخصصة للأجانب والمستثمرين في الإسكندرية: قضايا الموانئ والشحن، تأسيس الشركات، والإقامات.',
     excerpt_en: 'Specialized legal services for expats and investors in Alexandria: maritime disputes, port operations, company formation, and residency.',
     excerpt_fr: 'Services juridiques spécialisés pour expatriés et investisseurs à Alexandrie : litiges maritimes, création d\'entreprise et séjour.',
@@ -300,7 +343,7 @@ export const staticArticles: Record<string, StaticArticle> = {
     order: 4,
     content: `
       <h2>المكتب الرئيسي لمؤسسة كريم الديب في الإسكندرية</h2>
-      <p>يقع المقر الرئيسي لمكتب كريم الديب للمحاماة في قلب مدينة الإسكندرية (14 شارع الشهداء - محطة الرمل)، ويقدم دعماً قانونياً شاملاً للشركات الدولية، المستوردين، والمقيمين الأجانب في عروس البحر المتوسط.</p>
+      <p>يقع المقر الرئيسي لمكتب كريم الديب للمحاماة في قلب مدينة الإسكندرية (29 المسلة غرب وشريف باشا، العطارين)، ويقدم دعماً قانونياً شاملاً للشركات الدولية، المستوردين، والمقيمين الأجانب في عروس البحر المتوسط.</p>
       
       <h2>أبرز المجالات القانونية في الإسكندرية</h2>
       <ul>
@@ -322,6 +365,8 @@ export const staticArticles: Record<string, StaticArticle> = {
     title_en: 'Comprehensive Guide to Legal Services for Foreigners in Egypt 2026',
     title_fr: 'Guide Complet des Services Juridiques pour Étrangers en Égypte 2026',
     title_it: 'Guida Completa ai Servizi Legali per Stranieri in Egitto 2026',
+    seoTitle: 'الخدمات القانونية للأجانب في مصر 2026',
+    seoTitle_en: 'Legal Services for Foreigners in Egypt 2026',
     excerpt: 'دليل شامل للأجانب الراغبين في الاستثمار أو الإقامة في مصر، يوضح كافة الإجراءات والضمانات القانونية.',
     excerpt_en: 'Complete guide for foreigners living or investing in Egypt: laws, legal rights, company setup, and visas.',
     excerpt_fr: 'Guide complet pour étrangers vivant ou investissant en Égypte : lois, droits, entreprises et visas.',
@@ -357,6 +402,8 @@ export const staticArticles: Record<string, StaticArticle> = {
     title_en: 'Legal Rights Protection for Egyptian Expats Abroad: Remote Representation',
     title_fr: 'Protection des Droits Juridiques des Égyptiens à l\'Étranger',
     title_it: 'Tutela dei Diritti Legali per Egiziani all\'Estero',
+    seoTitle: 'محامي المصريين بالخارج: إدارة الحقوق عن بُعد',
+    seoTitle_en: 'Lawyer for Egyptians Abroad: Remote Representation',
     excerpt: 'كيف يمكن للمصريين في الخارج حماية ممتلكاتهم ومتابعة قضاياهم القانونية داخل مصر بواسطة التوكيلات الرسمية.',
     excerpt_en: 'How Egyptian expatriates can manage properties, inheritance, and legal cases in Egypt remotely via power of attorney.',
     excerpt_fr: 'Comment les expatriés égyptiens peuvent gérer leurs biens et affaires en Égypte à distance.',
@@ -392,6 +439,8 @@ export const staticArticles: Record<string, StaticArticle> = {
     title_en: 'Foreign Investment in Egypt 2026: Comprehensive Investor Guide & Incentives',
     title_fr: 'Investissement Étranger en Égypte 2026 : Guide Complet de l\'Investisseur',
     title_it: 'Investimenti Esteri in Egitto 2026: Guida Completa per Investitori',
+    seoTitle: 'الاستثمار الأجنبي في مصر 2026: الحوافز والضمانات',
+    seoTitle_en: 'Foreign Investment in Egypt 2026: Incentives & Guarantees',
     excerpt: 'دليل المستثمر الأجنبي في مصر: الحوافز الاستثمارية، الإعفاءات الضريبية، تأسيس الشركات، والرخصة الذهبية.',
     excerpt_en: 'Foreign investor legal guide in Egypt: tax incentives, Golden License, free zones, and investment guarantees.',
     excerpt_fr: 'Guide des investissements étrangers en Égypte : incitations fiscales, licence dorée et zones franches.',
@@ -426,28 +475,85 @@ export const staticArticles: Record<string, StaticArticle> = {
     title_en: 'Company Formation in Egypt for Foreigners 2026: Step-by-Step Legal Guide',
     title_fr: 'Création d\'Entreprise en Égypte pour les Étrangers 2026',
     title_it: 'Costituzione di Società in Egitto per Stranieri 2026',
-    excerpt: 'دليل متكامل لتأسيس الشركات في مصر للأجانب: الشركة ذات المسؤولية المحدودة (LLC)، شركة المساهمة، ورأس المال الأدنى.',
+    seoTitle: 'تأسيس شركة في مصر للأجانب 2026',
+    seoTitle_en: 'Company Formation in Egypt for Foreigners 2026',
+    excerpt: 'دليل تأسيس الشركات في مصر للأجانب: الأشكال القانونية المتاحة، وخطوات التأسيس أمام هيئة الاستثمار، والمستندات، وحوافز الاستثمار، والأخطاء الشائعة.',
     excerpt_en: 'Complete legal guide on setting up a company in Egypt for foreign nationals: LLCs, joint stock companies, and GAFI registration.',
     excerpt_fr: 'Guide complet pour créer une société en Égypte : SARL, société anonyme et démarches au GAFI.',
     excerpt_it: 'Guida completa per la costituzione di società in Egitto: SRL, SPA e procedure GAFI.',
     image: '/images/services/company-law.webp',
     date: '2026-01-24',
+    dateModified: '2026-11-12',
     category: 'قانون الشركات',
-    readTime: '11 دقيقة',
+    readTime: '3 دقائق',
     tags: ['تأسيس شركات', 'شركة ذات مسؤولية محدودة', 'هيئة الاستثمار GAFI', 'استثمار أجنبي'],
     isPublished: true,
     order: 8,
     content: `
-      <h2>خطوات تأسيس شركة ذات مسؤولية محدودة (LLC) في مصر</h2>
-      <p>تُعد الشركة ذات المسؤولية المحدودة الخيار الأكثر شعبية للمستثمرين الأجانب بسبب مرونة الإدارة وإمكانية الملكية الأجنبية بنسبة 100%.</p>
-      
-      <h2>المستندات المطلوبة للتأسيس:</h2>
+
+      <p>يسمح القانون المصري للأجانب بتأسيس شركات وتملكها بالكامل في أغلب الأنشطة، وينظم ذلك أساساً قانون الشركات رقم 159 لسنة 1981 وقانون الاستثمار رقم 72 لسنة 2017. يشرح هذا الدليل الأشكال القانونية المتاحة، وخطوات التأسيس، والأخطاء التي تؤخر المستثمر الأجنبي أو تكلفه لاحقاً.</p>
+
+      <h2>أولاً: الأشكال القانونية المتاحة للأجانب</h2>
+
+      <h3>1. الشركة ذات المسؤولية المحدودة</h3>
+      <p>الشكل الأكثر استخداماً للمشروعات الصغيرة والمتوسطة. مسؤولية كل شريك محدودة بحصته، والإدارة مرنة، ويجوز أن يكون المدير أجنبياً. يشترط القانون حداً أدنى وأقصى لعدد الشركاء، ولا يجوز لها طرح حصصها للاكتتاب العام.</p>
+
+      <h3>2. شركة الشخص الواحد</h3>
+      <p>أضيفت إلى قانون الشركات بتعديلات عام 2018، وتتيح لشخص واحد، مصرياً كان أو أجنبياً، تأسيس شركة بمسؤولية محدودة دون الحاجة إلى شريك. مناسبة للمشروعات الفردية والخدمات المهنية.</p>
+
+      <h3>3. شركة المساهمة</h3>
+      <p>للمشروعات الكبيرة أو التي تحتاج إلى تمويل من عدد كبير من المساهمين. تُدار بمجلس إدارة، ورأس مالها مقسم إلى أسهم قابلة للتداول، وإجراءات تأسيسها والرقابة عليها أكثر تفصيلاً.</p>
+
+      <h3>4. فرع الشركة الأجنبية</h3>
+      <p>تسجيل فرع لشركة قائمة في الخارج لمباشرة نشاطها في مصر. الفرع ليس شخصاً قانونياً مستقلاً، والشركة الأم مسؤولة عن التزاماته.</p>
+
+      <h3>5. مكتب التمثيل</h3>
+      <p>لدراسة السوق والترويج لمنتجات الشركة الأم فقط، ولا يجوز له ممارسة نشاط تجاري أو تحقيق إيرادات في مصر.</p>
+
+      <h2>ثانياً: كيف تختار الشكل المناسب؟</h2>
       <ul>
-        <li>جوازات سفر سارية لجميع الشركاء مترجمة ومصدقة.</li>
-        <li>استخراج الموافقات الأمنية للشركاء الأجانب.</li>
-        <li>شهادة عدم التباس الاسم التجاري من السجل التجاري.</li>
-        <li>عقد إيجار موثق لمقر الشركة مع إثبات التاريخ.</li>
+        <li><strong>عدد الشركاء:</strong> شريك واحد أم أكثر.</li>
+        <li><strong>طبيعة النشاط:</strong> بعض الأنشطة، مثل الاستيراد والأنشطة السياحية، لها شروط خاصة بالجنسية أو تراخيص من جهات محددة.</li>
+        <li><strong>حجم المشروع وخطط التمويل:</strong> هل ستحتاج إلى دخول مساهمين جدد لاحقاً؟</li>
+        <li><strong>الحوافز المطلوبة:</strong> نظام الاستثمار الداخلي أم المناطق الحرة.</li>
       </ul>
+      <p>الاختيار الخاطئ في البداية قد يحتاج إلى تحويل الشكل القانوني لاحقاً، وهو إجراء أطول من التأسيس نفسه.</p>
+
+      <h2>ثالثاً: خطوات التأسيس</h2>
+      <ol>
+        <li><strong>حجز الاسم التجاري:</strong> الحصول على شهادة بعدم الالتباس من السجل التجاري.</li>
+        <li><strong>إعداد عقد التأسيس أو النظام الأساسي:</strong> يحدد النشاط، ورأس المال وتوزيع الحصص، والمديرين وصلاحياتهم، وطريقة اتخاذ القرارات وحل الخلافات بين الشركاء.</li>
+        <li><strong>الموافقات الأمنية:</strong> للشركاء والمديرين الأجانب، وقد تكون شرطاً لبعض الأنشطة.</li>
+        <li><strong>إيداع رأس المال:</strong> في حساب بنكي باسم الشركة تحت التأسيس، واستخراج شهادة بنكية بذلك.</li>
+        <li><strong>التقديم في مركز خدمات المستثمرين بالهيئة العامة للاستثمار:</strong> لتوثيق العقد وإصدار السجل التجاري.</li>
+        <li><strong>البطاقة الضريبية والتسجيل في ضريبة القيمة المضافة</strong> إذا انطبقت شروطها.</li>
+        <li><strong>التأمينات الاجتماعية:</strong> تسجيل الشركة كصاحب عمل وتسجيل العاملين.</li>
+        <li><strong>التراخيص الخاصة بالنشاط:</strong> مثل تراخيص وزارة السياحة أو الصحة أو التراخيص الصناعية.</li>
+      </ol>
+
+      <h2>رابعاً: المستندات المعتادة</h2>
+      <ul>
+        <li>جوازات سفر سارية للشركاء الأجانب، مترجمة ومصدقة حسب الحالة.</li>
+        <li>عقد إيجار أو تملك لمقر الشركة.</li>
+        <li>توكيل رسمي للمحامي لمباشرة الإجراءات، ويمكن عمله من الخارج عبر القنصلية المصرية.</li>
+        <li>للشركاء من الأشخاص الاعتبارية: مستندات تأسيس الشركة الأجنبية وقرار المشاركة، مصدقة ومترجمة.</li>
+      </ul>
+
+      <h2>خامساً: حوافز الاستثمار</h2>
+      <p>يمنح قانون الاستثمار حوافز عامة لكل المشروعات، وحوافز خاصة وإضافية لمشروعات بعينها حسب النشاط والموقع الجغرافي، إلى جانب نظام المناطق الحرة والرخصة الذهبية للمشروعات الاستراتيجية. شروط كل حافز ونسبته ومدته تحددها اللائحة والقرارات المنفذة، ويجب التحقق منها لكل مشروع قبل البدء.</p>
+
+      <h2>سادساً: أخطاء شائعة</h2>
+      <ul>
+        <li><strong>استخدام عقد تأسيس جاهز:</strong> العقد الجاهز لا ينظم الخلافات بين الشركاء ولا خروج شريك أو دخول آخر.</li>
+        <li><strong>بدء النشاط قبل استكمال التراخيص:</strong> قد يعرض النشاط للغلق والغرامات.</li>
+        <li><strong>إهمال الالتزامات الضريبية والتأمينية بعد التأسيس:</strong> التأسيس بداية الالتزامات وليس نهايتها.</li>
+        <li><strong>تسجيل الشركة باسم شخص آخر للالتفاف على شرط قانوني:</strong> يضع ملكية المستثمر الحقيقية في خطر.</li>
+      </ul>
+
+      <h2>كيف نساعدك</h2>
+      <p>يتولى مكتب المحامي كريم الديب تأسيس الشركات للمستثمرين الأجانب من دراسة الشكل القانوني إلى استلام السجل التجاري والبطاقة الضريبية، مع صياغة عقد التأسيس واتفاقيات الشركاء، والتواصل بالعربية والإنجليزية والفرنسية والإيطالية. تفاصيل الخدمة في صفحة <a href="/company-law">قانون الشركات</a> وصفحة <a href="/alexandria/corporate-lawyer">محامي شركات في الإسكندرية</a>.</p>
+
+      <p><em>هذا المقال معلومات عامة وليس استشارة قانونية. الإجراءات والشروط تتغير بقرارات تنفيذية، فراجع حالتك مع محامٍ قبل اتخاذ أي قرار.</em></p>
     `,
     content_en: `
       <h2>Setting up an LLC in Egypt</h2>
@@ -462,27 +568,70 @@ export const staticArticles: Record<string, StaticArticle> = {
     title_en: 'Divorce for Foreigners in Egypt 2026: Legal Procedures, Custody & Alimony',
     title_fr: 'Divorce pour les Étrangers en Égypte 2026 : Procédures et Garde d\'Enfants',
     title_it: 'Divorzio per Stranieri in Egitto 2026: Procedure Legali e Affidamento',
+    seoTitle: 'الطلاق للأجانب في مصر 2026: الحضانة والنفقة',
+    seoTitle_en: 'Divorce for Foreigners in Egypt 2026: Custody & Support',
     excerpt: 'دليل قانوني شامل حول قضايا الطلاق والخلع للأجانب والزواج المختلط في مصر، وتحديد القانون الواجب التطبيق.',
     excerpt_en: 'Legal guide to international divorce and mixed marriage dissolution in Egypt: applicable law, custody, and alimony.',
     excerpt_fr: 'Guide juridique sur le divorce des étrangers en Égypte : loi applicable, garde des enfants et pension alimentaire.',
     excerpt_it: 'Guida legale al divorzio per stranieri in Egitto: legge applicabile, affidamento e alimenti.',
     image: '/images/services/family-law.webp',
     date: '2026-01-24',
+    dateModified: '2026-11-12',
     category: 'الأحوال الشخصية',
-    readTime: '10 دقائق',
+    readTime: '3 دقائق',
     tags: ['طلاق أجانب', 'زواج مختلط', 'حضانة أطفال', 'قانون الأسرة', 'محامي أحوال شخصية'],
     isPublished: true,
     order: 9,
     content: `
-      <h2>القانون الواجب التطبيق في طلاق الأجانب</h2>
-      <p>وفقاً للمادة 13 من القانون المدني المصري، يسري على الطلاق قانون الدولة التي ينتمي إليها الزوج بجنسيته وقت رفع الدعوى، ما لم تكن هناك استثناءات تتعلق بالزواج المختلط أو اتفاق الأطراف.</p>
-      
-      <h2>حقوق الحضانة والنفقة:</h2>
+
+      <p>الطلاق بين أجانب في مصر، أو بين أجنبي ومصري، يطرح سؤالاً قبل أي إجراء: أي قانون يحكم النزاع؟ الإجابة تحدد حق الطلاق نفسه، والحضانة، والنفقة، وإمكانية الاعتراف بالحكم في بلدك. يشرح هذا الدليل القواعد الأساسية والخطوات العملية.</p>
+
+      <h2>أولاً: القانون الواجب التطبيق</h2>
+      <p>تنظم المواد من 12 إلى 14 من القانون المدني المصري هذه المسألة:</p>
       <ul>
-        <li>حضانة الأطفال تخضع لمعايير مصلحة الطفل الفضلى.</li>
-        <li>النفقة الزوجية ونفقة الصغار تُقدّر وفقاً لمتطلبات المعيشة ودخل الزوج.</li>
-        <li>توثيق أحكام الطلاق لدى وزارة الخارجية والقنصليات لضمان الاعتراف الدولي.</li>
+        <li><strong>إذا كان أحد الزوجين مصرياً وقت انعقاد الزواج:</strong> يسري القانون المصري وحده على آثار الزواج والطلاق (المادة 14)، أياً كانت جنسية الطرف الآخر.</li>
+        <li><strong>إذا كان الزوجان أجنبيين:</strong> يسري على الطلاق قانون جنسية الزوج وقت الطلاق، ويسري على التطليق والانفصال قانون جنسية الزوج وقت رفع الدعوى (المادة 13).</li>
+        <li><strong>النظام العام:</strong> لا تطبق المحكمة المصرية أي نص أجنبي يخالف النظام العام في مصر.</li>
       </ul>
+      <p>لذلك قد ينظر القاضي المصري الدعوى ويطبق فيها قانوناً فرنسياً أو إيطالياً مثلاً، ويحتاج ذلك إلى تقديم نص القانون الأجنبي مترجماً وإثباته.</p>
+
+      <h2>ثانياً: صور إنهاء الزواج عند تطبيق القانون المصري</h2>
+      <h3>الطلاق بإرادة الزوج</h3>
+      <p>يوثق لدى المأذون أو الموثق المختص، ويترتب عليه حقوق مالية للزوجة.</p>
+      <h3>التطليق للضرر</h3>
+      <p>دعوى ترفعها الزوجة وتثبت فيها ضرراً يستحيل معه دوام العشرة، بالشهود أو المستندات أو التقارير. تحاول المحكمة الصلح أولاً.</p>
+      <h3>الخلع</h3>
+      <p>تنهي الزوجة الزواج دون موافقة الزوج، مقابل رد المهر الذي قبضته والتنازل عن حقوقها المالية الشرعية. تحاول المحكمة الصلح وتندب حكمين، وحكم الخلع نهائي لا يقبل الطعن.</p>
+      <h3>التطليق للغيبة أو لعدم الإنفاق</h3>
+      <p>في حالات غياب الزوج دون عذر مقبول أو امتناعه عن الإنفاق، بشروط يحددها قانون الأحوال الشخصية.</p>
+
+      <h2>ثالثاً: الحضانة</h2>
+      <p>عند تطبيق القانون المصري تكون الحضانة للأم أولاً حتى السن التي يحددها القانون، ثم يخير القاضي الصغير بين البقاء مع الحاضنة أو الانتقال. وللطرف غير الحاضن حق الرؤية بحكم أو باتفاق. أما إذا طبق قانون أجنبي فقد تختلف القواعد، مثل الحضانة المشتركة المعروفة في دول أوروبية كثيرة. وفي كل الأحوال تبقى مصلحة الطفل المعيار الأساسي.</p>
+      <p><strong>تنبيه مهم:</strong> نقل الأطفال خارج مصر دون اتفاق أو حكم قد يعرض الطرف الذي نقلهم لمسؤولية قانونية، وقد يجعل استردادهم إجراءً طويلاً بين أكثر من دولة.</p>
+
+      <h2>رابعاً: النفقة والحقوق المالية</h2>
+      <ul>
+        <li><strong>نفقة الزوجة ونفقة العدة والمتعة:</strong> عند تطبيق القانون المصري، وتقدرها المحكمة حسب يسار الزوج وظروف الطرفين.</li>
+        <li><strong>نفقة الصغار:</strong> واجبة على الأب، وتشمل المأكل والملبس والمسكن والتعليم والعلاج.</li>
+        <li><strong>الممتلكات:</strong> لا يعرف القانون المصري نظام الأموال المشتركة بين الزوجين، بعكس بعض القوانين الأجنبية، وهذا يؤثر على تقسيم الممتلكات.</li>
+      </ul>
+
+      <h2>خامساً: الخطوات العملية</h2>
+      <ol>
+        <li><strong>تحديد القانون الواجب التطبيق</strong> من جنسية كل طرف وقت الزواج ووقت رفع الدعوى.</li>
+        <li><strong>تجميع المستندات:</strong> وثيقة الزواج، وشهادات ميلاد الأطفال، وجوازات السفر، ومستندات الدخل، وأي دليل على الضرر، مع الترجمة والتصديق.</li>
+        <li><strong>التقدم لمكتب تسوية المنازعات الأسرية:</strong> خطوة إلزامية قبل رفع أغلب دعاوى الأسرة.</li>
+        <li><strong>رفع الدعوى أمام محكمة الأسرة المختصة</strong> وحضور الجلسات أو التوكيل بالحضور.</li>
+        <li><strong>بعد الحكم:</strong> استخراج صورة رسمية، وتصديقها من وزارة الخارجية والقنصلية المختصة، وقيدها في بلد كل طرف.</li>
+      </ol>
+
+      <h2>سادساً: الاعتراف بالحكم في الخارج</h2>
+      <p>صدور الحكم في مصر لا يعني تلقائياً الاعتراف به في بلدك. لكل دولة إجراءات خاصة لقيد أحكام الطلاق الأجنبية، لذلك من الأفضل التنسيق مع محامٍ في بلدك أو مع قنصليتك قبل رفع الدعوى، حتى يصدر الحكم بالشكل الذي يقبله نظامك القانوني.</p>
+
+      <h2>كيف نساعدك</h2>
+      <p>يتولى مكتب المحامي كريم الديب قضايا الأسرة للأجانب والزواج المختلط من تحديد القانون الواجب التطبيق حتى تصديق الحكم وقيده، مع التواصل بالعربية والإنجليزية والفرنسية والإيطالية، والتمثيل بالتوكيل إذا كنت خارج مصر. تفاصيل الخدمة في صفحة <a href="/family-law">قانون الأسرة</a> وصفحة <a href="/alexandria/family-lawyer">محامي أسرة في الإسكندرية</a>.</p>
+
+      <p><em>هذا المقال معلومات عامة وليس استشارة قانونية. كل حالة تختلف بحسب الجنسيات والديانة وتاريخ الزواج، فراجع حالتك مع محامٍ قبل اتخاذ أي خطوة.</em></p>
     `,
     content_en: `
       <h2>Applicable Law in International Divorce in Egypt</h2>
@@ -497,24 +646,76 @@ export const staticArticles: Record<string, StaticArticle> = {
     title_en: 'Real Estate Investment in Sharm El Sheikh for Foreigners 2026',
     title_fr: 'Investissement Immobilier à Sharm El Sheikh pour les Étrangers 2026',
     title_it: 'Investimenti Immobiliari a Sharm El Sheikh per Stranieri 2026',
-    excerpt: 'كل ما تحتاج معرفته عن شراء العقارات في شرم الشيخ: ضوابط حق الانتفاع لـ 50 عاماً، والإقامة العقارية.',
-    excerpt_en: 'Complete guide to buying real estate in Sharm El Sheikh: 50-year usufruct rights, due diligence, and real estate residency.',
+    seoTitle: 'تملك العقارات للأجانب في شرم الشيخ 2026',
+    seoTitle_en: 'Buying Property in Sharm El Sheikh as a Foreigner 2026',
+    excerpt: 'ما يجب أن يعرفه الأجنبي قبل شراء عقار في شرم الشيخ: قواعد التملك وحق الانتفاع في سيناء، والفحص القانوني، والتعاقد والدفع، والإقامة بعد الشراء.',
+    excerpt_en: 'What foreigners should know before buying property in Sharm El Sheikh: Sinai ownership rules and usufruct rights, due diligence, contracts and residency.',
     excerpt_fr: 'Guide d\'achat immobilier à Sharm El Sheikh : droit d\'usufruit de 50 ans et résidence immobilière.',
     excerpt_it: 'Guida all\'acquisto di immobili a Sharm El Sheikh: diritto di usufrutto di 50 anni e residenza.',
     image: '/images/services/foreigners-in-egypt.webp',
     date: '2026-01-20',
+    dateModified: '2026-11-12',
     category: 'عقارات واستثمار',
-    readTime: '9 دقائق',
+    readTime: '3 دقائق',
     tags: ['عقارات شرم الشيخ', 'حق الانتفاع', 'إقامة عقارية', 'استثمار أجنبي'],
     isPublished: true,
     order: 10,
     content: `
-      <h2>ضوابط تملك العقارات للأجانب في سيناء</h2>
-      <p>يخضع الاستثمار العقاري في شبه جزيرة سيناء وشرم الشيخ لأحكام القانون رقم 14 لسنة 2012 وتعديلاته، والذي يتيح للأجانب حق الانتفاع بالوحدات السكنية والتجارية لمدة تصل إلى 50 عاماً قابلة للتجديد.</p>
+
+      <p>شراء عقار في شرم الشيخ يختلف قانونياً عن الشراء في القاهرة أو الإسكندرية، لأن شبه جزيرة سيناء تخضع لقواعد خاصة في التملك. يشرح هذا الدليل ما يجب أن يعرفه المشتري الأجنبي قبل أن يدفع أي مبلغ.</p>
+
+      <h2>أولاً: الإطار القانوني في سيناء</h2>
+      <p>ينظم القانون رقم 14 لسنة 2012 بشأن التنمية المتكاملة في شبه جزيرة سيناء وتعديلاته التملك في المنطقة. يقصر القانون تملك الأراضي والعقارات ملكية تامة على فئات محددة من المصريين، ويتيح لغيرهم، ومنهم الأجانب، الحصول على <strong>حق الانتفاع</strong> بالوحدات وفق الضوابط والمدد التي يحددها القانون وقراراته التنفيذية.</p>
+      <p>معنى ذلك عملياً أن كثيراً من العقود المعروضة على الأجانب في شرم الشيخ تكون عقود انتفاع أو عقوداً مع مطور، وليست ملكية مسجلة. وصيغة العقد هي التي تحدد حقوقك في البيع والتوريث والتأجير.</p>
+
+      <h2>ثانياً: أنواع العقود التي ستقابلها</h2>
+      <ul>
+        <li><strong>عقد مع مطور لوحدة تحت الإنشاء:</strong> راجع تراخيص المشروع، وجدول التسليم، والجزاء على التأخير، ومصير مدفوعاتك إذا توقف المشروع.</li>
+        <li><strong>عقد انتفاع:</strong> راجع المدة، وشروط التجديد، وحقك في التنازل عن الانتفاع لغيرك، وما يحدث عند الوفاة.</li>
+        <li><strong>إعادة بيع من مالك سابق:</strong> راجع تسلسل العقود حتى المطور أو المالك الأصلي، وهل الحق قابل للنقل أصلاً.</li>
+      </ul>
+
+      <h2>ثالثاً: الفحص القانوني قبل الشراء</h2>
+      <ol>
+        <li>التحقق من صفة البائع وحقه في التصرف.</li>
+        <li>مراجعة سند ملكية الأرض وترخيص البناء وتطابق الوحدة معه.</li>
+        <li>البحث عن رهون أو حجوزات أو نزاعات قضائية على الوحدة أو المشروع.</li>
+        <li>مراجعة لائحة اتحاد الشاغلين ورسوم الصيانة والخدمات.</li>
+        <li>التأكد من أن الاستخدام المسموح، سكني أو فندقي، يتوافق مع ما تنوي فعله، خاصة إذا كنت تخطط للإيجار السياحي.</li>
+      </ol>
+
+      <h2>رابعاً: التعاقد والدفع</h2>
+      <ul>
+        <li>اطلب عقداً بلغة تفهمها إلى جانب النسخة العربية، مع تحديد النسخة التي تُعتمد عند الخلاف.</li>
+        <li>ادفع عبر تحويل بنكي موثق، وتجنب الدفع النقدي دون إيصالات رسمية.</li>
+        <li>اربط كل دفعة بمرحلة تنفيذ واضحة إذا كانت الوحدة تحت الإنشاء.</li>
+        <li>نظم إجراءات توثيق العقد أو إثبات تاريخه أو رفع دعوى صحة التوقيع حسب نوع العقد.</li>
+      </ul>
+
+      <h2>خامساً: بعد الشراء</h2>
+      <ul>
+        <li><strong>الإقامة:</strong> تملك عقار أو الانتفاع به قد يفتح الباب لنوع من الإقامة وفق الشروط المعلنة وقت التقديم.</li>
+        <li><strong>التأجير:</strong> التأجير السياحي قصير المدى قد يحتاج إلى تراخيص أو التعامل عبر شركة إدارة مرخصة.</li>
+        <li><strong>الضرائب والرسوم:</strong> تختلف حسب طبيعة العقار والاستخدام، وتحتاج إلى مراجعة محاسب.</li>
+        <li><strong>التوريث:</strong> حدد مسبقاً ما يحدث للحق عند الوفاة، خاصة في عقود الانتفاع.</li>
+      </ul>
+
+      <h2>أخطاء شائعة</h2>
+      <ul>
+        <li>الاعتماد على وعود البائع أو السمسار دون مراجعة المستندات.</li>
+        <li>توقيع عقد عربي لا تفهمه دون مراجعة.</li>
+        <li>تسجيل العقار باسم شخص مصري للالتفاف على قيود التملك، وهو ما يضع العقار كله في خطر.</li>
+        <li>شراء وحدة مبنية بالمخالفة لترخيصها.</li>
+      </ul>
+
+      <h2>كيف نساعدك</h2>
+      <p>يتولى مكتب المحامي كريم الديب من فرعه في شرم الشيخ الفحص القانوني للعقارات، ومراجعة وصياغة عقود الشراء والانتفاع، ومتابعة إجراءات التوثيق، مع التواصل بالعربية والإنجليزية والفرنسية والإيطالية. تفاصيل الخدمة في صفحة <a href="/sharm-el-sheikh">مكتب شرم الشيخ</a>.</p>
+
+      <p><em>هذا المقال معلومات عامة وليس استشارة قانونية. قواعد التملك في سيناء تتأثر بقرارات تنفيذية متتالية، فراجع العقد مع محامٍ قبل التوقيع أو الدفع.</em></p>
     `,
     content_en: `
       <h2>Real Estate Regulations in Sharm El Sheikh</h2>
-      <p>Property acquisitions by foreign nationals in Sharm El Sheikh are governed by Law No. 14 of 2012, allowing up to 50-year renewable usufruct rights.</p>
+      <p>Property acquisitions by foreign nationals in Sharm El Sheikh are governed by Law No. 14 of 2012, which grants foreign nationals usufruct rights under the terms set by the law and its executive decrees.</p>
     `
   },
 
@@ -525,24 +726,77 @@ export const staticArticles: Record<string, StaticArticle> = {
     title_en: 'Residence Permits in Egypt for Foreigners 2026: Types, Requirements & Fees',
     title_fr: 'Guide des Permis de Séjour en Égypte pour les Étrangers 2026',
     title_it: 'Guida ai Permessi di Soggiorno in Egitto per Stranieri 2026',
+    seoTitle: 'إقامة الأجانب في مصر 2026: الأنواع والشروط',
+    seoTitle_en: 'Residence Permits in Egypt for Foreigners 2026',
     excerpt: 'دليل شامل لاستخراج وتجديد الإقامات للأجانب في مصر: إقامة المستثمر، الإقامة العقارية، وإقامة العمل.',
     excerpt_en: 'Complete legal guide on obtaining residency in Egypt: investor visas, property owner residency, and work permits.',
     excerpt_fr: 'Guide complet pour obtenir un permis de séjour en Égypte : investisseur, propriétaire et travail.',
     excerpt_it: 'Guida completa per ottenere il permesso di soggiorno in Egitto: investitore, immobile e lavoro.',
     image: '/images/services/foreigners-in-egypt.webp',
     date: '2026-01-18',
+    dateModified: '2026-11-12',
     category: 'إقامة وتأشيرات',
-    readTime: '8 دقائق',
+    readTime: '3 دقائق',
     tags: ['إقامة الأجانب', 'إقامة عقارية', 'إقامة مستثمر', 'جوازات مصر'],
     isPublished: true,
     order: 11,
     content: `
-      <h2>أنواع تصاريح الإقامة في مصر للأجانب</h2>
+
+      <p>الإقامة هي ما يسمح للأجنبي بالبقاء في مصر بعد انتهاء تأشيرة الدخول. تصدرها الإدارة العامة للجوازات والهجرة والجنسية، ويختلف نوعها حسب سبب وجودك في مصر. يشرح هذا الدليل الأنواع الرئيسية والمستندات والخطوات والأخطاء الشائعة.</p>
+
+      <h2>أولاً: الأنواع الرئيسية للإقامة</h2>
+      <h3>إقامة العمل</h3>
+      <p>للأجنبي الذي يعمل لدى جهة في مصر. تسبقها موافقة وتصريح عمل من الوزارة المختصة بالعمل، وتجدد بتجديد التصريح. العمل بدون تصريح مخالفة يتحملها العامل وصاحب العمل.</p>
+      <h3>إقامة المستثمر أو الشريك</h3>
+      <p>للشركاء والمديرين في الشركات المؤسسة في مصر، وتصدر بناءً على مستندات الشركة وخطاب من الجهة المختصة.</p>
+      <h3>إقامة تملك العقار</h3>
+      <p>لمن يملك عقاراً في مصر وفق الشروط المعلنة من الجهات المختصة. وفي شرم الشيخ وسيناء عموماً لتملك الأجانب ضوابط خاصة يجب مراجعتها قبل الشراء.</p>
+      <h3>إقامة الزواج من مصري أو مصرية</h3>
+      <p>للزوج أو الزوجة الأجنبية بعد توثيق الزواج رسمياً، ولأبنائهم.</p>
+      <h3>إقامة الدراسة</h3>
+      <p>للطلاب المقيدين في جامعات أو معاهد معتمدة، بخطاب من جهة الدراسة.</p>
+      <h3>الإقامة السياحية</h3>
+      <p>لغير أغراض العمل، وتصدر وفق الشروط التي تعلنها الجوازات وقت التقديم.</p>
+      <p>مدة كل إقامة وقيمة رسومها وشروطها المالية تتغير بقرارات إدارية، لذلك نراجعها مع كل طلب ولا نعتمد على أرقام قديمة.</p>
+
+      <h2>ثانياً: المستندات المعتادة</h2>
       <ul>
-        <li><strong>الإقامة الاستثمارية:</strong> تُمنح لمدد من سنة إلى 5 سنوات للمؤسسين والشركاء في الشركات المسجلة.</li>
-        <li><strong>الإقامة العقارية:</strong> تُمنح عند شراء عقار في مصر بحد أدنى يبدأ من 100,000 دولار.</li>
-        <li><strong>الإقامة السياحية والخاصة:</strong> تصاريح إقامة مؤقتة مع إمكانية التجديد القانوني.</li>
+        <li>جواز سفر ساري لمدة كافية، وصورة من صفحة البيانات وختم الدخول.</li>
+        <li>صور شخصية حديثة.</li>
+        <li>مستند سبب الإقامة: تصريح العمل، أو مستندات الشركة، أو عقد العقار، أو وثيقة الزواج، أو خطاب الجامعة.</li>
+        <li>إثبات محل السكن في مصر.</li>
+        <li>مستندات أجنبية مترجمة ومصدقة عند الحاجة.</li>
       </ul>
+
+      <h2>ثالثاً: الخطوات</h2>
+      <ol>
+        <li>الدخول إلى مصر بتأشيرة سارية مناسبة.</li>
+        <li>تجهيز مستند سبب الإقامة واستكمال الترجمة والتصديقات.</li>
+        <li>التقديم في مكتب الجوازات المختص أو عبر المنصة الإلكترونية حسب نوع الإقامة، وسداد الرسوم.</li>
+        <li>المتابعة حتى الاستلام، والرد على أي طلب استيفاء.</li>
+        <li>تسجيل تاريخ انتهاء الإقامة والبدء في التجديد مبكراً.</li>
+      </ol>
+
+      <h2>رابعاً: أخطاء شائعة</h2>
+      <ul>
+        <li><strong>التأخر في التجديد:</strong> البقاء بعد انتهاء الإقامة يعرضك لغرامات، وقد يؤثر على طلباتك القادمة.</li>
+        <li><strong>العمل بإقامة غير إقامة العمل:</strong> مخالفة حتى لو كانت إقامتك سارية.</li>
+        <li><strong>تقديم مستندات أجنبية غير مصدقة:</strong> أكثر سبب لرفض الطلب أو تأخيره.</li>
+        <li><strong>الاعتماد على معلومات من منتديات قديمة:</strong> الشروط والرسوم تتغير باستمرار.</li>
+      </ul>
+
+      <h2>أسئلة شائعة</h2>
+      <h3>هل يمكن تغيير نوع الإقامة دون مغادرة مصر؟</h3>
+      <p>في حالات كثيرة نعم، إذا توافرت شروط النوع الجديد، مثل الانتقال من إقامة سياحية إلى إقامة عمل بعد استخراج تصريح العمل.</p>
+      <h3>ماذا أفعل إذا انتهت إقامتي بالفعل؟</h3>
+      <p>تقدم بطلب التجديد في أقرب وقت مع سداد الغرامة المستحقة. التأخير الطويل يعقد الوضع.</p>
+      <h3>هل أحتاج محامياً لاستخراج الإقامة؟</h3>
+      <p>ليس شرطاً في كل الحالات، لكنه يفيد عندما تكون الإقامة مرتبطة بشركة أو عقار أو زواج مختلط، أو عند وجود رفض سابق أو مخالفة.</p>
+
+      <h2>كيف نساعدك</h2>
+      <p>يتولى مكتب المحامي كريم الديب ملفات الإقامة للأجانب في الإسكندرية وشرم الشيخ: تحديد النوع المناسب، وتجهيز المستندات، والمتابعة مع الجهات، وحل مشكلات الإقامة المنتهية. تفاصيل الخدمة في صفحة <a href="/foreigners-in-egypt">خدمات الأجانب في مصر</a> وصفحة <a href="/alexandria/immigration-lawyer">محامي هجرة وإقامات في الإسكندرية</a>.</p>
+
+      <p><em>هذا المقال معلومات عامة وليس استشارة قانونية. شروط الإقامة ورسومها تتغير بقرارات إدارية، فتأكد من الوضع الحالي قبل التقديم.</em></p>
     `,
     content_en: `
       <h2>Types of Residency in Egypt</h2>
@@ -557,6 +811,8 @@ export const staticArticles: Record<string, StaticArticle> = {
     title_en: 'International Arbitration Lawyer in Egypt & Cross-Border Investment Dispute Resolution Guide',
     title_fr: 'Avocat d\'Arbitrage International en Égypte & Règlement des Litiges d\'Investissement Transfrontaliers',
     title_it: 'Avvocato di Arbitrato Internazionale in Egitto e Risoluzione Controversie Commerciali',
+    seoTitle: 'محامي تحكيم دولي في مصر لمنازعات الاستثمار',
+    seoTitle_en: 'International Arbitration Lawyer in Egypt',
     excerpt: 'دليل متخصص من مكتب محاماة دولي في مصر حول التحكيم التجاري الدولي، تسوية منازعات المستثمرين الأجانب، التقاضي الدولي، وتنفيذ أحكام التحكيم في القاهرة والإسكندرية وشرم الشيخ.',
     excerpt_en: 'Comprehensive guide by an international law firm in Egypt on international commercial arbitration, foreign investor disputes, cross-border dispute resolution, and arbitral award enforcement.',
     excerpt_fr: 'Guide complet par un cabinet d\'avocats international en Égypte sur l\'arbitrage commercial international et le règlement des différends relatifs aux investissements étrangers.',
@@ -597,7 +853,7 @@ export const staticArticles: Record<string, StaticArticle> = {
       <p>صدور حكم التحكيم لا يكتمل أثره إلا بـ <strong>تنفيذ أحكام التحكيم الدولي في مصر</strong>. يتولى فريقنا إجراءات <strong>الاعتراف بأحكام التحكيم الأجنبية في مصر</strong> واستصدار أمر الإيداع والأمر بالتنفيذ (Exequatur) وفقاً للمادة 58 من القانون رقم 27 لسنة 1994 وبنود اتفاقية نيويورك، مع التصدي الفوري لأي دعاوى بطلان كيدية تُقام لعرقلة التنفيذ.</p>
 
       <h2>حضور إقليمي متخصص: القاهرة، الإسكندرية، وشرم الشيخ</h2>
-      <p>بفضل خبرة تتجاوز 18 عاماً واعتماد رسمي لدى القنصلية الفرنسية والعديد من السفارات الأوروبية، توفر مؤسسة كريم الديب خدمات <strong>محامي تحكيم دولي في الإسكندرية</strong> للنزاعات البحرية والتجارية، و<strong>محامي تحكيم دولي في شرم الشيخ</strong> للمنازعات العقارية والسياحية، إلى جانب مقرنا الرئيسي لخدمة قضايا التحكيم بالقاهرة الكبرى.</p>
+      <p>بفضل خبرة منذ عام 2006 واعتماد رسمي لدى القنصلية الفرنسية والعديد من السفارات الأوروبية، توفر مؤسسة كريم الديب خدمات <strong>محامي تحكيم دولي في الإسكندرية</strong> للنزاعات البحرية والتجارية، و<strong>محامي تحكيم دولي في شرم الشيخ</strong> للمنازعات العقارية والسياحية، إلى جانب مقرنا الرئيسي لخدمة قضايا التحكيم بالقاهرة الكبرى.</p>
     `,
     content_en: `
       <h2>Leading International Arbitration Lawyer in Egypt & Dispute Resolution Firm</h2>

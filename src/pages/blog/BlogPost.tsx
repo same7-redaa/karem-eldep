@@ -3,6 +3,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { useParams, Link } from 'react-router-dom';
 import AdvancedSEO from '../../components/AdvancedSEO';
 import { staticArticles, slugAliases } from '../../data/staticArticles';
+import { DOMAIN, ORG_ID, ATTORNEY_ID } from '../../data/business';
 
 const BlogPost: React.FC = () => {
   const { language } = useLanguage();
@@ -56,23 +57,6 @@ const BlogPost: React.FC = () => {
     }
   }, [slug]);
 
-  // SEO & Localization Effect
-  useEffect(() => {
-    if (article) {
-      const localizedTitle = getLocalizedContent('title') || article.title;
-      const localizedExcerpt = getLocalizedContent('excerpt') || article.excerpt;
-
-      // Update Title
-      document.title = `${localizedTitle} | ${isRTL ? 'المحامي كريم الديب' : 'Karim El-Dib Law Firm'}`;
-
-      // Update Meta Description
-      const metaDescription = document.querySelector('meta[name="description"]');
-      if (metaDescription) {
-        metaDescription.setAttribute('content', localizedExcerpt);
-      }
-    }
-  }, [article, language, isRTL]);
-
   // Helper to get localized content
   const getLocalizedContent = (field: string) => {
     if (!article) return '';
@@ -85,6 +69,37 @@ const BlogPost: React.FC = () => {
   const title = getLocalizedContent('title');
   const excerpt = getLocalizedContent('excerpt');
   const content = getLocalizedContent('content');
+  // Short <title> for search results; falls back to the full article title.
+  const seoTitle = getLocalizedContent('seoTitle') || title;
+
+  const articleSlug = article?.slug || slug;
+  const pageUrl = `${DOMAIN}${isRTL ? '' : '/en'}/blog/${articleSlug}`;
+  const image = article?.image ? `${DOMAIN}${article.image}` : `${DOMAIN}/images/lawyer-7.jpg`;
+  const schema = article ? [
+    {
+      '@type': 'BlogPosting',
+      '@id': `${pageUrl}#article`,
+      headline: title,
+      description: excerpt,
+      image,
+      datePublished: article.date,
+      dateModified: article.dateModified || article.date,
+      inLanguage: isRTL ? 'ar' : 'en',
+      author: { '@id': ATTORNEY_ID },
+      publisher: { '@id': ORG_ID },
+      mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+      keywords: article.tags?.join(', '),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: isRTL ? 'الرئيسية' : 'Home', item: `${DOMAIN}${isRTL ? '/' : '/en'}` },
+        { '@type': 'ListItem', position: 2, name: isRTL ? 'المدونة' : 'Blog', item: `${DOMAIN}${isRTL ? '' : '/en'}/blog` },
+        { '@type': 'ListItem', position: 3, name: title, item: pageUrl },
+      ],
+    },
+  ] : [];
 
   if (loading) {
     return (
@@ -104,7 +119,7 @@ const BlogPost: React.FC = () => {
           <h1 className="text-4xl font-bold text-[#c8a876] mb-4">
             {isRTL ? 'المقال غير موجود' : 'Article Not Found'}
           </h1>
-          <Link to="/blog" className="text-[#c8a876] hover:text-white">
+          <Link to={isRTL ? "/blog" : "/en/blog"} className="text-[#c8a876] hover:text-white">
             {isRTL ? 'العودة للمقالات' : 'Back to Articles'}
           </Link>
         </div>
@@ -115,17 +130,18 @@ const BlogPost: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200 py-20" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
-        title={`${title} | ${isRTL ? 'المحامي كريم الديب' : 'Karim El-Dib Law Firm'}`}
+        title={seoTitle}
         description={excerpt}
         keywords={article.tags?.join(', ')}
-        canonicalUrl={`https://www.ke-lawyer.com/blog/${article.slug || slug}`}
+        canonicalUrl={`${DOMAIN}/blog/${articleSlug}`}
+        schema={schema}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* العودة للمقالات */}
         <div className="mb-8">
           <Link
-            to="/blog"
+            to={isRTL ? "/blog" : "/en/blog"}
             className="inline-flex items-center gap-2 text-[#c8a876] hover:text-white transition-colors duration-300"
           >
             <i className={`fas fa-arrow-${isRTL ? 'right' : 'left'}`}></i>
@@ -196,7 +212,7 @@ const BlogPost: React.FC = () => {
             }
           </p>
           <Link
-            to="/#contact"
+            to={isRTL ? "/#contact" : "/en#contact"}
             className="bg-[#0b1a33] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-800 transition-colors duration-300 inline-block"
           >
             {isRTL ? 'احجز استشارة الآن' : 'Book Consultation Now'}

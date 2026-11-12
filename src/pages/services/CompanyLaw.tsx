@@ -10,8 +10,8 @@ const CompanyLaw: React.FC = () => {
     return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
-        title={language === 'ar' ? "محامي قانون الشركات | المحامي كريم الديب" : "Corporate Law Lawyer in Egypt | Lawyer Karim El-Dib"}
-        description={language === 'ar' ? "محامي قانون الشركات - المحامي كريم الديب خبير في قانون الشركات وتأسيس الشركات والحوكمة المؤسسية." : "Corporate law and company formation lawyer in Egypt. Comprehensive legal services for businesses."}
+        title={language === 'ar' ? "محامي شركات وتأسيس شركات في مصر | كريم الديب" : "Company Formation & Corporate Lawyer in Egypt | Karim Eldib"}
+        description={language === 'ar' ? "تأسيس الشركات المساهمة وذات المسؤولية المحدودة وفروع الشركات الأجنبية في مصر، صياغة عقود التأسيس، الاندماج والاستحواذ، الحوكمة وتسوية منازعات الشركاء. مكاتب في الإسكندرية وشرم الشيخ." : "Company formation in Egypt: joint stock, LLC and foreign company branches, articles of incorporation, mergers and acquisitions, governance and shareholder disputes. Offices in Alexandria and Sharm El Sheikh."}
         canonicalUrl="https://www.ke-lawyer.com/company-law"
       />
       {/* Hero Section */}

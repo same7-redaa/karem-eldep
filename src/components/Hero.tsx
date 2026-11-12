@@ -1,8 +1,14 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  /** Render the hero title as <h1> (default) or <p> when the page has its own H1. */
+  titleAsH1?: boolean;
+}
+
+const Hero: React.FC<HeroProps> = ({ titleAsH1 = true }) => {
   const { t } = useLanguage();
+  const TitleTag = titleAsH1 ? 'h1' : 'p';
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -45,9 +51,9 @@ const Hero: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6">
-        <h1 className="text-2xl md:text-3xl lg:text-5xl font-extrabold font-sans mb-2 md:mb-3 leading-tight">
+        <TitleTag className="text-2xl md:text-3xl lg:text-5xl font-extrabold font-sans mb-2 md:mb-3 leading-tight">
           {t('hero.title')}
-        </h1>
+        </TitleTag>
         <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-3 md:mb-4 font-medium text-[#d4a15c] font-sans">
           {t('hero.subtitle')}
         </p>

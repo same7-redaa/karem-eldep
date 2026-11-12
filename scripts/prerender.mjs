@@ -31,7 +31,12 @@ const staticPaths = [
 const articlesSrc = fs.readFileSync(path.join(rootDir, 'src/data/staticArticles.ts'), 'utf8');
 const blogSlugs = [...articlesSrc.matchAll(/^\s{2}['"]([a-z0-9-]+)['"]\s*:\s*\{/gm)].map(m => m[1]);
 
-const allPaths = [...staticPaths, ...blogSlugs.map(s => `/blog/${s}`)];
+// Alexandria practice-area pages (slugs read from src/data/alexandriaServices.ts)
+const alexSrc = fs.readFileSync(path.join(rootDir, 'src/data/alexandriaServices.ts'), 'utf8');
+const alexSlugs = [...alexSrc.matchAll(/^\s{4}slug:\s*'([a-z0-9-]+)'/gm)].map(m => m[1]);
+if (!alexSlugs.length) { console.error('No Alexandria service slugs found'); process.exit(1); }
+
+const allPaths = [...staticPaths, ...alexSlugs.map(s => `/alexandria/${s}`), ...blogSlugs.map(s => `/blog/${s}`)];
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 

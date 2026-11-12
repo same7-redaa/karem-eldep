@@ -41,7 +41,7 @@ const Cairo: React.FC = () => {
         city="Cairo"
       />
       <div className="min-h-screen bg-[#0e1f3b]">
-        <Hero />
+        <Hero titleAsH1={false} />
         
         <section className="py-16 px-4 container mx-auto">
           <div className="max-w-7xl mx-auto">
