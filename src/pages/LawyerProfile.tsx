@@ -636,6 +636,72 @@ const LawyerProfile: React.FC = () => {
           </div>
         </div>
 
+        {/* نُشر عنه: مقالات المحامي على مواقع أخرى (MisrConnect) */}
+        <div className="bg-[#1a2d4d] rounded-lg p-8 mb-16">
+          <h2 className="text-3xl font-bold text-[#c8a876] mb-4 text-center">
+            {getTextByLanguage({
+              ar: 'مقالات منشورة للمحامي كريم الديب',
+              en: 'Articles by Karim Eldib Elsewhere',
+              fr: 'Articles de Karim Eldib publiés ailleurs',
+              it: 'Articoli di Karim Eldib pubblicati altrove'
+            })}
+          </h2>
+          <p className="text-gray-300 text-center mb-8">
+            {getTextByLanguage({
+              ar: 'مقالات وتحقيقات نشرها الأستاذ كريم الديب على موقع مصر كونكت حول التحكيم والاستثمار وقضايا الشركات.',
+              en: 'Articles and interviews by Karim Eldib on MisrConnect about arbitration, investment and company law (in Arabic).',
+              fr: 'Articles et entretiens de Karim Eldib sur MisrConnect : arbitrage, investissement et droit des sociétés (en arabe).',
+              it: 'Articoli e interviste di Karim Eldib su MisrConnect su arbitrato, investimenti e diritto societario (in arabo).'
+            })}
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              {
+                href: 'https://misrconnect.com/news/egypt-news/international-maritime-arbitration-lawyer-in-alexandria-karim-el-deeb',
+                ar: 'حماية حقوق شركة مصرية في نزاع تحكيم بحري دولي',
+                en: 'Protecting an Egyptian company in an international maritime arbitration'
+              },
+              {
+                href: 'https://misrconnect.com/news/egypt-news/international-commercial-arbitration-lawyer-in-alexandria-karim-el-deeb',
+                ar: 'نزاع تحكيم تجاري دولي حول عقد توريد في الإسكندرية',
+                en: 'An international commercial arbitration over a supply contract in Alexandria'
+              },
+              {
+                href: 'https://misrconnect.com/news/egypt-news/arbitration-clauses-in-major-commercial-contracts-lawyer-karim-el-deeb',
+                ar: 'بند التحكيم في العقود التجارية الكبرى',
+                en: 'Arbitration clauses in major commercial contracts'
+              },
+              {
+                href: 'https://misrconnect.com/news/egypt-news/egypt-2026-special-legal-consultant-karim-el-deeb',
+                ar: 'تحقيق خاص مصر 2026: تسوية المنازعات والاستثمار',
+                en: 'Egypt 2026 special report: dispute resolution and investment'
+              },
+              {
+                href: 'https://misrconnect.com/news/egypt-news/almstshar-krym-aldyb-ywdhh-akhtr-5-akhtaa-qanwnyh-yqa-fyha-ashab-alshrkat-walmstthmrwn',
+                ar: 'أخطر 5 أخطاء قانونية يقع فيها أصحاب الشركات والمستثمرون',
+                en: 'Five legal mistakes company owners and investors make'
+              },
+              {
+                href: 'https://misrconnect.com/profiles/3702',
+                ar: 'الملف الكامل للمحامي كريم الديب على مصر كونكت',
+                en: 'Karim Eldib’s full profile on MisrConnect'
+              }
+            ].map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener"
+                  className="flex items-start gap-3 bg-[#0b1a33] rounded-lg p-4 h-full text-gray-200 hover:text-[#c8a876] transition-colors duration-300"
+                >
+                  <i className="fas fa-newspaper text-[#c8a876] mt-1" aria-hidden="true"></i>
+                  <span>{language === 'ar' ? item.ar : item.en}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* شهادات العملاء */}
         <div className="bg-[#1a2d4d] rounded-lg p-8">
           <h2 className="text-3xl font-bold text-[#c8a876] mb-8 text-center">

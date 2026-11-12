@@ -29,6 +29,16 @@ export const BUSINESS = {
     'https://www.instagram.com/karimeldeeb_lawyer/',
     'https://www.tiktok.com/@lawyer.karim.eldee',
   ],
+  // Third-party listings of the firm (verified: same phone or a link to this site).
+  firmProfiles: [
+    'https://yellowpages.com.eg/ar/profile/%D9%83%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AF%D9%8A%D8%A8-%D9%84%D9%84%D9%85%D8%AD%D8%A7%D9%85%D8%A7%D8%A9/713138',
+    'https://www.hawleek.com/professionals/karim-eldeeb-law-firm/',
+  ],
+  // Third-party profiles of Karim Eldib himself (MisrConnect also lists his articles).
+  attorneyProfiles: [
+    'https://misrconnect.com/profiles/3702',
+    'https://afokato.com/ar/lawyer/%D9%83%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AF%D9%8A%D8%A8',
+  ],
   // Open 24 hours, 7 days (matches both Google Business Profiles)
   hours: {
     days: ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
@@ -158,7 +168,7 @@ export const buildBusinessGraph = (isAr: boolean) => [
     priceRange: '$$',
     founder: { '@id': ATTORNEY_ID },
     knowsLanguage: BUSINESS.languages,
-    sameAs: BUSINESS.sameAs,
+    sameAs: [...BUSINESS.sameAs, ...BUSINESS.firmProfiles],
     address: branchNode('alexandria', isAr).address,
     subOrganization: [{ '@id': branchId('alexandria') }, { '@id': branchId('sharm') }],
     areaServed: [
@@ -181,7 +191,7 @@ export const buildBusinessGraph = (isAr: boolean) => [
     image: BUSINESS.image,
     telephone: BUSINESS.phone,
     knowsLanguage: BUSINESS.languages,
-    sameAs: BUSINESS.sameAs,
+    sameAs: [...BUSINESS.sameAs, ...BUSINESS.attorneyProfiles],
   },
   {
     '@type': 'WebSite',
