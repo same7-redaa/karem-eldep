@@ -2,19 +2,207 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "ke-lawyer.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "ke-lawyer.com"
+        }
+      ],
       "destination": "https://www.ke-lawyer.com/:path*",
       "permanent": true
     },
-    { "source": "/", "has": [{ "type": "query", "key": "lang", "value": "en" }], "destination": "/en", "permanent": true },
-    { "source": "/ar", "destination": "/", "permanent": true },
-    { "source": "/ar/:path*", "destination": "/:path*", "permanent": true },
-    { "source": "/fr", "destination": "/en", "permanent": true },
-    { "source": "/fr/:path*", "destination": "/en/:path*", "permanent": true },
-    { "source": "/it", "destination": "/en", "permanent": true },
-    { "source": "/it/:path*", "destination": "/en/:path*", "permanent": true },
-    { "source": "/services/:slug(civil-law|criminal-law|commercial-law|family-law|company-law|foreigners-in-egypt|egyptians-abroad|arbitration-mediation)", "destination": "/:slug", "permanent": true },
-    { "source": "/en/services/:slug(civil-law|criminal-law|commercial-law|family-law|company-law|foreigners-in-egypt|egyptians-abroad|arbitration-mediation)", "destination": "/en/:slug", "permanent": true }
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/en",
+      "permanent": true
+    },
+    {
+      "source": "/ar",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/fr",
+      "destination": "/en",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:path*",
+      "destination": "/en/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/it",
+      "destination": "/en",
+      "permanent": true
+    },
+    {
+      "source": "/it/:path*",
+      "destination": "/en/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/services/:slug(civil-law|criminal-law|commercial-law|family-law|company-law|foreigners-in-egypt|egyptians-abroad|arbitration-mediation)",
+      "destination": "/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/en/services/:slug(civil-law|criminal-law|commercial-law|family-law|company-law|foreigners-in-egypt|egyptians-abroad|arbitration-mediation)",
+      "destination": "/en/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/blog/comprehensive-guide-egypt-2026",
+      "destination": "/blog/comprehensive-legal-services-guide-egypt-2026",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/comprehensive-guide-egypt-2026",
+      "destination": "/en/blog/comprehensive-legal-services-guide-egypt-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/arbitration-investors-guide-2026",
+      "destination": "/blog/international-arbitration-foreign-investors-lawyer-egypt-2026",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/arbitration-investors-guide-2026",
+      "destination": "/en/blog/international-arbitration-foreign-investors-lawyer-egypt-2026",
+      "permanent": true
+    },
+    {
+      "source": "/blog/international-arbitration-lawyer-in-egypt",
+      "destination": "/blog/international-arbitration-lawyer-egypt-investment-disputes",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/international-arbitration-lawyer-in-egypt",
+      "destination": "/en/blog/international-arbitration-lawyer-egypt-investment-disputes",
+      "permanent": true
+    },
+    {
+      "source": "/blog/arbitration-lawyer-egypt",
+      "destination": "/blog/international-arbitration-lawyer-egypt-investment-disputes",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/arbitration-lawyer-egypt",
+      "destination": "/en/blog/international-arbitration-lawyer-egypt-investment-disputes",
+      "permanent": true
+    },
+    {
+      "source": "/blog/best-lawyer-foreigners-sharm-el-sheikh-guide-2026",
+      "destination": "/blog/foreign-lawyer-sharm-el-sheikh",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/best-lawyer-foreigners-sharm-el-sheikh-guide-2026",
+      "destination": "/en/blog/foreign-lawyer-sharm-el-sheikh",
+      "permanent": true
+    },
+    {
+      "source": "/blog/foreign-lawyer-sharm",
+      "destination": "/blog/foreign-lawyer-sharm-el-sheikh",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/foreign-lawyer-sharm",
+      "destination": "/en/blog/foreign-lawyer-sharm-el-sheikh",
+      "permanent": true
+    },
+    {
+      "source": "/blog/enforcement-foreign-arbitral-awards-egypt-guide-2026",
+      "destination": "/blog/enforcement-foreign-arbitral-awards-egypt-guide",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/enforcement-foreign-arbitral-awards-egypt-guide-2026",
+      "destination": "/en/blog/enforcement-foreign-arbitral-awards-egypt-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/company-formation-egypt-foreigners-complete-guide-2026",
+      "destination": "/blog/company-formation-for-foreigners-in-egypt-complete-guide",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/company-formation-egypt-foreigners-complete-guide-2026",
+      "destination": "/en/blog/company-formation-for-foreigners-in-egypt-complete-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/divorce-foreigners-egypt-complete-legal-guide-2026",
+      "destination": "/blog/divorce-for-foreigners-in-egypt-comprehensive-guide",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/divorce-foreigners-egypt-complete-legal-guide-2026",
+      "destination": "/en/blog/divorce-for-foreigners-in-egypt-comprehensive-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/christian-divorce-case-2025",
+      "destination": "/blog/divorce-for-foreigners-in-egypt-comprehensive-guide",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/christian-divorce-case-2025",
+      "destination": "/en/blog/divorce-for-foreigners-in-egypt-comprehensive-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/rent-control-decision-2025",
+      "destination": "/blog/guide-foreigners-legal-services-egypt-2025",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/rent-control-decision-2025",
+      "destination": "/en/blog/guide-foreigners-legal-services-egypt-2025",
+      "permanent": true
+    },
+    {
+      "source": "/blog/egyptians-abroad",
+      "destination": "/blog/egyptians-abroad-legal-rights-protection",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/egyptians-abroad",
+      "destination": "/en/blog/egyptians-abroad-legal-rights-protection",
+      "permanent": true
+    },
+    {
+      "source": "/blog/foreign-investment",
+      "destination": "/blog/foreign-investment-egypt-complete-guide",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/foreign-investment",
+      "destination": "/en/blog/foreign-investment-egypt-complete-guide",
+      "permanent": true
+    },
+    {
+      "source": "/blog/guide-foreigners",
+      "destination": "/blog/guide-foreigners-legal-services-egypt-2025",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/guide-foreigners",
+      "destination": "/en/blog/guide-foreigners-legal-services-egypt-2025",
+      "permanent": true
+    }
   ],
   "cleanUrls": true,
   "trailingSlash": false,
