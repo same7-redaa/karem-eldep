@@ -286,7 +286,7 @@ const Services: React.FC = () => {
                             <div key={index} className="bg-[#0e1f3b] h-full rounded-lg border border-[#d4a15c]/20 hover:border-[#d4a15c]/50 transition-all duration-300 hover:transform hover:scale-105 overflow-hidden flex flex-col">
                                 {service.image && (
                                     <div className="relative h-48 w-full">
-                                        <img src={service.image} alt={getTitle(service)} className="w-full h-full object-cover" />
+                                        <img loading="lazy" decoding="async" src={service.image} alt={getTitle(service)} className="w-full h-full object-cover" />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#0e1f3b] to-transparent"></div>
                                         <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
                                             <div className="bg-[#0e1f3b]/80 p-2 rounded-lg backdrop-blur-sm border border-[#d4a15c]/30">

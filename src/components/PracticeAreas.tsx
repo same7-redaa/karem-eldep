@@ -21,7 +21,7 @@ const PracticeAreaCard: React.FC<{ area: PracticeAreaWithLink }> = ({ area }) =>
             {/* Background Image overlay instead of solid color, or just an image at the top */}
             {area.image && (
                 <div className="relative h-48 w-full overflow-hidden">
-                    <img src={area.image} alt={area.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img loading="lazy" decoding="async" src={area.image} alt={area.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0b1a33] to-transparent"></div>
                     <div className="absolute top-4 right-4 h-12 w-12 rounded-lg bg-[#0b1a33]/80 backdrop-blur-sm flex items-center justify-center border border-[#d4a15c]/30">
                         <i className={`${area.icon} text-xl text-[#d4a15c]`}></i>

@@ -11,6 +11,20 @@ const BlogSection: React.FC = () => {
   };
 
   const [articles, setArticles] = React.useState<any[]>([]);
+  // Firebase is heavy: only load it when the visitor scrolls near this section.
+  const sentinelRef = React.useRef<HTMLDivElement>(null);
+  const [nearView, setNearView] = React.useState(false);
+
+  React.useEffect(() => {
+    const el = sentinelRef.current;
+    if (!el || nearView) return;
+    if (typeof IntersectionObserver === 'undefined') { setNearView(true); return; }
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some(e => e.isIntersecting)) { setNearView(true); io.disconnect(); }
+    }, { rootMargin: '600px 0px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [nearView]);
 
   // Helper to get localized content for an article
   const getLocalizedContent = (article: any, field: string) => {
@@ -20,6 +34,7 @@ const BlogSection: React.FC = () => {
   };
 
   React.useEffect(() => {
+    if (!nearView) return;
     const fetchFeaturedArticles = async () => {
       try {
         const { collection, getDocs, query, where, limit } = await import('firebase/firestore');
@@ -47,9 +62,10 @@ const BlogSection: React.FC = () => {
     };
 
     fetchFeaturedArticles();
-  }, []);
+  }, [nearView]);
 
-  if (articles.length === 0) return null; // Don't show section if no articles
+  // Empty marker until articles arrive; the section stays hidden if there are none.
+  if (articles.length === 0) return <div ref={sentinelRef} aria-hidden="true" />;
 
   return (
     <section className="py-20 bg-[#0b1a33]" dir={isRTL ? 'rtl' : 'ltr'}>
@@ -77,7 +93,7 @@ const BlogSection: React.FC = () => {
 
               {/* صورة المقال */}
               <div className="h-48 overflow-hidden">
-                <img
+                <img loading="lazy" decoding="async"
                   src={article.image}
                   alt={article.title}
                   className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-300"

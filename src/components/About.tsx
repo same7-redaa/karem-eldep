@@ -109,7 +109,7 @@ const About: React.FC = () => {
               {/* الصورة */}
               <div className="relative group mx-auto w-full max-w-md">
                 <div className="absolute -inset-2 bg-gradient-to-r from-[#d4a15c] to-[#b8860b] rounded-lg blur-xl opacity-0 group-hover:opacity-50 transition-all duration-500"></div>
-                <img 
+                <img loading="lazy" decoding="async" 
                   src="/karim-eldib-profile-main.jpeg"
                   alt={isRTL ? "مكتب كريم الديب للمحاماة - مكتب محاماة متخصص في خدمة الأجانب والمصريين بالخارج" : "Karim Eldib Law Firm - Law office specialized in serving foreigners and Egyptians abroad"} 
                   className="relative rounded-lg shadow-lg w-full h-auto object-cover transform transition-all duration-500 ease-out group-hover:scale-[1.05] group-hover:shadow-2xl group-hover:-rotate-1"

@@ -104,7 +104,7 @@ const Blog: React.FC = () => {
 
               {/* صورة المقال */}
               <div className="h-56 overflow-hidden relative">
-                <img
+                <img loading="lazy" decoding="async"
                   src={article.image}
                   alt={article.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"

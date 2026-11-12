@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import SocialButtons from './components/SocialButtons';
 import { useLanguage, getLanguageFromPath } from './contexts/LanguageContext';
-import { alexandriaServiceSlugs } from './data/alexandriaServices';
+import { alexandriaServiceSlugs } from './data/alexandriaSlugs';
 
 // Pages
 const Home = lazy(() => import('./pages/Home'));

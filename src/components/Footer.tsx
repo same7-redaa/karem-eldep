@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
           {/* Col 1: About Firm & NAP */}
           <div className={isRTL ? 'text-right' : 'text-left'}>
             <div className="flex items-center gap-3 mb-4">
-              <img 
+              <img loading="lazy" decoding="async" 
                 src="https://i.postimg.cc/G3FMRMY4/3.png" 
                 alt="Karim Eldib Law Firm Logo" 
                 className="h-12 w-auto"

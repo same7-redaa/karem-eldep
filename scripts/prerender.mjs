@@ -35,6 +35,12 @@ const blogSlugs = [...articlesSrc.matchAll(/^\s{2}['"]([a-z0-9-]+)['"]\s*:\s*\{/
 const alexSrc = fs.readFileSync(path.join(rootDir, 'src/data/alexandriaServices.ts'), 'utf8');
 const alexSlugs = [...alexSrc.matchAll(/^\s{4}slug:\s*'([a-z0-9-]+)'/gm)].map(m => m[1]);
 if (!alexSlugs.length) { console.error('No Alexandria service slugs found'); process.exit(1); }
+// The router uses the short list in alexandriaSlugs.ts; it must match the content file.
+const routerSlugs = [...fs.readFileSync(path.join(rootDir, 'src/data/alexandriaSlugs.ts'), 'utf8').matchAll(/^\s{2}'([a-z0-9-]+)',/gm)].map(m => m[1]);
+if (routerSlugs.join() !== alexSlugs.join()) {
+  console.error('alexandriaSlugs.ts does not match the slugs in alexandriaServices.ts');
+  process.exit(1);
+}
 
 const allPaths = [...staticPaths, ...alexSlugs.map(s => `/alexandria/${s}`), ...blogSlugs.map(s => `/blog/${s}`)];
 
