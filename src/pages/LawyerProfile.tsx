@@ -10,8 +10,8 @@ const LawyerProfile: React.FC = () => {
     <>
       
       <AdvancedSEO
-        title={language === 'ar' ? "المحامي كريم الديب | محامي دولي وقضايا أجانب في مصر" : "Karim El-Dib Lawyer | International Lawyer in Egypt"}
-        description={language === 'ar' ? "المحامي كريم الديب - محامي دولي معتمد بخبرة 18 عاماً في خدمة الأجانب والمستثمرين والمصريين بالخارج." : "Lawyer Karim El-Dib - Certified international lawyer with 18 years of experience serving foreigners and investors in Egypt."}
+        title={language === 'ar' ? "المحامي كريم الديب | محامي دولي وقضايا أجانب في مصر" : "Karim El Deeb Lawyer | International Lawyer in Egypt"}
+        description={language === 'ar' ? "المحامي كريم الديب - محامي دولي معتمد بخبرة 20 عاماً في خدمة الأجانب والمستثمرين والمصريين بالخارج." : "Lawyer Karim El Deeb - Certified international lawyer with 20 years of experience serving foreigners and investors in Egypt."}
         canonicalUrl="https://www.ke-lawyer.com/lawyer-profile"
       />
       <div className="min-h-screen bg-[#0b1a33] text-gray-200 py-20" dir={isRTL ? 'rtl' : 'ltr'}>
@@ -24,9 +24,9 @@ const LawyerProfile: React.FC = () => {
               src="https://i.postimg.cc/G3FMRMY4/3.png" 
               alt={getTextByLanguage({
                 ar: "المحامي كريم الديب - محامي دولي في مصر متخصص في خدمة الأجانب والمصريين المغتربين",
-                en: "Lawyer Karim El-Dib - International lawyer in Egypt specializing in serving foreigners and Egyptian expats",
-                fr: "Avocat Karim El-Dib - Avocat international en Égypte spécialisé dans les services aux étrangers et expatriés égyptiens",
-                it: "Avvocato Karim El-Dib - Avvocato internazionale in Egitto specializzato nei servizi per stranieri ed espatriati egiziani"
+                en: "Lawyer Karim El Deeb - International lawyer in Egypt specializing in serving foreigners and Egyptian expats",
+                fr: "Avocat Karim El Deeb - Avocat international en Égypte spécialisé dans les services aux étrangers et expatriés égyptiens",
+                it: "Avvocato Karim El Deeb - Avvocato internazionale in Egitto specializzato nei servizi per stranieri ed espatriati egiziani"
               })}
               className="w-full h-full object-cover"
             />
@@ -34,9 +34,9 @@ const LawyerProfile: React.FC = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#c8a876]">
             {getTextByLanguage({
               ar: 'المحامي كريم الديب',
-              en: 'Lawyer Karim El-Dib',
-              fr: 'Avocat Karim El-Dib',
-              it: 'Avvocato Karim El-Dib'
+              en: 'Lawyer Karim El Deeb',
+              fr: 'Avocat Karim El Deeb',
+              it: 'Avvocato Karim El Deeb'
             })}
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-6">
@@ -74,9 +74,9 @@ const LawyerProfile: React.FC = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-[#c8a876] mb-8 text-center">
                 {getTextByLanguage({
                   ar: 'من هو المحامي كريم الديب؟ - محامي الأجانب في شرم الشيخ والإسكندرية',
-                  en: 'Who is Lawyer Karim El-Dib? - Lawyer for Foreigners in Sharm El Sheikh and Alexandria',
-                  fr: 'Qui est l\'avocat Karim El-Dib? - Avocat pour étrangers à Charm el-Cheikh et Alexandrie',
-                  it: 'Chi è l\'avvocato Karim El-Dib? - Avvocato per stranieri a Sharm El Sheikh e Alessandria'
+                  en: 'Who is Lawyer Karim El Deeb? - Lawyer for Foreigners in Sharm El Sheikh and Alexandria',
+                  fr: 'Qui est l\'avocat Karim El Deeb? - Avocat pour étrangers à Charm el-Cheikh et Alexandrie',
+                  it: 'Chi è l\'avvocato Karim El Deeb? - Avvocato per stranieri a Sharm El Sheikh e Alessandria'
                 })}
               </h2>
 
@@ -88,9 +88,9 @@ const LawyerProfile: React.FC = () => {
                       src="/images/karim-eldib-lawyer.jpg" 
                       alt={getTextByLanguage({
                         ar: "المحامي كريم الديب - محامي معتمد من القنصلية الفرنسية",
-                        en: "Lawyer Karim El-Dib - Certified by the French Consulate",
-                        fr: "Avocat Karim El-Dib - Agréé par le Consulat de France",
-                        it: "Avvocato Karim El-Dib - Certificato dal Consolato Francese"
+                        en: "Lawyer Karim El Deeb - Certified by the French Consulate",
+                        fr: "Avocat Karim El Deeb - Agréé par le Consulat de France",
+                        it: "Avvocato Karim El Deeb - Certificato dal Consolato Francese"
                       })}
                       className="w-full h-full object-cover"
                     />
@@ -113,9 +113,9 @@ const LawyerProfile: React.FC = () => {
                 <p className="text-lg md:text-xl leading-relaxed text-gray-200 mb-6">
                   {getTextByLanguage({
                     ar: 'يُعتبر المحامي كريم الديب واحدًا من أبرز المتخصصين في قضايا وإجراءات الأجانب في شرم الشيخ وقضايا الأجانب في الإسكندرية، حيث يتمتع بخبرة طويلة في تقديم الخدمات القانونية للمقيمين والزوار في المدينتين. لقد بنى كريم الديب سمعته المتميزة بفضل قدرته الفائقة على تبسيط الإجراءات الحكومية المعقّدة، وإنهاء كافة المعاملات الخاصة بالأجانب بسرعة ودقة ومهنية عالية، مما جعل اسمه بارزًا بين محامي الأجانب في مصر.',
-                    en: 'Lawyer Karim El-Dib is considered one of the leading specialists in foreigner cases and procedures in Sharm El Sheikh and Alexandria. He has extensive experience in providing legal services to residents and visitors in both cities. Karim El-Dib has built his distinguished reputation thanks to his exceptional ability to simplify complex government procedures and complete all foreigner-related transactions quickly, accurately, and with high professionalism, making his name prominent among lawyers for foreigners in Egypt.',
-                    fr: 'L\'avocat Karim El-Dib est considéré comme l\'un des principaux spécialistes des affaires et procédures concernant les étrangers à Charm el-Cheikh et Alexandrie. Il possède une vaste expérience dans la prestation de services juridiques aux résidents et visiteurs des deux villes. Karim El-Dib a construit sa réputation distinguée grâce à sa capacité exceptionnelle à simplifier les procédures gouvernementales complexes et à compléter toutes les transactions liées aux étrangers rapidement, avec précision et professionnalisme élevé.',
-                    it: 'L\'avvocato Karim El-Dib è considerato uno dei principali specialisti in casi e procedure per stranieri a Sharm El Sheikh e Alessandria. Ha una vasta esperienza nella fornitura di servizi legali a residenti e visitatori in entrambe le città. Karim El-Dib ha costruito la sua reputazione distinta grazie alla sua capacità eccezionale di semplificare procedure governative complesse e completare tutte le transazioni relative agli stranieri rapidamente, con precisione e alto professionalismo.'
+                    en: 'Lawyer Karim El Deeb is considered one of the leading specialists in foreigner cases and procedures in Sharm El Sheikh and Alexandria. He has extensive experience in providing legal services to residents and visitors in both cities. Karim El Deeb has built his distinguished reputation thanks to his exceptional ability to simplify complex government procedures and complete all foreigner-related transactions quickly, accurately, and with high professionalism, making his name prominent among lawyers for foreigners in Egypt.',
+                    fr: 'L\'avocat Karim El Deeb est considéré comme l\'un des principaux spécialistes des affaires et procédures concernant les étrangers à Charm el-Cheikh et Alexandrie. Il possède une vaste expérience dans la prestation de services juridiques aux résidents et visiteurs des deux villes. Karim El Deeb a construit sa réputation distinguée grâce à sa capacité exceptionnelle à simplifier les procédures gouvernementales complexes et à compléter toutes les transactions liées aux étrangers rapidement, avec précision et professionnalisme élevé.',
+                    it: 'L\'avvocato Karim El Deeb è considerato uno dei principali specialisti in casi e procedure per stranieri a Sharm El Sheikh e Alessandria. Ha una vasta esperienza nella fornitura di servizi legali a residenti e visitatori in entrambe le città. Karim El Deeb ha costruito la sua reputazione distinta grazie alla sua capacità eccezionale di semplificare procedure governative complesse e completare tutte le transazioni relative agli stranieri rapidamente, con precisione e alto professionalismo.'
                   })}
                 </p>
               </div>
@@ -134,9 +134,9 @@ const LawyerProfile: React.FC = () => {
                 <p className="text-lg leading-relaxed text-gray-200 mb-6">
                   {getTextByLanguage({
                     ar: 'بصفته محامي أجانب متميز في شرم الشيخ والإسكندرية، يُقدم المحامي كريم الديب مجموعة واسعة من الخدمات القانونية التي يحتاجها الأجانب في مصر، وتشمل:',
-                    en: 'As a distinguished lawyer for foreigners in Sharm El Sheikh and Alexandria, Lawyer Karim El-Dib provides a wide range of legal services needed by foreigners in Egypt, including:',
-                    fr: 'En tant qu\'avocat distingué pour étrangers à Charm el-Cheikh et Alexandrie, Maître Karim El-Dib fournit une large gamme de services juridiques nécessaires aux étrangers en Égypte, notamment:',
-                    it: 'Come avvocato distinto per stranieri a Sharm El Sheikh e Alessandria, l\'Avvocato Karim El-Dib fornisce un\'ampia gamma di servizi legali necessari agli stranieri in Egitto, tra cui:'
+                    en: 'As a distinguished lawyer for foreigners in Sharm El Sheikh and Alexandria, Lawyer Karim El Deeb provides a wide range of legal services needed by foreigners in Egypt, including:',
+                    fr: 'En tant qu\'avocat distingué pour étrangers à Charm el-Cheikh et Alexandrie, Maître Karim El Deeb fournit une large gamme de services juridiques nécessaires aux étrangers en Égypte, notamment:',
+                    it: 'Come avvocato distinto per stranieri a Sharm El Sheikh e Alessandria, l\'Avvocato Karim El Deeb fornisce un\'ampia gamma di servizi legali necessari agli stranieri in Egitto, tra cui:'
                   })}
                 </p>
                 <ul className="grid md:grid-cols-2 gap-4 text-gray-200">
@@ -185,9 +185,9 @@ const LawyerProfile: React.FC = () => {
                 <p className="text-lg leading-relaxed text-gray-200 mb-6">
                   {getTextByLanguage({
                     ar: 'يتميز المحامي كريم الديب بفهمه الدقيق للقوانين المنظمة لوضع الأجانب داخل مصر، وقدرته الفائقة على إنهاء الإجراءات الحكومية بكفاءة عالية داخل الجهات التالية:',
-                    en: 'Lawyer Karim El-Dib is distinguished by his precise understanding of the laws regulating the status of foreigners in Egypt, and his exceptional ability to complete government procedures with high efficiency within the following entities:',
-                    fr: 'Maître Karim El-Dib se distingue par sa compréhension précise des lois régissant le statut des étrangers en Égypte, et sa capacité exceptionnelle à accomplir les procédures gouvernementales avec une grande efficacité auprès des entités suivantes:',
-                    it: 'L\'Avvocato Karim El-Dib si distingue per la sua precisa comprensione delle leggi che regolano lo status degli stranieri in Egitto, e la sua capacità eccezionale di completare le procedure governative con alta efficienza presso le seguenti entità:'
+                    en: 'Lawyer Karim El Deeb is distinguished by his precise understanding of the laws regulating the status of foreigners in Egypt, and his exceptional ability to complete government procedures with high efficiency within the following entities:',
+                    fr: 'Maître Karim El Deeb se distingue par sa compréhension précise des lois régissant le statut des étrangers en Égypte, et sa capacité exceptionnelle à accomplir les procédures gouvernementales avec une grande efficacité auprès des entités suivantes:',
+                    it: 'L\'Avvocato Karim El Deeb si distingue per la sua precisa comprensione delle leggi che regolano lo status degli stranieri in Egitto, e la sua capacità eccezionale di completare le procedure governative con alta efficienza presso le seguenti entità:'
                   })}
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
@@ -232,9 +232,9 @@ const LawyerProfile: React.FC = () => {
                 <p className="text-lg leading-relaxed text-gray-200 mb-6">
                   {getTextByLanguage({
                     ar: 'لتسهيل التواصل مع أكبر عدد من الجاليات الأجنبية، يُقدم المحامي كريم الديب خدماته القانونية واستشاراته بخمس لغات، وهي:',
-                    en: 'To facilitate communication with the largest number of foreign communities, Lawyer Karim El-Dib provides his legal services and consultations in five languages:',
-                    fr: 'Pour faciliter la communication avec le plus grand nombre de communautés étrangères, Maître Karim El-Dib fournit ses services juridiques et ses consultations en cinq langues:',
-                    it: 'Per facilitare la comunicazione con il maggior numero di comunità straniere, l\'Avvocato Karim El-Dib fornisce i suoi servizi legali e consulenze in cinque lingue:'
+                    en: 'To facilitate communication with the largest number of foreign communities, Lawyer Karim El Deeb provides his legal services and consultations in five languages:',
+                    fr: 'Pour faciliter la communication avec le plus grand nombre de communautés étrangères, Maître Karim El Deeb fournit ses services juridiques et ses consultations en cinq langues:',
+                    it: 'Per facilitare la comunicazione con il maggior numero di comunità straniere, l\'Avvocato Karim El Deeb fornisce i suoi servizi legali e consulenze in cinque lingue:'
                   })}
                 </p>
                 <div className="flex flex-wrap justify-center gap-4 mb-6">
@@ -270,9 +270,9 @@ const LawyerProfile: React.FC = () => {
                   <i className="fas fa-star"></i>
                   {getTextByLanguage({
                     ar: 'لماذا يختار العملاء المحامي كريم الديب؟',
-                    en: 'Why Do Clients Choose Lawyer Karim El-Dib?',
-                    fr: 'Pourquoi les clients choisissent-ils l\'avocat Karim El-Dib?',
-                    it: 'Perché i clienti scelgono l\'avvocato Karim El-Dib?'
+                    en: 'Why Do Clients Choose Lawyer Karim El Deeb?',
+                    fr: 'Pourquoi les clients choisissent-ils l\'avocat Karim El Deeb?',
+                    it: 'Perché i clienti scelgono l\'avvocato Karim El Deeb?'
                   })}
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4">
@@ -641,17 +641,17 @@ const LawyerProfile: React.FC = () => {
           <h2 className="text-3xl font-bold text-[#c8a876] mb-4 text-center">
             {getTextByLanguage({
               ar: 'مقالات منشورة للمحامي كريم الديب',
-              en: 'Articles by Karim Eldib Elsewhere',
-              fr: 'Articles de Karim Eldib publiés ailleurs',
-              it: 'Articoli di Karim Eldib pubblicati altrove'
+              en: 'Articles by Karim El Deeb Elsewhere',
+              fr: 'Articles de Karim El Deeb publiés ailleurs',
+              it: 'Articoli di Karim El Deeb pubblicati altrove'
             })}
           </h2>
           <p className="text-gray-300 text-center mb-8">
             {getTextByLanguage({
               ar: 'مقالات وتحقيقات نشرها الأستاذ كريم الديب على موقع مصر كونكت حول التحكيم والاستثمار وقضايا الشركات.',
-              en: 'Articles and interviews by Karim Eldib on MisrConnect about arbitration, investment and company law (in Arabic).',
-              fr: 'Articles et entretiens de Karim Eldib sur MisrConnect : arbitrage, investissement et droit des sociétés (en arabe).',
-              it: 'Articoli e interviste di Karim Eldib su MisrConnect su arbitrato, investimenti e diritto societario (in arabo).'
+              en: 'Articles and interviews by Karim El Deeb on MisrConnect about arbitration, investment and company law (in Arabic).',
+              fr: 'Articles et entretiens de Karim El Deeb sur MisrConnect : arbitrage, investissement et droit des sociétés (en arabe).',
+              it: 'Articoli e interviste di Karim El Deeb su MisrConnect su arbitrato, investimenti e diritto societario (in arabo).'
             })}
           </p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -684,7 +684,7 @@ const LawyerProfile: React.FC = () => {
               {
                 href: 'https://misrconnect.com/profiles/3702',
                 ar: 'الملف الكامل للمحامي كريم الديب على مصر كونكت',
-                en: 'Karim Eldib’s full profile on MisrConnect'
+                en: 'Karim El Deeb’s full profile on MisrConnect'
               }
             ].map((item) => (
               <li key={item.href}>

@@ -36,7 +36,7 @@ const QuickNavigation: React.FC = () => {
       gradient: 'from-red-600 to-red-800'
     },
     {
-      title: isRTL ? 'المحامي كريم الديب' : 'Lawyer Karim El-Dib',
+      title: isRTL ? 'المحامي كريم الديب' : 'Lawyer Karim El Deeb',
       description: isRTL ? 'تعرف على خبرات ومؤهلات المحامي' : 'Learn about the lawyer\'s experience and qualifications',
       path: '/lawyer-karim-eldib',
       icon: 'fas fa-user-tie',
@@ -63,7 +63,7 @@ const QuickNavigation: React.FC = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {isRTL 
               ? 'اختر الخدمة التي تحتاجها واحصل على استشارة قانونية متخصصة من المحامي كريم الديب'
-              : 'Choose the service you need and get specialized legal consultation from Lawyer Karim El-Dib'
+              : 'Choose the service you need and get specialized legal consultation from Lawyer Karim El Deeb'
             }
           </p>
         </div>
@@ -119,7 +119,7 @@ const QuickNavigation: React.FC = () => {
             <p className="text-gray-300 mb-6">
               {isRTL 
                 ? 'تواصل مع المحامي كريم الديب مباشرة للحصول على استشارة قانونية متخصصة'
-                : 'Contact Lawyer Karim El-Dib directly for specialized legal consultation'
+                : 'Contact Lawyer Karim El Deeb directly for specialized legal consultation'
               }
             </p>
             <div className="flex flex-wrap justify-center gap-4">

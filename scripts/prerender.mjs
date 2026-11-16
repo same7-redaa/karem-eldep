@@ -42,7 +42,17 @@ if (routerSlugs.join() !== alexSlugs.join()) {
   process.exit(1);
 }
 
-const allPaths = [...staticPaths, ...alexSlugs.map(s => `/alexandria/${s}`), ...blogSlugs.map(s => `/blog/${s}`)];
+// Sharm El Sheikh practice-area pages (slugs read from src/data/sharmServices.ts)
+const sharmSrc = fs.readFileSync(path.join(rootDir, 'src/data/sharmServices.ts'), 'utf8');
+const sharmSlugs = [...sharmSrc.matchAll(/^\s{4}slug:\s*'([a-z0-9-]+)'/gm)].map(m => m[1]);
+if (!sharmSlugs.length) { console.error('No Sharm service slugs found'); process.exit(1); }
+const sharmRouterSlugs = [...fs.readFileSync(path.join(rootDir, 'src/data/sharmSlugs.ts'), 'utf8').matchAll(/^\s{2}'([a-z0-9-]+)',/gm)].map(m => m[1]);
+if (sharmRouterSlugs.join() !== sharmSlugs.join()) {
+  console.error('sharmSlugs.ts does not match the slugs in sharmServices.ts');
+  process.exit(1);
+}
+
+const allPaths = [...staticPaths, ...alexSlugs.map(s => `/alexandria/${s}`), ...sharmSlugs.map(s => `/sharm-el-sheikh/${s}`), ...blogSlugs.map(s => `/blog/${s}`)];
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -65,7 +75,7 @@ function buildHtml({ html, head, lang }) {
   out = out.replace(/<meta property="og:title"[^>]*>/i, `<meta property="og:title" content="${t}" />`);
   out = out.replace(/<meta property="og:description"[^>]*>/i, `<meta property="og:description" content="${d}" />`);
   out = out.replace(/<meta property="og:locale"[^>]*>/i, `<meta property="og:locale" content="${isAr ? 'ar_EG' : 'en_US'}" />`);
-  out = out.replace(/<meta property="og:site_name"[^>]*>/i, `<meta property="og:site_name" content="${isAr ? 'مكتب المحامي كريم الديب للمحاماة' : 'Karim Eldib Law Firm'}" />`);
+  out = out.replace(/<meta property="og:site_name"[^>]*>/i, `<meta property="og:site_name" content="${isAr ? 'مكتب المحامي كريم الديب للمحاماة' : 'Karim El Deeb Law Firm'}" />`);
   out = out.replace(/<meta name="twitter:title"[^>]*>/i, `<meta name="twitter:title" content="${t}" />`);
   out = out.replace(/<meta name="twitter:description"[^>]*>/i, `<meta name="twitter:description" content="${d}" />`);
   out = out.replace('<div id="root"></div>', `<div id="root">${html}</div>`);

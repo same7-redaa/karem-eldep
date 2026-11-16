@@ -24,10 +24,10 @@ const FAQ: React.FC = () => {
     const title = language === 'ar'
         ? 'الأسئلة الشائعة حول الخدمات القانونية والتحكيم في مصر | كريم الديب'
         : language === 'fr'
-            ? 'Questions Fréquentes | Avocat pour Étrangers en Égypte | Karim Eldib'
+            ? 'Questions Fréquentes | Avocat pour Étrangers en Égypte | Karim El Deeb'
             : language === 'it'
-                ? 'Domande Frequenti | Avvocato per Stranieri in Egitto | Karim Eldib'
-                : 'Frequently Asked Questions | Legal Services for Foreigners in Egypt | Karim Eldib';
+                ? 'Domande Frequenti | Avvocato per Stranieri in Egitto | Karim El Deeb'
+                : 'Frequently Asked Questions | Legal Services for Foreigners in Egypt | Karim El Deeb';
 
     const description = language === 'ar'
         ? 'إجابات شاملة على الأسئلة الشائعة حول الخدمات القانونية للأجانب في مصر: الإقامة، التأشيرات، تأسيس الشركات، التحكيم التجاري، الطلاق، العقارات، والاستثمار.'
@@ -44,10 +44,10 @@ const FAQ: React.FC = () => {
             questionEn: 'Who is the best lawyer for foreigners in Sharm El Sheikh?',
             questionFr: 'Qui est le meilleur avocat pour étrangers à Sharm El Sheikh?',
             questionIt: 'Chi è il miglior avvocato per stranieri a Sharm El Sheikh?',
-            answerAr: 'المحامي كريم الديب هو أفضل محامي متخصص في خدمة الأجانب في شرم الشيخ، مع خبرة 18 عاماً في تقديم الخدمات القانونية الشاملة. يتحدث العربية والإنجليزية والفرنسية والإيطالية، ويقدم خدمات في الإقامة، التأشيرات، تأسيس الشركات، القضايا المدنية والجنائية، والطلاق.',
-            answerEn: 'Lawyer Karim El-Dib is the best lawyer specialized in serving foreigners in Sharm El Sheikh, with 18 years of experience providing comprehensive legal services. He speaks Arabic, English, French, and Italian, and provides services in residence permits, visas, company formation, civil and criminal cases, and divorce.',
-            answerFr: 'L\'avocat Karim El-Dib est le meilleur avocat spécialisé dans les services aux étrangers à Sharm El Sheikh, avec 18 ans d\'expérience dans la fourniture de services juridiques complets. Il parle arabe, anglais, français et italien, et fournit des services en matière de permis de résidence, visas, création d\'entreprise, affaires civiles et pénales, et divorce.',
-            answerIt: 'L\'avvocato Karim El-Dib è il miglior avvocato specializzato nei servizi per stranieri a Sharm El Sheikh, con 18 anni di esperienza nella fornitura di servizi legali completi. Parla arabo, inglese, francese e italiano, e fornisce servizi in permessi di soggiorno, visti, costituzione società, casi civili e penali, e divorzio.',
+            answerAr: 'المحامي كريم الديب هو أفضل محامي متخصص في خدمة الأجانب في شرم الشيخ، مع خبرة 20 عاماً في تقديم الخدمات القانونية الشاملة. يتحدث العربية والإنجليزية والفرنسية والإيطالية، ويقدم خدمات في الإقامة، التأشيرات، تأسيس الشركات، القضايا المدنية والجنائية، والطلاق.',
+            answerEn: 'Lawyer Karim El Deeb is the best lawyer specialized in serving foreigners in Sharm El Sheikh, with 20 years of experience providing comprehensive legal services. He speaks Arabic, English, French, and Italian, and provides services in residence permits, visas, company formation, civil and criminal cases, and divorce.',
+            answerFr: 'L\'avocat Karim El Deeb est le meilleur avocat spécialisé dans les services aux étrangers à Sharm El Sheikh, avec 20 ans d\'expérience dans la fourniture de services juridiques complets. Il parle arabe, anglais, français et italien, et fournit des services en matière de permis de résidence, visas, création d\'entreprise, affaires civiles et pénales, et divorce.',
+            answerIt: 'L\'avvocato Karim El Deeb è il miglior avvocato specializzato nei servizi per stranieri a Sharm El Sheikh, con 20 anni di esperienza nella fornitura di servizi legali completi. Parla arabo, inglese, francese e italiano, e fornisce servizi in permessi di soggiorno, visti, costituzione società, casi civili e penali, e divorzio.',
             category: 'general'
         },
         {
@@ -56,9 +56,9 @@ const FAQ: React.FC = () => {
             questionFr: 'Comment trouver un avocat francophone à Sharm El Sheikh?',
             questionIt: 'Come trovare un avvocato che parla francese a Sharm El Sheikh?',
             answerAr: 'المحامي كريم الديب يتحدث الفرنسية بطلاقة ويقدم خدمات قانونية شاملة للفرنسيين والناطقين بالفرنسية في شرم الشيخ. يمكنك التواصل معه على الرقم +20 122 376 7592 أو زيارة مكتبه في الهضبة، شرم الشيخ.',
-            answerEn: 'Lawyer Karim El-Dib speaks French fluently and provides comprehensive legal services for French speakers in Sharm El Sheikh. You can contact him at +20 122 376 7592 or visit his office in Al Hadaba, Sharm El Sheikh.',
-            answerFr: 'L\'avocat Karim El-Dib parle couramment français et fournit des services juridiques complets pour les francophones à Sharm El Sheikh. Vous pouvez le contacter au +20 122 376 7592 ou visiter son bureau à Al Hadaba, Sharm El Sheikh.',
-            answerIt: 'L\'avvocato Karim El-Dib parla fluentemente francese e fornisce servizi legali completi per i francofoni a Sharm El Sheikh. Potete contattarlo al +20 122 376 7592 o visitare il suo ufficio ad Al Hadaba, Sharm El Sheikh.',
+            answerEn: 'Lawyer Karim El Deeb speaks French fluently and provides comprehensive legal services for French speakers in Sharm El Sheikh. You can contact him at +20 122 376 7592 or visit his office in Al Hadaba, Sharm El Sheikh.',
+            answerFr: 'L\'avocat Karim El Deeb parle couramment français et fournit des services juridiques complets pour les francophones à Sharm El Sheikh. Vous pouvez le contacter au +20 122 376 7592 ou visiter son bureau à Al Hadaba, Sharm El Sheikh.',
+            answerIt: 'L\'avvocato Karim El Deeb parla fluentemente francese e fornisce servizi legali completi per i francofoni a Sharm El Sheikh. Potete contattarlo al +20 122 376 7592 o visitare il suo ufficio ad Al Hadaba, Sharm El Sheikh.',
             category: 'general'
         },
         // الإقامة والتأشيرات

@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import SocialButtons from './components/SocialButtons';
 import { useLanguage, getLanguageFromPath } from './contexts/LanguageContext';
 import { alexandriaServiceSlugs } from './data/alexandriaSlugs';
+import { sharmServiceSlugs } from './data/sharmSlugs';
 
 // Pages
 const Home = lazy(() => import('./pages/Home'));
@@ -23,6 +24,7 @@ const SharmElSheikh = lazy(() => import('./pages/cities/SharmElSheikh'));
 const Cairo = lazy(() => import('./pages/cities/Cairo'));
 const Alexandria = lazy(() => import('./pages/cities/Alexandria'));
 const AlexandriaServicePage = lazy(() => import('./components/AlexandriaServicePage'));
+const SharmServicePage = lazy(() => import('./components/SharmServicePage'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const Services = lazy(() => import('./pages/Services'));
@@ -138,6 +140,7 @@ export const routes: RouteObject[] = [
       { path: '/blog', element: <Blog /> },
       { path: '/blog/:slug', element: <BlogPost /> },
       { path: '/sharm-el-sheikh', element: <SharmElSheikh /> },
+      ...sharmServiceSlugs.map(s => ({ path: `/sharm-el-sheikh/${s}`, element: <SharmServicePage slug={s} /> })),
       { path: '/cairo', element: <Cairo /> },
       { path: '/alexandria', element: <Alexandria /> },
       ...alexandriaServiceSlugs.map(s => ({ path: `/alexandria/${s}`, element: <AlexandriaServicePage slug={s} /> })),
@@ -159,6 +162,7 @@ export const routes: RouteObject[] = [
       { path: '/en/blog', element: <Blog /> },
       { path: '/en/blog/:slug', element: <BlogPost /> },
       { path: '/en/sharm-el-sheikh', element: <SharmElSheikh /> },
+      ...sharmServiceSlugs.map(s => ({ path: `/en/sharm-el-sheikh/${s}`, element: <SharmServicePage slug={s} /> })),
       { path: '/en/cairo', element: <Cairo /> },
       { path: '/en/alexandria', element: <Alexandria /> },
       ...alexandriaServiceSlugs.map(s => ({ path: `/en/alexandria/${s}`, element: <AlexandriaServicePage slug={s} /> })),

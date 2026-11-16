@@ -208,7 +208,7 @@ const BlogPost: React.FC = () => {
           <p className="text-lg text-[#0b1a33] mb-6">
             {isRTL
               ? 'المحامي كريم الديب جاهز لمساعدتك في جميع احتياجاتك القانونية'
-              : 'Lawyer Karim El-Dib is ready to help you with all your legal needs'
+              : 'Lawyer Karim El Deeb is ready to help you with all your legal needs'
             }
           </p>
           <Link

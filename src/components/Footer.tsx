@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
     { name: getTextByLanguage({ ar: 'الرئيسية', en: 'Home', fr: 'Accueil', it: 'Home' }), path: '/' },
     { name: getTextByLanguage({ ar: 'كافة الخدمات القانونية', en: 'All Legal Services', fr: 'Tous les Services', it: 'Tutti i Servizi' }), path: '/services' },
     { name: getTextByLanguage({ ar: 'عن المؤسسة وتاريخنا', en: 'About Our Firm', fr: 'À Propos du Cabinet', it: 'Chi Siamo' }), path: '/about-us' },
-    { name: getTextByLanguage({ ar: 'مدير المؤسسة: كريم الديب', en: 'Firm Director: Karim Eldib', fr: 'Directeur: Karim Eldib', it: 'Direttore: Karim Eldib' }), path: '/lawyer-profile' },
+    { name: getTextByLanguage({ ar: 'مدير المؤسسة: كريم الديب', en: 'Firm Director: Karim El Deeb', fr: 'Directeur: Karim El Deeb', it: 'Direttore: Karim El Deeb' }), path: '/lawyer-profile' },
     { name: getTextByLanguage({ ar: 'الأسئلة الشائعة (FAQ)', en: 'FAQ', fr: 'FAQ', it: 'FAQ' }), path: '/faq' },
     { name: getTextByLanguage({ ar: 'المدونة القانونية ومقالات الاستثمار', en: 'Legal Blog & Guides', fr: 'Blog Juridique', it: 'Blog Legale' }), path: '/blog' }
   ];
@@ -135,13 +135,13 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-3 mb-4">
               <img loading="lazy" decoding="async" 
                 src="https://i.postimg.cc/G3FMRMY4/3.png" 
-                alt="Karim Eldib Law Firm Logo" 
+                alt="Karim El Deeb Law Firm Logo" 
                 className="h-12 w-auto"
                 style={{ mixBlendMode: 'screen' }}
               />
               <div>
                 <h3 className="text-[#d4a15c] font-bold text-lg leading-tight">
-                  {isRTL ? 'مؤسسة كريم الديب للمحاماة' : 'Karim Eldib Law Firm'}
+                  {isRTL ? 'مؤسسة كريم الديب للمحاماة' : 'Karim El Deeb Law Firm'}
                 </h3>
                 <span className="text-xs text-gray-400">Unlimited Lawyers & Foreign Services</span>
               </div>
@@ -217,10 +217,61 @@ const Footer: React.FC = () => {
 
         </div>
 
+        {/* Alexandria practice areas: internal links for local SEO */}
+        <nav aria-label={isRTL ? 'محامي في الإسكندرية' : 'Lawyer in Alexandria'} className={`mb-10 ${isRTL ? 'text-right' : 'text-left'}`}>
+          <h4 className="text-white font-bold text-base mb-3 border-b border-[#d4a15c]/30 pb-2">
+            {isRTL ? 'محامي في الإسكندرية حسب التخصص' : 'Lawyer in Alexandria by Practice Area'}
+          </h4>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-xs lg:text-sm">
+            {[
+              ['family-lawyer', 'محامي أسرة وأحوال شخصية', 'Family Lawyer'],
+              ['real-estate-lawyer', 'محامي عقارات', 'Real Estate Lawyer'],
+              ['civil-lawyer', 'محامي مدني', 'Civil Lawyer'],
+              ['commercial-lawyer', 'محامي تجاري', 'Commercial Lawyer'],
+              ['corporate-lawyer', 'محامي شركات', 'Corporate Lawyer'],
+              ['immigration-lawyer', 'محامي هجرة وإقامة', 'Immigration Lawyer'],
+              ['lawyer-for-foreigners', 'محامي للأجانب', 'Lawyer for Foreigners'],
+              ['international-lawyer', 'محامي دولي', 'International Lawyer'],
+              ['international-arbitration-lawyer', 'محامي تحكيم دولي', 'International Arbitration'],
+              ['maritime-arbitration-lawyer', 'محامي تحكيم بحري', 'Maritime Arbitration'],
+              ['mediation-lawyer', 'محامي وساطة', 'Mediation Lawyer'],
+            ].map(([slug, ar, en]) => (
+              <li key={slug}>
+                <Link to={getLocalizedLink(`/alexandria/${slug}`)} className="hover:text-[#d4a15c] transition-colors duration-200">
+                  {isRTL ? ar : `${en} in Alexandria`}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* Sharm El Sheikh practice areas: internal links for local SEO */}
+        <nav aria-label={isRTL ? 'محامي في شرم الشيخ' : 'Lawyer in Sharm El Sheikh'} className={`mb-10 ${isRTL ? 'text-right' : 'text-left'}`}>
+          <h4 className="text-white font-bold text-base mb-3 border-b border-[#d4a15c]/30 pb-2">
+            {isRTL ? 'محامي في شرم الشيخ حسب التخصص' : 'Lawyer in Sharm El Sheikh by Practice Area'}
+          </h4>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2 text-xs lg:text-sm">
+            {[
+              ['lawyer-for-foreigners', 'محامي أجانب', 'Lawyer for Foreigners'],
+              ['real-estate-lawyer', 'محامي عقارات وحق انتفاع', 'Property & Usufruct Lawyer'],
+              ['criminal-lawyer', 'محامي جنائي', 'Criminal Lawyer'],
+              ['family-lawyer', 'محامي أحوال شخصية', 'Family Lawyer'],
+              ['immigration-lawyer', 'محامي إقامة وهجرة', 'Residency Lawyer'],
+              ['corporate-lawyer', 'محامي شركات وتراخيص سياحية', 'Company & Tourism Licence Lawyer'],
+            ].map(([slug, ar, en]) => (
+              <li key={slug}>
+                <Link to={getLocalizedLink(`/sharm-el-sheikh/${slug}`)} className="hover:text-[#d4a15c] transition-colors duration-200">
+                  {isRTL ? ar : `${en} in Sharm El Sheikh`}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
           <p>
-            &copy; {new Date().getFullYear()} {isRTL ? 'مؤسسة كريم الديب للمحاماة والاستشارات القانونية الدولية. جميع الحقوق محفوظة.' : 'Karim Eldib Law Firm. All rights reserved.'}
+            &copy; {new Date().getFullYear()} {isRTL ? 'مؤسسة كريم الديب للمحاماة والاستشارات القانونية الدولية. جميع الحقوق محفوظة.' : 'Karim El Deeb Law Firm. All rights reserved.'}
           </p>
           <div className="flex gap-4">
             <Link to={getLocalizedLink('/')} className="hover:text-gray-400">{isRTL ? 'الرئيسية' : 'Home'}</Link>

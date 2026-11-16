@@ -9,11 +9,11 @@ const CivilLaw: React.FC = () => {
 
   const seoTitle = isRTL 
     ? 'محامي قانون مدني في مصر | تعويضات وعقود وعقارات | المحامي كريم الديب'
-    : 'Civil Law Lawyer in Egypt | Contracts, Real Estate & Compensation | Karim El-Dib';
+    : 'Civil Law Lawyer in Egypt | Contracts, Real Estate & Compensation | Karim El Deeb';
 
   const seoDescription = isRTL
-    ? 'محامي قانون مدني في مصر — المحامي كريم الديب. متخصص في قضايا التعويضات، صياغة ومراجعة العقود المدنية، النزاعات العقارية، وتقسيم التركات. خبرة 18 عاماً.'
-    : 'Civil Law Lawyer in Egypt — Karim El-Dib. Expert representation in civil contracts, tort compensation, property disputes, and inheritance cases in Cairo, Alexandria & Sharm El Sheikh.';
+    ? 'محامي قانون مدني في مصر — المحامي كريم الديب. متخصص في قضايا التعويضات، صياغة ومراجعة العقود المدنية، النزاعات العقارية، وتقسيم التركات. خبرة 20 عاماً.'
+    : 'Civil Law Lawyer in Egypt — Karim El Deeb. Expert representation in civil contracts, tort compensation, property disputes, and inheritance cases in Cairo, Alexandria & Sharm El Sheikh.';
 
   const seoKeywords = isRTL
     ? 'محامي قانون مدني, محامي مدني في مصر, محامي تعويضات مصر, محامي عقود مدنية, محامي نزاعات عقارية, محامي قضايا إرث, كريم الديب محامي مدني'
@@ -178,7 +178,7 @@ const CivilLaw: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
-        title={isRTL ? "محامي مدني وعقارات وتعويضات في مصر | المحامي كريم الديب" : "Civil & Property Litigation Lawyer in Egypt | Karim Eldib Law Firm"}
+        title={isRTL ? "محامي مدني وعقارات وتعويضات في مصر | المحامي كريم الديب" : "Civil & Property Litigation Lawyer in Egypt | Karim El Deeb Law Firm"}
         description={isRTL ? "محامي قانون مدني في الإسكندرية وشرم الشيخ: دعاوى التعويض، صحة ونفاذ العقود، المنازعات العقارية والإيجارات، والميراث وقسمة التركات." : "Civil litigation lawyer in Alexandria & Sharm El Sheikh: compensation claims, contract validation, real estate and rent disputes, inheritance and estate division."}
         canonicalUrl="https://www.ke-lawyer.com/civil-law"
       />
@@ -187,7 +187,7 @@ const CivilLaw: React.FC = () => {
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
         <img
           src="/images/services/civil-law.webp"
-          alt={isRTL ? "القانون المدني - مكتب كريم الديب للمحاماة" : "Civil Law - Karim El-Dib Law Firm"}
+          alt={isRTL ? "القانون المدني - مكتب كريم الديب للمحاماة" : "Civil Law - Karim El Deeb Law Firm"}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
@@ -206,9 +206,9 @@ const CivilLaw: React.FC = () => {
           <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-6 font-medium text-[#d4a15c]">
             {getTextByLanguage({
               ar: 'المحامي كريم الديب - خبير في القانون المدني المصري. نقدم خدمات قانونية متكاملة في قضايا التعويضات، العقود، النزاعات العقارية، والإرث.',
-              en: 'Lawyer Karim El-Dib - Expert in Egyptian civil law. We provide comprehensive legal services in compensation cases, contracts, real estate disputes, and inheritance.',
-              fr: 'Avocat Karim El-Dib - Expert en droit civil égyptien. Services juridiques complets en indemnisation, contrats, litiges immobiliers et succession.',
-              it: 'Avvocato Karim El-Dib - Esperto in diritto civile egiziano. Servizi legali completi in risarcimento, contratti, controversie immobiliari ed eredità.'
+              en: 'Lawyer Karim El Deeb - Expert in Egyptian civil law. We provide comprehensive legal services in compensation cases, contracts, real estate disputes, and inheritance.',
+              fr: 'Avocat Karim El Deeb - Expert en droit civil égyptien. Services juridiques complets en indemnisation, contrats, litiges immobiliers et succession.',
+              it: 'Avvocato Karim El Deeb - Esperto in diritto civile egiziano. Servizi legali completi in risarcimento, contratti, controversie immobiliari ed eredità.'
             })}
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-base">

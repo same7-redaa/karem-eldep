@@ -11,10 +11,10 @@ const Services: React.FC = () => {
     const title = language === 'ar'
         ? 'الخدمات القانونية ومنازعات الاستثمار والتحكيم الدولي في مصر | كريم الديب'
         : language === 'fr'
-            ? 'Nos Services Juridiques & Arbitrage International en Égypte | Karim Eldib'
+            ? 'Nos Services Juridiques & Arbitrage International en Égypte | Karim El Deeb'
             : language === 'it'
-                ? 'I Nostri Servizi Legali & Arbitrato Internazionale in Egitto | Karim Eldib'
-                : 'Legal Services, Foreign Investment & Arbitration in Egypt | Karim Eldib';
+                ? 'I Nostri Servizi Legali & Arbitrato Internazionale in Egitto | Karim El Deeb'
+                : 'Legal Services, Foreign Investment & Arbitration in Egypt | Karim El Deeb';
 
     const description = language === 'ar'
         ? 'خدمات قانونية شاملة ومتخصصة للأجانب والشركات في مصر: التحكيم التجاري الدولي، تأسيس الشركات، إقامة وتأشيرات، عقارات واستثمارات، قضايا مدنية وجنائية وقانون الأسرة. نتحدث 4 لغات.'
@@ -255,7 +255,7 @@ const Services: React.FC = () => {
             <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
                 <img
                     src="/images/services/civil-law.webp"
-                    alt={isRTL ? "خدماتنا القانونية - مكتب كريم الديب للمحاماة" : "Our Legal Services - Karim El-Dib Law Firm"}
+                    alt={isRTL ? "خدماتنا القانونية - مكتب كريم الديب للمحاماة" : "Our Legal Services - Karim El Deeb Law Firm"}
                     className="absolute inset-0 w-full h-full object-cover"
                     loading="eager"
                     fetchPriority="high"

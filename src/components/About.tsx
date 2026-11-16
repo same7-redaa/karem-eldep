@@ -21,7 +21,7 @@ const About: React.FC = () => {
     const isRTL = language === 'ar';
 
     const stats: Stat[] = [
-        { value: '18+', label: t('about.stat1') },
+        { value: '20+', label: t('about.stat1') },
         { value: '3500+', label: t('about.stat2') },
         { value: t('about.stat3.value'), label: t('about.stat3.label') }
     ];
@@ -111,7 +111,7 @@ const About: React.FC = () => {
                 <div className="absolute -inset-2 bg-gradient-to-r from-[#d4a15c] to-[#b8860b] rounded-lg blur-xl opacity-0 group-hover:opacity-50 transition-all duration-500"></div>
                 <img loading="lazy" decoding="async" 
                   src="/karim-eldib-profile-main.jpeg"
-                  alt={isRTL ? "مكتب كريم الديب للمحاماة - مكتب محاماة متخصص في خدمة الأجانب والمصريين بالخارج" : "Karim Eldib Law Firm - Law office specialized in serving foreigners and Egyptians abroad"} 
+                  alt={isRTL ? "مكتب كريم الديب للمحاماة - مكتب محاماة متخصص في خدمة الأجانب والمصريين بالخارج" : "Karim El Deeb Law Firm - Law office specialized in serving foreigners and Egyptians abroad"} 
                   className="relative rounded-lg shadow-lg w-full h-auto object-cover transform transition-all duration-500 ease-out group-hover:scale-[1.05] group-hover:shadow-2xl group-hover:-rotate-1"
                 />
               </div>

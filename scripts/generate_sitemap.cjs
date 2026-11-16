@@ -29,22 +29,16 @@ for (const m of alexSrc.matchAll(/^\s{4}slug:\s*'([a-z0-9-]+)'/gm)) {
   mainPages.push({ path: `/alexandria/${m[1]}`, priority: '0.8', changefreq: 'monthly' });
 }
 
-const articleSlugs = [
-  'international-commercial-arbitration-egypt-guide-2026',
-  'international-arbitration-foreign-investors-lawyer-egypt-2026',
-  'comprehensive-legal-services-guide-egypt-2026',
-  'enforcement-foreign-arbitral-awards-egypt-guide',
-  'foreign-lawyer-sharm-el-sheikh',
-  'foreign-lawyer-alexandria',
-  'guide-foreigners-legal-services-egypt-2025',
-  'egyptians-abroad-legal-rights-protection',
-  'foreign-investment-egypt-complete-guide',
-  'company-formation-for-foreigners-in-egypt-complete-guide',
-  'divorce-for-foreigners-in-egypt-comprehensive-guide',
-  'real-estate-investment-sharm-el-sheikh-comprehensive-guide',
-  'residence-permit-guide-in-egypt-2026',
-  'international-arbitration-lawyer-egypt-investment-disputes'
-];
+// Sharm El Sheikh practice-area pages (same rule)
+const sharmSrc = fs.readFileSync('src/data/sharmServices.ts', 'utf8');
+for (const m of sharmSrc.matchAll(/^\s{4}slug:\s*'([a-z0-9-]+)'/gm)) {
+  mainPages.push({ path: `/sharm-el-sheikh/${m[1]}`, priority: '0.8', changefreq: 'monthly' });
+}
+
+// Blog slugs are read from staticArticles.ts so new articles are never missed (same rule as scripts/prerender.mjs)
+const articlesSrc = fs.readFileSync('src/data/staticArticles.ts', 'utf8');
+const articleSlugs = [...articlesSrc.matchAll(/^\s{2}['"]([a-z0-9-]+)['"]\s*:\s*\{/gm)].map(m => m[1]);
+if (!articleSlugs.length) { console.error('No article slugs found'); process.exit(1); }
 
 let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"

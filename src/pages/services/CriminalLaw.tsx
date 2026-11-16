@@ -10,15 +10,15 @@ const CriminalLaw: React.FC = () => {
     return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
-        title={language === 'ar' ? "محامي جنايات وجنح في مصر | كريم الديب" : "Criminal Defense Lawyer in Egypt | Karim Eldib"}
-        description={language === 'ar' ? "دفاع جنائي للمصريين والأجانب: حضور التحقيقات، التمثيل أمام محاكم الجنح والجنايات، الاستئناف والنقض، قضايا المخدرات والجرائم الإلكترونية وجرائم الأموال. مكاتب في الإسكندرية وشرم الشيخ." : "Criminal defense for Egyptians and foreigners: attending investigations, representation before misdemeanor and felony courts, appeals, drug, cybercrime and financial crime cases. Offices in Alexandria and Sharm El Sheikh."}
+        title={language === 'ar' ? "محامي جنايات وجنح في الإسكندرية ومصر | كريم الديب" : "Criminal Defense Lawyer in Egypt | Karim El Deeb"}
+        description={language === 'ar' ? "محامي جنائي في الإسكندرية ومصر: حضور التحقيقات والنيابة، الدفاع أمام الجنح والجنايات، الاستئناف والنقض، المخدرات والجرائم الإلكترونية والأموال. اتصل 01223767592." : "Criminal defense lawyer in Egypt: police and prosecution attendance, misdemeanor and felony trials, appeals, drug, cybercrime and financial cases. Call +20 122 376 7592."}
         canonicalUrl="https://www.ke-lawyer.com/criminal-law"
       />
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
         <img
           src="/images/services/criminal-law.webp"
-          alt={isRTL ? "القانون الجنائي - مكتب كريم الديب للمحاماة" : "Criminal Law - Karim El-Dib Law Firm"}
+          alt={isRTL ? "القانون الجنائي - مكتب كريم الديب للمحاماة" : "Criminal Law - Karim El Deeb Law Firm"}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
@@ -32,9 +32,9 @@ const CriminalLaw: React.FC = () => {
           <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-6 font-medium text-[#d4a15c]">
             {getTextByLanguage({
               ar: 'المحامي كريم الديب - خبير في الدفاع الجنائي والقضايا الجنائية. نقدم دفاعاً قوياً ومهنياً للمصريين والأجانب في جميع القضايا الجنائية.',
-              en: 'Lawyer Karim El-Dib - Expert in criminal defense and criminal cases. We provide strong and professional defense for Egyptians and foreigners in all criminal cases.',
-              fr: 'Avocat Karim El-Dib - Expert en défense pénale. Nous fournissons une défense solide et professionnelle pour les Égyptiens et les étrangers.',
-              it: 'Avvocato Karim El-Dib - Esperto in difesa penale. Forniamo una difesa forte e professionale per egiziani e stranieri.'
+              en: 'Lawyer Karim El Deeb - Expert in criminal defense and criminal cases. We provide strong and professional defense for Egyptians and foreigners in all criminal cases.',
+              fr: 'Avocat Karim El Deeb - Expert en défense pénale. Nous fournissons une défense solide et professionnelle pour les Égyptiens et les étrangers.',
+              it: 'Avvocato Karim El Deeb - Esperto in difesa penale. Forniamo una difesa forte e professionale per egiziani e stranieri.'
             })}
           </p>
         </div>

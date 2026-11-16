@@ -12,16 +12,16 @@ const Cairo: React.FC = () => {
 
   const title = getTextByLanguage({
     ar: 'محامي تحكيم دولي وقضايا أجانب في القاهرة | كريم الديب',
-    en: 'International Arbitration & Foreigners Lawyer in Cairo | Karim Eldib',
-    fr: 'Avocat Arbitrage International & Étrangers au Caire | Karim Eldib',
-    it: 'Avvocato Arbitrato Internazionale e Stranieri al Cairo | Karim Eldib'
+    en: 'International Arbitration & Foreigners Lawyer in Cairo | Karim El Deeb',
+    fr: 'Avocat Arbitrage International & Étrangers au Caire | Karim El Deeb',
+    it: 'Avvocato Arbitrato Internazionale e Stranieri al Cairo | Karim El Deeb'
   });
 
   const description = getTextByLanguage({
     ar: 'مكتب المحامي كريم الديب للتحكيم الدولي وقضايا الأجانب في القاهرة. تأسيس شركات أمام الهيئة العامة للاستثمار (GAFI)، تمثيل أمام مركز القاهرة الإقليمي (CRCICA)، تسوية منازعات الاستثمار وعقود الاستيراد والتصدير. نتحدث العربية والإنجليزية والفرنسية والإيطالية.',
-    en: 'Karim Eldib Law Firm for international arbitration and foreigners in Cairo. Company formation before GAFI, representation before CRCICA, investment dispute resolution, and international commercial contracts. Speak English, French, Italian.',
-    fr: 'Cabinet Karim Eldib pour l\'arbitrage international et les étrangers au Caire. Création d\'entreprises (GAFI), représentation devant le CRCICA, et règlement des litiges d\'investissement. Nous parlons français.',
-    it: 'Studio Karim Eldib per l\'arbitrato internazionale e gli stranieri al Cairo. Costituzione di società (GAFI), rappresentanza presso CRCICA e risoluzione delle controversie sugli investimenti. Parliamo italiano.'
+    en: 'Karim El Deeb Law Firm for international arbitration and foreigners in Cairo. Company formation before GAFI, representation before CRCICA, investment dispute resolution, and international commercial contracts. Speak English, French, Italian.',
+    fr: 'Cabinet Karim El Deeb pour l\'arbitrage international et les étrangers au Caire. Création d\'entreprises (GAFI), représentation devant le CRCICA, et règlement des litiges d\'investissement. Nous parlons français.',
+    it: 'Studio Karim El Deeb per l\'arbitrato internazionale e gli stranieri al Cairo. Costituzione di società (GAFI), rappresentanza presso CRCICA e risoluzione delle controversie sugli investimenti. Parliamo italiano.'
   });
 
   const keywords = getTextByLanguage({
@@ -146,9 +146,9 @@ const Cairo: React.FC = () => {
               <h2 className="text-2xl font-bold mb-4 text-[#d4a15c]">
                 {getTextByLanguage({
                   ar: 'لماذا تختار المحامي كريم الديب في القاهرة؟',
-                  en: 'Why Choose Lawyer Karim Eldib in Cairo?',
-                  fr: 'Pourquoi Choisir l\'Avocat Karim Eldib au Caire?',
-                  it: 'Perché Scegliere l\'Avvocato Karim Eldib al Cairo?'
+                  en: 'Why Choose Lawyer Karim El Deeb in Cairo?',
+                  fr: 'Pourquoi Choisir l\'Avocat Karim El Deeb au Caire?',
+                  it: 'Perché Scegliere l\'Avvocato Karim El Deeb al Cairo?'
                 })}
               </h2>
               <div className="space-y-4">

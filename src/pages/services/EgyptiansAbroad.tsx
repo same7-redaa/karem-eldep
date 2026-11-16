@@ -11,10 +11,10 @@ const EgyptiansAbroad: React.FC = () => {
     const title = language === 'ar'
       ? "خدمات المصريين المغتربين | المحامي كريم الديب"
       : language === 'fr'
-      ? "Services pour Égyptiens à l'Étranger | Karim El-Dib"
+      ? "Services pour Égyptiens à l'Étranger | Karim El Deeb"
       : language === 'it'
-      ? "Servizi per Egiziani all'Estero | Karim El-Dib"
-      : "Legal Services for Egyptian Expats | Karim El-Dib";
+      ? "Servizi per Egiziani all'Estero | Karim El Deeb"
+      : "Legal Services for Egyptian Expats | Karim El Deeb";
     
     document.title = title;
     
@@ -23,10 +23,10 @@ const EgyptiansAbroad: React.FC = () => {
       const description = language === 'ar'
         ? 'خدمات قانونية للمصريين المغتربين - المحامي كريم الديب محامي في مصر متخصص في خدمة المغتربين المصريين. خدمات قانونية شاملة للمصريين في جميع أنحاء العالم.'
         : language === 'fr'
-        ? 'Services juridiques pour Égyptiens expatriés - Karim El-Dib avocat en Égypte spécialisé au service des expatriés égyptiens. Services juridiques complets pour Égyptiens dans le monde entier.'
+        ? 'Services juridiques pour Égyptiens expatriés - Karim El Deeb avocat en Égypte spécialisé au service des expatriés égyptiens. Services juridiques complets pour Égyptiens dans le monde entier.'
         : language === 'it'
-        ? 'Servizi legali per egiziani espatriati - Karim El-Dib avvocato in Egitto specializzato nel servizio degli espatriati egiziani. Servizi legali completi per egiziani in tutto il mondo.'
-        : 'Legal services for Egyptian expats - Karim El-Dib lawyer in Egypt specialized in serving Egyptian expatriates. Comprehensive legal services for Egyptians worldwide.';
+        ? 'Servizi legali per egiziani espatriati - Karim El Deeb avvocato in Egitto specializzato nel servizio degli espatriati egiziani. Servizi legali completi per egiziani in tutto il mondo.'
+        : 'Legal services for Egyptian expats - Karim El Deeb lawyer in Egypt specialized in serving Egyptian expatriates. Comprehensive legal services for Egyptians worldwide.';
       
       metaDescription.setAttribute('content', description);
     }
@@ -321,7 +321,7 @@ const EgyptiansAbroad: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
-        title={language === 'ar' ? "خدمات المصريين بالخارج | المحامي كريم الديب - مصر" : "Legal Services for Egyptian Expats Abroad | Karim El-Dib"}
+        title={language === 'ar' ? "خدمات المصريين بالخارج | المحامي كريم الديب - مصر" : "Legal Services for Egyptian Expats Abroad | Karim El Deeb"}
         description={language === 'ar' ? "خدمات قانونية متكاملة للمصريين في الخارج - المحامي كريم الديب. متابعة قضايا، إدارة عقارات، توكيلات، استشارات قانونية عن بعد." : "Comprehensive legal services for Egyptian expats abroad. Real estate management, powers of attorney, inheritance and court representation in Egypt."}
         canonicalUrl="https://www.ke-lawyer.com/egyptians-abroad"
       />
@@ -329,7 +329,7 @@ const EgyptiansAbroad: React.FC = () => {
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
         <img
           src="/images/services/egyptians-abroad.webp"
-          alt={isRTL ? "خدمات المصريين المغتربين - مكتب كريم الديب للمحاماة" : "Egyptians Abroad - Karim El-Dib Law Firm"}
+          alt={isRTL ? "خدمات المصريين المغتربين - مكتب كريم الديب للمحاماة" : "Egyptians Abroad - Karim El Deeb Law Firm"}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
@@ -348,18 +348,18 @@ const EgyptiansAbroad: React.FC = () => {
           <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-6 font-medium text-[#d4a15c]">
             {getTextByLanguage({
               ar: 'المحامي كريم الديب - محامي دولي في مصر متخصص في تقديم الخدمات القانونية للمغتربين المصريين في جميع أنحاء العالم. نحن جسرك القانوني مع مصر.',
-              en: 'Lawyer Karim El-Dib - International lawyer in Egypt specialized in providing legal services for Egyptian expats worldwide. We are your legal bridge with Egypt.',
-              fr: 'Avocat Karim El-Dib - Avocat international. Services juridiques pour les expatriés égyptiens. Votre pont juridique avec l\'Égypte.',
-              it: 'Avvocato Karim El-Dib - Avvocato internazionale. Servizi legali per espatriati egiziani. Il tuo ponte legale con l\'Egitto.'
+              en: 'Lawyer Karim El Deeb - International lawyer in Egypt specialized in providing legal services for Egyptian expats worldwide. We are your legal bridge with Egypt.',
+              fr: 'Avocat Karim El Deeb - Avocat international. Services juridiques pour les expatriés égyptiens. Votre pont juridique avec l\'Égypte.',
+              it: 'Avvocato Karim El Deeb - Avvocato internazionale. Servizi legali per espatriati egiziani. Il tuo ponte legale con l\'Egitto.'
             })}
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-base">
             <span className="bg-[#c8a876] text-[#0b1a33] px-5 py-2.5 rounded-full font-semibold">
               {getTextByLanguage({
                 ar: 'المحامي كريم الديب',
-                en: 'Lawyer Karim El-Dib',
-                fr: 'Avocat Karim El-Dib',
-                it: 'Avvocato Karim El-Dib'
+                en: 'Lawyer Karim El Deeb',
+                fr: 'Avocat Karim El Deeb',
+                it: 'Avvocato Karim El Deeb'
               })}
             </span>
             <span className="bg-white/20 backdrop-blur-sm text-white px-5 py-2.5 rounded-full font-semibold border border-white/30">
@@ -566,9 +566,9 @@ const EgyptiansAbroad: React.FC = () => {
               {
                 q: getTextByLanguage({
                   ar: 'هل يمكنني توكيل المحامي كريم الديب وأنا في الخارج؟',
-                  en: 'Can I authorize Lawyer Karim El-Dib while I am abroad?',
-                  fr: 'Puis-je autoriser l\'avocat Karim El-Dib alors que je suis à l\'étranger?',
-                  it: 'Posso autorizzare l\'avvocato Karim El-Dib mentre sono all\'estero?'
+                  en: 'Can I authorize Lawyer Karim El Deeb while I am abroad?',
+                  fr: 'Puis-je autoriser l\'avocat Karim El Deeb alors que je suis à l\'étranger?',
+                  it: 'Posso autorizzare l\'avvocato Karim El Deeb mentre sono all\'estero?'
                 }),
                 a: getTextByLanguage({
                   ar: 'نعم، يمكنك توكيلنا من خلال القنصليات المصرية أو عبر التوكيل الإلكتروني المعتمد.',
@@ -700,9 +700,9 @@ const EgyptiansAbroad: React.FC = () => {
           <p className="text-xl text-[#0b1a33] mb-8 max-w-3xl mx-auto">
             {getTextByLanguage({
               ar: 'المحامي كريم الديب - محامي دولي في مصر جاهز لخدمتك أينما كنت في العالم. تواصل معنا الآن.',
-              en: 'Lawyer Karim El-Dib - International lawyer in Egypt ready to serve you wherever you are in the world. Contact us now.',
-              fr: 'Avocat Karim El-Dib - Avocat international en Égypte prêt à vous servir où que vous soyez dans le monde. Contactez-nous maintenant.',
-              it: 'Avvocato Karim El-Dib - Avvocato internazionale in Egitto pronto a servirti ovunque tu sia nel mondo. Contattaci ora.'
+              en: 'Lawyer Karim El Deeb - International lawyer in Egypt ready to serve you wherever you are in the world. Contact us now.',
+              fr: 'Avocat Karim El Deeb - Avocat international en Égypte prêt à vous servir où que vous soyez dans le monde. Contactez-nous maintenant.',
+              it: 'Avvocato Karim El Deeb - Avvocato internazionale in Egitto pronto a servirti ovunque tu sia nel mondo. Contattaci ora.'
             })}
           </p>
           <div className="flex flex-wrap justify-center gap-4">

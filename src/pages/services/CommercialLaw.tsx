@@ -320,7 +320,7 @@ const steps = [
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
-        title={language === 'ar' ? "محامي قانون تجاري | تأسيس شركات في مصر | المحامي كريم الديب" : "Commercial Lawyer | Company Formation Egypt | Lawyer Karim El-Dib"}
+        title={language === 'ar' ? "محامي قانون تجاري | تأسيس شركات في مصر | المحامي كريم الديب" : "Commercial Lawyer | Company Formation Egypt | Lawyer Karim El Deeb"}
         description={language === 'ar' ? "محامي قانون تجاري - المحامي كريم الديب خبير في تأسيس الشركات والقانون التجاري. تأسيس شركات للأجانب والمصريين، عقود تجارية، استثمار." : "Commercial lawyer Egypt, company formation, business law. Expert in foreign companies, commercial contracts, corporate compliance."}
         canonicalUrl="https://www.ke-lawyer.com/commercial-law"
       />
@@ -328,7 +328,7 @@ const steps = [
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
         <img
           src="/images/services/commercial-law.webp"
-          alt={isRTL ? "القانون التجاري - مكتب كريم الديب للمحاماة" : "Commercial Law - Karim El-Dib Law Firm"}
+          alt={isRTL ? "القانون التجاري - مكتب كريم الديب للمحاماة" : "Commercial Law - Karim El Deeb Law Firm"}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
@@ -347,9 +347,9 @@ const steps = [
           <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-6 font-medium text-[#d4a15c]">
             {getTextByLanguage({
               ar: 'المحامي كريم الديب - خبير في القانون التجاري وتأسيس الشركات في مصر. نساعد المصريين والأجانب في تأسيس شركاتهم وتنمية أعمالهم وفقاً للقانون المصري.',
-              en: 'Lawyer Karim El-Dib - Expert in commercial law and company formation in Egypt. We help Egyptians and foreigners establish their companies and grow their businesses according to Egyptian law.',
-              fr: 'Avocat Karim El-Dib - Expert en droit commercial et constitution de sociétés en Égypte. Nous aidons les Égyptiens et les étrangers à créer leurs entreprises et à développer leurs activités conformément à la loi égyptienne.',
-              it: 'Avvocato Karim El-Dib - Esperto in diritto commerciale e costituzione di società in Egitto. Aiutiamo egiziani e stranieri a costituire le loro società e a sviluppare le loro attività secondo la legge egiziana.'
+              en: 'Lawyer Karim El Deeb - Expert in commercial law and company formation in Egypt. We help Egyptians and foreigners establish their companies and grow their businesses according to Egyptian law.',
+              fr: 'Avocat Karim El Deeb - Expert en droit commercial et constitution de sociétés en Égypte. Nous aidons les Égyptiens et les étrangers à créer leurs entreprises et à développer leurs activités conformément à la loi égyptienne.',
+              it: 'Avvocato Karim El Deeb - Esperto in diritto commerciale e costituzione di società in Egitto. Aiutiamo egiziani e stranieri a costituire le loro società e a sviluppare le loro attività secondo la legge egiziana.'
             })}
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-base">
@@ -659,9 +659,9 @@ const steps = [
           <p className="text-xl text-[#0b1a33] mb-8 max-w-3xl mx-auto">
             {getTextByLanguage({
               ar: 'المحامي كريم الديب جاهز لمساعدتك في تأسيس شركتك وبدء رحلة نجاحك التجاري في مصر.',
-              en: 'Lawyer Karim El-Dib is ready to help you establish your company and start your commercial success journey in Egypt.',
-              fr: 'L\'avocat Karim El-Dib est prêt à vous aider à créer votre société et à démarrer votre parcours de réussite commerciale en Égypte.',
-              it: 'L\'avvocato Karim El-Dib è pronto ad aiutarti a costituire la tua società e ad iniziare il tuo percorso di successo commerciale in Egitto.'
+              en: 'Lawyer Karim El Deeb is ready to help you establish your company and start your commercial success journey in Egypt.',
+              fr: 'L\'avocat Karim El Deeb est prêt à vous aider à créer votre société et à démarrer votre parcours de réussite commerciale en Égypte.',
+              it: 'L\'avvocato Karim El Deeb è pronto ad aiutarti a costituire la tua società e ad iniziare il tuo percorso di successo commerciale in Egitto.'
             })}
           </p>
           <div className="flex flex-wrap justify-center gap-4">

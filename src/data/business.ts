@@ -7,13 +7,13 @@ export const DOMAIN = 'https://www.ke-lawyer.com';
 
 export const BUSINESS = {
   nameAr: 'مكتب المحامي كريم الديب للمحاماة',
-  nameEn: 'Karim Eldib Law Firm',
+  nameEn: 'Karim El Deeb Law Firm',
   alternateNames: [
     'كريم الديب محامي',
     'المحامي كريم الديب',
     'Karim El Deeb Lawyer',
     'Karim El Deeb Law firm',
-    'Karim Eldib Lawyer',
+    'Karim Eldib Law Firm',
     'Unlimited Lawyers & Foreign Services',
   ],
   phone: '+201223767592',
@@ -34,7 +34,7 @@ export const BUSINESS = {
     'https://yellowpages.com.eg/ar/profile/%D9%83%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AF%D9%8A%D8%A8-%D9%84%D9%84%D9%85%D8%AD%D8%A7%D9%85%D8%A7%D8%A9/713138',
     'https://www.hawleek.com/professionals/karim-eldeeb-law-firm/',
   ],
-  // Third-party profiles of Karim Eldib himself (MisrConnect also lists his articles).
+  // Third-party profiles of Karim El Deeb himself (MisrConnect also lists his articles).
   attorneyProfiles: [
     'https://misrconnect.com/profiles/3702',
     'https://afokato.com/ar/lawyer/%D9%83%D8%B1%D9%8A%D9%85-%D8%A7%D9%84%D8%AF%D9%8A%D8%A8',
@@ -74,7 +74,7 @@ export const BRANCHES: Record<BranchId, {
     id: 'alexandria',
     path: '/alexandria',
     nameAr: 'مكتب المحامي كريم الديب – الإسكندرية (المكتب الرئيسي)',
-    nameEn: 'Karim Eldib Law Firm – Alexandria (Main Office)',
+    nameEn: 'Karim El Deeb Law Firm – Alexandria (Main Office)',
     streetAr: '29 المسلة غرب وشريف باشا، العطارين',
     streetEn: '29 El Masalla Gharb & Sherif Pasha St., El Attarin',
     cityAr: 'الإسكندرية',
@@ -91,7 +91,7 @@ export const BRANCHES: Record<BranchId, {
     id: 'sharm',
     path: '/sharm-el-sheikh',
     nameAr: 'مكتب المحامي كريم الديب – شرم الشيخ',
-    nameEn: 'Karim Eldib Law Firm – Sharm El Sheikh',
+    nameEn: 'Karim El Deeb Law Firm – Sharm El Sheikh',
     streetAr: '123 شارع البحر',
     streetEn: '123 El Bahr St.',
     postalCode: '46619',
@@ -183,8 +183,8 @@ export const buildBusinessGraph = (isAr: boolean) => [
   {
     '@type': 'Person',
     '@id': ATTORNEY_ID,
-    name: isAr ? 'كريم الديب' : 'Karim Eldib',
-    alternateName: ['Karim El Deeb', 'Karim El-Dib', 'كريم الديب'],
+    name: isAr ? 'كريم الديب' : 'Karim El Deeb',
+    alternateName: ['Karim El Deeb', 'Karim El Deeb', 'كريم الديب'],
     jobTitle: isAr ? 'محامٍ بالنقض ومحكّم دولي' : 'Attorney at the Court of Cassation & International Arbitrator',
     worksFor: { '@id': ORG_ID },
     url: `${DOMAIN}${isAr ? '' : '/en'}/lawyer-profile`,

@@ -51,7 +51,7 @@ export const alexandriaServices: AlexandriaService[] = [
     slug: 'family-lawyer',
     topic: t('قضايا الأسرة والأحوال الشخصية', 'Family and Personal Status Cases'),
     name: t('محامي أسرة وأحوال شخصية في الإسكندرية', 'Family Lawyer in Alexandria'),
-    seoTitle: t('محامي أسرة وأحوال شخصية في الإسكندرية | كريم الديب', 'Family & Divorce Lawyer in Alexandria, Egypt | Karim Eldib'),
+    seoTitle: t('محامي أسرة وأحوال شخصية في الإسكندرية | كريم الديب', 'Family & Divorce Lawyer in Alexandria, Egypt | Karim El Deeb'),
     seoDescription: t(
       'محامي أحوال شخصية في الإسكندرية: طلاق وخلع، نفقة، حضانة ورؤية، إثبات نسب وزواج الأجانب أمام محاكم الأسرة بالإسكندرية. اتصل 01223767592.',
       'Family lawyer in Alexandria, Egypt: divorce and khul, alimony, child custody and visitation, and mixed-nationality marriages before the Alexandria family courts.'
@@ -61,7 +61,7 @@ export const alexandriaServices: AlexandriaService[] = [
     intro: [
       t(
         'قضايا الأسرة لا تحتمل التجربة؛ خطأ إجرائي واحد قد يؤخر نفقة أطفال شهوراً أو يُسقط حقاً في الحضانة. مكتب المحامي كريم الديب يتولى قضايا الأحوال الشخصية أمام محاكم الأسرة في الإسكندرية منذ 2006، للزوج أو الزوجة، وللمصريين والأجانب والزيجات المختلطة.',
-        'Family cases leave little room for trial and error: one procedural mistake can delay child support for months or weaken a custody claim. Karim Eldib Law Firm has handled personal status cases before the family courts of Alexandria since 2006, for husbands and wives, Egyptians, foreigners and mixed-nationality couples.'
+        'Family cases leave little room for trial and error: one procedural mistake can delay child support for months or weaken a custody claim. Karim El Deeb Law Firm has handled personal status cases before the family courts of Alexandria since 2006, for husbands and wives, Egyptians, foreigners and mixed-nationality couples.'
       ),
       t(
         'نبدأ دائماً بتقييم واقعي: ما الذي يمكن الحصول عليه قانوناً، وكم يستغرق، وهل التسوية الودية أفضل لك من التقاضي. وإذا كان أحد الطرفين خارج مصر، نتابع الدعوى بتوكيل رسمي دون حاجة لحضوره كل جلسة.',
@@ -146,7 +146,7 @@ export const alexandriaServices: AlexandriaService[] = [
     slug: 'real-estate-lawyer',
     topic: t('القضايا العقارية', 'Real Estate Matters'),
     name: t('محامي عقارات في الإسكندرية', 'Real Estate Lawyer in Alexandria'),
-    seoTitle: t('محامي عقارات في الإسكندرية | تسجيل وصحة توقيع ونزاعات | كريم الديب', 'Real Estate Lawyer in Alexandria, Egypt | Karim Eldib'),
+    seoTitle: t('محامي عقارات في الإسكندرية | تسجيل وصحة توقيع ونزاعات | كريم الديب', 'Real Estate Lawyer in Alexandria, Egypt | Karim El Deeb'),
     seoDescription: t(
       'محامي عقارات في الإسكندرية: فحص ملكية قبل الشراء، صحة توقيع وصحة ونفاذ، تسجيل بالشهر العقاري، ونزاعات الإيجار والملكية. اتصل 01223767592.',
       'Real estate lawyer in Alexandria, Egypt: title checks before purchase, contract validation suits, registration at the Real Estate Registry, and rent and ownership disputes.'
@@ -241,7 +241,7 @@ export const alexandriaServices: AlexandriaService[] = [
     slug: 'immigration-lawyer',
     topic: t('قضايا الهجرة والإقامة والجنسية', 'Immigration, Residency and Nationality Matters'),
     name: t('محامي هجرة وإقامات في الإسكندرية', 'Immigration Lawyer in Alexandria'),
-    seoTitle: t('محامي هجرة وإقامات في الإسكندرية | جنسية وتصاريح عمل | كريم الديب', 'Immigration & Residency Lawyer in Alexandria, Egypt | Karim Eldib'),
+    seoTitle: t('محامي هجرة وإقامات في الإسكندرية | جنسية وتصاريح عمل | كريم الديب', 'Immigration & Residency Lawyer in Alexandria, Egypt | Karim El Deeb'),
     seoDescription: t(
       'محامي هجرة في الإسكندرية: إقامات الأجانب وتجديدها، تصاريح العمل، الجنسية المصرية، وتجهيز وتصديق مستندات ملفات الهجرة للخارج. اتصل 01223767592.',
       'Immigration lawyer in Alexandria, Egypt: residence permits and renewals, work permits, Egyptian nationality, and legalising documents for visa and emigration files.'
@@ -336,7 +336,7 @@ export const alexandriaServices: AlexandriaService[] = [
     slug: 'civil-lawyer',
     topic: t('القضايا المدنية', 'Civil Cases'),
     name: t('محامي مدني في الإسكندرية', 'Civil Lawyer in Alexandria'),
-    seoTitle: t('محامي مدني في الإسكندرية | تعويضات وعقود وميراث | كريم الديب', 'Civil Litigation Lawyer in Alexandria, Egypt | Karim Eldib'),
+    seoTitle: t('محامي مدني في الإسكندرية | تعويضات وعقود وميراث | كريم الديب', 'Civil Litigation Lawyer in Alexandria, Egypt | Karim El Deeb'),
     seoDescription: t(
       'محامي مدني في الإسكندرية: دعاوى التعويض، منازعات العقود والديون، الميراث وقسمة التركات، وتنفيذ الأحكام أمام محاكم الإسكندرية. اتصل 01223767592.',
       'Civil lawyer in Alexandria, Egypt: compensation claims, contract and debt disputes, inheritance and estate division, and enforcement of judgments before the Alexandria courts.'
@@ -431,7 +431,7 @@ export const alexandriaServices: AlexandriaService[] = [
     slug: 'commercial-lawyer',
     topic: t('القضايا التجارية', 'Commercial Cases'),
     name: t('محامي تجاري في الإسكندرية', 'Commercial Lawyer in Alexandria'),
-    seoTitle: t('محامي تجاري في الإسكندرية | عقود وشيكات ومحكمة اقتصادية | كريم الديب', 'Commercial Lawyer in Alexandria, Egypt | Karim Eldib'),
+    seoTitle: t('محامي تجاري في الإسكندرية | عقود وشيكات ومحكمة اقتصادية | كريم الديب', 'Commercial Lawyer in Alexandria, Egypt | Karim El Deeb'),
     seoDescription: t(
       'محامي تجاري في الإسكندرية: عقود التوريد والوكالات، الشيكات وتحصيل الديون التجارية، الإفلاس وإعادة الهيكلة، والتقاضي أمام المحكمة الاقتصادية.',
       'Commercial lawyer in Alexandria, Egypt: supply and agency contracts, cheques and commercial debt recovery, insolvency and restructuring, and Economic Court litigation.'
@@ -526,7 +526,7 @@ export const alexandriaServices: AlexandriaService[] = [
     slug: 'corporate-lawyer',
     topic: t('شؤون الشركات', 'Corporate Matters'),
     name: t('محامي شركات في الإسكندرية', 'Corporate Lawyer in Alexandria'),
-    seoTitle: t('محامي شركات في الإسكندرية | تأسيس شركات وعقود شركاء | كريم الديب', 'Corporate Lawyer in Alexandria, Egypt | Company Formation | Karim Eldib'),
+    seoTitle: t('محامي شركات في الإسكندرية | تأسيس شركات وعقود شركاء | كريم الديب', 'Corporate Lawyer in Alexandria, Egypt | Company Formation | Karim El Deeb'),
     seoDescription: t(
       'محامي شركات في الإسكندرية: تأسيس شركات للمصريين والأجانب، سجل تجاري وبطاقة ضريبية، عقود الشركاء، تعديل وتصفية الشركات ومنازعات الشركاء.',
       'Corporate lawyer in Alexandria, Egypt: company formation for Egyptians and foreigners, commercial registration, shareholder agreements, amendments, liquidation and partner disputes.'

@@ -14,9 +14,9 @@ const News: React.FC = () => {
       id: 1,
       title: getTextByLanguage({
         ar: 'نصير من لا نصير له: المحامي كريم الديب صاحب القضايا المستحيلة',
-        en: 'Supporter of the Unsupported: Lawyer Karim El-Dib, Master of Impossible Cases',
-        fr: 'Soutien des Sans Soutien: L\'Avocat Karim El-Dib, Maître des Cas Impossibles',
-        it: 'Sostenitore dei Senza Sostegno: L\'Avvocato Karim El-Dib, Maestro dei Casi Impossibili'
+        en: 'Supporter of the Unsupported: Lawyer Karim El Deeb, Master of Impossible Cases',
+        fr: 'Soutien des Sans Soutien: L\'Avocat Karim El Deeb, Maître des Cas Impossibles',
+        it: 'Sostenitore dei Senza Sostegno: L\'Avvocato Karim El Deeb, Maestro dei Casi Impossibili'
       }),
       newspaper: getTextByLanguage({
         ar: 'أخبار الجمهورية',
@@ -32,25 +32,25 @@ const News: React.FC = () => {
       }),
       excerpt: getTextByLanguage({
         ar: 'تقرير شامل عن إنجازات المحامي كريم الديب في الدفاع عن القضايا الصعبة والمعقدة التي لا يجرؤ محامون آخرون على التعامل معها.',
-        en: 'Comprehensive report on Lawyer Karim El-Dib\'s achievements in defending difficult and complex cases that other lawyers dare not handle.',
-        fr: 'Rapport complet sur les réalisations de l\'avocat Karim El-Dib dans la défense de cas difficiles et complexes que d\'autres avocats n\'osent pas gérer.',
-        it: 'Rapporto completo sui successi dell\'avvocato Karim El-Dib nella difesa di casi difficili e complessi che altri avvocati non osano gestire.'
+        en: 'Comprehensive report on Lawyer Karim El Deeb\'s achievements in defending difficult and complex cases that other lawyers dare not handle.',
+        fr: 'Rapport complet sur les réalisations de l\'avocat Karim El Deeb dans la défense de cas difficiles et complexes que d\'autres avocats n\'osent pas gérer.',
+        it: 'Rapporto completo sui successi dell\'avvocato Karim El Deeb nella difesa di casi difficili e complessi che altri avvocati non osano gestire.'
       }),
       link: 'https://akhbaralgomhuria.com/%d9%86%d8%b5%d9%8a%d8%b1-%d9%85%d9%86-%d9%84%d8%a7-%d9%86%d8%b5%d9%8a%d8%b1-%d9%84%d8%a9-%d8%a7%d9%84%d9%85%d8%ad%d8%a7%d9%85%d9%8a-%d9%83%d8%b1%d9%8a%d9%85-%d8%a7%d9%84%d8%af%d9%8a%d8%a8-%d8%b5/',
       image: '/images/lawyer-4.jpg',
       tags: [
         getTextByLanguage({ ar: 'أخبار المحامين', en: 'Lawyers News', fr: 'Actualités Juridiques', it: 'Notizie Legali' }),
         getTextByLanguage({ ar: 'قضايا صعبة', en: 'Difficult Cases', fr: 'Cas Difficiles', it: 'Casi Difficili' }),
-        getTextByLanguage({ ar: 'كريم الديب', en: 'Karim El-Dib', fr: 'Karim El-Dib', it: 'Karim El-Dib' })
+        getTextByLanguage({ ar: 'كريم الديب', en: 'Karim El Deeb', fr: 'Karim El Deeb', it: 'Karim El Deeb' })
       ]
     },
     {
       id: 2,
       title: getTextByLanguage({
         ar: 'المحامي كريم الديب يحقق نصراً قانونياً مدوياً في قضية استثمارية معقدة',
-        en: 'Lawyer Karim El-Dib Achieves Resounding Legal Victory in Complex Investment Case',
-        fr: 'L\'Avocat Karim El-Dib Remporte une Victoire Juridique Retentissante dans un Cas d\'Investissement Complexe',
-        it: 'L\'Avvocato Karim El-Dib Ottiene una Vittoria Legale Clamorosa in un Caso di Investimento Complesso'
+        en: 'Lawyer Karim El Deeb Achieves Resounding Legal Victory in Complex Investment Case',
+        fr: 'L\'Avocat Karim El Deeb Remporte une Victoire Juridique Retentissante dans un Cas d\'Investissement Complexe',
+        it: 'L\'Avvocato Karim El Deeb Ottiene una Vittoria Legale Clamorosa in un Caso di Investimento Complesso'
       }),
       newspaper: getTextByLanguage({
         ar: 'اليوم السابع',
@@ -66,9 +66,9 @@ const News: React.FC = () => {
       }),
       excerpt: getTextByLanguage({
         ar: 'تغطية حصرية لانتصار المحامي كريم الديب في قضية استثمارية دولية معقدة تتعلق بحقوق المستثمرين الأجانب في مصر.',
-        en: 'Exclusive coverage of Lawyer Karim El-Dib\'s victory in a complex international investment case related to foreign investors\' rights in Egypt.',
-        fr: 'Couverture exclusive de la victoire de l\'avocat Karim El-Dib dans une affaire d\'investissement international complexe liée aux droits des investisseurs étrangers en Égypte.',
-        it: 'Copertura esclusiva della vittoria dell\'avvocato Karim El-Dib in un caso di investimento internazionale complesso relativo ai diritti degli investitori stranieri in Egitto.'
+        en: 'Exclusive coverage of Lawyer Karim El Deeb\'s victory in a complex international investment case related to foreign investors\' rights in Egypt.',
+        fr: 'Couverture exclusive de la victoire de l\'avocat Karim El Deeb dans une affaire d\'investissement international complexe liée aux droits des investisseurs étrangers en Égypte.',
+        it: 'Copertura esclusiva della vittoria dell\'avvocato Karim El Deeb in un caso di investimento internazionale complesso relativo ai diritti degli investitori stranieri in Egitto.'
       }),
       link: 'https://www.youm7.com/2025/05/blog-post_565.html',
       image: '/images/lawyer-5.jpg',
@@ -82,9 +82,9 @@ const News: React.FC = () => {
       id: 3,
       title: getTextByLanguage({
         ar: 'كريم الديب: رائد الخدمات القانونية للمصريين بالخارج والمستثمرين الأجانب',
-        en: 'Karim El-Dib: Pioneer in Legal Services for Egyptians Abroad and Foreign Investors',
-        fr: 'Karim El-Dib: Pionnier des Services Juridiques pour les Égyptiens à l\'Étranger et les Investisseurs Étrangers',
-        it: 'Karim El-Dib: Pioniere dei Servizi Legali per gli Egiziani all\'Estero e gli Investitori Stranieri'
+        en: 'Karim El Deeb: Pioneer in Legal Services for Egyptians Abroad and Foreign Investors',
+        fr: 'Karim El Deeb: Pionnier des Services Juridiques pour les Égyptiens à l\'Étranger et les Investisseurs Étrangers',
+        it: 'Karim El Deeb: Pioniere dei Servizi Legali per gli Egiziani all\'Estero e gli Investitori Stranieri'
       }),
       newspaper: getTextByLanguage({
         ar: 'الوطن نيوز',
@@ -100,9 +100,9 @@ const News: React.FC = () => {
       }),
       excerpt: getTextByLanguage({
         ar: 'حوار شامل مع المحامي كريم الديب حول تطوير الخدمات القانونية المتخصصة للمصريين في الخارج والمستثمرين الأجانب في مصر.',
-        en: 'Comprehensive interview with Lawyer Karim El-Dib about developing specialized legal services for Egyptians abroad and foreign investors in Egypt.',
-        fr: 'Entretien complet avec l\'avocat Karim El-Dib sur le développement de services juridiques spécialisés pour les Égyptiens à l\'étranger et les investisseurs étrangers en Égypte.',
-        it: 'Intervista completa con l\'avvocato Karim El-Dib sullo sviluppo di servizi legali specializzati per gli egiziani all\'estero e gli investitori stranieri in Egitto.'
+        en: 'Comprehensive interview with Lawyer Karim El Deeb about developing specialized legal services for Egyptians abroad and foreign investors in Egypt.',
+        fr: 'Entretien complet avec l\'avocat Karim El Deeb sur le développement de services juridiques spécialisés pour les Égyptiens à l\'étranger et les investisseurs étrangers en Égypte.',
+        it: 'Intervista completa con l\'avvocato Karim El Deeb sullo sviluppo di servizi legali specializzati per gli egiziani all\'estero e gli investitori stranieri in Egitto.'
       }),
       link: 'https://www.elwaatannews.com/2025/05/blog-post_55.html',
       image: '/images/lawyer-6.jpg',
@@ -124,17 +124,17 @@ const News: React.FC = () => {
             <i className="fas fa-newspaper text-[#c8a876] ml-3"></i>
             {getTextByLanguage({
               ar: 'كريم الديب في الأخبار',
-              en: 'Karim El-Dib in the News',
-              fr: 'Karim El-Dib dans les Nouvelles',
-              it: 'Karim El-Dib nelle Notizie'
+              en: 'Karim El Deeb in the News',
+              fr: 'Karim El Deeb dans les Nouvelles',
+              it: 'Karim El Deeb nelle Notizie'
             })}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {getTextByLanguage({
               ar: 'تغطية إعلامية شاملة لإنجازات وانتصارات المحامي كريم الديب في أهم الصحف والمواقع الإخبارية المصرية',
-              en: 'Comprehensive media coverage of Lawyer Karim El-Dib\'s achievements and victories in major Egyptian newspapers and news websites',
-              fr: 'Couverture médiatique complète des réalisations et victoires de l\'avocat Karim El-Dib dans les principaux journaux et sites d\'actualités égyptiens',
-              it: 'Copertura mediatica completa dei successi e delle vittorie dell\'avvocato Karim El-Dib nei principali giornali e siti di notizie egiziani'
+              en: 'Comprehensive media coverage of Lawyer Karim El Deeb\'s achievements and victories in major Egyptian newspapers and news websites',
+              fr: 'Couverture médiatique complète des réalisations et victoires de l\'avocat Karim El Deeb dans les principaux journaux et sites d\'actualités égyptiens',
+              it: 'Copertura mediatica completa dei successi e delle vittorie dell\'avvocato Karim El Deeb nei principali giornali e siti di notizie egiziani'
             })}
           </p>
         </div>
@@ -341,9 +341,9 @@ const News: React.FC = () => {
           <p className="text-gray-300 mt-4 text-sm">
             {getTextByLanguage({
               ar: 'يحظى المحامي كريم الديب بتغطية إعلامية واسعة لإنجازاته القانونية المتميزة',
-              en: 'Lawyer Karim El-Dib receives extensive media coverage for his outstanding legal achievements',
-              fr: 'L\'avocat Karim El-Dib bénéficie d\'une large couverture médiatique pour ses remarquables réalisations juridiques',
-              it: 'L\'avvocato Karim El-Dib riceve un\'ampia copertura mediatica per i suoi eccezionali risultati legali'
+              en: 'Lawyer Karim El Deeb receives extensive media coverage for his outstanding legal achievements',
+              fr: 'L\'avocat Karim El Deeb bénéficie d\'une large couverture médiatique pour ses remarquables réalisations juridiques',
+              it: 'L\'avvocato Karim El Deeb riceve un\'ampia copertura mediatica per i suoi eccezionali risultati legali'
             })}
           </p>
         </div>

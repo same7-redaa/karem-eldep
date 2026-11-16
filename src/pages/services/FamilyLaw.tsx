@@ -10,15 +10,15 @@ const FamilyLaw: React.FC = () => {
     return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
-        title={language === 'ar' ? "محامي أحوال شخصية وقانون الأسرة للأجانب في مصر | كريم الديب" : "Family Lawyer for Foreigners in Egypt | Karim El-Dib"}
-        description={language === 'ar' ? "محامي أحوال شخصية للأجانب في مصر — كريم الديب. طلاق، حضانة، نفقة، وإقامة للمقيمين الأجانب." : "Family and divorce lawyer for foreigners and mixed marriages in Egypt. Child custody, alimony, and residence permits."}
+        title={language === 'ar' ? "محامي أحوال شخصية وطلاق في مصر والإسكندرية | كريم الديب" : "Divorce & Family Lawyer in Egypt | Karim El Deeb"}
+        description={language === 'ar' ? "محامي أحوال شخصية في الإسكندرية ومصر: طلاق، خلع، حضانة، نفقة، ورؤية، وقضايا الأجانب. مكتب كريم الديب منذ 2006، اتصل أو راسل واتساب على 01223767592." : "Divorce and family lawyer in Egypt (Alexandria office since 2006): divorce, custody, alimony, and mixed marriages for foreigners. Call or WhatsApp +20 122 376 7592."}
         canonicalUrl="https://www.ke-lawyer.com/family-law"
       />
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
         <img
           src="/images/services/family-law.webp"
-          alt={isRTL ? "قانون الأسرة - مكتب كريم الديب للمحاماة" : "Family Law - Karim El-Dib Law Firm"}
+          alt={isRTL ? "قانون الأسرة - مكتب كريم الديب للمحاماة" : "Family Law - Karim El Deeb Law Firm"}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
@@ -32,9 +32,9 @@ const FamilyLaw: React.FC = () => {
           <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-6 font-medium text-[#d4a15c]">
             {getTextByLanguage({
               ar: 'المحامي كريم الديب - خبير في قانون الأسرة والأحوال الشخصية. نتعامل بحساسية واحترافية مع قضايا الأسرة للمصريين والأجانب.',
-              en: 'Lawyer Karim El-Dib - Expert in family law and personal status. We handle family matters with sensitivity and professionalism for Egyptians and foreigners.',
-              fr: 'Avocat Karim El-Dib - Expert en droit de la famille. Nous traitons les affaires familiales avec sensibilité et professionnalisme.',
-              it: 'Avvocato Karim El-Dib - Esperto in diritto di famiglia. Gestiamo questioni familiari con sensibilità e professionalità.'
+              en: 'Lawyer Karim El Deeb - Expert in family law and personal status. We handle family matters with sensitivity and professionalism for Egyptians and foreigners.',
+              fr: 'Avocat Karim El Deeb - Expert en droit de la famille. Nous traitons les affaires familiales avec sensibilité et professionnalisme.',
+              it: 'Avvocato Karim El Deeb - Esperto in diritto di famiglia. Gestiamo questioni familiari con sensibilità e professionalità.'
             })}
           </p>
         </div>

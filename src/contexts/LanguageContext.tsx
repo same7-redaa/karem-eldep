@@ -49,7 +49,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.intro': 'نبذة عن مكتب كريم الديب للمحاماة',
     'about.p1': 'مكتب كريم الديب للمحاماة والاستشارات القانونية هو مكتب قانوني معتمد تأسس عام 2006 ويضم فريق متخصص من المحامين ذوي الخبرة في مختلف فروع القانون.',
     'about.p2': 'يقدم المكتب خدماته في مجالات القضايا الجنائية والمدنية وقضايا الأجانب والاقامات والعقود الدولية والتحكيم قانون الشركات قانون الأسرة قانون تجاري.',
-    'about.p3': 'يتميز المكتب بخبرة تتجاوز 18 عام في تقديم الدعم القانوني للأفراد والشركات محليا ودوليا خاصة بالتعاون مع السفارات الأجنبية في مصر. نلتزم بالدقة والسرية والاحترافية في تمثيل عملائنا داخل وخارج مصر. هدفنا هو تحقيق العدالة وحماية حقوق عملائنا بكل شفافية والتزام.',
+    'about.p3': 'يتميز المكتب بخبرة تتجاوز 20 عام في تقديم الدعم القانوني للأفراد والشركات محليا ودوليا خاصة بالتعاون مع السفارات الأجنبية في مصر. نلتزم بالدقة والسرية والاحترافية في تمثيل عملائنا داخل وخارج مصر. هدفنا هو تحقيق العدالة وحماية حقوق عملائنا بكل شفافية والتزام.',
     'about.stat1': 'سنة خبرة',
     'about.stat2': 'موكل',
     'about.stat3.value': 'عالمية',
@@ -94,7 +94,7 @@ const translations: Record<Language, Record<string, string>> = {
     // Why Choose Us
     'why.title': 'لماذا تختار مكتب كريم الديب؟',
     'why.subtitle': 'مكتب كريم الديب للمحاماة يهدف إلى تقديم خدمات قانونية دولية بمستوى عالمي، مع الحفاظ على السرية التامة والالتزام بأخلاقيات المهنة.',
-    'why.experience': 'خبرة 18 عام',
+    'why.experience': 'خبرة 20 عام',
     'why.experience.desc': 'خبرة طويلة في تقديم الدعم القانوني للأفراد والشركات محليا ودوليا',
     'why.diplomatic': 'تعاون دولي',
     'why.diplomatic.desc': 'تعاون مع السفارات الأجنبية في مصر ومكاتب قانونية دولية',
@@ -132,7 +132,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.book': 'Book Consultation',
     
     // Hero
-    'hero.title': 'Karim Eldib International Law Firm & Foreign Services',
+    'hero.title': 'Karim El Deeb International Law Firm & Foreign Services',
     'hero.subtitle': 'Unlimited lawyers & foreign services',
     'hero.cities': 'Foreign Lawyer in Sharm El Sheikh | Lawyer for Foreigners in Alexandria',
     'hero.consulate': 'Certified Lawyer at the French Consulate',
@@ -140,15 +140,15 @@ const translations: Record<Language, Record<string, string>> = {
     
     // About
     'about.title': 'About the Firm',
-    'about.intro': 'About Karim Eldib Law Firm',
-    'about.p1': 'Karim Eldib Law Firm & Legal Consultations is an accredited legal office established in 2006, comprising a specialized team of experienced lawyers in various branches of law.',
+    'about.intro': 'About Karim El Deeb Law Firm',
+    'about.p1': 'Karim El Deeb Law Firm & Legal Consultations is an accredited legal office established in 2006, comprising a specialized team of experienced lawyers in various branches of law.',
     'about.p2': 'The firm provides its services in the fields of criminal and civil cases, foreigners and residence cases, international contracts, arbitration, corporate law, family law, and commercial law.',
-    'about.p3': 'The firm is distinguished by experience spanning over 18 years in providing legal support to individuals and companies locally and internationally, especially in cooperation with foreign embassies in Egypt. We are committed to accuracy, confidentiality, and professionalism in representing our clients inside and outside Egypt. Our goal is to achieve justice and protect the rights of our clients with complete transparency and commitment.',
+    'about.p3': 'The firm is distinguished by experience spanning over 20 years in providing legal support to individuals and companies locally and internationally, especially in cooperation with foreign embassies in Egypt. We are committed to accuracy, confidentiality, and professionalism in representing our clients inside and outside Egypt. Our goal is to achieve justice and protect the rights of our clients with complete transparency and commitment.',
     'about.stat1': 'Years Experience',
     'about.stat2': 'Clients',
     'about.stat3.value': 'Global',
     'about.stat3.label': 'Services',
-    'about.lawyerProfile': 'Meet Lawyer Karim Eldib',
+    'about.lawyerProfile': 'Meet Lawyer Karim El Deeb',
     
     // Services
     'services.title': 'Unlimited Legal Services',
@@ -185,9 +185,9 @@ const translations: Record<Language, Record<string, string>> = {
     'services.maritime.desc': 'Resolving maritime transport disputes, customs clearance issues, and legal matters at major ports and the Suez Canal',
     'services.learnMore': 'Learn More',
     // Why Choose Us
-    'why.title': 'Why Choose Karim Eldib Law Firm?',
-    'why.subtitle': 'Karim Eldib Law Firm aims to provide international legal services at a world-class level, while maintaining complete confidentiality and commitment to professional ethics.',
-    'why.experience': '18 Years Experience',
+    'why.title': 'Why Choose Karim El Deeb Law Firm?',
+    'why.subtitle': 'Karim El Deeb Law Firm aims to provide international legal services at a world-class level, while maintaining complete confidentiality and commitment to professional ethics.',
+    'why.experience': '20 Years Experience',
     'why.experience.desc': 'Long experience in providing legal support to individuals and companies locally and internationally',
     'why.diplomatic': 'International Cooperation',
     'why.diplomatic.desc': 'Cooperation with foreign embassies in Egypt and international legal offices',
@@ -214,7 +214,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.social': 'Follow Us on Social Media',
     
     // Footer
-    'footer.rights': 'Karim Eldib Law Firm. All rights reserved.',
+    'footer.rights': 'Karim El Deeb Law Firm. All rights reserved.',
   },
   
   // French translations
@@ -227,7 +227,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.book': 'Réserver une consultation',
     
     // Hero
-    'hero.title': 'Cabinet Karim Eldib - Avocat International et Services pour Étrangers',
+    'hero.title': 'Cabinet Karim El Deeb - Avocat International et Services pour Étrangers',
     'hero.subtitle': 'Services juridiques illimités pour étrangers',
     'hero.cities': 'Avocat pour Étrangers à Charm El-Cheikh | Avocat pour Étrangers à Alexandrie',
     'hero.consulate': 'Avocat agréé au Consulat de France',
@@ -235,15 +235,15 @@ const translations: Record<Language, Record<string, string>> = {
     
     // About
     'about.title': 'À propos du cabinet',
-    'about.intro': 'À propos du Cabinet Karim Eldib',
-    'about.p1': 'Le Cabinet Karim Eldib est un cabinet juridique agréé fondé en 2006, composé d\'une équipe spécialisée d\'avocats expérimentés dans diverses branches du droit.',
+    'about.intro': 'À propos du Cabinet Karim El Deeb',
+    'about.p1': 'Le Cabinet Karim El Deeb est un cabinet juridique agréé fondé en 2006, composé d\'une équipe spécialisée d\'avocats expérimentés dans diverses branches du droit.',
     'about.p2': 'Le cabinet offre ses services dans les domaines du droit pénal et civil, affaires d\'étrangers, permis de résidence, contrats internationaux, arbitrage, droit des sociétés, droit de la famille et droit commercial.',
-    'about.p3': 'Le cabinet se distingue par une expérience de plus de 18 ans dans la fourniture de soutien juridique aux particuliers et aux entreprises localement et internationalement, en particulier en coopération avec les ambassades étrangères en Égypte.',
+    'about.p3': 'Le cabinet se distingue par une expérience de plus de 20 ans dans la fourniture de soutien juridique aux particuliers et aux entreprises localement et internationalement, en particulier en coopération avec les ambassades étrangères en Égypte.',
     'about.stat1': 'Années d\'expérience',
     'about.stat2': 'Clients',
     'about.stat3.value': 'Mondiaux',
     'about.stat3.label': 'Services',
-    'about.lawyerProfile': 'Profil de l\'Avocat Karim Eldib',
+    'about.lawyerProfile': 'Profil de l\'Avocat Karim El Deeb',
     
     // Services
     'services.title': 'Nos Services',
@@ -281,9 +281,9 @@ const translations: Record<Language, Record<string, string>> = {
     'services.learnMore': 'En savoir plus',
     
     // Why Choose Us
-    'why.title': 'Pourquoi choisir le Cabinet Karim Eldib?',
+    'why.title': 'Pourquoi choisir le Cabinet Karim El Deeb?',
     'why.subtitle': 'Services juridiques internationaux de classe mondiale avec confidentialité totale',
-    'why.experience': '18 ans d\'expérience',
+    'why.experience': '20 ans d\'expérience',
     'why.experience.desc': 'Longue expérience dans le soutien juridique local et international',
     'why.diplomatic': 'Coopération Internationale',
     'why.diplomatic.desc': 'Coopération avec les ambassades étrangères et cabinets juridiques internationaux',
@@ -310,7 +310,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.social': 'Suivez-nous sur les réseaux sociaux',
     
     // Footer
-    'footer.rights': 'Cabinet Karim Eldib. Tous droits réservés.',
+    'footer.rights': 'Cabinet Karim El Deeb. Tous droits réservés.',
   },
   
   // Italian translations
@@ -323,7 +323,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.book': 'Prenota consulenza',
     
     // Hero
-    'hero.title': 'Studio Legale Karim Eldib - Avvocato Internazionale e Servizi per Stranieri',
+    'hero.title': 'Studio Legale Karim El Deeb - Avvocato Internazionale e Servizi per Stranieri',
     'hero.subtitle': 'Servizi legali illimitati per stranieri',
     'hero.cities': 'Avvocato per Stranieri a Sharm El Sheikh | Avvocato per Stranieri ad Alessandria',
     'hero.consulate': 'Avvocato certificato presso il Consolato Francese',
@@ -331,15 +331,15 @@ const translations: Record<Language, Record<string, string>> = {
     
     // About
     'about.title': 'Chi Siamo',
-    'about.intro': 'Informazioni sullo Studio Legale Karim Eldib',
-    'about.p1': 'Lo Studio Legale Karim Eldib è uno studio legale accreditato fondato nel 2006, composto da un team specializzato di avvocati esperti in vari rami del diritto.',
+    'about.intro': 'Informazioni sullo Studio Legale Karim El Deeb',
+    'about.p1': 'Lo Studio Legale Karim El Deeb è uno studio legale accreditato fondato nel 2006, composto da un team specializzato di avvocati esperti in vari rami del diritto.',
     'about.p2': 'Lo studio offre i suoi servizi nei settori del diritto penale e civile, affari degli stranieri, permessi di soggiorno, contratti internazionali, arbitrato, diritto societario, diritto di famiglia e diritto commerciale.',
-    'about.p3': 'Lo studio si distingue per un\'esperienza di oltre 18 anni nel fornire supporto legale a privati e aziende localmente e internazionalmente, in particolare in collaborazione con ambasciate straniere in Egitto.',
+    'about.p3': 'Lo studio si distingue per un\'esperienza di oltre 20 anni nel fornire supporto legale a privati e aziende localmente e internazionalmente, in particolare in collaborazione con ambasciate straniere in Egitto.',
     'about.stat1': 'Anni di esperienza',
     'about.stat2': 'Clienti',
     'about.stat3.value': 'Globali',
     'about.stat3.label': 'Servizi',
-    'about.lawyerProfile': 'Profilo dell\'Avvocato Karim Eldib',
+    'about.lawyerProfile': 'Profilo dell\'Avvocato Karim El Deeb',
     
     // Services
     'services.title': 'I Nostri Servizi',
@@ -377,9 +377,9 @@ const translations: Record<Language, Record<string, string>> = {
     'services.learnMore': 'Scopri di più',
     
     // Why Choose Us
-    'why.title': 'Perché scegliere lo Studio Legale Karim Eldib?',
+    'why.title': 'Perché scegliere lo Studio Legale Karim El Deeb?',
     'why.subtitle': 'Servizi legali internazionali di livello mondiale con totale riservatezza',
-    'why.experience': '18 anni di esperienza',
+    'why.experience': '20 anni di esperienza',
     'why.experience.desc': 'Lunga esperienza nel supporto legale locale e internazionale',
     'why.diplomatic': 'Cooperazione Internazionale',
     'why.diplomatic.desc': 'Cooperazione con ambasciate straniere e studi legali internazionali',
@@ -406,7 +406,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.social': 'Seguici sui social media',
     
     // Footer
-    'footer.rights': 'Studio Legale Karim Eldib. Tutti i diritti riservati.',
+    'footer.rights': 'Studio Legale Karim El Deeb. Tutti i diritti riservati.',
   }
 };
 

@@ -9,18 +9,18 @@ const ForeignersInEgypt: React.FC = () => {
   const seoTitle = language === 'ar'
     ? 'محامي الأجانب والمستثمرين في مصر | إقامة وتأشيرات وشركات | كريم الديب'
     : language === 'fr'
-    ? 'Avocat pour Étrangers en Égypte | Résidence, Visa & Investissement | Karim Eldib'
+    ? 'Avocat pour Étrangers en Égypte | Résidence, Visa & Investissement | Karim El Deeb'
     : language === 'it'
-    ? 'Avvocato per Stranieri in Egitto | Residenza, Visto & Investimenti | Karim Eldib'
-    : 'Immigration & Foreigners Lawyer in Egypt | Residence Permits, Visas & Company Formation | Karim Eldib';
+    ? 'Avvocato per Stranieri in Egitto | Residenza, Visto & Investimenti | Karim El Deeb'
+    : 'Immigration & Foreigners Lawyer in Egypt | Residence Permits, Visas & Company Formation | Karim El Deeb';
 
   const seoDescription = language === 'ar'
-    ? 'محامي كريم الديب — متخصص في خدمات الأجانب والمقيمين في مصر. إقامة وتأشيرات، تأسيس شركات، عقود العمل، عقارات، ومنازعات الاستثمار. خبرة 18 عاماً. استشارة مجانية.'
+    ? 'محامي كريم الديب — متخصص في خدمات الأجانب والمقيمين في مصر. إقامة وتأشيرات، تأسيس شركات، عقود العمل، عقارات، ومنازعات الاستثمار. خبرة 20 عاماً. استشارة مجانية.'
     : language === 'fr'
-    ? 'Avocat Karim Eldib pour étrangers en Égypte. Résidence, visas, création d\'entreprises, contrats et litiges d\'investissement. 18 ans d\'expérience. Consultation gratuite. Nous parlons français.'
+    ? 'Avocat Karim El Deeb pour étrangers en Égypte. Résidence, visas, création d\'entreprises, contrats et litiges d\'investissement. 20 ans d\'expérience. Consultation gratuite. Nous parlons français.'
     : language === 'it'
-    ? 'Avvocato Karim Eldib per stranieri in Egitto. Residenza, visti, costituzione società e controversie. 18 anni di esperienza. Consulenza gratuita. Parliamo italiano.'
-    : 'Immigration & Foreigners Lawyer in Egypt — Karim Eldib. Expert in residence permits, visas, company formation & investment disputes in Cairo, Alexandria & Sharm El Sheikh. Free consultation. English, French & Italian spoken.';
+    ? 'Avvocato Karim El Deeb per stranieri in Egitto. Residenza, visti, costituzione società e controversie. 20 anni di esperienza. Consulenza gratuita. Parliamo italiano.'
+    : 'Immigration & Foreigners Lawyer in Egypt — Karim El Deeb. Expert in residence permits, visas, company formation & investment disputes in Cairo, Alexandria & Sharm El Sheikh. Free consultation. English, French & Italian spoken.';
 
   const seoKeywords = language === 'ar'
     ? 'محامي استثمار أجنبي في مصر, منازعات المستثمرين الأجانب في مصر, منازعات الاستثمار في مصر, تسوية المنازعات الاستثمارية, محامي أجانب في مصر, محامي دولي في مصر, تأسيس شركات للأجانب'
@@ -191,7 +191,7 @@ const ForeignersInEgypt: React.FC = () => {
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
         <img
           src="/images/services/foreigners-in-egypt.webp"
-          alt={isRTL ? "خدمات الأجانب في مصر - مكتب كريم الديب للمحاماة" : "Foreigners in Egypt - Karim El-Dib Law Firm"}
+          alt={isRTL ? "خدمات الأجانب في مصر - مكتب كريم الديب للمحاماة" : "Foreigners in Egypt - Karim El Deeb Law Firm"}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
@@ -210,18 +210,18 @@ const ForeignersInEgypt: React.FC = () => {
           <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-6 font-medium text-[#d4a15c]">
             {getTextByLanguage({
               ar: 'المحامي كريم الديب - خبير في تقديم الخدمات القانونية المتخصصة للأجانب في مصر. محامي معتمد بخبرة دولية واسعة في خدمة الأجانب والمستثمرين الأجانب في مصر.',
-              en: 'Lawyer Karim El-Dib - Expert in providing specialized legal services for foreigners in Egypt. Certified lawyer with extensive international experience in serving foreigners and foreign investors in Egypt.',
-              fr: 'Avocat Karim El-Dib - Expert en services juridiques pour étrangers. Avocat certifié au service des étrangers et investisseurs.',
-              it: 'Avvocato Karim El-Dib - Esperto in servizi legali per stranieri. Avvocato certificato al servizio di stranieri e investitori.'
+              en: 'Lawyer Karim El Deeb - Expert in providing specialized legal services for foreigners in Egypt. Certified lawyer with extensive international experience in serving foreigners and foreign investors in Egypt.',
+              fr: 'Avocat Karim El Deeb - Expert en services juridiques pour étrangers. Avocat certifié au service des étrangers et investisseurs.',
+              it: 'Avvocato Karim El Deeb - Esperto in servizi legali per stranieri. Avvocato certificato al servizio di stranieri e investitori.'
             })}
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-base">
             <span className="bg-[#c8a876] text-[#0b1a33] px-5 py-2.5 rounded-full font-semibold">
               {getTextByLanguage({
                 ar: 'كريم الديب محامي',
-                en: 'Karim El-Dib Lawyer',
-                fr: 'Karim El-Dib Avocat',
-                it: 'Karim El-Dib Avvocato'
+                en: 'Karim El Deeb Lawyer',
+                fr: 'Karim El Deeb Avocat',
+                it: 'Karim El Deeb Avvocato'
               })}
             </span>
             <span className="bg-white/20 backdrop-blur-sm text-white px-5 py-2.5 rounded-full font-semibold border border-white/30">
@@ -264,9 +264,9 @@ const ForeignersInEgypt: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center text-[#c8a876] mb-12">
             {getTextByLanguage({
               ar: 'لماذا تختار المحامي كريم الديب؟',
-              en: 'Why Choose Lawyer Karim El-Dib?',
-              fr: 'Pourquoi Choisir l\'Avocat Karim El-Dib?',
-              it: 'Perché Scegliere l\'Avvocato Karim El-Dib?'
+              en: 'Why Choose Lawyer Karim El Deeb?',
+              fr: 'Pourquoi Choisir l\'Avocat Karim El Deeb?',
+              it: 'Perché Scegliere l\'Avvocato Karim El Deeb?'
             })}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -499,9 +499,9 @@ const ForeignersInEgypt: React.FC = () => {
           <p className="text-xl text-[#0b1a33] mb-8 max-w-3xl mx-auto">
             {getTextByLanguage({
               ar: 'المحامي كريم الديب جاهز لمساعدتك في جميع احتياجاتك القانونية كأجنبي في مصر. اتصل بنا الآن للحصول على استشارة مجانية.',
-              en: 'Lawyer Karim El-Dib is ready to help you with all your legal needs as a foreigner in Egypt. Contact us now for a free consultation.',
-              fr: 'L\'avocat Karim El-Dib est prêt à vous aider pour tous vos besoins juridiques en tant qu\'étranger en Égypte. Contactez-nous maintenant pour une consultation gratuite.',
-              it: 'L\'avvocato Karim El-Dib è pronto ad aiutarti con tutte le tue esigenze legali come straniero in Egitto. Contattaci ora per una consulenza gratuita.'
+              en: 'Lawyer Karim El Deeb is ready to help you with all your legal needs as a foreigner in Egypt. Contact us now for a free consultation.',
+              fr: 'L\'avocat Karim El Deeb est prêt à vous aider pour tous vos besoins juridiques en tant qu\'étranger en Égypte. Contactez-nous maintenant pour une consultation gratuite.',
+              it: 'L\'avvocato Karim El Deeb è pronto ad aiutarti con tutte le tue esigenze legali come straniero in Egitto. Contattaci ora per una consulenza gratuita.'
             })}
           </p>
           <div className="flex flex-wrap justify-center gap-4">

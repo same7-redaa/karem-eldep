@@ -245,7 +245,7 @@ const Header: React.FC = () => {
           <button onClick={() => scrollToSection('hero')} className="flex items-center cursor-pointer hover:opacity-80 transition-opacity">
             <img 
               src="https://i.postimg.cc/G3FMRMY4/3.png" 
-              alt={isRTL ? "شعار مكتب كريم الديب للمحاماة - مكتب محاماة دولي متخصص" : "Karim Eldib Law Firm Logo - International specialized law office"}
+              alt={isRTL ? "شعار مكتب كريم الديب للمحاماة - مكتب محاماة دولي متخصص" : "Karim El Deeb Law Firm Logo - International specialized law office"}
               className="h-10 md:h-12 w-auto"
               style={{ mixBlendMode: 'screen' }}
             />

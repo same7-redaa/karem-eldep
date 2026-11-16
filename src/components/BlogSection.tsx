@@ -79,9 +79,9 @@ const BlogSection: React.FC = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {getTextByLanguage({
               ar: 'مقالات قانونية متخصصة من المحامي كريم الديب لمساعدتك في فهم القوانين والحصول على نصائح قانونية قيمة',
-              en: 'Specialized legal articles by Lawyer Karim El-Dib to help you understand laws and get valuable legal advice',
-              fr: 'Articles juridiques spécialisés de l\'avocat Karim El-Dib pour vous aider à comprendre les lois et obtenir des conseils juridiques précieux',
-              it: 'Articoli legali specializzati dell\'avvocato Karim El-Dib per aiutarti a comprendere le leggi e ottenere preziosi consigli legali'
+              en: 'Specialized legal articles by Lawyer Karim El Deeb to help you understand laws and get valuable legal advice',
+              fr: 'Articles juridiques spécialisés de l\'avocat Karim El Deeb pour vous aider à comprendre les lois et obtenir des conseils juridiques précieux',
+              it: 'Articoli legali specializzati dell\'avvocato Karim El Deeb per aiutarti a comprendere le leggi e ottenere preziosi consigli legali'
             })}
           </p>
         </div>

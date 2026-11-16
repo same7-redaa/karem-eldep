@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({ titleAsH1 = true }) => {
       {/* Background Image with optimization and blur placeholder */}
       <img
         src="/france.webp"
-        alt="Karim El-Dib Law Firm Background"
+        alt="Karim El Deeb Law Firm Background"
         width="1920"
         height="1080"
         className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"

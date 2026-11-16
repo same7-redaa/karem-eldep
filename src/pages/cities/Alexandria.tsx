@@ -5,16 +5,16 @@ const data: CityPageData = {
   branch: 'alexandria',
   seoTitle: {
     ar: 'محامي في الإسكندرية | مكتب محاماة لجميع القضايا | المحامي كريم الديب',
-    en: 'Lawyer in Alexandria, Egypt | English-Speaking Law Firm | Karim Eldib',
+    en: 'Lawyer in Alexandria, Egypt | English-Speaking Law Firm | Karim El Deeb',
   },
   seoDescription: {
     ar: 'محامي في الإسكندرية منذ 2006 – مكتب المحامي كريم الديب يخدم كل أحياء الإسكندرية: قضايا جنائية ومدنية وأسرة، تأسيس شركات، قضايا الأجانب والتحكيم. اتصل: 01223767592',
-    en: 'Looking for a lawyer in Alexandria, Egypt? Karim Eldib Law Firm serves all of Alexandria and handles criminal, civil, family & corporate cases for locals and foreigners. English, French & Italian spoken.',
+    en: 'Looking for a lawyer in Alexandria, Egypt? Karim El Deeb Law Firm serves all of Alexandria and handles criminal, civil, family & corporate cases for locals and foreigners. English, French & Italian spoken.',
   },
   badge: { ar: 'المكتب الرئيسي – الإسكندرية', en: 'Main Office – Alexandria' },
   h1: {
     ar: 'محامي في الإسكندرية – مكتب المحامي كريم الديب للمحاماة',
-    en: 'Lawyer in Alexandria, Egypt – Karim Eldib Law Firm',
+    en: 'Lawyer in Alexandria, Egypt – Karim El Deeb Law Firm',
   },
   subtitle: {
     ar: 'تمثيل قانوني أمام محاكم الإسكندرية للأفراد والشركات والأجانب – بالعربية والإنجليزية والفرنسية والإيطالية',
@@ -23,7 +23,7 @@ const data: CityPageData = {
   intro: [
     {
       ar: 'إذا كنت تبحث عن محامي في الإسكندرية يجمع بين الخبرة في المحاكم المصرية والقدرة على التعامل مع القضايا ذات الطابع الدولي، فمكتب المحامي كريم الديب هو المقر الرئيسي لمؤسستنا في الإسكندرية منذ عام 2006، ويخدم الموكلين في كل أحياء المدينة. نتولى القضايا الجنائية والمدنية وقضايا الأحوال الشخصية، وتأسيس الشركات، والعقود التجارية، وقضايا الأجانب والإقامة، والتحكيم التجاري.',
-      en: 'If you need a lawyer in Alexandria who knows the Egyptian courts and can also handle cases with an international dimension, Karim Eldib Law Firm has run its main office in Alexandria since 2006, serving clients across the whole city. We handle criminal defense, civil litigation, family and personal-status cases, company formation, commercial contracts, residency matters for foreigners, and commercial arbitration.',
+      en: 'If you need a lawyer in Alexandria who knows the Egyptian courts and can also handle cases with an international dimension, Karim El Deeb Law Firm has run its main office in Alexandria since 2006, serving clients across the whole city. We handle criminal defense, civil litigation, family and personal-status cases, company formation, commercial contracts, residency matters for foreigners, and commercial arbitration.',
     },
     {
       ar: 'يخدم مكتبنا في الإسكندرية الموكلين المصريين المقيمين داخل مصر وخارجها، والأجانب المقيمين في الإسكندرية والساحل الشمالي، والشركات العاملة في ميناء الإسكندرية والمناطق الحرة. نشرح لك موقفك القانوني بوضوح، ونحدد الأتعاب كتابياً قبل البدء، ونتابع معك كل خطوة في القضية.',

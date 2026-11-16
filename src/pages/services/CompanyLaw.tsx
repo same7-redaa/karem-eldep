@@ -10,7 +10,7 @@ const CompanyLaw: React.FC = () => {
     return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
-        title={language === 'ar' ? "محامي شركات وتأسيس شركات في مصر | كريم الديب" : "Company Formation & Corporate Lawyer in Egypt | Karim Eldib"}
+        title={language === 'ar' ? "محامي شركات وتأسيس شركات في مصر | كريم الديب" : "Company Formation & Corporate Lawyer in Egypt | Karim El Deeb"}
         description={language === 'ar' ? "تأسيس الشركات المساهمة وذات المسؤولية المحدودة وفروع الشركات الأجنبية في مصر، صياغة عقود التأسيس، الاندماج والاستحواذ، الحوكمة وتسوية منازعات الشركاء. مكاتب في الإسكندرية وشرم الشيخ." : "Company formation in Egypt: joint stock, LLC and foreign company branches, articles of incorporation, mergers and acquisitions, governance and shareholder disputes. Offices in Alexandria and Sharm El Sheikh."}
         canonicalUrl="https://www.ke-lawyer.com/company-law"
       />
@@ -18,7 +18,7 @@ const CompanyLaw: React.FC = () => {
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
         <img
           src="/images/services/company-law.webp"
-          alt={isRTL ? "قانون الشركات - مكتب كريم الديب للمحاماة" : "Corporate Law - Karim El-Dib Law Firm"}
+          alt={isRTL ? "قانون الشركات - مكتب كريم الديب للمحاماة" : "Corporate Law - Karim El Deeb Law Firm"}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
@@ -37,9 +37,9 @@ const CompanyLaw: React.FC = () => {
           <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-6 font-medium text-[#d4a15c]">
             {getTextByLanguage({
               ar: 'المحامي كريم الديب - خبير في قانون الشركات وتأسيس الشركات والحوكمة المؤسسية. نقدم استشارات قانونية متقدمة للشركات المحلية والدولية في مصر.',
-              en: 'Lawyer Karim El-Dib - Expert in corporate law, company formation, and corporate governance. We provide advanced legal consultations for local and international companies in Egypt.',
-              fr: 'Avocat Karim El-Dib - Expert en droit des sociétés. Nous fournissons des consultations juridiques avancées pour les entreprises locales et internationales.',
-              it: 'Avvocato Karim El-Dib - Esperto in diritto societario. Forniamo consulenze legali avanzate per aziende locali e internazionali.'
+              en: 'Lawyer Karim El Deeb - Expert in corporate law, company formation, and corporate governance. We provide advanced legal consultations for local and international companies in Egypt.',
+              fr: 'Avocat Karim El Deeb - Expert en droit des sociétés. Nous fournissons des consultations juridiques avancées pour les entreprises locales et internationales.',
+              it: 'Avvocato Karim El Deeb - Esperto in diritto societario. Forniamo consulenze legali avanzate per aziende locali e internazionali.'
             })}
           </p>
         </div>

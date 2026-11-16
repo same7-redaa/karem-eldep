@@ -8,25 +8,25 @@ const AboutUs: React.FC = () => {
     const isRTL = language === 'ar';
 
     const title = language === 'ar'
-        ? 'من نحن | المحامي كريم الديب | 18 عاماً من الخبرة في خدمة الأجانب والتحكيم الدولي'
+        ? 'من نحن | المحامي كريم الديب | 20 عاماً من الخبرة في خدمة الأجانب والتحكيم الدولي'
         : language === 'fr'
-            ? 'À Propos | Avocat Karim Eldib | 18 Ans d\'Expérience en Égypte'
+            ? 'À Propos | Avocat Karim El Deeb | 20 Ans d\'Expérience en Égypte'
             : language === 'it'
-                ? 'Chi Siamo | Avvocato Karim Eldib | 18 Anni di Esperienza in Egitto'
-                : 'About Us | Lawyer Karim El-Dib | 18 Years Experience in Egypt';
+                ? 'Chi Siamo | Avvocato Karim El Deeb | 20 Anni di Esperienza in Egitto'
+                : 'About Us | Lawyer Karim El Deeb | 20 Years Experience in Egypt';
 
     const description = language === 'ar'
-        ? 'تعرف على المحامي كريم الديب، صاحب 18 عاماً من الخبرة المتخصصة في خدمة الأجانب والمستثمرين في مصر. مكتب محاماة دولي يتحدث 4 لغات ويقدم خدمات قانونية شاملة في شرم الشيخ والإسكندرية والقاهرة.'
+        ? 'تعرف على المحامي كريم الديب، صاحب 20 عاماً من الخبرة المتخصصة في خدمة الأجانب والمستثمرين في مصر. مكتب محاماة دولي يتحدث 4 لغات ويقدم خدمات قانونية شاملة في شرم الشيخ والإسكندرية والقاهرة.'
         : language === 'fr'
-            ? 'Découvrez l\'avocat Karim El-Dib, 18 ans d\'expérience spécialisée dans les services aux étrangers et investisseurs en Égypte. Cabinet d\'avocats international parlant 4 langues.'
+            ? 'Découvrez l\'avocat Karim El Deeb, 20 ans d\'expérience spécialisée dans les services aux étrangers et investisseurs en Égypte. Cabinet d\'avocats international parlant 4 langues.'
             : language === 'it'
-                ? 'Scopri l\'avvocato Karim El-Dib, 18 anni di esperienza specializzata nei servizi per stranieri e investitori in Egitto. Studio legale internazionale che parla 4 lingue.'
-                : 'Meet Lawyer Karim El-Dib, 18 years of specialized experience serving foreigners and investors in Egypt. International law firm speaking 4 languages in Alexandria, Cairo & Sharm El Sheikh.';
+                ? 'Scopri l\'avvocato Karim El Deeb, 20 anni di esperienza specializzata nei servizi per stranieri e investitori in Egitto. Studio legale internazionale che parla 4 lingue.'
+                : 'Meet Lawyer Karim El Deeb, 20 years of specialized experience serving foreigners and investors in Egypt. International law firm speaking 4 languages in Alexandria, Cairo & Sharm El Sheikh.';
 
     const stats = [
         {
             icon: Award,
-            number: '18',
+            number: '20',
             labelAr: 'عاماً من الخبرة',
             labelEn: 'Years of Experience',
             labelFr: 'Ans d\'Expérience',
@@ -158,15 +158,15 @@ const AboutUs: React.FC = () => {
                         </h1>
                         <p className="text-xl md:text-2xl text-[#d4a15c] font-medium mb-4">
                             {language === 'ar' && 'مؤسسة كريم الديب للمحاماة الدولية'}
-                            {language === 'en' && 'Karim El-Dib International Law Firm'}
-                            {language === 'fr' && 'Cabinet Juridique International Karim El-Dib'}
-                            {language === 'it' && 'Studio Legale Internazionale Karim El-Dib'}
+                            {language === 'en' && 'Karim El Deeb International Law Firm'}
+                            {language === 'fr' && 'Cabinet Juridique International Karim El Deeb'}
+                            {language === 'it' && 'Studio Legale Internazionale Karim El Deeb'}
                         </p>
                         <p className="text-lg text-gray-300">
-                            {language === 'ar' && '18 عاماً من التميز في خدمة الأجانب والمستثمرين في مصر'}
-                            {language === 'en' && '18 Years of Excellence Serving Foreigners and Investors in Egypt'}
-                            {language === 'fr' && '18 Ans d\'Excellence au Service des Étrangers et Investisseurs en Égypte'}
-                            {language === 'it' && '18 Anni di Eccellenza al Servizio di Stranieri e Investitori in Egitto'}
+                            {language === 'ar' && '20 عاماً من التميز في خدمة الأجانب والمستثمرين في مصر'}
+                            {language === 'en' && '20 Years of Excellence Serving Foreigners and Investors in Egypt'}
+                            {language === 'fr' && '20 Ans d\'Excellence au Service des Étrangers et Investisseurs en Égypte'}
+                            {language === 'it' && '20 Anni di Eccellenza al Servizio di Stranieri e Investitori in Egitto'}
                         </p>
                     </div>
                 </div>
@@ -205,9 +205,9 @@ const AboutUs: React.FC = () => {
                         <div className="bg-[#0e1f3b] rounded-lg p-8 border border-[#d4a15c]/20">
                             <p className="text-lg text-gray-300 leading-relaxed mb-6">
                                 {language === 'ar' && 'بدأت رحلتنا في عام 2006 عندما أسس المحامي كريم الديب مكتبه في الإسكندرية بهدف واضح: تقديم خدمات قانونية متميزة للأجانب والمستثمرين في مصر. مع مرور السنوات، نمت خبرتنا وتوسعت خدماتنا لتشمل شرم الشيخ، إحدى أهم الوجهات السياحية والاستثمارية في مصر.'}
-                                {language === 'en' && 'Our journey began in 2006 when Lawyer Karim El-Dib established his office in Alexandria with a clear goal: to provide distinguished legal services to foreigners and investors in Egypt. Over the years, our expertise has grown and our services have expanded to include Sharm El Sheikh, one of Egypt\'s most important tourist and investment destinations.'}
-                                {language === 'fr' && 'Notre parcours a commencé en 2006 lorsque l\'avocat Karim El-Dib a établi son cabinet à Alexandrie avec un objectif clair: fournir des services juridiques distingués aux étrangers et investisseurs en Égypte. Au fil des ans, notre expertise s\'est développée et nos services se sont étendus pour inclure Sharm El Sheikh, l\'une des destinations touristiques et d\'investissement les plus importantes d\'Égypte.'}
-                                {language === 'it' && 'Il nostro viaggio è iniziato nel 2006 quando l\'avvocato Karim El-Dib ha fondato il suo studio ad Alessandria con un obiettivo chiaro: fornire servizi legali distinti a stranieri e investitori in Egitto. Nel corso degli anni, la nostra esperienza è cresciuta e i nostri servizi si sono espansi per includere Sharm El Sheikh, una delle destinazioni turistiche e di investimento più importanti dell\'Egitto.'}
+                                {language === 'en' && 'Our journey began in 2006 when Lawyer Karim El Deeb established his office in Alexandria with a clear goal: to provide distinguished legal services to foreigners and investors in Egypt. Over the years, our expertise has grown and our services have expanded to include Sharm El Sheikh, one of Egypt\'s most important tourist and investment destinations.'}
+                                {language === 'fr' && 'Notre parcours a commencé en 2006 lorsque l\'avocat Karim El Deeb a établi son cabinet à Alexandrie avec un objectif clair: fournir des services juridiques distingués aux étrangers et investisseurs en Égypte. Au fil des ans, notre expertise s\'est développée et nos services se sont étendus pour inclure Sharm El Sheikh, l\'une des destinations touristiques et d\'investissement les plus importantes d\'Égypte.'}
+                                {language === 'it' && 'Il nostro viaggio è iniziato nel 2006 quando l\'avvocato Karim El Deeb ha fondato il suo studio ad Alessandria con un obiettivo chiaro: fornire servizi legali distinti a stranieri e investitori in Egitto. Nel corso degli anni, la nostra esperienza è cresciuta e i nostri servizi si sono espansi per includere Sharm El Sheikh, una delle destinazioni turistiche e di investimento più importanti dell\'Egitto.'}
                             </p>
 
                             <p className="text-lg text-gray-300 leading-relaxed">
@@ -261,10 +261,10 @@ const AboutUs: React.FC = () => {
                         <div className="space-y-4">
                             {[
                                 {
-                                    ar: 'خبرة 18 عاماً متخصصة في خدمة الأجانب والمستثمرين',
-                                    en: '18 years of specialized experience serving foreigners and investors',
-                                    fr: '18 ans d\'expérience spécialisée au service des étrangers et investisseurs',
-                                    it: '18 anni di esperienza specializzata al servizio di stranieri e investitori'
+                                    ar: 'خبرة 20 عاماً متخصصة في خدمة الأجانب والمستثمرين',
+                                    en: '20 years of specialized experience serving foreigners and investors',
+                                    fr: '20 ans d\'expérience spécialisée au service des étrangers et investisseurs',
+                                    it: '20 anni di esperienza specializzata al servizio di stranieri e investitori'
                                 },
                                 {
                                     ar: 'نتحدث 4 لغات: العربية، الإنجليزية، الفرنسية، والإيطالية',

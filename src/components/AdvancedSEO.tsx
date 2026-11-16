@@ -27,11 +27,11 @@ export const ssrHead: { current: null | {
 
 const DEFAULT_TITLE = {
   ar: 'المحامي كريم الديب | محامي في الإسكندرية وشرم الشيخ | قضايا أجانب وتحكيم دولي',
-  en: 'Karim Eldib Law Firm | Lawyer in Alexandria & Sharm El Sheikh, Egypt',
+  en: 'Karim El Deeb Law Firm | Lawyer in Alexandria & Sharm El Sheikh, Egypt',
 };
 const DEFAULT_DESC = {
   ar: 'مكتب المحامي كريم الديب للمحاماة في الإسكندرية وشرم الشيخ: قضايا جنائية ومدنية وأحوال شخصية، تأسيس شركات، إقامات الأجانب، والتحكيم الدولي. خبرة منذ 2006 ونتحدث 4 لغات.',
-  en: 'Karim Eldib Law Firm — English-speaking lawyers in Alexandria & Sharm El Sheikh, Egypt: criminal, civil & family law, company formation, residency for foreigners and international arbitration. Since 2006.',
+  en: 'Karim El Deeb Law Firm — English-speaking lawyers in Alexandria & Sharm El Sheikh, Egypt: criminal, civil & family law, company formation, residency for foreigners and international arbitration. Since 2006.',
 };
 
 // Escape < and & as unicode escapes so JSON-LD can never break out of the <script> tag

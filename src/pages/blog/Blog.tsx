@@ -66,10 +66,10 @@ const Blog: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200 py-20" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
-        title={isRTL ? 'مقالات قانونية | مدونة المحامي كريم الديب' : 'Legal Articles | Karim Eldib Law Firm Blog'}
+        title={isRTL ? 'مقالات قانونية | مدونة المحامي كريم الديب' : 'Legal Articles | Karim El Deeb Law Firm Blog'}
         description={isRTL
           ? 'مقالات قانونية من المحامي كريم الديب في قضايا الأجانب والتحكيم وتأسيس الشركات والأحوال الشخصية في مصر.'
-          : 'Legal articles by Karim Eldib Law Firm on foreigners in Egypt, arbitration, company formation and family law.'}
+          : 'Legal articles by Karim El Deeb Law Firm on foreigners in Egypt, arbitration, company formation and family law.'}
         canonicalUrl="https://www.ke-lawyer.com/blog"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,9 +87,9 @@ const Blog: React.FC = () => {
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
             {getTextByLanguage({
               ar: 'مقالات قانونية متخصصة من المحامي كريم الديب لمساعدتك في فهم القوانين المصرية والحصول على نصائح قانونية قيمة.',
-              en: 'Specialized legal articles by Lawyer Karim El-Dib to help you understand Egyptian laws and get valuable legal advice.',
-              fr: 'Articles juridiques spécialisés de l\'avocat Karim El-Dib pour vous aider à comprendre les lois égyptiennes et obtenir des conseils juridiques précieux.',
-              it: 'Articoli legali specializzati dell\'avvocato Karim El-Dib per aiutarti a comprendere le leggi egiziane e ottenere preziosi consigli legali.'
+              en: 'Specialized legal articles by Lawyer Karim El Deeb to help you understand Egyptian laws and get valuable legal advice.',
+              fr: 'Articles juridiques spécialisés de l\'avocat Karim El Deeb pour vous aider à comprendre les lois égyptiennes et obtenir des conseils juridiques précieux.',
+              it: 'Articoli legali specializzati dell\'avvocato Karim El Deeb per aiutarti a comprendere le leggi egiziane e ottenere preziosi consigli legali.'
             })}
           </p>
         </div>
@@ -193,9 +193,9 @@ const Blog: React.FC = () => {
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               {getTextByLanguage({
                 ar: 'تواصل معنا الآن للحصول على استشارة قانونية متخصصة من المحامي كريم الديب',
-                en: 'Contact us now for specialized legal consultation from Lawyer Karim El-Dib',
-                fr: 'Contactez-nous maintenant pour une consultation juridique spécialisée de l\'avocat Karim El-Dib',
-                it: 'Contattaci ora per una consulenza legale specializzata dall\'avvocato Karim El-Dib'
+                en: 'Contact us now for specialized legal consultation from Lawyer Karim El Deeb',
+                fr: 'Contactez-nous maintenant pour une consultation juridique spécialisée de l\'avocat Karim El Deeb',
+                it: 'Contattaci ora per una consulenza legale specializzata dall\'avvocato Karim El Deeb'
               })}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">

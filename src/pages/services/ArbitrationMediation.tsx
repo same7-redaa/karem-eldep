@@ -10,18 +10,18 @@ const ArbitrationMediation: React.FC = () => {
   const seoTitle = language === 'ar'
     ? 'محامي تحكيم دولي في مصر | منازعات الاستثمار والتحكيم التجاري | كريم الديب'
     : language === 'fr'
-    ? 'Avocat Arbitrage International Égypte | Litiges Investissement & Commercial | Karim Eldib'
+    ? 'Avocat Arbitrage International Égypte | Litiges Investissement & Commercial | Karim El Deeb'
     : language === 'it'
-    ? 'Avvocato Arbitrato Internazionale Egitto | Controversie Investimento | Karim Eldib'
-    : 'International Arbitration Lawyer in Egypt | Investment & Commercial Dispute Resolution | Karim Eldib';
+    ? 'Avvocato Arbitrato Internazionale Egitto | Controversie Investimento | Karim El Deeb'
+    : 'International Arbitration Lawyer in Egypt | Investment & Commercial Dispute Resolution | Karim El Deeb';
 
   const seoDescription = language === 'ar'
     ? 'محامي كريم الديب — مكتب محاماة دولي متخصص في التحكيم التجاري الدولي، منازعات المستثمرين الأجانب، تسوية المنازعات الدولية، وتنفيذ أحكام التحكيم الأجنبية في مصر. تمثيل أمام CRCICA وICCوUNCITRAL. مصر — الإسكندرية — القاهرة — شرم الشيخ.'
     : language === 'fr'
-    ? 'Cabinet Karim Eldib — Spécialiste en arbitrage commercial international, litiges d\'investissement étranger, résolution des différends transfrontaliers et exécution de sentences arbitrales en Égypte. Représentation devant CRCICA, ICC et UNCITRAL.'
+    ? 'Cabinet Karim El Deeb — Spécialiste en arbitrage commercial international, litiges d\'investissement étranger, résolution des différends transfrontaliers et exécution de sentences arbitrales en Égypte. Représentation devant CRCICA, ICC et UNCITRAL.'
     : language === 'it'
-    ? 'Studio Karim Eldib — Specialista in arbitrato commerciale internazionale, controversie sugli investimenti esteri, risoluzione delle dispute transfrontaliere ed esecuzione di lodi arbitrali in Egitto. CRCICA, ICC, UNCITRAL.'
-    : 'Karim Eldib — International Arbitration & Dispute Resolution Lawyer in Egypt. Expert in international commercial arbitration, investment disputes, cross-border dispute resolution, and enforcement of foreign arbitral awards. Representation before CRCICA, ICC, LCIA & UNCITRAL in Cairo, Alexandria & Sharm El Sheikh.';
+    ? 'Studio Karim El Deeb — Specialista in arbitrato commerciale internazionale, controversie sugli investimenti esteri, risoluzione delle dispute transfrontaliere ed esecuzione di lodi arbitrali in Egitto. CRCICA, ICC, UNCITRAL.'
+    : 'Karim El Deeb — International Arbitration & Dispute Resolution Lawyer in Egypt. Expert in international commercial arbitration, investment disputes, cross-border dispute resolution, and enforcement of foreign arbitral awards. Representation before CRCICA, ICC, LCIA & UNCITRAL in Cairo, Alexandria & Sharm El Sheikh.';
 
   const seoKeywords = language === 'ar'
     ? 'محامي تحكيم دولي في مصر, التحكيم التجاري الدولي في مصر, محاماة التحكيم الدولي في مصر, تسوية المنازعات الدولية في مصر, محامي منازعات دولية في مصر, حل المنازعات التجارية الدولية, محامي منازعات تجارية دولية, محامي استثمار أجنبي في مصر, منازعات المستثمرين الأجانب في مصر, منازعات الاستثمار في مصر, تسوية المنازعات الاستثمارية, محامي شركات دولي في مصر, محامي دولي في مصر, مكتب محاماة دولي في مصر, محامي تحكيم دولي في الإسكندرية, محامي تحكيم دولي في شرم الشيخ, محامي منازعات تجارية في مصر, محامي عقود تجارية دولية, منازعات العقود التجارية الدولية, المنازعات العابرة للحدود, التقاضي في المنازعات الدولية, تنفيذ أحكام التحكيم الأجنبية في مصر, الاعتراف بأحكام التحكيم الأجنبية في مصر, تنفيذ أحكام التحكيم الدولي في مصر, الوساطة وتسوية المنازعات في مصر, التفاوض وتسوية المنازعات التجارية'
@@ -96,7 +96,7 @@ const ArbitrationMediation: React.FC = () => {
             "name": "What is CRCICA and how does it handle arbitration cases in Egypt?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The Cairo Regional Centre for International Commercial Arbitration (CRCICA) is the leading international arbitration center in Africa and the Middle East, operating under UNCITRAL rules. Karim Eldib Law Firm provides full legal representation before CRCICA in Cairo for commercial and investment disputes."
+              "text": "The Cairo Regional Centre for International Commercial Arbitration (CRCICA) is the leading international arbitration center in Africa and the Middle East, operating under UNCITRAL rules. Karim El Deeb Law Firm provides full legal representation before CRCICA in Cairo for commercial and investment disputes."
             }
           },
           {
@@ -109,10 +109,10 @@ const ArbitrationMediation: React.FC = () => {
           },
           {
             "@type": "Question",
-            "name": "Does Karim Eldib Law Firm handle arbitration in Alexandria and Sharm El Sheikh?",
+            "name": "Does Karim El Deeb Law Firm handle arbitration in Alexandria and Sharm El Sheikh?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, Karim Eldib Law Firm provides international commercial arbitration and dispute resolution services in Alexandria, Sharm El Sheikh, Cairo, and across Egypt, with representation before both local and international arbitration centers."
+              "text": "Yes, Karim El Deeb Law Firm provides international commercial arbitration and dispute resolution services in Alexandria, Sharm El Sheikh, Cairo, and across Egypt, with representation before both local and international arbitration centers."
             }
           },
           {
@@ -209,7 +209,7 @@ const ArbitrationMediation: React.FC = () => {
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden bg-[#0b1a33]">
         <img
           src="/images/services/arbitration-mediation.webp"
-          alt={isRTL ? "التحكيم التجاري الدولي في مصر - مكتب كريم الديب للمحاماة" : "International Commercial Arbitration in Egypt - Karim El-Dib Law Firm"}
+          alt={isRTL ? "التحكيم التجاري الدولي في مصر - مكتب كريم الديب للمحاماة" : "International Commercial Arbitration in Egypt - Karim El Deeb Law Firm"}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
@@ -228,9 +228,9 @@ const ArbitrationMediation: React.FC = () => {
           <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-6 font-medium text-[#d4a15c]">
             {getTextByLanguage({
               ar: 'المؤسسة القانونية للأستاذ كريم الديب - متخصصون في التحكيم التجاري الدولي ومنازعات الاستثمار الأجنبي وتسييل وتنفيذ أحكام التحكيم الأجنبية في مصر. نقدم حلولاً متكاملة لتسوية المنازعات العابرة للحدود بطريقة أسرع وأكثر كفاءة.',
-              en: 'Karim El-Dib Law Firm - Specialized in international commercial arbitration, foreign investment disputes, and enforcement of foreign arbitral awards in Egypt. We provide comprehensive solutions for cross-border dispute resolution.',
-              fr: 'Maitre Karim El-Dib - Spécialisé en arbitrage commercial international, litiges d\'investissement étranger et exécution des sentences arbitrales en Égypte. Solutions de résolution des litiges transfrontaliers.',
-              it: 'Avvocato Karim El-Dib - Specializzato in arbitrato commerciale internazionale, controversie sugli investimenti esteri ed esecuzione di lodi arbitrali in Egitto. Soluzioni di risoluzione delle controversie.'
+              en: 'Karim El Deeb Law Firm - Specialized in international commercial arbitration, foreign investment disputes, and enforcement of foreign arbitral awards in Egypt. We provide comprehensive solutions for cross-border dispute resolution.',
+              fr: 'Maitre Karim El Deeb - Spécialisé en arbitrage commercial international, litiges d\'investissement étranger et exécution des sentences arbitrales en Égypte. Solutions de résolution des litiges transfrontaliers.',
+              it: 'Avvocato Karim El Deeb - Specializzato in arbitrato commerciale internazionale, controversie sugli investimenti esteri ed esecuzione di lodi arbitrali in Egitto. Soluzioni di risoluzione delle controversie.'
             })}
           </p>
         </div>
@@ -573,9 +573,9 @@ const ArbitrationMediation: React.FC = () => {
                 <p className="mb-4">
                   {getTextByLanguage({
                     ar: 'يُكفل قانون الاستثمار المصري رقم 72 لسنة 2017 حقوق المستثمرين الأجانب ويمنحهم الحق في اللجوء إلى التحكيم الدولي لتسوية منازعاتهم مع الدولة المصرية أو الأطراف التجارية الأخرى. يمتلك مكتب كريم الديب خبرة واسعة في تمثيل المستثمرين الأجانب.',
-                    en: 'Egyptian Investment Law No. 72 of 2017 guarantees foreign investor rights and grants them the right to resort to international arbitration to settle disputes with the Egyptian state or other commercial parties. Karim Eldib Law Firm has extensive experience representing foreign investors.',
-                    fr: 'La loi égyptienne sur l\'investissement n° 72 de 2017 garantit les droits des investisseurs étrangers et leur accorde le droit de recourir à l\'arbitrage international. Le cabinet Karim Eldib a une vaste expérience dans la représentation des investisseurs étrangers.',
-                    it: 'La legge egiziana sugli investimenti n. 72 del 2017 garantisce i diritti degli investitori stranieri e concede loro il diritto di ricorrere all\'arbitrato internazionale. Lo Studio Karim Eldib ha ampia esperienza nella rappresentanza di investitori stranieri.'
+                    en: 'Egyptian Investment Law No. 72 of 2017 guarantees foreign investor rights and grants them the right to resort to international arbitration to settle disputes with the Egyptian state or other commercial parties. Karim El Deeb Law Firm has extensive experience representing foreign investors.',
+                    fr: 'La loi égyptienne sur l\'investissement n° 72 de 2017 garantit les droits des investisseurs étrangers et leur accorde le droit de recourir à l\'arbitrage international. Le cabinet Karim El Deeb a une vaste expérience dans la représentation des investisseurs étrangers.',
+                    it: 'La legge egiziana sugli investimenti n. 72 del 2017 garantisce i diritti degli investitori stranieri e concede loro il diritto di ricorrere all\'arbitrato internazionale. Lo Studio Karim El Deeb ha ampia esperienza nella rappresentanza di investitori stranieri.'
                   })}
                 </p>
                 <ul className="space-y-2">
@@ -660,9 +660,9 @@ const ArbitrationMediation: React.FC = () => {
                 title: getTextByLanguage({ ar: 'إجراءات التنفيذ والاعتراف', en: 'Recognition & Enforcement Procedure', fr: 'Procédure de Reconnaissance & Exécution', it: 'Procedura di Riconoscimento & Esecuzione' }),
                 text: getTextByLanguage({
                   ar: 'يُقدم مكتب كريم الديب طلب الاعتراف والتنفيذ، ويُرفق مستندات الحكم والترجمة المعتمدة، ويتابع الإجراءات حتى صدور أمر التنفيذ.',
-                  en: 'Karim Eldib Law Firm files the recognition and enforcement petition, attaches award documents and certified translations, and follows up until the exequatur order is issued.',
-                  fr: 'Le cabinet Karim Eldib dépose la requête en reconnaissance et exécution, joint les documents de la sentence et les traductions certifiées, jusqu\'à l\'ordonnance exequatur.',
-                  it: 'Lo Studio Karim Eldib deposita la richiesta di riconoscimento ed esecuzione, allega i documenti del lodo e le traduzioni certificate, fino all\'emissione dell\'ordine di exequatur.'
+                  en: 'Karim El Deeb Law Firm files the recognition and enforcement petition, attaches award documents and certified translations, and follows up until the exequatur order is issued.',
+                  fr: 'Le cabinet Karim El Deeb dépose la requête en reconnaissance et exécution, joint les documents de la sentence et les traductions certifiées, jusqu\'à l\'ordonnance exequatur.',
+                  it: 'Lo Studio Karim El Deeb deposita la richiesta di riconoscimento ed esecuzione, allega i documenti del lodo e le traduzioni certificate, fino all\'emissione dell\'ordine di exequatur.'
                 })
               }
             ].map((card, i) => (
@@ -698,8 +698,8 @@ const ArbitrationMediation: React.FC = () => {
                   { q: 'What is international commercial arbitration in Egypt?', a: 'International commercial arbitration in Egypt is an ADR method governed by Law No. 27 of 1994. Specialized arbitrators issue a binding award in commercial and investment disputes. Awards are enforceable in 170+ countries under the New York Convention 1958.' },
                   { q: 'How to enforce foreign arbitral awards in Egypt?', a: 'Foreign arbitral awards are enforced in Egypt under the New York Convention 1958 and Law No. 27 of 1994. A recognition petition is filed before the Court of Appeal, which issues an exequatur order after verifying formal requirements and non-violation of public order.' },
                   { q: 'What are the options for resolving investment disputes in Egypt?', a: 'Options include: international arbitration before ICSID, ICC, LCIA, and CRCICA; commercial mediation; direct negotiation; and Egyptian court litigation. International arbitration is typically preferred under Bilateral Investment Treaties (BITs).' },
-                  { q: 'What is CRCICA and how does it handle arbitration in Egypt?', a: 'CRCICA (Cairo Regional Centre for International Commercial Arbitration) is the leading arbitration center in Africa and the Middle East, operating under UNCITRAL rules. Karim Eldib Law Firm provides full legal representation before CRCICA in Cairo.' },
-                  { q: 'Does Karim Eldib handle arbitration in Alexandria and Sharm El Sheikh?', a: 'Yes. Karim Eldib Law Firm provides international arbitration and dispute resolution services in Alexandria, Sharm El Sheikh, Cairo, and across Egypt, with representation before both local and international arbitration centers.' },
+                  { q: 'What is CRCICA and how does it handle arbitration in Egypt?', a: 'CRCICA (Cairo Regional Centre for International Commercial Arbitration) is the leading arbitration center in Africa and the Middle East, operating under UNCITRAL rules. Karim El Deeb Law Firm provides full legal representation before CRCICA in Cairo.' },
+                  { q: 'Does Karim El Deeb handle arbitration in Alexandria and Sharm El Sheikh?', a: 'Yes. Karim El Deeb Law Firm provides international arbitration and dispute resolution services in Alexandria, Sharm El Sheikh, Cairo, and across Egypt, with representation before both local and international arbitration centers.' },
                   { q: 'What is cross-border dispute resolution?', a: 'Cross-border dispute resolution handles commercial and investment disputes between parties from different countries, primarily through international arbitration under ICC, UNCITRAL, or CRCICA rules, or ICSID treaty arbitration.' },
                 ]
             ).map((faq, i) => (

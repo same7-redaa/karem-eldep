@@ -5,16 +5,16 @@ const data: CityPageData = {
   branch: 'sharm',
   seoTitle: {
     ar: 'محامي في شرم الشيخ | مكتب محاماة لجميع القضايا | المحامي كريم الديب',
-    en: 'Lawyer in Sharm El Sheikh, Egypt | English & Italian Speaking | Karim Eldib',
+    en: 'Lawyer in Sharm El Sheikh, Egypt | English & Italian Speaking | Karim El Deeb',
   },
   seoDescription: {
     ar: 'محامي في شرم الشيخ – مكتب المحامي كريم الديب يخدم كل مناطق شرم الشيخ وجنوب سيناء: قضايا الأجانب والسياح، عقارات وحق انتفاع، إقامات، قضايا جنائية وأسرة وشركات. اتصل: 01223767592',
-    en: 'Need a lawyer in Sharm El Sheikh? Karim Eldib Law Firm serves all of Sharm El Sheikh and helps tourists, expats & investors: police cases, property & usufruct, residency, family & company law. English, Italian & French spoken.',
+    en: 'Need a lawyer in Sharm El Sheikh? Karim El Deeb Law Firm serves all of Sharm El Sheikh and helps tourists, expats & investors: police cases, property & usufruct, residency, family & company law. English, Italian & French spoken.',
   },
   badge: { ar: 'فرع شرم الشيخ – جنوب سيناء', en: 'Sharm El Sheikh Office – South Sinai' },
   h1: {
     ar: 'محامي في شرم الشيخ – مكتب المحامي كريم الديب للمحاماة',
-    en: 'Lawyer in Sharm El Sheikh, Egypt – Karim Eldib Law Firm',
+    en: 'Lawyer in Sharm El Sheikh, Egypt – Karim El Deeb Law Firm',
   },
   subtitle: {
     ar: 'خدمات قانونية للمقيمين والسياح والمستثمرين في شرم الشيخ وجنوب سيناء – بالعربية والإنجليزية والإيطالية والفرنسية',
@@ -23,7 +23,7 @@ const data: CityPageData = {
   intro: [
     {
       ar: 'شرم الشيخ مدينة يعيش ويعمل ويستثمر فيها آلاف المصريين والأجانب، ولهذا تحتاج قضاياها إلى محامي في شرم الشيخ يعرف المحاكم والنيابات المحلية ويتحدث لغة الموكل. يقدم مكتب المحامي كريم الديب في شرم الشيخ تمثيلاً قانونياً كاملاً في القضايا الجنائية والمدنية والأحوال الشخصية، وعقود العقارات وحق الانتفاع، وتأسيس الشركات السياحية، وإقامات الأجانب.',
-      en: 'Sharm El Sheikh is home to thousands of Egyptians and foreigners who live, work and invest there, so cases here need a lawyer in Sharm El Sheikh who knows the local courts and prosecutors and speaks the client\'s language. Karim Eldib Law Firm in Sharm El Sheikh provides full representation in criminal, civil and family cases, property and usufruct contracts, tourism company formation, and residency for foreigners.',
+      en: 'Sharm El Sheikh is home to thousands of Egyptians and foreigners who live, work and invest there, so cases here need a lawyer in Sharm El Sheikh who knows the local courts and prosecutors and speaks the client\'s language. Karim El Deeb Law Firm in Sharm El Sheikh provides full representation in criminal, civil and family cases, property and usufruct contracts, tourism company formation, and residency for foreigners.',
     },
     {
       ar: 'إذا كنت سائحاً وتعرضت لمشكلة أثناء إقامتك، أو مقيماً أجنبياً يحتاج إلى عقد أو إقامة، أو مستثمراً في قطاع الفنادق والسياحة، نتواصل معك بسرعة ونشرح لك الخطوات بوضوح ونحدد الأتعاب كتابياً قبل البدء.',
@@ -33,7 +33,7 @@ const data: CityPageData = {
   servicesHeading: { ar: 'خدماتنا القانونية في شرم الشيخ', en: 'Our Legal Services in Sharm El Sheikh' },
   services: [
     {
-      path: '/foreigners-in-egypt', icon: 'fas fa-passport',
+      path: '/sharm-el-sheikh/lawyer-for-foreigners', icon: 'fas fa-passport',
       title: { ar: 'محامي أجانب في شرم الشيخ', en: 'Lawyer for Foreigners in Sharm El Sheikh' },
       text: {
         ar: 'الإقامات السياحية والعقارية وتصاريح العمل، ومساعدة الأجانب في أي إجراء قانوني داخل جنوب سيناء.',
@@ -41,7 +41,7 @@ const data: CityPageData = {
       },
     },
     {
-      path: '/criminal-law', icon: 'fas fa-balance-scale',
+      path: '/sharm-el-sheikh/criminal-lawyer', icon: 'fas fa-balance-scale',
       title: { ar: 'محامي جنائي في شرم الشيخ', en: 'Criminal Lawyer in Sharm El Sheikh' },
       text: {
         ar: 'حضور عاجل أمام أقسام الشرطة والنيابة للسياح والمقيمين، والدفاع في الجنح والجنايات والاستئناف.',
@@ -49,7 +49,7 @@ const data: CityPageData = {
       },
     },
     {
-      path: '/civil-law', icon: 'fas fa-key',
+      path: '/sharm-el-sheikh/real-estate-lawyer', icon: 'fas fa-key',
       title: { ar: 'محامي عقارات وحق انتفاع في شرم الشيخ', en: 'Property & Usufruct Lawyer in Sharm El Sheikh' },
       text: {
         ar: 'مراجعة عقود الشقق والفيلات وحق الانتفاع قبل التوقيع، ومنازعات المطورين والإيجار والتعويضات.',
@@ -57,7 +57,7 @@ const data: CityPageData = {
       },
     },
     {
-      path: '/family-law', icon: 'fas fa-users',
+      path: '/sharm-el-sheikh/family-lawyer', icon: 'fas fa-users',
       title: { ar: 'محامي أحوال شخصية في شرم الشيخ', en: 'Family Lawyer in Sharm El Sheikh' },
       text: {
         ar: 'توثيق زواج الأجانب، الطلاق والنفقة والحضانة، والزواج المختلط بين مصريين وأجانب.',
@@ -65,11 +65,19 @@ const data: CityPageData = {
       },
     },
     {
-      path: '/company-law', icon: 'fas fa-umbrella-beach',
+      path: '/sharm-el-sheikh/corporate-lawyer', icon: 'fas fa-umbrella-beach',
       title: { ar: 'محامي شركات واستثمار سياحي', en: 'Corporate & Tourism Investment Lawyer' },
       text: {
         ar: 'تأسيس شركات السياحة والغوص والمطاعم، التراخيص، وعقود إدارة الفنادق والشراكات.',
         en: 'Setting up tour, diving and restaurant companies, licensing, hotel management agreements and partnerships.',
+      },
+    },
+    {
+      path: '/sharm-el-sheikh/immigration-lawyer', icon: 'fas fa-id-card',
+      title: { ar: 'محامي إقامة وهجرة في شرم الشيخ', en: 'Residency & Immigration Lawyer in Sharm El Sheikh' },
+      text: {
+        ar: 'استخراج وتجديد الإقامات (عمل، استثمار، عقارية، زواج) وحل مشكلات الإقامة المنتهية.',
+        en: 'Obtaining and renewing residency (work, investor, property, marriage) and resolving expired-residency problems.',
       },
     },
     {

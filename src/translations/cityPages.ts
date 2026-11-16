@@ -3,9 +3,9 @@ export const cityTranslations = {
   sharm: {
     title: {
       ar: 'محامي أجانب في شرم الشيخ | كريم الديب',
-      en: 'Lawyer for Foreigners in Sharm El Sheikh | Karim Eldib',
-      fr: 'Avocat pour Étrangers à Sharm El Sheikh | Karim Eldib',
-      it: 'Avvocato per Stranieri a Sharm El Sheikh | Karim Eldib'
+      en: 'Lawyer for Foreigners in Sharm El Sheikh | Karim El Deeb',
+      fr: 'Avocat pour Étrangers à Sharm El Sheikh | Karim El Deeb',
+      it: 'Avvocato per Stranieri a Sharm El Sheikh | Karim El Deeb'
     },
     mainHeading: {
       ar: 'محامي أجانب متخصص في شرم الشيخ',
@@ -17,9 +17,9 @@ export const cityTranslations = {
   cairo: {
     title: {
       ar: 'محامي أجانب في القاهرة | كريم الديب',
-      en: 'Lawyer for Foreigners in Cairo | Karim Eldib',
-      fr: 'Avocat pour Étrangers au Caire | Karim Eldib',
-      it: 'Avvocato per Stranieri al Cairo | Karim Eldib'
+      en: 'Lawyer for Foreigners in Cairo | Karim El Deeb',
+      fr: 'Avocat pour Étrangers au Caire | Karim El Deeb',
+      it: 'Avvocato per Stranieri al Cairo | Karim El Deeb'
     },
     mainHeading: {
       ar: 'محامي أجانب متخصص في القاهرة',
@@ -31,9 +31,9 @@ export const cityTranslations = {
   alexandria: {
     title: {
       ar: 'محامي أجانب في الإسكندرية | كريم الديب',
-      en: 'Lawyer for Foreigners in Alexandria | Karim Eldib',
-      fr: 'Avocat pour Étrangers à Alexandrie | Karim Eldib',
-      it: 'Avvocato per Stranieri ad Alessandria | Karim Eldib'
+      en: 'Lawyer for Foreigners in Alexandria | Karim El Deeb',
+      fr: 'Avocat pour Étrangers à Alexandrie | Karim El Deeb',
+      it: 'Avvocato per Stranieri ad Alessandria | Karim El Deeb'
     },
     mainHeading: {
       ar: 'محامي أجانب متخصص في الإسكندرية',
@@ -51,9 +51,9 @@ export const cityTranslations = {
     },
     whyChoose: {
       ar: 'لماذا تختار المحامي كريم الديب؟',
-      en: 'Why Choose Lawyer Karim Eldib?',
-      fr: 'Pourquoi Choisir l\'Avocat Karim Eldib?',
-      it: 'Perché Scegliere l\'Avvocato Karim Eldib?'
+      en: 'Why Choose Lawyer Karim El Deeb?',
+      fr: 'Pourquoi Choisir l\'Avocat Karim El Deeb?',
+      it: 'Perché Scegliere l\'Avvocato Karim El Deeb?'
     },
     availability: {
       ar: 'متاح للاستشارات القانونية يومياً من 9 صباحاً حتى 9 مساءً',

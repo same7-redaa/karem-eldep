@@ -233,7 +233,7 @@ const CityLandingPage: React.FC<{ data: CityPageData }> = ({ data }) => {
             )}
           </div>
           <iframe
-            title={isAr ? `موقع مكتب المحامي كريم الديب في ${br.cityAr}` : `Karim Eldib Law Firm location in ${br.cityEn}`}
+            title={isAr ? `موقع مكتب المحامي كريم الديب في ${br.cityAr}` : `Karim El Deeb Law Firm location in ${br.cityEn}`}
             src={br.mapEmbed}
             className="w-full min-h-[380px] rounded-lg border border-[#d4a15c]/20"
             loading="lazy"
