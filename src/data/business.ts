@@ -63,8 +63,9 @@ export const BRANCHES: Record<BranchId, {
   regionAr: string;
   regionEn: string;
   postalCode?: string;
-  lat: number;
-  lng: number;
+  /** Optional: omitted until the exact pin of the office is confirmed. */
+  lat?: number;
+  lng?: number;
   mapUrl: string;
   /** Stable Google Maps CID URL – used as schema hasMap */
   cidUrl: string;
@@ -75,25 +76,23 @@ export const BRANCHES: Record<BranchId, {
     path: '/alexandria',
     nameAr: 'مكتب المحامي كريم الديب – الإسكندرية (المكتب الرئيسي)',
     nameEn: 'Karim El Deeb Law Firm – Alexandria (Main Office)',
-    streetAr: '29 المسلة غرب وشريف باشا، العطارين',
-    streetEn: '29 El Masalla Gharb & Sherif Pasha St., El Attarin',
+    streetAr: '14 شارع الشهداء، محطة الرمل',
+    streetEn: '14 El Shohada St., Raml Station',
     cityAr: 'الإسكندرية',
     cityEn: 'Alexandria',
     regionAr: 'الإسكندرية',
     regionEn: 'Alexandria Governorate',
-    lat: 31.1997224,
-    lng: 29.8969014,
     mapUrl: 'https://maps.app.goo.gl/ZbXQ8WdAtYyER15E6',
     cidUrl: 'https://maps.google.com/?cid=11140661931420793809',
-    mapEmbed: 'https://maps.google.com/maps?q=Karim+El+Deeb+Lawyer@31.1997224,29.8969014&z=16&output=embed',
+    mapEmbed: 'https://maps.google.com/maps?q=14+El+Shohada+St,+Raml+Station,+Alexandria,+Egypt&z=16&output=embed',
   },
   sharm: {
     id: 'sharm',
     path: '/sharm-el-sheikh',
     nameAr: 'مكتب المحامي كريم الديب – شرم الشيخ',
     nameEn: 'Karim El Deeb Law Firm – Sharm El Sheikh',
-    streetAr: '123 شارع البحر',
-    streetEn: '123 El Bahr St.',
+    streetAr: '123 شارع البحر، الهضبة',
+    streetEn: '123 El Bahr St., El Hadaba',
     postalCode: '46619',
     cityAr: 'شرم الشيخ',
     cityEn: 'Sharm El Sheikh',
@@ -139,7 +138,7 @@ const branchNode = (b: BranchId, isAr: boolean) => {
       ...(br.postalCode ? { postalCode: br.postalCode } : {}),
       addressCountry: 'EG',
     },
-    geo: { '@type': 'GeoCoordinates', latitude: br.lat, longitude: br.lng },
+    ...(br.lat !== undefined && br.lng !== undefined ? { geo: { '@type': 'GeoCoordinates', latitude: br.lat, longitude: br.lng } } : {}),
     hasMap: br.cidUrl,
     sameAs: [br.cidUrl],
     openingHoursSpecification: [hoursSpec()],

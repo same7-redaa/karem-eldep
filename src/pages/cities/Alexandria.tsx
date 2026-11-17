@@ -179,8 +179,8 @@ const data: CityPageData = {
     {
       q: { ar: 'أين يقع مكتب المحامي كريم الديب في الإسكندرية؟', en: 'Where is your law office in Alexandria?' },
       a: {
-        ar: 'المكتب الرئيسي في 29 المسلة غرب وشريف باشا، العطارين، الإسكندرية، وهو مفتوح 24 ساعة طوال أيام الأسبوع. يمكنك التواصل معنا في أي وقت على 01223767592.',
-        en: 'Our main office is at 29 El Masalla Gharb & Sherif Pasha St., El Attarin, Alexandria, and is open 24 hours, 7 days a week. You can reach us any time on +20 122 376 7592.',
+        ar: 'المكتب الرئيسي في 14 شارع الشهداء، محطة الرمل، الإسكندرية، وهو مفتوح 24 ساعة طوال أيام الأسبوع. يمكنك التواصل معنا في أي وقت على 01223767592.',
+        en: 'Our main office is at 14 El Shohada St., Raml Station, Alexandria, and is open 24 hours, 7 days a week. You can reach us any time on +20 122 376 7592.',
       },
     },
     {

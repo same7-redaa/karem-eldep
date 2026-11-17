@@ -98,8 +98,8 @@ const Footer: React.FC = () => {
   const cityLinks = [
     {
       name: getTextByLanguage({
-        ar: 'المكتب الرئيسي - الإسكندرية (29 المسلة غرب وشريف باشا، العطارين)',
-        en: 'Main Office - Alexandria (29 El Masalla Gharb & Sherif Pasha St., El Attarin)',
+        ar: 'المكتب الرئيسي - الإسكندرية (14 شارع الشهداء، محطة الرمل)',
+        en: 'Main Office - Alexandria (14 El Shohada St., Raml Station)',
         fr: 'Bureau Principal - Alexandrie',
         it: 'Ufficio Principale - Alessandria'
       }),
