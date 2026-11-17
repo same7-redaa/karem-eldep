@@ -1,6 +1,16 @@
 {
   "redirects": [
     {
+      "source": "/review/alexandria",
+      "destination": "https://g.page/r/CdG7DTkAlZuaEBM/review",
+      "permanent": false
+    },
+    {
+      "source": "/review/sharm",
+      "destination": "https://g.page/r/CR0jMTtrc6bhEBM/review",
+      "permanent": false
+    },
+    {
       "source": "/:path*",
       "has": [
         {

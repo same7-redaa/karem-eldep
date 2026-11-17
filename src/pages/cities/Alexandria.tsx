@@ -219,6 +219,21 @@ const data: CityPageData = {
       },
     },
   ],
+  guides: {
+    heading: { ar: 'أدلة قانونية مفيدة عن المحامي في الإسكندرية', en: 'Helpful Legal Guides for Alexandria' },
+    items: [
+      { path: '/blog/how-to-choose-a-lawyer-in-alexandria-guide', text: { ar: 'كيف تختار محامياً في الإسكندرية؟ 8 أسئلة قبل التعاقد', en: 'How to choose a lawyer in Alexandria: 8 questions to ask' } },
+      { path: '/blog/khula-divorce-procedure-egypt-guide', text: { ar: 'الخلع في مصر: الشروط والإجراءات', en: 'Khula in Egypt: conditions and steps' } },
+      { path: '/blog/alimony-custody-visitation-egypt-guide', text: { ar: 'النفقة والحضانة والرؤية في مصر', en: 'Alimony, custody and visitation in Egypt' } },
+      { path: '/blog/property-sale-registration-lawyer-egypt-guide', text: { ar: 'شراء عقار وتسجيله: صحة ونفاذ العقد', en: 'Buying and registering property in Egypt' } },
+      { path: '/blog/company-setup-alexandria-steps-guide', text: { ar: 'تأسيس شركة في الإسكندرية: الخطوات والجهات', en: 'Setting up a company in Alexandria' } },
+      { path: '/blog/civil-lawsuit-steps-egypt-guide', text: { ar: 'مراحل الدعوى المدنية في مصر', en: 'Stages of a civil lawsuit in Egypt' } },
+      { path: '/blog/criminal-investigation-rights-lawyer-egypt-guide', text: { ar: 'حقوقك أثناء التحقيق الجنائي', en: 'Your rights during a criminal investigation' } },
+      { path: '/blog/bounced-cheque-egypt-lawyer-guide', text: { ar: 'الشيك المرتد في مصر: ماذا تفعل', en: 'Bounced cheques in Egypt: what to do' } },
+      { path: '/blog/maritime-arbitration-alexandria-port-disputes-guide', text: { ar: 'التحكيم البحري ونزاعات الشحن في الإسكندرية', en: 'Maritime arbitration and shipping disputes in Alexandria' } },
+      { path: '/blog/inheritance-estate-division-egypt-guide', text: { ar: 'حصر التركة وقسمة الميراث', en: 'Inheritance and estate division in Egypt' } },
+    ],
+  },
   otherBranch: { path: '/sharm-el-sheikh', text: { ar: 'فرعنا في شرم الشيخ', en: 'Our Sharm El Sheikh office' } },
   relatedArticle: {
     path: '/blog/foreign-lawyer-alexandria',

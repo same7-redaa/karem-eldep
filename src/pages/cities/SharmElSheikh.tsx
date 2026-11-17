@@ -170,6 +170,19 @@ const data: CityPageData = {
       },
     },
   ],
+  guides: {
+    heading: { ar: 'أدلة قانونية مفيدة عن المحامي في شرم الشيخ', en: 'Helpful Legal Guides for Sharm El Sheikh' },
+    items: [
+      { path: '/blog/foreign-lawyer-sharm-el-sheikh', text: { ar: 'محامي أجانب في شرم الشيخ: الدليل الشامل', en: 'Lawyer for foreigners in Sharm El Sheikh: complete guide' } },
+      { path: '/blog/real-estate-investment-sharm-el-sheikh-comprehensive-guide', text: { ar: 'العقارات وحق الانتفاع في شرم الشيخ', en: 'Property and usufruct in Sharm El Sheikh' } },
+      { path: '/blog/residence-permit-guide-in-egypt-2026', text: { ar: 'إقامة الأجانب في مصر: الأنواع والشروط', en: 'Residence permits in Egypt for foreigners' } },
+      { path: '/blog/foreigner-marriage-egyptian-registration-guide', text: { ar: 'زواج الأجانب وتوثيقه في مصر', en: 'Marriage of foreigners in Egypt' } },
+      { path: '/blog/divorce-for-foreigners-in-egypt-comprehensive-guide', text: { ar: 'الطلاق للأجانب في مصر', en: 'Divorce for foreigners in Egypt' } },
+      { path: '/blog/company-formation-for-foreigners-in-egypt-complete-guide', text: { ar: 'تأسيس شركة في مصر للأجانب', en: 'Company formation in Egypt for foreigners' } },
+      { path: '/blog/criminal-investigation-rights-lawyer-egypt-guide', text: { ar: 'حقوقك أثناء التحقيق الجنائي', en: 'Your rights during a criminal investigation' } },
+      { path: '/blog/traffic-accident-compensation-egypt-guide', text: { ar: 'حوادث الطرق والتعويض في مصر', en: 'Road accidents and compensation in Egypt' } },
+    ],
+  },
   otherBranch: { path: '/alexandria', text: { ar: 'مكتبنا الرئيسي في الإسكندرية', en: 'Our Alexandria main office' } },
   relatedArticle: {
     path: '/blog/foreign-lawyer-sharm-el-sheikh',

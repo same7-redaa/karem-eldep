@@ -28,6 +28,8 @@ export interface CityPageData {
   faq: { q: T; a: T }[];
   otherBranch: { path: string; text: T };
   relatedArticle?: { path: string; text: T };
+  /** Extra helpful guides linked from the page (internal links for local SEO). */
+  guides?: { heading: T; items: { path: string; text: T }[] };
 }
 
 const CityLandingPage: React.FC<{ data: CityPageData }> = ({ data }) => {
@@ -137,6 +139,24 @@ const CityLandingPage: React.FC<{ data: CityPageData }> = ({ data }) => {
           </div>
         </div>
       </section>
+
+      {/* Helpful guides (internal links) */}
+      {data.guides && data.guides.items.length > 0 && (
+        <section className="py-12 border-y border-[#d4a15c]/10 bg-[#1a2d4d]/30">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">{L(data.guides.heading)}</h2>
+            <ul className="grid sm:grid-cols-2 gap-3">
+              {data.guides.items.map(g => (
+                <li key={g.path}>
+                  <Link to={link(g.path)} className="block bg-[#0e1f3b] border border-[#d4a15c]/20 hover:border-[#d4a15c]/60 rounded-lg px-4 py-3 text-[#d4a15c] font-semibold">
+                    {L(g.text)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* Courts & areas */}
       <section className="py-14">
