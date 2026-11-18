@@ -32,3 +32,6 @@ export async function render(pathname: string) {
   const html = await streamToString(prelude);
   return { html, head: ssrHead.current, lang };
 }
+
+// Article data for build-time feeds (scripts/prerender.mjs writes /feed.xml and /en/feed.xml)
+export { staticArticles } from './data/staticArticles';

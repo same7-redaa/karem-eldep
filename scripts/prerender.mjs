@@ -17,7 +17,7 @@ if (!fs.existsSync(path.join(distDir, 'index.html')) || !fs.existsSync(serverEnt
   process.exit(1);
 }
 
-const { render } = await import(pathToFileURL(serverEntry).href);
+const { render, staticArticles } = await import(pathToFileURL(serverEntry).href);
 const template = fs.readFileSync(path.join(distDir, 'index.html'), 'utf8');
 
 const staticPaths = [
@@ -69,7 +69,7 @@ function buildHtml({ html, head, lang }) {
   out = out.replace(/\s*<link rel="alternate" hreflang[^>]*>/gi, '');
   out = out.replace(
     /(<link rel="canonical"[^>]*>)/i,
-    `$1\n  <link rel="alternate" hreflang="ar" href="${head.arHref}" />\n  <link rel="alternate" hreflang="en" href="${head.enHref}" />\n  <link rel="alternate" hreflang="x-default" href="${head.arHref}" />`
+    `$1\n  <link rel="alternate" hreflang="ar" href="${head.arHref}" />\n  <link rel="alternate" hreflang="en" href="${head.enHref}" />\n  <link rel="alternate" hreflang="x-default" href="${head.arHref}" />\n  <link rel="alternate" type="application/rss+xml" title="${isAr ? 'مقالات المحامي كريم الديب' : 'Karim El Deeb Law Firm – Legal Guides'}" href="https://www.ke-lawyer.com${isAr ? '' : '/en'}/feed.xml" />`
   );
   out = out.replace(/<meta property="og:url"[^>]*>/i, `<meta property="og:url" content="${head.canonical}" />`);
   out = out.replace(/<meta property="og:title"[^>]*>/i, `<meta property="og:title" content="${t}" />`);
@@ -99,6 +99,47 @@ for (const p of allPaths) {
       failures.push(`${urlPath}: ${err.message}`);
     }
   }
+}
+
+
+// RSS feeds (Arabic and English) so readers and AI/search engines can discover new articles
+{
+  const SITE = 'https://www.ke-lawyer.com';
+  const xmlEsc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const arts = Object.values(staticArticles).filter(a => a.isPublished).sort((a, b) => String(b.dateModified || b.date).localeCompare(String(a.dateModified || a.date)));
+  for (const lang of ['ar', 'en']) {
+    const en = lang === 'en';
+    const items = arts.map(a => {
+      const url = `${SITE}${en ? '/en' : ''}/blog/${a.slug}`;
+      const title = en ? (a.title_en || a.title) : a.title;
+      const desc = en ? (a.excerpt_en || a.excerpt) : a.excerpt;
+      const d = new Date(a.date);
+      return `    <item>
+      <title>${xmlEsc(title)}</title>
+      <link>${url}</link>
+      <guid isPermaLink="true">${url}</guid>
+      <description>${xmlEsc(desc)}</description>
+${isNaN(d) ? '' : `      <pubDate>${d.toUTCString()}</pubDate>
+`}    </item>`;
+    }).join('\n');
+    const self = `${SITE}${en ? '/en' : ''}/feed.xml`;
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${en ? 'Karim El Deeb Law Firm – Legal Guides' : 'مكتب المحامي كريم الديب – مقالات قانونية'}</title>
+    <link>${SITE}${en ? '/en' : ''}/blog</link>
+    <atom:link href="${self}" rel="self" type="application/rss+xml" />
+    <description>${en ? 'Legal guides from a law firm in Alexandria and Sharm El Sheikh, Egypt.' : 'مقالات وأدلة قانونية من مكتب محاماة في الإسكندرية وشرم الشيخ.'}</description>
+    <language>${lang}</language>
+${items}
+  </channel>
+</rss>
+`;
+    const dir = path.join(distDir, en ? 'en' : '');
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'feed.xml'), xml, 'utf8');
+  }
+  console.log(`Wrote RSS feeds (${arts.length} articles).`);
 }
 
 console.log(`Prerendered ${count} pages.`);

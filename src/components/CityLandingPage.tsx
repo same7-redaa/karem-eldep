@@ -37,6 +37,7 @@ const CityLandingPage: React.FC<{ data: CityPageData }> = ({ data }) => {
   const isAr = language === 'ar';
   const L = (t: T) => (isAr ? t.ar : t.en);
   const link = (p: string) => (isAr ? p : `/en${p}`);
+  const PAGE_UPDATED = '2026-11-18';
   const br = BRANCHES[data.branch];
   const pageUrl = `${DOMAIN}${isAr ? '' : '/en'}${br.path}`;
 
@@ -83,6 +84,7 @@ const CityLandingPage: React.FC<{ data: CityPageData }> = ({ data }) => {
         description={L(data.seoDescription)}
         canonicalUrl={`${DOMAIN}${br.path}`}
         schema={extraSchema}
+        dateModified={PAGE_UPDATED}
       />
 
       {/* Hero */}
@@ -120,6 +122,11 @@ const CityLandingPage: React.FC<{ data: CityPageData }> = ({ data }) => {
       <section className="py-14">
         <div className="container mx-auto px-4 max-w-4xl space-y-5 text-base md:text-lg leading-relaxed text-gray-300">
           {data.intro.map((p, i) => <p key={i}>{L(p)}</p>)}
+          <p className="text-sm text-gray-400 pt-2">
+            {isAr
+              ? `إعداد: مكتب المحامي كريم الديب للمحاماة · آخر تحديث: ${PAGE_UPDATED}`
+              : `By Karim El Deeb Law Firm · Last updated: ${PAGE_UPDATED}`}
+          </p>
         </div>
       </section>
 

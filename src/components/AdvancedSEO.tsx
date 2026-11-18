@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getLanguageFromPath } from '../contexts/LanguageContext';
-import { DOMAIN, BUSINESS, buildBusinessGraph, ORG_ID, WEBSITE_ID } from '../data/business';
+import { DOMAIN, BUSINESS, buildBusinessGraph, ORG_ID, WEBSITE_ID, ATTORNEY_ID } from '../data/business';
 
 interface AdvancedSEOProps {
   title?: string;
@@ -13,6 +13,10 @@ interface AdvancedSEOProps {
   city?: string;
   /** Extra JSON-LD nodes for this page (FAQPage, BreadcrumbList, Service...) */
   schema?: Record<string, any>[];
+  /** ISO date the page content was last reviewed/updated (adds WebPage.dateModified). */
+  dateModified?: string;
+  /** True when Karim El Deeb reviewed the legal content (adds WebPage.reviewedBy). */
+  reviewedByAttorney?: boolean;
 }
 
 /** Head data collected during server-side prerender (scripts/prerender.mjs reads it). */
@@ -39,7 +43,7 @@ const BACKSLASH = String.fromCharCode(92);
 const safeJson = (data: unknown) =>
   JSON.stringify(data).replace(/[<&]/g, c => `${BACKSLASH}u00${c.charCodeAt(0).toString(16)}`);
 
-const AdvancedSEO: React.FC<AdvancedSEOProps> = ({ title, description, canonicalUrl, schema }) => {
+const AdvancedSEO: React.FC<AdvancedSEOProps> = ({ title, description, canonicalUrl, schema, dateModified, reviewedByAttorney }) => {
   const { pathname } = useLocation();
 
   // Language comes from the URL (never from localStorage) so the canonical is always stable.
@@ -74,6 +78,8 @@ const AdvancedSEO: React.FC<AdvancedSEOProps> = ({ title, description, canonical
         inLanguage: lang,
         isPartOf: { '@id': WEBSITE_ID },
         about: { '@id': ORG_ID },
+        ...(dateModified ? { dateModified, author: { '@id': ORG_ID } } : {}),
+        ...(reviewedByAttorney ? { reviewedBy: { '@id': ATTORNEY_ID }, author: { '@id': ATTORNEY_ID } } : {}),
       },
       ...(schema || []),
     ],
