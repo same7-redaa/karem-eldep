@@ -20,6 +20,17 @@ const data: CityPageData = {
     ar: 'تمثيل قانوني أمام محاكم الإسكندرية للأفراد والشركات والأجانب – بالعربية والإنجليزية والفرنسية والإيطالية',
     en: 'Representation before Alexandria courts for individuals, companies and foreigners – in English, Arabic, French and Italian',
   },
+  summary: {
+    heading: { ar: 'محامي في الإسكندرية: مكتب المحامي كريم الديب باختصار', en: 'Lawyer in Alexandria: Karim El Deeb Law Firm at a glance' },
+    lead: {
+      ar: 'مكتب المحامي كريم الديب للمحاماة هو مكتب محاماة في الإسكندرية يقع في 14 شارع الشهداء بمحطة الرمل، ويعمل منذ 2006 في قضايا الأحوال الشخصية والعقارات والقضايا المدنية والجنائية، وتأسيس الشركات، وقضايا الأجانب، والتحكيم التجاري والبحري، مع التواصل بأربع لغات.',
+      en: 'Karim El Deeb Law Firm is a law firm in Alexandria, Egypt, at 14 El Shohada St., Raml Station. Since 2006 it has handled family, property, civil and criminal cases, company formation, matters for foreigners, and commercial and maritime arbitration, in four languages.',
+    },
+    specialties: {
+      ar: 'أحوال شخصية (خلع، طلاق، نفقة، حضانة) · عقارات وتسجيل · قضايا مدنية وجنائية · تأسيس شركات وعقود تجارية · قضايا الأجانب والإقامة · تحكيم تجاري وبحري ووساطة',
+      en: 'Family law (divorce, khula, alimony, custody) · Property and registration · Civil and criminal cases · Company formation and commercial contracts · Foreigners and residency · Commercial and maritime arbitration, mediation',
+    },
+  },
   intro: [
     {
       ar: 'إذا كنت تبحث عن محامي في الإسكندرية يجمع بين الخبرة في المحاكم المصرية والقدرة على التعامل مع القضايا ذات الطابع الدولي، فمكتب المحامي كريم الديب هو المقر الرئيسي لمؤسستنا في الإسكندرية منذ عام 2006، ويخدم الموكلين في كل أحياء المدينة. نتولى القضايا الجنائية والمدنية وقضايا الأحوال الشخصية، وتأسيس الشركات، والعقود التجارية، وقضايا الأجانب والإقامة، والتحكيم التجاري.',

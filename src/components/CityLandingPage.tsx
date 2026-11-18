@@ -28,6 +28,8 @@ export interface CityPageData {
   faq: { q: T; a: T }[];
   otherBranch: { path: string; text: T };
   relatedArticle?: { path: string; text: T };
+  /** Short "at a glance" facts block near the top: an extractable answer for AI Overviews. */
+  summary?: { heading: T; lead: T; specialties: T };
   /** Extra helpful guides linked from the page (internal links for local SEO). */
   guides?: { heading: T; items: { path: string; text: T }[] };
 }
@@ -117,6 +119,28 @@ const CityLandingPage: React.FC<{ data: CityPageData }> = ({ data }) => {
           </div>
         </div>
       </section>
+
+      {/* At a glance: short factual answer (name, address, specialties, phone) */}
+      {data.summary && (
+        <section className="pt-12" aria-labelledby="at-a-glance">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="rounded-xl border border-[#d4a15c]/40 bg-[#1a2d4d]/50 p-6 md:p-8">
+              <h2 id="at-a-glance" className="text-xl md:text-2xl font-bold text-[#d4a15c] mb-3">{L(data.summary.heading)}</h2>
+              <p className="text-gray-200 leading-relaxed mb-5">{L(data.summary.lead)}</p>
+              <dl className="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm md:text-base">
+                <div><dt className="text-gray-400">{isAr ? 'المكتب' : 'Firm'}</dt><dd className="text-white font-semibold">{isAr ? br.nameAr : br.nameEn}</dd></div>
+                <div><dt className="text-gray-400">{isAr ? 'العنوان' : 'Address'}</dt><dd className="text-white font-semibold">{isAr ? `${br.streetAr}، ${br.cityAr}` : `${br.streetEn}, ${br.cityEn}`}</dd></div>
+                <div className="sm:col-span-2"><dt className="text-gray-400">{isAr ? 'التخصصات' : 'Practice areas'}</dt><dd className="text-white">{L(data.summary.specialties)}</dd></div>
+                <div><dt className="text-gray-400">{isAr ? 'الخبرة' : 'Experience'}</dt><dd className="text-white">{isAr ? `منذ ${BUSINESS.foundingYear} (أكثر من 20 عاماً)` : `Since ${BUSINESS.foundingYear} (20+ years)`}</dd></div>
+                <div><dt className="text-gray-400">{isAr ? 'اللغات' : 'Languages'}</dt><dd className="text-white">{isAr ? 'العربية، الإنجليزية، الفرنسية، الإيطالية' : 'Arabic, English, French, Italian'}</dd></div>
+                <div><dt className="text-gray-400">{isAr ? 'التليفون / واتساب' : 'Phone / WhatsApp'}</dt><dd><a href={`tel:${BUSINESS.phone}`} className="text-[#d4a15c] font-semibold" dir="ltr">{BUSINESS.phoneDisplay}</a></dd></div>
+                <div><dt className="text-gray-400">{isAr ? 'المواعيد' : 'Hours'}</dt><dd className="text-white">{isAr ? BUSINESS.hours.labelAr : BUSINESS.hours.labelEn}</dd></div>
+                <div className="sm:col-span-2"><dt className="text-gray-400">{isAr ? 'على خرائط Google' : 'On Google Maps'}</dt><dd><a href={br.cidUrl} target="_blank" rel="noopener noreferrer" className="text-[#d4a15c] underline">{isAr ? 'الاتجاهات وتقييمات الموكلين' : 'Directions and client reviews'}</a></dd></div>
+              </dl>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Intro */}
       <section className="py-14">

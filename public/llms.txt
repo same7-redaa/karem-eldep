@@ -3,7 +3,10 @@
 > Egyptian law firm founded in 2006, led by lawyer Karim El Deeb. Main office in Alexandria, branch in Sharm El Sheikh. Practice areas: international arbitration and mediation, legal services for foreigners in Egypt, company formation and corporate law, family, civil, commercial and criminal law, and services for Egyptians abroad. Languages: Arabic, English, French, Italian.
 
 - Main office: 14 El Shohada St., Raml Station, Alexandria, Egypt
-- Branch: Sharm El Sheikh, South Sinai, Egypt
+- Branch: 123 El Bahr St., El Hadaba, Sharm El Sheikh, South Sinai 46619, Egypt
+- Google Maps (Alexandria): https://maps.google.com/?cid=11140661931420793809
+- Google Maps (Sharm El Sheikh): https://maps.google.com/?cid=16259810409059525405
+- بالعربية: مكتب المحامي كريم الديب للمحاماة – محامي في الإسكندرية (14 شارع الشهداء، محطة الرمل) وفرع شرم الشيخ (123 شارع البحر، الهضبة). منذ 2006. أحوال شخصية، عقارات، مدني وجنائي، تأسيس شركات، قضايا الأجانب، تحكيم. هاتف/واتساب: 01223767592. الصفحات العربية: https://www.ke-lawyer.com/alexandria و https://www.ke-lawyer.com/sharm-el-sheikh
 - Phone / WhatsApp: +20 122 376 7592
 - Hours: open 24 hours, 7 days a week
 - The site is published in Arabic (default, at the root) and English (under /en).

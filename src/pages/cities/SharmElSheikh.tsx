@@ -20,6 +20,17 @@ const data: CityPageData = {
     ar: 'خدمات قانونية للمقيمين والسياح والمستثمرين في شرم الشيخ وجنوب سيناء – بالعربية والإنجليزية والإيطالية والفرنسية',
     en: 'Legal help for residents, tourists and investors in Sharm El Sheikh and South Sinai – in English, Italian, French and Arabic',
   },
+  summary: {
+    heading: { ar: 'محامي في شرم الشيخ: كريم الديب المحامي باختصار', en: 'Lawyer in Sharm El Sheikh: Karim El Deeb Law Firm at a glance' },
+    lead: {
+      ar: 'كريم الديب المحامي هو مكتب محاماة في شرم الشيخ يقع في 123 شارع البحر بالهضبة، ويخدم المصريين والأجانب منذ 2006 في شراء العقارات وعقود حق الانتفاع، وإقامات الأجانب، وتأسيس الشركات والتراخيص السياحية، والزواج والطلاق، والقضايا المدنية والجنائية.',
+      en: 'Karim El Deeb Law Firm is a law firm in Sharm El Sheikh, Egypt, at 123 El Bahr St., El Hadaba. Since 2006 it has served Egyptians and foreigners with property purchases and usufruct contracts, residency permits, company and tourism licences, marriage and divorce, and civil and criminal cases.',
+    },
+    specialties: {
+      ar: 'شراء العقارات والفحص القانوني · عقود حق الانتفاع · إقامات الأجانب · تأسيس الشركات والتراخيص السياحية · الزواج والطلاق · القضايا المدنية والجنائية',
+      en: 'Property purchase and due diligence · Usufruct contracts · Residency for foreigners · Company setup and tourism licences · Marriage and divorce · Civil and criminal cases',
+    },
+  },
   intro: [
     {
       ar: 'شرم الشيخ مدينة يعيش ويعمل ويستثمر فيها آلاف المصريين والأجانب، ولهذا تحتاج قضاياها إلى محامي في شرم الشيخ يعرف المحاكم والنيابات المحلية ويتحدث لغة الموكل. يقدم مكتب المحامي كريم الديب في شرم الشيخ تمثيلاً قانونياً كاملاً في القضايا الجنائية والمدنية والأحوال الشخصية، وعقود العقارات وحق الانتفاع، وتأسيس الشركات السياحية، وإقامات الأجانب.',
