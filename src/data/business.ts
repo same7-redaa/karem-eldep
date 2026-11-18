@@ -85,12 +85,12 @@ export const BRANCHES: Record<BranchId, {
     cityEn: 'Alexandria',
     regionAr: 'الإسكندرية',
     regionEn: 'Alexandria Governorate',
-    // Pin exactly as stored on the Google Business Profile (owner: do not move it).
-    lat: 31.2001116,
-    lng: 29.8964066,
+    // Live Google Maps pin (building 14, corner of El Shohada & Omar Lotfy), confirmed 2026-11-18.
+    lat: 31.1995989,
+    lng: 29.8967125,
     mapUrl: 'https://maps.app.goo.gl/ZbXQ8WdAtYyER15E6',
     cidUrl: 'https://maps.google.com/?cid=11140661931420793809',
-    mapEmbed: 'https://maps.google.com/maps?q=Karim+El+Deeb+Lawyer@31.2001116,29.8964066&z=16&output=embed',
+    mapEmbed: 'https://maps.google.com/maps?q=Karim+El+Deeb+Lawyer@31.1995989,29.8967125&z=16&output=embed',
   },
   sharm: {
     id: 'sharm',
