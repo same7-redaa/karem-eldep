@@ -90,3 +90,47 @@ We have 106 (Alexandria) and 102 (Sharm).
 - Run "محامي في الاسكندرية" / "lawyer in Alexandria" in Maps from Raml Station and Smouha.
 - Track position and review count vs. the top 5.
 - In Search Console, track clicks from `utm_campaign=gbp_*` and the queries for `/alexandria`.
+
+## 7. Data analysis (Search Console, 90 days to 2026-11-18) and SERP check
+
+### What the data says
+
+- **Volume:**
+  - Egypt is 92,742 of about 95k impressions.
+  - The biggest are the English generic queries "family lawyer" (29.8k, pos 7.3) and "divorce lawyer" (12.5k, pos 7.6).
+  - They land on the **Arabic** `/family-law` page, so CTR is only 0.13–0.3%.
+  - Fix shipped: a bilingual `<title>` on `/family-law`.
+- **Arabic "محامي (في) الاسكندرية":**
+  - `/alexandria` sits at about pos 7–10 but with very few impressions.
+  - Google's organic top 10 for the term is mostly directories: Yellow Pages (x2), Lawzana (x2), Hawleek, wakilly, Facebook pages, and one competitor site (elmustasharlawfirm.com).
+  - The map pack shows 4 firms with 24–337 reviews. We are not in it in Arabic.
+- **AI Overview** for "محامي في الاسكندرية" already names **Karim El Deeb Law Firm** for companies, commercial and maritime arbitration.
+  - It described the office as being in "العطارين" (the old profile address).
+  - That updates now that the address is «14 شارع الشهداء، محطة الرمل».
+- **Duplicate URL variants still collect impressions:** `ke-lawyer.com` (non-www), `?lang=ar`, `?lang=en`.
+  Non-www already 308-redirects and the canonicals are correct, so no action is needed. These variants fade as Google recrawls.
+
+### Shipped on 2026-11-18
+
+- `/alexandria`:
+  - Three FAQ answers that match Google's "People also ask": choosing a lawyer, consultation cost (no figures), and the phone number.
+  - New areas: Moharam Bek, Ibrahimia/Azarita/Shatby, Cleopatra/Hadara, Seyouf/Asafra. These come from "searched also for".
+- RSS feeds, page dates and author on the city pages.
+- Google Business posts on both profiles (first in a year), each linking to its city page with UTM `gbp_post_*`.
+- Replied to 3 new or recent Sharm reviews.
+
+### Owner actions, in order of impact
+
+1. **Reviews:** the biggest Maps lever (we have 106, the leaders 118–337). Ask every closed case for a review with the short link or QR.
+2. **1-star review on Alexandria** (John Mark, 2026-11-17): "Unprofessional, defensive, terrible communication…".
+   - If he was a client, reply calmly without any case details and invite him to call.
+   - If he was never a client, flag it in the profile as "not a customer".
+3. **Facebook page** (12k followers, 1,037 recommendations) has **no website link**. Add `https://www.ke-lawyer.com` in Page → About → Links.
+   The Chrome session isn't a page admin, so the owner has to do this.
+4. **Directories that rank for "محامي في الاسكندرية":**
+   - Get listed or claimed on **Lawzana** (Alexandria) and **wakilly.com**.
+   - Add the website link to **Yellow Pages**, **Hawleek** and **Afokato**. Those profiles exist but don't link to the site.
+   - Keep name, address and phone identical to the Google profiles.
+5. **LinkedIn** (Karim Eldeeb, 130+ followers): add the website and the firm name.
+   Then add the LinkedIn URL to `attorneyProfiles` in `src/data/business.ts`.
+6. **Weekly:** one Google post per profile. Rotate the service pages and new articles.
