@@ -10,7 +10,7 @@ const FamilyLaw: React.FC = () => {
     return (
     <div className="min-h-screen bg-[#0b1a33] text-gray-200" dir={isRTL ? 'rtl' : 'ltr'}>
       <AdvancedSEO
-        title={language === 'ar' ? "محامي أحوال شخصية وطلاق في مصر والإسكندرية | كريم الديب" : "Divorce & Family Lawyer in Egypt | Karim El Deeb"}
+        title={language === 'ar' ? "محامي أحوال شخصية وطلاق بالإسكندرية | Family & Divorce Lawyer | كريم الديب" : "Family & Divorce Lawyer in Egypt (Alexandria) | Karim El Deeb"}
         description={language === 'ar' ? "محامي أحوال شخصية في الإسكندرية ومصر: طلاق، خلع، حضانة، نفقة، ورؤية، وقضايا الأجانب. مكتب كريم الديب منذ 2006، اتصل أو راسل واتساب على 01223767592." : "Divorce and family lawyer in Egypt (Alexandria office since 2006): divorce, custody, alimony, and mixed marriages for foreigners. Call or WhatsApp +20 122 376 7592."}
         canonicalUrl="https://www.ke-lawyer.com/family-law"
       />

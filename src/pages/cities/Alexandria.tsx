@@ -152,6 +152,10 @@ const data: CityPageData = {
     { ar: 'سان ستيفانو', en: 'San Stefano' },
     { ar: 'المندرة والمنتزه', en: 'Mandara & Montaza' },
     { ar: 'العجمي', en: 'Agami' },
+    { ar: 'محرم بك', en: 'Moharam Bek' },
+    { ar: 'الإبراهيمية والأزاريطة والشاطبي', en: 'Ibrahimia, Azarita & Shatby' },
+    { ar: 'كليوباترا والحضرة', en: 'Cleopatra & El Hadara' },
+    { ar: 'السيوف والعصافرة', en: 'El Seyouf & Asafra' },
     { ar: 'العامرية وبرج العرب', en: 'Amreya & Borg El Arab' },
     { ar: 'الساحل الشمالي', en: 'North Coast' },
   ],
@@ -209,6 +213,27 @@ const data: CityPageData = {
       a: {
         ar: 'تواصل معنا عبر الهاتف أو واتساب على 01223767592 لتحديد موعد في المكتب أو استشارة عن بُعد، وسنوضح لك الأتعاب قبل البدء.',
         en: 'Call or WhatsApp +20 122 376 7592 to book an in-office or remote consultation. We confirm the fee with you before the consultation.',
+      },
+    },
+    {
+      q: { ar: 'كيف أختار أفضل محامي في الاسكندرية لقضيتي؟', en: 'How do I choose the right lawyer in Alexandria?' },
+      a: {
+        ar: 'اختر محامياً متخصصاً في نوع قضيتك ومقيداً بنقابة المحامين، يشرح لك موقفك بصراحة، ويكتب نطاق العمل والأتعاب في عقد قبل البدء، ويتابع معك بانتظام. مكتب المحامي كريم الديب يعمل في الإسكندرية منذ 2006، ويمكنك قراءة تقييمات الموكلين على صفحة المكتب في خرائط Google.',
+        en: 'Pick a lawyer who specialises in your type of case, is registered with the Bar, explains your position honestly, puts the scope and fees in a written agreement before starting, and keeps you updated. Karim El Deeb Law Firm has practised in Alexandria since 2006, and you can read client reviews on our Google Maps listing.',
+      },
+    },
+    {
+      q: { ar: 'كم سعر استشارة محامي في الاسكندرية؟', en: 'How much does a lawyer consultation cost in Alexandria?' },
+      a: {
+        ar: 'تختلف أتعاب الاستشارة حسب نوع القضية ومدى تعقيدها. نوضح لك قيمة الاستشارة قبل الموعد، وإذا توليّنا القضية نحدد الأتعاب كتابياً قبل البدء، دون أي مبالغ مفاجئة.',
+        en: 'It depends on the type and complexity of the matter. We tell you the consultation fee before the appointment, and if we take the case the fees are agreed in writing before work starts, with no surprise charges.',
+      },
+    },
+    {
+      q: { ar: 'ما رقم تليفون محامي في الاسكندرية متاح الآن؟', en: 'What is the phone number of a lawyer available now in Alexandria?' },
+      a: {
+        ar: 'يمكنك الاتصال بمكتب المحامي كريم الديب أو مراسلته على واتساب في أي وقت على 01223767592، والمكتب في 14 شارع الشهداء، محطة الرمل.',
+        en: 'You can call or WhatsApp Karim El Deeb Law Firm at any time on +20 122 376 7592. The office is at 14 El Shohada St., Raml Station.',
       },
     },
     {
