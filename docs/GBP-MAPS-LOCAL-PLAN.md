@@ -134,3 +134,50 @@ We have 106 (Alexandria) and 102 (Sharm).
 5. **LinkedIn** (Karim Eldeeb, 130+ followers): add the website and the firm name.
    Then add the LinkedIn URL to `attorneyProfiles` in `src/data/business.ts`.
 6. **Weekly:** one Google post per profile. Rotate the service pages and new articles.
+
+## 8. Log, later on 2026-11-18
+
+### Approved by Google
+
+- Alexandria address: «14 شارع الشهداء، محطة الرمل». The pin is on building 14 (corner of El Shohada and Omar Lotfy), at 31.1995989, 29.8967125.
+- Sharm name: «كريم الديب المحامي - Karim El Deeb Law Firm». It matches the real signs.
+- Alexandria description, and Instagram on both profiles.
+
+### Website (deployed)
+
+- An "at a glance" facts block near the top of `/alexandria` and `/sharm-el-sheikh` (name, address, practice areas, years, languages, phone, Maps link).
+  This gives AI Overviews a short passage to cite, so they link to the site and not only to directories.
+- `llms.txt`: both addresses, the Maps CIDs and an Arabic summary.
+- Alexandria `geo` and map embed updated to the approved pin.
+
+### Google posts
+
+8 posts with a "Learn more" button and UTM `gbp_post_*`:
+
+| Profile | Links to |
+|---|---|
+| Alexandria | `/alexandria`, `/alexandria/family-lawyer`, `/alexandria/real-estate-lawyer`, `/alexandria/corporate-lawyer` |
+| Sharm | `/sharm-el-sheikh`, `/sharm-el-sheikh/real-estate-lawyer`, `/sharm-el-sheikh/immigration-lawyer`, `/sharm-el-sheikh/lawyer-for-foreigners` |
+
+Never put phone numbers in post text, because Google rejects those posts.
+
+### Review replies
+
+- **Sharm:** AR Thalen, Hosam Elgar and Mohamed Abdalmaksoud (positive).
+- **Alexandria, negative:**
+  - John Mark (1★, "unprofessional… pushes for a good review early"): calm reply that keeps client confidentiality and invites direct contact.
+  - Itachi Uchiha (1★): replied.
+  - Ouuyyy Rreedoo (2★, no text): replied.
+- **Still open: Keir Harris (1★, 2026-11-17).**
+  - He is a real client: rental-deposit case, fee paid in July 2026.
+  - He says he got no updates after August, never received a court, case number or hearing date, was blocked on WhatsApp, and had no answer to his email of 12 Nov.
+  - The owner must first email him the court, case number and next hearing date, and unblock him. Only then post this reply:
+
+    > Hello Keir, thank you for your feedback, and we're sorry you felt uninformed. Clients abroad should always know exactly where their case stands. We have emailed you the full case details (court, case number and next hearing date) so you can verify them directly, and Mr. Karim El Deeb remains available to update you personally. For client confidentiality we can't discuss the case here. – Karim El Deeb Law Firm
+
+### Next session
+
+1. Search Console indexing, 10 per day. Queue in memory: /alexandria and /sharm-el-sheikh recrawl first, then the 11 new articles.
+2. Keir Harris reply, once the owner confirms the email was sent.
+3. More Google posts weekly. Re-check the AI Overview for «محامي في الاسكندرية» in about 2 weeks.
+4. Owner tasks: Facebook page website link; Lawzana and wakilly listings; website links on Yellow Pages, Hawleek and Afokato; real sign photos.
